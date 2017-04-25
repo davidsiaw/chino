@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'sinatra/base'
+
+class Website < Sinatra::Base
+
+	def self.datapath
+		"#{Gem.loaded_specs['chino'].full_gem_path}/data/chino"
+	end
+
+	set :static, true
+	set :public_folder, datapath
+	set :bind, '0.0.0.0'
+
+	get '/*' do
+		send_file "#{Website.datapath}/index-debug.html"
+
+	end
+
+end
+
+Website.run!
