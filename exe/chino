@@ -2,21 +2,76 @@
 
 require 'sinatra/base'
 
-class Website < Sinatra::Base
+class Config
+	def initialize(&block)
+		instance_eval(&block)
+	end
 
-	def self.datapath
+	def data_path
 		"#{Gem.loaded_specs['chino'].full_gem_path}/data/chino"
 	end
 
-	set :static, true
-	set :public_folder, datapath
+	def common_path
+		"#{data_path}/common"
+	end
+
+	def get_file(file)
+		if File.exists?("#{file}")
+			{
+				filename: "#{file}"
+			}
+		elsif File.exists?("#{common_path}/#{file}")
+			{
+				filename: "#{common_path}/#{file}"
+			}
+		else
+			{}
+		end
+	end
+end
+
+class Website < Sinatra::Base
+
+	def self.setup(config)
+		@@config = config
+	end
+
 	set :bind, '0.0.0.0'
 
-	get '/*' do
-		send_file "#{Website.datapath}/index-debug.html"
-
+	helpers do
+		def output_for(path)
+			file = @@config.get_file(path)
+			if file[:filename]
+				send_file file[:filename]
+			elsif file[:string]
+				file[:string]
+			else
+				status 404
+			end
+		end
 	end
+
+	get '/' do
+		output_for("index-debug.html")
+	end
+
+	get '/*' do
+		output_for(params["splat"].first)
+	end
+end
+
+command = ARGV.shift
+
+if command == "build"
+
+else
 
 end
 
+config = Config.new() do 
+	proc = Proc.new {}
+	eval File.read("Chinofile"), proc.binding, "Chinofile"
+end
+
+Website.setup(config)
 Website.run!
