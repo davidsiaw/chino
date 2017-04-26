@@ -1,0 +1,23 @@
+@import <Foundation/Foundation.j>
+
+@implementation <%= cls_name %> : CPObject
+{
+}
+
+- (id)init
+{
+	self = [super init];
+	if (self)
+	{
+		// Initialization code
+	}
+	return self;
+}
+
+- (CPString)description
+{
+	// Return a string that describes the object for debugging purposes
+	return [CPString stringWithFormat:@"<<%= cls_name %> #%d>", 0];
+}
+
+@end

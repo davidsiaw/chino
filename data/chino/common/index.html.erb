@@ -2,10 +2,10 @@
 <html lang="en">
 <!--
  index.html
- chino
+ <%= bundle_name %>
 
- Created by You on April 26, 2017.
- Copyright 2017, Your Company All rights reserved.
+ Created by <%= bundle_author %> on <%= bundle_created_at %>.
+ Copyright <%= bundle_created_at.year %>, <%= bundle_company_name %> All rights reserved.
 -->
     <head>
         <meta charset="utf-8">
@@ -25,7 +25,7 @@
         <link rel="apple-touch-icon" href="Resources/icon.png">
         <link rel="apple-touch-startup-image" href="Resources/default.png">
 
-        <title>chino</title>
+        <title><%= bundle_name %></title>
 
         <!-- Custom javascript goes here -->
         <!-- End custom javascript -->

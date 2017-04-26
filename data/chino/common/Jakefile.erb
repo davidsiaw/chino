@@ -1,9 +1,9 @@
 /*
  * Jakefile
- * chino
+ * <%= bundle_name %>
  *
- * Created by You on April 26, 2017.
- * Copyright 2017, Your Company All rights reserved.
+ * Created by <%= bundle_author %> on <%= bundle_created_at %>.
+ * Copyright <%= bundle_created_at.year %>, <%= bundle_company_name %> All rights reserved.
  */
 
 var ENV = require("system").env,
@@ -14,7 +14,7 @@ var ENV = require("system").env,
     app = require("cappuccino/jake").app,
     configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
     OS = require("os"),
-    projectName = "chino";
+    projectName = "<%= bundle_name %>";
 
 app (projectName, function(task)
 {
@@ -23,15 +23,15 @@ app (projectName, function(task)
     if (configuration === "Debug")
         ENV["OBJJ_INCLUDE_PATHS"] = FILE.join(ENV["OBJJ_INCLUDE_PATHS"], configuration);
 
-    task.setBuildIntermediatesPath(FILE.join("Build", "chino.build", configuration));
+    task.setBuildIntermediatesPath(FILE.join("Build", "<%= bundle_name %>.build", configuration));
     task.setBuildPath(FILE.join("Build", configuration));
 
-    task.setProductName("chino");
-    task.setIdentifier("com.yourcompany.chino");
-    task.setVersion("1.0");
-    task.setAuthor("Your Company");
-    task.setEmail("feedback @nospam@ yourcompany.com");
-    task.setSummary("chino");
+    task.setProductName("<%= bundle_name %>");
+    task.setIdentifier("<%= bundle_identifier %>");
+    task.setVersion("<%= bundle_version %>");
+    task.setAuthor("<%= bundle_company_name %>");
+    task.setEmail("<%= bundle_email %>");
+    task.setSummary("<%= bundle_name %>");
     task.setSources(new FileList("**/*.j").exclude(FILE.join("Build", "**")).exclude(FILE.join("Frameworks", "Source", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
@@ -85,13 +85,13 @@ task ("deploy", ["release"], function()
 task ("desktop", ["release"], function()
 {
     FILE.mkdirs(FILE.join("Build", "Desktop", projectName));
-    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", projectName), FILE.join("Build", "Desktop", projectName, "chino.app"));
+    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", projectName), FILE.join("Build", "Desktop", projectName, "<%= bundle_name %>.app"));
     printResults("Desktop")
 });
 
 task ("run-desktop", ["desktop"], function()
 {
-    OS.system([FILE.join("Build", "Desktop", projectName, "chino.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+    OS.system([FILE.join("Build", "Desktop", projectName, "<%= bundle_name %>.app", "Contents", "MacOS", "NativeHost"), "-i"]);
 });
 
 function printResults(configuration)
