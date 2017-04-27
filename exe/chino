@@ -8,14 +8,13 @@ include Chino
 
 command = ARGV.shift
 
-if !File.exists? "Chinofile"
-	puts "This directory has no Chinofile. Please create one before running chino"
-	exit(1)
-end
+def config
+	if !File.exists? "Chinofile"
+		puts "This directory has no Chinofile. Please create one before running chino"
+		exit(1)
+	end
 
-config = Config.new() do 
-	proc = Proc.new {}
-	eval File.read("Chinofile"), proc.binding, "Chinofile"
+	Config.new() 
 end
 
 if command == "build"
@@ -38,9 +37,19 @@ if command == "build"
 	end
 	FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", "build")
 	
+elsif command == "create"
+
+	folder = ARGV.shift
+	if folder
+		FileUtils.cp_r "#{Gem.loaded_specs['chino'].full_gem_path}/data/chino/skeleton", folder
+		FileUtils.mkdir "#{folder}/Resources"
+	else
+		puts "No folder specified"
+	end
 
 elsif command == "gen"
 	class_type = ARGV.shift
+
 	if File.exists?("#{config.data_path}/templates/#{class_type}.j.erb")
 		cls_name = ARGV.shift.camelize
 		renderer = ERB.new(File.read("#{config.data_path}/templates/#{class_type}.j.erb"))

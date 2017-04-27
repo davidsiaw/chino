@@ -3,8 +3,11 @@ require 'erb'
 module Chino
 	class Config
 
-		def initialize(&block)
-			@chinofile = Chinofile.new(&block)
+		def initialize(file: "Chinofile")
+			@chinofile = Chinofile.new() do 
+				proc = Proc.new {}
+				eval File.read(file), proc.binding, file
+			end
 		end
 
 		def bundle_name
