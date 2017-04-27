@@ -5,7 +5,9 @@ module Chino
 		attr_accessor :information
 
 		def initialize(&block)
-			@information = {}
+			@information = {
+				dependencies: []
+			}
 			instance_eval(&block)
 
 			@information[:name] ||= "UnnamedChinoProject"
@@ -13,7 +15,7 @@ module Chino
 			@information[:author] ||= "Incognito"
 			@information[:author_email] ||= "incognito@example.com"
 			@information[:company_name] ||= "#{@information[:author]}"
-			@information[:identifier] ||= "com.#{@information[:company_name].downcase.gsub(/[^a-z0-9]+/, "_")}.#{@information[:name]}"
+			@information[:identifier] ||= "com.#{@information[:company_name].downcase.gsub(/[^a-z0-9]+/, "_")}.#{@information[:name].gsub(/[^a-z0-9]+/, "_")}"
 			@information[:created_at] ||= Time.now
 
 		end	
@@ -44,6 +46,9 @@ module Chino
 
 		def created_at(value)
 			@information[:created_at] = value
+		end
+
+		def imports(name, version:nil, path:nil)
 		end
 	end
 end

@@ -30,7 +30,7 @@ app (projectName, function(task)
     task.setIdentifier("<%= bundle_identifier %>");
     task.setVersion("<%= bundle_version %>");
     task.setAuthor("<%= bundle_company_name %>");
-    task.setEmail("<%= bundle_email %>");
+    task.setEmail("<%= bundle_author_email %>");
     task.setSummary("<%= bundle_name %>");
     task.setSources(new FileList("**/*.j").exclude(FILE.join("Build", "**")).exclude(FILE.join("Frameworks", "Source", "**")));
     task.setResources(new FileList("Resources/**"));

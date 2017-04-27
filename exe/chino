@@ -2,6 +2,7 @@
 
 require "chino"
 require "active_support/all"
+require "fileutils"
 
 include Chino
 
@@ -18,6 +19,25 @@ config = Config.new() do
 end
 
 if command == "build"
+
+	FileUtils.rm_r("build") if Dir.exists?("build")
+	FileUtils.rm_r("temp") if Dir.exists?("temp")
+	FileUtils.mkdir("temp")
+	FileUtils.cp_r("#{config.data_path}/common/Frameworks", "temp")
+	FileUtils.cp_r("Resources", "temp") if Dir.exists?("Resources")
+	Dir["./**/*.j"].each {|file| FileUtils.cp(file, "temp")}
+	Dir["#{config.data_path}/common/*"].select{|x|File.file? x}.each do |file|
+		filename = File.basename(file, ".erb")
+		file_content = config.get_file(filename)[:string]
+		File.write("temp/#{filename}", file_content)
+	end
+	IO.popen('cd temp && jake deploy') do |io|
+		while (line = io.gets) do
+			puts line
+		end
+	end
+	FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", "build")
+	
 
 elsif command == "gen"
 	class_type = ARGV.shift
