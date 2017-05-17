@@ -47,6 +47,7 @@ module Chino
 		end
 
 		def get_file(file)
+
 			if File.exists?("#{file}")
 				{
 					filename: "#{file}"
@@ -60,9 +61,17 @@ module Chino
 				{
 					filename: "#{common_path}/#{file}"
 				}
+			elsif @chinofile.find_file(file)
+				{
+					filename: "#{@chinofile.find_file(file)}"
+				}
 			else
 				{}
 			end
+		end
+
+		def collect_exports
+			exports = @chinofile.collect_exports
 		end
 	end
 end

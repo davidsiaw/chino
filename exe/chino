@@ -22,14 +22,22 @@ if command == "build"
 	FileUtils.rm_r("build") if Dir.exists?("build")
 	FileUtils.rm_r("temp") if Dir.exists?("temp")
 	FileUtils.mkdir("temp")
-	FileUtils.cp_r("#{config.data_path}/common/Frameworks", "temp")
 	FileUtils.cp_r("Resources", "temp") if Dir.exists?("Resources")
 	Dir["./**/*.j"].each {|file| FileUtils.cp(file, "temp")}
+
+	config.collect_exports.each do |k,v|
+		FileUtils.mkdir_p( File.join("temp", File.dirname(k)) )
+		FileUtils.cp(v, File.join("temp", k))
+	end
+
+	FileUtils.cp_r("#{config.data_path}/common/Frameworks", "temp")
+
 	Dir["#{config.data_path}/common/*"].select{|x|File.file? x}.each do |file|
 		filename = File.basename(file, ".erb")
 		file_content = config.get_file(filename)[:string]
 		File.write("temp/#{filename}", file_content)
 	end
+
 	IO.popen('cd temp && jake deploy') do |io|
 		while (line = io.gets) do
 			puts line
