@@ -54,7 +54,32 @@ module Chino
 			@information[:exports][filename] = File.join(@information[:path], filename)
 		end
 
-		def imports(the_name, path:nil)
+		def imports(the_name, path: nil, version: nil)
+
+			if path == nil
+				# this means that the package is downloaded somewhere already
+				base_dir = "#{ENV['HOME']}/.chino/dependencies/#{the_name}"
+
+				if !Dir.exists?("#{ENV['HOME']}/.chino/dependencies/#{the_name}")
+					throw "The bundle '#{the_name}' has not been installed. Please run chino install."
+				end
+
+				version_list = Dir["#{base_dir}/*"].sort_by{|x| x}.reverse
+
+				if version_list.count == 0
+					throw "The bundle '#{the_name}' has not been installed. Please run chino install."
+				end
+
+				if version
+					if !Dir.exists?("#{base_dir}/#{version}")
+						throw "The bundle '#{the_name}' with version #{version} has not been installed. Please run chino install."
+					end
+					path = "#{base_dir}/#{version}"
+				else
+					path = version_list.first
+				end
+
+			end
 
 			file = File.join(path, "Chinofile")
 			dep_chinofile = Chinofile.new(path: path) do 
