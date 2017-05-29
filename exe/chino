@@ -23,7 +23,17 @@ if command == "build"
 	FileUtils.rm_r("temp") if Dir.exists?("temp")
 	FileUtils.mkdir("temp")
 	FileUtils.cp_r("Resources", "temp") if Dir.exists?("Resources")
-	Dir["./**/*.j"].each {|file| FileUtils.cp(file, "temp")}
+
+	base_path = File.expand_path("./")
+	puts "base_path: #{base_path}"
+
+	Dir["./**/*.j"].each do |file|
+		cur_path = File.expand_path(file)
+		rel_path = cur_path.sub( Regexp.new("^#{base_path}"), "" )
+
+		FileUtils.mkdir_p( File.join("temp", File.dirname(rel_path)) )
+		FileUtils.cp( cur_path, File.join("temp", rel_path) )
+	end
 
 	config.collect_exports.each do |k,v|
 		FileUtils.mkdir_p( File.join("temp", File.dirname(k)) )
