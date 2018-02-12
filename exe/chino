@@ -14,7 +14,7 @@ def config
 		exit(1)
 	end
 
-	Config.new() 
+	Config.new()
 end
 
 if command == "build"
@@ -76,6 +76,10 @@ elsif command == "gen"
 		puts "Class type #{class_type} not supported"
 		exit(1)
 	end
+
+elsif command == "install"
+	install_cfg = Config.new(install: true)
+	p install_cfg.dependencies
 
 else
 	Website.setup(config)

@@ -4,13 +4,12 @@ module Chino
 
 		attr_accessor :information
 
-		def initialize(path: "#{`pwd`.chomp}", &block)
+		def initialize(path: "#{`pwd`.chomp}", install: false, &block)
 			@information = {
 				path: path,
 				dependencies: {},
 				exports: {}
 			}
-			instance_eval(&block)
 
 			@information[:name] ||= "UnnamedChinoProject"
 			@information[:version] ||= "0.1.0"
@@ -19,6 +18,10 @@ module Chino
 			@information[:company_name] ||= "#{@information[:author]}"
 			@information[:identifier] ||= "com.#{@information[:company_name].downcase.gsub(/[^a-z0-9]+/, "_")}.#{@information[:name].downcase.gsub(/[^a-z0-9]+/, "_")}"
 			@information[:created_at] ||= Time.now
+
+			@install = install
+			
+			instance_eval(&block)
 
 		end	
 
@@ -55,6 +58,11 @@ module Chino
 		end
 
 		def imports(the_name, path: nil, version: nil)
+
+			if @install
+				@information[:dependencies][the_name] = {version: version}
+				return
+			end
 
 			if path == nil
 				# this means that the package is downloaded somewhere already

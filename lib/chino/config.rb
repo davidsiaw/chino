@@ -3,8 +3,8 @@ require 'erb'
 module Chino
 	class Config
 
-		def initialize(file: "Chinofile")
-			@chinofile = Chinofile.new() do 
+		def initialize(file: "Chinofile", install: false)
+			@chinofile = Chinofile.new(install: install) do 
 				proc = Proc.new {}
 				eval File.read(file), proc.binding, file
 			end
@@ -36,6 +36,10 @@ module Chino
 
 		def bundle_created_at
 			@chinofile.information[:created_at]
+		end
+
+		def dependencies
+			@chinofile.information[:dependencies]
 		end
 
 		def data_path
