@@ -1,28 +1,31 @@
 # Chino
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chino`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Chino is a commandline tool that allows you to develop Cappuccino apps on the fly and provides a small webserver to preview your site as it changes.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'chino'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install chino
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a chino project by going
+
+    $ chino create my_app
+    $ cd my_app
+
+Create boilerplate Cappuccino .j files using `chino gen`
+
+    $ bundle exec chino gen class MyNewObject.j
+
+Preview your app using
+
+    $ bundle exec chino
+    
+Build your app using
+
+    $ bundle exec chino build
+    
+The resulting files can be moved to any CDN or file-based webserver for serving.
 
 ## Development
 
