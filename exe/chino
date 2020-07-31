@@ -1,87 +1,88 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require "chino"
-require "active_support/all"
-require "fileutils"
+require 'chino'
+require 'active_support/all'
+require 'fileutils'
 
 include Chino
 
 command = ARGV.shift
 
 def config
-	if !File.exists? "Chinofile"
-		puts "This directory has no Chinofile. Please create one before running chino"
-		exit(1)
-	end
+  unless File.exist? 'Chinofile'
+    puts 'This directory has no Chinofile. Please create one before running chino'
+    exit(1)
+  end
 
-	Config.new()
+  Config.new
 end
 
-if command == "build"
+if command == 'build'
 
-	FileUtils.rm_r("build") if Dir.exists?("build")
-	FileUtils.rm_r("temp") if Dir.exists?("temp")
-	FileUtils.mkdir("temp")
-	FileUtils.cp_r("Resources", "temp") if Dir.exists?("Resources")
+  FileUtils.rm_r('build') if Dir.exist?('build')
+  FileUtils.rm_r('temp') if Dir.exist?('temp')
+  FileUtils.mkdir('temp')
+  FileUtils.cp_r('Resources', 'temp') if Dir.exist?('Resources')
 
-	base_path = File.expand_path("./")
-	puts "base_path: #{base_path}"
+  base_path = File.expand_path('./')
+  puts "base_path: #{base_path}"
 
-	Dir["./**/*.j"].each do |file|
-		cur_path = File.expand_path(file)
-		rel_path = cur_path.sub( Regexp.new("^#{base_path}"), "" )
+  Dir['./**/*.j'].each do |file|
+    cur_path = File.expand_path(file)
+    rel_path = cur_path.sub(Regexp.new("^#{base_path}"), '')
 
-		FileUtils.mkdir_p( File.join("temp", File.dirname(rel_path)) )
-		FileUtils.cp( cur_path, File.join("temp", rel_path) )
-	end
+    FileUtils.mkdir_p(File.join('temp', File.dirname(rel_path)))
+    FileUtils.cp(cur_path, File.join('temp', rel_path))
+  end
 
-	config.collect_exports.each do |k,v|
-		FileUtils.mkdir_p( File.join("temp", File.dirname(k)) )
-		FileUtils.cp(v, File.join("temp", k))
-	end
+  config.collect_exports.each do |k, v|
+    FileUtils.mkdir_p(File.join('temp', File.dirname(k)))
+    FileUtils.cp(v, File.join('temp', k))
+  end
 
-	FileUtils.cp_r("#{config.data_path}/common/Frameworks", "temp")
+  FileUtils.cp_r("#{config.data_path}/common/Frameworks", 'temp')
 
-	Dir["#{config.data_path}/common/*"].select{|x|File.file? x}.each do |file|
-		filename = File.basename(file, ".erb")
-		file_content = config.get_file(filename)[:string]
-		File.write("temp/#{filename}", file_content)
-	end
+  Dir["#{config.data_path}/common/*"].select { |x| File.file? x }.each do |file|
+    filename = File.basename(file, '.erb')
+    file_content = config.get_file(filename)[:string]
+    File.write("temp/#{filename}", file_content)
+  end
 
-	IO.popen('cd temp && jake deploy') do |io|
-		while (line = io.gets) do
-			puts line
-		end
-	end
-	FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", "build")
-	
-elsif command == "create"
+  IO.popen('cd temp && jake deploy') do |io|
+    while (line = io.gets)
+      puts line
+    end
+  end
+  FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", 'build')
 
-	folder = ARGV.shift
-	if folder
-		FileUtils.cp_r "#{Gem.loaded_specs['chino'].full_gem_path}/data/chino/skeleton", folder
-		FileUtils.mkdir "#{folder}/Resources"
-	else
-		puts "No folder specified"
-	end
+elsif command == 'create'
 
-elsif command == "gen"
-	class_type = ARGV.shift
+  folder = ARGV.shift
+  if folder
+    FileUtils.cp_r "#{Gem.loaded_specs['chino'].full_gem_path}/data/chino/skeleton", folder
+    FileUtils.mkdir "#{folder}/Resources"
+  else
+    puts 'No folder specified'
+  end
 
-	if File.exists?("#{config.data_path}/templates/#{class_type}.j.erb")
-		cls_name = ARGV.shift.camelize
-		renderer = ERB.new(File.read("#{config.data_path}/templates/#{class_type}.j.erb"))
-		File.write("#{cls_name}.j", renderer.result(binding))
-	else
-		puts "Class type #{class_type} not supported"
-		exit(1)
-	end
+elsif command == 'gen'
+  class_type = ARGV.shift
 
-elsif command == "install"
-	install_cfg = Config.new(install: true)
-	p install_cfg.dependencies
+  if File.exist?("#{config.data_path}/templates/#{class_type}.j.erb")
+    cls_name = ARGV.shift.camelize
+    renderer = ERB.new(File.read("#{config.data_path}/templates/#{class_type}.j.erb"))
+    File.write("#{cls_name}.j", renderer.result(binding))
+  else
+    puts "Class type #{class_type} not supported"
+    exit(1)
+  end
+
+elsif command == 'install'
+  install_cfg = Config.new(install: true)
+  p install_cfg.dependencies
 
 else
-	Website.setup(config)
-	Website.run!
+  Website.setup(config)
+  Website.run!
 end
