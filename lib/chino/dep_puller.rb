@@ -2,6 +2,7 @@
 
 require 'active_support/inflector'
 require 'chino/drivers/base_driver'
+require 'chino/drivers/path_driver'
 
 module Chino
   # dependency puller

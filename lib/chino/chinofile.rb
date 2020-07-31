@@ -46,7 +46,7 @@ module Chino
       driver = hash.keys.first
       location = hash[driver]
       version = hash[:version]
-      @information[:dependencies] << { driver: driver, version: version, location: location }
+      @information[:dependencies] << { driver: driver.to_s, version: version, location: location }
     end
 
     def find_file(filename)

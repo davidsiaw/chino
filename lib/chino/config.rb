@@ -5,8 +5,10 @@ require 'chino/dep_puller'
 
 module Chino
   class Config
-    def initialize(file: 'Chinofile', install: false)
-      @chinofile = Chinofile.new do
+    def initialize(file: nil, install: false)
+      path = File.basename(file || '')
+      file ||= 'Chinofile'
+      @chinofile = Chinofile.new(path: path) do
         instance_eval File.read(file), file
       end
       @dep_puller = DepPuller.new
@@ -42,6 +44,10 @@ module Chino
 
     def bundle_created_at
       @chinofile.information[:created_at]
+    end
+
+    def bundle_exports
+      @chinofile.information[:exports]
     end
 
     def data_path
