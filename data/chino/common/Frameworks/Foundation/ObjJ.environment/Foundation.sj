@@ -313,7 +313,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 
 ,["unsigned","id"])]);
 }
-p;13;CPFormatter.jt;2730;@STATIC;1.0;i;13;CPException.ji;10;CPObject.jt;2678;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);
+p;13;CPFormatter.jt;2729;@STATIC;1.0;i;13;CPException.ji;10;CPObject.jt;2677;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPFormatter"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("stringForObjectValue:"), function $CPFormatter__stringForObjectValue_(self, _cmd, anObject)
@@ -348,7 +348,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("stringForObjectValue:")
     if (!valid)
     {
         (aPartialStringRef)(newString);
-        if (newString !== nil)
+        if (newString != nil)
             (aProposedSelectedRangeRef)(CPMakeRange(newString.length, 0));
     }
     return valid;
@@ -436,7 +436,7 @@ CPOrderedAscending = -1;
 CPOrderedSame = 0;
 CPOrderedDescending = 1;
 CPNotFound = -1;
-p;22;CPNotificationCenter.jt;21694;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;16;CPNotification.ji;8;CPNull.ji;18;CPOperationQueue.ji;13;CPOperation.ji;7;CPSet.jt;21539;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNotification.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPOperationQueue.j", YES);objj_executeFile("CPOperation.j", YES);objj_executeFile("CPSet.j", YES);var CPNotificationDefaultCenter = nil;
+p;22;CPNotificationCenter.jt;22079;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;16;CPNotification.ji;8;CPNull.ji;18;CPOperationQueue.ji;13;CPOperation.ji;7;CPSet.jt;21924;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNotification.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPOperationQueue.j", YES);objj_executeFile("CPOperation.j", YES);objj_executeFile("CPSet.j", YES);var CPNotificationDefaultCenter = nil;
 
 {var the_class = objj_allocateClassPair(CPObject, "CPNotificationCenter"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_namedRegistries", "CPMutableDictionary"), new objj_ivar("_unnamedRegistry", "_CPNotificationRegistry")]);objj_registerClassPair(the_class);
@@ -445,8 +445,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
     self = (objj_getClass("CPNotificationCenter").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._namedRegistries = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._unnamedRegistry = ((___r1 = (_CPNotificationRegistry == null ? null : (_CPNotificationRegistry.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationRegistry, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._namedRegistries = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._unnamedRegistry = ((___r1 = (_CPNotificationRegistry == null ? _CPNotificationRegistry : (_CPNotificationRegistry.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationRegistry, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     }
     return self;
     var ___r1;
@@ -455,16 +455,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
 ,["id"]), new objj_method(sel_getUid("addObserver:selector:name:object:"), function $CPNotificationCenter__addObserver_selector_name_object_(self, _cmd, anObserver, aSelector, aNotificationName, anObject)
 {
     var registry = (self.isa.method_msgSend["_registryForNotificationName:"] || _objj_forward)(self, "_registryForNotificationName:", aNotificationName),
-        observer = ((___r1 = (_CPNotificationObserver == null ? null : (_CPNotificationObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserver, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObserver:selector:"] || _objj_forward)(___r1, "initWithObserver:selector:", anObserver, aSelector));
-    (registry == null ? null : (registry.isa.method_msgSend["addObserver:object:"] || _objj_forward)(registry, "addObserver:object:", observer, anObject));
+        observer = ((___r1 = (_CPNotificationObserver == null ? _CPNotificationObserver : (_CPNotificationObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserver, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObserver:selector:"] || _objj_forward)(___r1, "initWithObserver:selector:", anObserver, aSelector));
+    (registry == null ? registry : (registry.isa.method_msgSend["addObserver:object:"] || _objj_forward)(registry, "addObserver:object:", observer, anObject));
     var ___r1;
 }
 
 ,["void","id","SEL","CPString","id"]), new objj_method(sel_getUid("addObserverForName:object:queue:usingBlock:"), function $CPNotificationCenter__addObserverForName_object_queue_usingBlock_(self, _cmd, aNotificationName, anObject, queue, block)
 {
     var registry = (self.isa.method_msgSend["_registryForNotificationName:"] || _objj_forward)(self, "_registryForNotificationName:", aNotificationName),
-        observer = ((___r1 = (_CPNotificationObserver == null ? null : (_CPNotificationObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserver, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithBlock:queue:"] || _objj_forward)(___r1, "initWithBlock:queue:", block, queue));
-    (registry == null ? null : (registry.isa.method_msgSend["addObserver:object:"] || _objj_forward)(registry, "addObserver:object:", observer, anObject));
+        observer = ((___r1 = (_CPNotificationObserver == null ? _CPNotificationObserver : (_CPNotificationObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserver, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithBlock:queue:"] || _objj_forward)(___r1, "initWithBlock:queue:", block, queue));
+    (registry == null ? registry : (registry.isa.method_msgSend["addObserver:object:"] || _objj_forward)(registry, "addObserver:object:", observer, anObject));
     return observer;
     var ___r1;
 }
@@ -474,10 +474,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
     var registry;
     if (aNotificationName == nil)
         registry = self._unnamedRegistry;
-    else if (!(registry = ((___r1 = self._namedRegistries), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aNotificationName))))
+    else if (!(registry = ((___r1 = self._namedRegistries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aNotificationName))))
     {
-        registry = ((___r1 = (_CPNotificationRegistry == null ? null : (_CPNotificationRegistry.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationRegistry, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        ((___r1 = self._namedRegistries), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", registry, aNotificationName));
+        registry = ((___r1 = (_CPNotificationRegistry == null ? _CPNotificationRegistry : (_CPNotificationRegistry.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationRegistry, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        ((___r1 = self._namedRegistries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", registry, aNotificationName));
     }
     return registry;
     var ___r1;
@@ -486,10 +486,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
 ,["_CPNotificationRegistry","CPString"]), new objj_method(sel_getUid("removeObserver:"), function $CPNotificationCenter__removeObserver_(self, _cmd, anObserver)
 {
     var name = nil,
-        names = ((___r1 = self._namedRegistries), ___r1 == null ? null : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
-    while ((name = (names == null ? null : (names.isa.method_msgSend["nextObject"] || _objj_forward)(names, "nextObject"))) !== nil)
-        ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", name))), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, nil));
-    ((___r1 = self._unnamedRegistry), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, nil));
+        names = ((___r1 = self._namedRegistries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
+    while ((name = (names == null ? names : (names.isa.method_msgSend["nextObject"] || _objj_forward)(names, "nextObject"))) != nil)
+        ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", name))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, nil));
+    ((___r1 = self._unnamedRegistry), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, nil));
     var ___r1, ___r2;
 }
 
@@ -498,13 +498,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
     if (aNotificationName == nil)
     {
         var name = nil,
-            names = ((___r1 = self._namedRegistries), ___r1 == null ? null : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
-        while ((name = (names == null ? null : (names.isa.method_msgSend["nextObject"] || _objj_forward)(names, "nextObject"))) !== nil)
-            ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", name))), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
-        ((___r1 = self._unnamedRegistry), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
+            names = ((___r1 = self._namedRegistries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
+        while ((name = (names == null ? names : (names.isa.method_msgSend["nextObject"] || _objj_forward)(names, "nextObject"))) != nil)
+            ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", name))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
+        ((___r1 = self._unnamedRegistry), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
     }
     else
-        ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", aNotificationName))), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
+        ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", aNotificationName))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:object:"] || _objj_forward)(___r1, "removeObserver:object:", anObserver, anObject));
     var ___r1, ___r2;
 }
 
@@ -517,13 +517,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
 
 ,["void","CPNotification"]), new objj_method(sel_getUid("postNotificationName:object:userInfo:"), function $CPNotificationCenter__postNotificationName_object_userInfo_(self, _cmd, aNotificationName, anObject, aUserInfo)
 {
-    _CPNotificationCenterPostNotification(self, ((___r1 = (CPNotification.isa.method_msgSend["alloc"] || _objj_forward)(CPNotification, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithName:object:userInfo:"] || _objj_forward)(___r1, "initWithName:object:userInfo:", aNotificationName, anObject, aUserInfo)));
+    _CPNotificationCenterPostNotification(self, ((___r1 = (CPNotification.isa.method_msgSend["alloc"] || _objj_forward)(CPNotification, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithName:object:userInfo:"] || _objj_forward)(___r1, "initWithName:object:userInfo:", aNotificationName, anObject, aUserInfo)));
     var ___r1;
 }
 
 ,["void","CPString","id","CPDictionary"]), new objj_method(sel_getUid("postNotificationName:object:"), function $CPNotificationCenter__postNotificationName_object_(self, _cmd, aNotificationName, anObject)
 {
-    _CPNotificationCenterPostNotification(self, ((___r1 = (CPNotification.isa.method_msgSend["alloc"] || _objj_forward)(CPNotification, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithName:object:userInfo:"] || _objj_forward)(___r1, "initWithName:object:userInfo:", aNotificationName, anObject, nil)));
+    _CPNotificationCenterPostNotification(self, ((___r1 = (CPNotification.isa.method_msgSend["alloc"] || _objj_forward)(CPNotification, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithName:object:userInfo:"] || _objj_forward)(___r1, "initWithName:object:userInfo:", aNotificationName, anObject, nil)));
     var ___r1;
 }
 
@@ -531,7 +531,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPNot
 class_addMethods(meta_class, [new objj_method(sel_getUid("defaultCenter"), function $CPNotificationCenter__defaultCenter(self, _cmd)
 {
     if (!CPNotificationDefaultCenter)
-        CPNotificationDefaultCenter = ((___r1 = (CPNotificationCenter.isa.method_msgSend["alloc"] || _objj_forward)(CPNotificationCenter, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        CPNotificationDefaultCenter = ((___r1 = (CPNotificationCenter.isa.method_msgSend["alloc"] || _objj_forward)(CPNotificationCenter, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     return CPNotificationDefaultCenter;
     var ___r1;
 }
@@ -540,8 +540,8 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("defaultCenter"), funct
 }
 var _CPNotificationCenterPostNotification = function(self, aNotification)
 {
-    ((___r1 = self._unnamedRegistry), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", aNotification));
-    ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", (aNotification == null ? null : (aNotification.isa.method_msgSend["name"] || _objj_forward)(aNotification, "name"))))), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", aNotification));
+    ((___r1 = self._unnamedRegistry), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", aNotification));
+    ((___r1 = ((___r2 = self._namedRegistries), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", (aNotification == null ? aNotification : (aNotification.isa.method_msgSend["name"] || _objj_forward)(aNotification, "name"))))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", aNotification));
     var ___r1, ___r2;
 };
 
@@ -552,7 +552,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $_CPNo
     self = (objj_getClass("_CPNotificationRegistry").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._objectObservers = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._objectObservers = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     }
     return self;
     var ___r1;
@@ -562,13 +562,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $_CPNo
 {
     if (!anObject)
         anObject = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
-    var observers = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))));
+    var observers = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))));
     if (!observers)
     {
         observers = (CPMutableSet.isa.method_msgSend["set"] || _objj_forward)(CPMutableSet, "set");
-        ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", observers, (anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))));
+        ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", observers, (anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))));
     }
-    (observers == null ? null : (observers.isa.method_msgSend["addObject:"] || _objj_forward)(observers, "addObject:", anObserver));
+    (observers == null ? observers : (observers.isa.method_msgSend["addObject:"] || _objj_forward)(observers, "addObject:", anObserver));
     var ___r1;
 }
 
@@ -578,68 +578,68 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $_CPNo
     if (anObject == nil)
     {
         var key = nil,
-            keys = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
-        while ((key = (keys == null ? null : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) !== nil)
+            keys = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["keyEnumerator"] || _objj_forward)(___r1, "keyEnumerator"));
+        while ((key = (keys == null ? keys : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) != nil)
         {
-            var observers = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key)),
+            var observers = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key)),
                 observer = nil,
-                observersEnumerator = (observers == null ? null : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
-            while ((observer = (observersEnumerator == null ? null : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) !== nil)
-                if ((observer == null ? null : (observer.isa.method_msgSend["observer"] || _objj_forward)(observer, "observer")) == anObserver || (observer == null ? null : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) && (anObserver == null ? null : (anObserver.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(anObserver, "respondsToSelector:", sel_getUid("block"))) && (observer == null ? null : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) == (anObserver == null ? null : (anObserver.isa.method_msgSend["block"] || _objj_forward)(anObserver, "block")))
-                    (observers == null ? null : (observers.isa.method_msgSend["removeObject:"] || _objj_forward)(observers, "removeObject:", observer));
-            if (!(observers == null ? null : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
+                observersEnumerator = (observers == null ? observers : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
+            while ((observer = (observersEnumerator == null ? observersEnumerator : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) != nil)
+                if ((observer == null ? observer : (observer.isa.method_msgSend["observer"] || _objj_forward)(observer, "observer")) == anObserver || (observer == null ? observer : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) && (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(anObserver, "respondsToSelector:", sel_getUid("block"))) && (observer == null ? observer : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) == (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["block"] || _objj_forward)(anObserver, "block")))
+                    (observers == null ? observers : (observers.isa.method_msgSend["removeObject:"] || _objj_forward)(observers, "removeObject:", observer));
+            if (!(observers == null ? observers : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
                 removedKeys.push(key);
         }
     }
     else
     {
-        var key = (anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID")),
-            observers = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key)),
+        var key = (anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID")),
+            observers = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key)),
             observer = nil,
-            observersEnumerator = (observers == null ? null : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
-        while ((observer = (observersEnumerator == null ? null : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) !== nil)
-            if ((observer == null ? null : (observer.isa.method_msgSend["observer"] || _objj_forward)(observer, "observer")) == anObserver || (observer == null ? null : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) && (anObserver == null ? null : (anObserver.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(anObserver, "respondsToSelector:", sel_getUid("block"))) && (observer == null ? null : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) == (anObserver == null ? null : (anObserver.isa.method_msgSend["block"] || _objj_forward)(anObserver, "block")))
-                (observers == null ? null : (observers.isa.method_msgSend["removeObject:"] || _objj_forward)(observers, "removeObject:", observer));
-        if (!(observers == null ? null : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
+            observersEnumerator = (observers == null ? observers : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
+        while ((observer = (observersEnumerator == null ? observersEnumerator : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) != nil)
+            if ((observer == null ? observer : (observer.isa.method_msgSend["observer"] || _objj_forward)(observer, "observer")) == anObserver || (observer == null ? observer : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) && (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(anObserver, "respondsToSelector:", sel_getUid("block"))) && (observer == null ? observer : (observer.isa.method_msgSend["block"] || _objj_forward)(observer, "block")) == (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["block"] || _objj_forward)(anObserver, "block")))
+                (observers == null ? observers : (observers.isa.method_msgSend["removeObject:"] || _objj_forward)(observers, "removeObject:", observer));
+        if (!(observers == null ? observers : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
             removedKeys.push(key);
     }
     var count = removedKeys.length;
     while (count--)
-        ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", removedKeys[count]));
+        ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", removedKeys[count]));
     var ___r1;
 }
 
 ,["void","id","id"]), new objj_method(sel_getUid("postNotification:"), function $_CPNotificationRegistry__postNotification_(self, _cmd, aNotification)
 {
-    var object = (aNotification == null ? null : (aNotification.isa.method_msgSend["object"] || _objj_forward)(aNotification, "object")),
+    var object = (aNotification == null ? aNotification : (aNotification.isa.method_msgSend["object"] || _objj_forward)(aNotification, "object")),
         currentObservers = nil;
-    if (object != nil && (currentObservers = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (object == null ? null : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))))))
+    if (object != nil && (currentObservers = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (object == null ? object : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))))))
     {
-        var observers = (currentObservers == null ? null : (currentObservers.isa.method_msgSend["copy"] || _objj_forward)(currentObservers, "copy")),
+        var observers = (currentObservers == null ? currentObservers : (currentObservers.isa.method_msgSend["copy"] || _objj_forward)(currentObservers, "copy")),
             observer = nil,
-            observersEnumerator = (observers == null ? null : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
-        while ((observer = (observersEnumerator == null ? null : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) !== nil)
+            observersEnumerator = (observers == null ? observers : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
+        while ((observer = (observersEnumerator == null ? observersEnumerator : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) != nil)
         {
-            if ((currentObservers == null ? null : (currentObservers.isa.method_msgSend["containsObject:"] || _objj_forward)(currentObservers, "containsObject:", observer)))
-                (observer == null ? null : (observer.isa.method_msgSend["postNotification:"] || _objj_forward)(observer, "postNotification:", aNotification));
+            if ((currentObservers == null ? currentObservers : (currentObservers.isa.method_msgSend["containsObject:"] || _objj_forward)(currentObservers, "containsObject:", observer)))
+                (observer == null ? observer : (observer.isa.method_msgSend["postNotification:"] || _objj_forward)(observer, "postNotification:", aNotification));
         }
     }
-    currentObservers = ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", ((___r2 = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null")), ___r2 == null ? null : (___r2.isa.method_msgSend["UID"] || _objj_forward)(___r2, "UID"))));
+    currentObservers = ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", ((___r2 = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["UID"] || _objj_forward)(___r2, "UID"))));
     if (!currentObservers)
         return;
-    var observers = (currentObservers == null ? null : (currentObservers.isa.method_msgSend["copy"] || _objj_forward)(currentObservers, "copy")),
-        observersEnumerator = (observers == null ? null : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
-    while ((observer = (observersEnumerator == null ? null : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) !== nil)
+    var observers = (currentObservers == null ? currentObservers : (currentObservers.isa.method_msgSend["copy"] || _objj_forward)(currentObservers, "copy")),
+        observersEnumerator = (observers == null ? observers : (observers.isa.method_msgSend["objectEnumerator"] || _objj_forward)(observers, "objectEnumerator"));
+    while ((observer = (observersEnumerator == null ? observersEnumerator : (observersEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(observersEnumerator, "nextObject"))) != nil)
     {
-        if ((currentObservers == null ? null : (currentObservers.isa.method_msgSend["containsObject:"] || _objj_forward)(currentObservers, "containsObject:", observer)))
-            (observer == null ? null : (observer.isa.method_msgSend["postNotification:"] || _objj_forward)(observer, "postNotification:", aNotification));
+        if ((currentObservers == null ? currentObservers : (currentObservers.isa.method_msgSend["containsObject:"] || _objj_forward)(currentObservers, "containsObject:", observer)))
+            (observer == null ? observer : (observer.isa.method_msgSend["postNotification:"] || _objj_forward)(observer, "postNotification:", aNotification));
     }
     var ___r1, ___r2;
 }
 
 ,["void","CPNotification"]), new objj_method(sel_getUid("count"), function $_CPNotificationRegistry__count(self, _cmd)
 {
-    return ((___r1 = self._objectObservers), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+    return ((___r1 = self._objectObservers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
     var ___r1;
 }
 
@@ -685,10 +685,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObserver:select
         if (!self._operationQueue)
             self._block(aNotification);
         else
-            ((___r1 = self._operationQueue), ___r1 == null ? null : (___r1.isa.method_msgSend["addOperation:"] || _objj_forward)(___r1, "addOperation:", ((___r2 = (_CPNotificationObserverOperation == null ? null : (_CPNotificationObserverOperation.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserverOperation, "alloc"))), ___r2 == null ? null : (___r2.isa.method_msgSend["initWithBlock:notification:"] || _objj_forward)(___r2, "initWithBlock:notification:", self._block, aNotification))));
+            ((___r1 = self._operationQueue), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addOperation:"] || _objj_forward)(___r1, "addOperation:", ((___r2 = (_CPNotificationObserverOperation == null ? _CPNotificationObserverOperation : (_CPNotificationObserverOperation.isa.method_msgSend["alloc"] || _objj_forward)(_CPNotificationObserverOperation, "alloc"))), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["initWithBlock:notification:"] || _objj_forward)(___r2, "initWithBlock:notification:", self._block, aNotification))));
         return;
     }
-    ((___r1 = self._observer), ___r1 == null ? null : (___r1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(___r1, "performSelector:withObject:", self._selector, aNotification));
+    ((___r1 = self._observer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(___r1, "performSelector:withObject:", self._selector, aNotification));
     var ___r1, ___r2;
 }
 
@@ -838,7 +838,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("cancelPreviousPerformR
 
 ,["void","id","SEL","id","CPTimeInterval","CPArray"])]);
 }
-p;16;CPCharacterSet.jt;44302;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;10;CPObject.ji;10;CPString.ji;7;CPURL.jt;44210;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);var _builtInCharacterSets = {};
+p;16;CPCharacterSet.jt;44397;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;10;CPObject.ji;10;CPString.ji;7;CPURL.jt;44305;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);var _builtInCharacterSets = {};
 
 {var the_class = objj_allocateClassPair(CPObject, "CPCharacterSet"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_inverted", "BOOL")]);objj_registerClassPair(the_class);
@@ -871,13 +871,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPCha
 ,["void","id"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("characterSetWithCharactersInString:"), function $CPCharacterSet__characterSetWithCharactersInString_(self, _cmd, aString)
 {
-    return ((___r1 = (_CPStringContentCharacterSet == null ? null : (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", aString));
+    return ((___r1 = (_CPStringContentCharacterSet == null ? _CPStringContentCharacterSet : (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", aString));
     var ___r1;
 }
 
 ,["id","CPString"]), new objj_method(sel_getUid("characterSetWithRange:"), function $CPCharacterSet__characterSetWithRange_(self, _cmd, aRange)
 {
-    return ((___r1 = (_CPRangeCharacterSet == null ? null : (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithRange:"] || _objj_forward)(___r1, "initWithRange:", aRange));
+    return ((___r1 = (_CPRangeCharacterSet == null ? _CPRangeCharacterSet : (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRange:"] || _objj_forward)(___r1, "initWithRange:", aRange));
     var ___r1;
 }
 
@@ -954,9 +954,9 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("characterSetWithCharac
             var loc = rangeArray[i],
                 length = rangeArray[i + 1],
                 range = CPMakeRange(loc, length);
-            (ranges == null ? null : (ranges.isa.method_msgSend["addObject:"] || _objj_forward)(ranges, "addObject:", range));
+            (ranges == null ? ranges : (ranges.isa.method_msgSend["addObject:"] || _objj_forward)(ranges, "addObject:", range));
         }
-        cs = ((___r1 = (_CPRangeCharacterSet == null ? null : (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", ranges));
+        cs = ((___r1 = (_CPRangeCharacterSet == null ? _CPRangeCharacterSet : (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", ranges));
         _builtInCharacterSets[csname] = cs;
     }
     return cs;
@@ -973,14 +973,14 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     if (self = (objj_getClass("CPCharacterSet").super_class.method_dtable["init"] || _objj_forward)(self, "init"))
     {
-        self._inverted = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPCharacterSetInvertedKey));
+        self._inverted = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPCharacterSetInvertedKey));
     }
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPCharacterSet__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._inverted, CPCharacterSetInvertedKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._inverted, CPCharacterSetInvertedKey));
 }
 
 ,["void","CPCoder"])]);
@@ -1005,16 +1005,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:"), funct
 
 ,["id","CPArray"]), new objj_method(sel_getUid("copy"), function $_CPRangeCharacterSet__copy(self, _cmd)
 {
-    var set = ((___r1 = (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", self._ranges));
-    (set == null ? null : (set.isa.method_msgSend["_setInverted:"] || _objj_forward)(set, "_setInverted:", self._inverted));
+    var set = ((___r1 = (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", self._ranges));
+    (set == null ? set : (set.isa.method_msgSend["_setInverted:"] || _objj_forward)(set, "_setInverted:", self._inverted));
     return set;
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("invertedSet"), function $_CPRangeCharacterSet__invertedSet(self, _cmd)
 {
-    var set = ((___r1 = (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", self._ranges));
-    (set == null ? null : (set.isa.method_msgSend["invert"] || _objj_forward)(set, "invert"));
+    var set = ((___r1 = (_CPRangeCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPRangeCharacterSet, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRanges:"] || _objj_forward)(___r1, "initWithRanges:", self._ranges));
+    (set == null ? set : (set.isa.method_msgSend["invert"] || _objj_forward)(set, "invert"));
     return set;
     var ___r1;
 }
@@ -1022,9 +1022,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:"), funct
 ,["id"]), new objj_method(sel_getUid("characterIsMember:"), function $_CPRangeCharacterSet__characterIsMember_(self, _cmd, aCharacter)
 {
     var c = aCharacter.charCodeAt(0),
-        enu = ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator")),
+        enu = ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator")),
         range;
-    while ((range = (enu == null ? null : (enu.isa.method_msgSend["nextObject"] || _objj_forward)(enu, "nextObject"))) !== nil)
+    while ((range = (enu == null ? enu : (enu.isa.method_msgSend["nextObject"] || _objj_forward)(enu, "nextObject"))) != nil)
     {
         if (CPLocationInRange(c, range))
             return !self._inverted;
@@ -1037,9 +1037,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:"), funct
 {
     if (plane !== 0)
         return NO;
-    var enu = ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator")),
+    var enu = ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator")),
         range;
-    while ((range = (enu == null ? null : (enu.isa.method_msgSend["nextObject"] || _objj_forward)(enu, "nextObject"))) !== nil)
+    while ((range = (enu == null ? enu : (enu.isa.method_msgSend["nextObject"] || _objj_forward)(enu, "nextObject"))) != nil)
     {
         if (!CPEmptyRange(range))
             return YES;
@@ -1050,7 +1050,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:"), funct
 
 ,["BOOL","int"]), new objj_method(sel_getUid("addCharactersInRange:"), function $_CPRangeCharacterSet__addCharactersInRange_(self, _cmd, aRange)
 {
-    ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aRange));
+    ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aRange));
     var ___r1;
 }
 
@@ -1061,7 +1061,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:"), funct
     {
         var code = aString.charCodeAt(i),
             range = CPMakeRange(code, 1);
-        ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", range));
+        ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", range));
     }
     var ___r1;
 }
@@ -1083,16 +1083,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 
 ,["id","CPString"]), new objj_method(sel_getUid("copy"), function $_CPStringContentCharacterSet__copy(self, _cmd)
 {
-    var set = ((___r1 = (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string));
-    (set == null ? null : (set.isa.method_msgSend["_setInverted:"] || _objj_forward)(set, "_setInverted:", self._inverted));
+    var set = ((___r1 = (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string));
+    (set == null ? set : (set.isa.method_msgSend["_setInverted:"] || _objj_forward)(set, "_setInverted:", self._inverted));
     return set;
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("invertedSet"), function $_CPStringContentCharacterSet__invertedSet(self, _cmd)
 {
-    var set = ((___r1 = (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string));
-    (set == null ? null : (set.isa.method_msgSend["invert"] || _objj_forward)(set, "invert"));
+    var set = ((___r1 = (_CPStringContentCharacterSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPStringContentCharacterSet, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string));
+    (set == null ? set : (set.isa.method_msgSend["invert"] || _objj_forward)(set, "invert"));
     return set;
     var ___r1;
 }
@@ -1120,7 +1120,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
     {
         var s = String.fromCharCode(i);
         if (!(self.isa.method_msgSend["characterIsMember:"] || _objj_forward)(self, "characterIsMember:", s))
-            self._string = ((___r1 = self._string), ___r1 == null ? null : (___r1.isa.method_msgSend["stringByAppendingString:"] || _objj_forward)(___r1, "stringByAppendingString:", s));
+            self._string = ((___r1 = self._string), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["stringByAppendingString:"] || _objj_forward)(___r1, "stringByAppendingString:", s));
     }
     var ___r1;
 }
@@ -1132,7 +1132,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
     {
         var s = aString.charAt(i);
         if (!(self.isa.method_msgSend["characterIsMember:"] || _objj_forward)(self, "characterIsMember:", s))
-            self._string = ((___r1 = self._string), ___r1 == null ? null : (___r1.isa.method_msgSend["stringByAppendingString:"] || _objj_forward)(___r1, "stringByAppendingString:", s));
+            self._string = ((___r1 = self._string), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["stringByAppendingString:"] || _objj_forward)(___r1, "stringByAppendingString:", s));
     }
     var ___r1;
 }
@@ -1141,7 +1141,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 {
     if (self === aCharacterSet)
         return YES;
-    if (!aCharacterSet || !(aCharacterSet == null ? null : (aCharacterSet.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aCharacterSet, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))))
+    if (!aCharacterSet || !(aCharacterSet == null ? aCharacterSet : (aCharacterSet.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aCharacterSet, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))))
         return NO;
     return (self.isa.method_msgSend["_isEqualToStringContentCharacterSet:"] || _objj_forward)(self, "_isEqualToStringContentCharacterSet:", aCharacterSet);
 }
@@ -1163,7 +1163,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     if (self = (objj_getClass("_CPStringContentCharacterSet").super_class.method_dtable["initWithCoder:"] || _objj_forward)(self, "initWithCoder:", aCoder))
     {
-        self._string = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPStringContentCharacterSetStringKey));
+        self._string = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPStringContentCharacterSetStringKey));
     }
     return self;
 }
@@ -1171,7 +1171,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPStringContentCharacterSet__encodeWithCoder_(self, _cmd, aCoder)
 {
     (objj_getClass("_CPStringContentCharacterSet").super_class.method_dtable["encodeWithCoder:"] || _objj_forward)(self, "encodeWithCoder:", aCoder);
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._string, _CPStringContentCharacterSetStringKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._string, _CPStringContentCharacterSetStringKey));
 }
 
 ,["void","CPCoder"])]);
@@ -1190,15 +1190,15 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         i = 0;
     for (; i < self.length; i++)
     {
-        if ((separator == null ? null : (separator.isa.method_msgSend["characterIsMember:"] || _objj_forward)(separator, "characterIsMember:", self.charAt(i))))
+        if ((separator == null ? separator : (separator.isa.method_msgSend["characterIsMember:"] || _objj_forward)(separator, "characterIsMember:", self.charAt(i))))
         {
             componentRange.length = i - componentRange.location;
-            (components == null ? null : (components.isa.method_msgSend["addObject:"] || _objj_forward)(components, "addObject:", (self.isa.method_msgSend["substringWithRange:"] || _objj_forward)(self, "substringWithRange:", componentRange)));
+            (components == null ? components : (components.isa.method_msgSend["addObject:"] || _objj_forward)(components, "addObject:", (self.isa.method_msgSend["substringWithRange:"] || _objj_forward)(self, "substringWithRange:", componentRange)));
             componentRange.location += componentRange.length + 1;
         }
     }
     componentRange.length = self.length - componentRange.location;
-    (components == null ? null : (components.isa.method_msgSend["addObject:"] || _objj_forward)(components, "addObject:", (self.isa.method_msgSend["substringWithRange:"] || _objj_forward)(self, "substringWithRange:", componentRange)));
+    (components == null ? components : (components.isa.method_msgSend["addObject:"] || _objj_forward)(components, "addObject:", (self.isa.method_msgSend["substringWithRange:"] || _objj_forward)(self, "substringWithRange:", componentRange)));
     return components;
 }
 
@@ -1213,14 +1213,14 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     if (options & _CPCharacterSetTrimAtBeginning)
     {
         var cutEdgeBeginning = 0;
-        while (cutEdgeBeginning < self.length && (set == null ? null : (set.isa.method_msgSend["characterIsMember:"] || _objj_forward)(set, "characterIsMember:", self.charAt(cutEdgeBeginning))))
+        while (cutEdgeBeginning < self.length && (set == null ? set : (set.isa.method_msgSend["characterIsMember:"] || _objj_forward)(set, "characterIsMember:", self.charAt(cutEdgeBeginning))))
             cutEdgeBeginning++;
         str = str.substr(cutEdgeBeginning);
     }
     if (options & _CPCharacterSetTrimAtEnd)
     {
         var cutEdgeEnd = str.length;
-        while (cutEdgeEnd > 0 && (set == null ? null : (set.isa.method_msgSend["characterIsMember:"] || _objj_forward)(set, "characterIsMember:", str.charAt(cutEdgeEnd - 1))))
+        while (cutEdgeEnd > 0 && (set == null ? set : (set.isa.method_msgSend["characterIsMember:"] || _objj_forward)(set, "characterIsMember:", str.charAt(cutEdgeEnd - 1))))
             cutEdgeEnd--;
         str = str.substr(0, cutEdgeEnd);
     }
@@ -1257,13 +1257,13 @@ objj_registerTypeDef(the_typedef);
 objj_registerTypeDef(the_typedef);
 }{var the_typedef = objj_allocateTypeDef("CPTimeInterval");
 objj_registerTypeDef(the_typedef);
-}p;20;CPValueTransformer.jt;9019;@STATIC;1.0;i;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;10;CPNumber.ji;10;CPObject.jt;8875;objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPKeyedUnarchiver.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPObject.j", YES);var transformerMap = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+}p;20;CPValueTransformer.jt;9009;@STATIC;1.0;i;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;10;CPNumber.ji;10;CPObject.jt;8865;objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPKeyedUnarchiver.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPObject.j", YES);var transformerMap = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
 
 {var the_class = objj_allocateClassPair(CPObject, "CPValueTransformer"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("reverseTransformedValue:"), function $CPValueTransformer__reverseTransformedValue_(self, _cmd, aValue)
 {
-    if (!((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["allowsReverseTransformation"] || _objj_forward)(___r1, "allowsReverseTransformation")))
+    if (!((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allowsReverseTransformation"] || _objj_forward)(___r1, "allowsReverseTransformation")))
     {
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, self + " is not reversible.");
     }
@@ -1285,17 +1285,17 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 
 ,["void"]), new objj_method(sel_getUid("setValueTransformer:forName:"), function $CPValueTransformer__setValueTransformer_forName_(self, _cmd, transformer, aName)
 {
-    (transformerMap == null ? null : (transformerMap.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(transformerMap, "setObject:forKey:", transformer, aName));
+    (transformerMap == null ? transformerMap : (transformerMap.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(transformerMap, "setObject:forKey:", transformer, aName));
 }
 
 ,["void","CPValueTransformer","CPString"]), new objj_method(sel_getUid("valueTransformerForName:"), function $CPValueTransformer__valueTransformerForName_(self, _cmd, aName)
 {
-    return (transformerMap == null ? null : (transformerMap.isa.method_msgSend["objectForKey:"] || _objj_forward)(transformerMap, "objectForKey:", aName));
+    return (transformerMap == null ? transformerMap : (transformerMap.isa.method_msgSend["objectForKey:"] || _objj_forward)(transformerMap, "objectForKey:", aName));
 }
 
 ,["CPValueTransformer","CPString"]), new objj_method(sel_getUid("valueTransformerNames"), function $CPValueTransformer__valueTransformerNames(self, _cmd)
 {
-    return (transformerMap == null ? null : (transformerMap.isa.method_msgSend["allKeys"] || _objj_forward)(transformerMap, "allKeys"));
+    return (transformerMap == null ? transformerMap : (transformerMap.isa.method_msgSend["allKeys"] || _objj_forward)(transformerMap, "allKeys"));
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("allowsReverseTransformation"), function $CPValueTransformer__allowsReverseTransformation(self, _cmd)
@@ -1315,12 +1315,12 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("reverseTransformedValue:"), function $CPNegateBooleanTransformer__reverseTransformedValue_(self, _cmd, aValue)
 {
-    return !(aValue == null ? null : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue"));
+    return !(aValue == null ? aValue : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue"));
 }
 
 ,["id","id"]), new objj_method(sel_getUid("transformedValue:"), function $CPNegateBooleanTransformer__transformedValue_(self, _cmd, aValue)
 {
-    return !(aValue == null ? null : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue"));
+    return !(aValue == null ? aValue : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue"));
 }
 
 ,["id","id"])]);
@@ -1341,7 +1341,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("allowsReverseTransform
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("transformedValue:"), function $CPIsNilTransformer__transformedValue_(self, _cmd, aValue)
 {
-    return aValue === nil || aValue === undefined;
+    return aValue == nil;
 }
 
 ,["id","id"])]);
@@ -1362,7 +1362,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("allowsReverseTransform
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("transformedValue:"), function $CPIsNotNilTransformer__transformedValue_(self, _cmd, aValue)
 {
-    return aValue !== nil && aValue !== undefined;
+    return aValue != nil;
 }
 
 ,["id","id"])]);
@@ -1409,10 +1409,10 @@ CPIsNilTransformerName = "CPIsNil";
 CPIsNotNilTransformerName = "CPIsNotNil";
 CPUnarchiveFromDataTransformerName = "CPUnarchiveFromData";
 CPKeyedUnarchiveFromDataTransformerName = "CPKeyedUnarchiveFromData";
-(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPNegateBooleanTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPNegateBooleanTransformer, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPNegateBooleanTransformerName);
-(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPIsNilTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPIsNilTransformer, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPIsNilTransformerName);
-(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPIsNotNilTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPIsNotNilTransformer, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPIsNotNilTransformerName);
-(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPUnarchiveFromDataTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPUnarchiveFromDataTransformer, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPUnarchiveFromDataTransformerName);
+(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPNegateBooleanTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPNegateBooleanTransformer, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPNegateBooleanTransformerName);
+(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPIsNilTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPIsNilTransformer, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPIsNilTransformerName);
+(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPIsNotNilTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPIsNotNilTransformer, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPIsNotNilTransformerName);
+(CPValueTransformer.isa.method_msgSend["setValueTransformer:forName:"] || _objj_forward)(CPValueTransformer, "setValueTransformer:forName:", ((___r1 = (CPUnarchiveFromDataTransformer.isa.method_msgSend["alloc"] || _objj_forward)(CPUnarchiveFromDataTransformer, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")), CPUnarchiveFromDataTransformerName);
 p;14;CPInvocation.jt;4444;@STATIC;1.0;i;10;CPObject.ji;9;CPArray.jt;4397;objj_executeFile("CPObject.j", YES);objj_executeFile("CPArray.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPInvocation"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_returnValue", "id"), new objj_ivar("_arguments", "CPMutableArray"), new objj_ivar("_methodSignature", "CPMethodSignature")]);objj_registerClassPair(the_class);
@@ -1561,7 +1561,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("functionOperationWithF
 
 ,["id","JSObject"])]);
 }
-p;17;CPDateFormatter.jt;114883;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;10;CPString.ji;13;CPFormatter.ji;12;CPTimeZone.ji;10;CPLocale.jt;114772;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPFormatter.j", YES);objj_executeFile("CPTimeZone.j", YES);objj_executeFile("CPLocale.j", YES);{var the_typedef = objj_allocateTypeDef("CPDateFormatterStyle");
+p;17;CPDateFormatter.jt;116060;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;10;CPString.ji;13;CPFormatter.ji;12;CPTimeZone.ji;10;CPLocale.jt;115949;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPFormatter.j", YES);objj_executeFile("CPTimeZone.j", YES);objj_executeFile("CPLocale.j", YES);{var the_typedef = objj_allocateTypeDef("CPDateFormatterStyle");
 objj_registerTypeDef(the_typedef);
 }CPDateFormatterNoStyle = 0;
 CPDateFormatterShortStyle = 1;
@@ -1576,6 +1576,7 @@ CPDateFormatterBehavior10_4 = 1040;
 var defaultDateFormatterBehavior = CPDateFormatterBehavior10_4,
     relativeDateFormating,
     patternStringTokens;
+var _separatorsCharacterSet = nil;
 
 {var the_class = objj_allocateClassPair(CPFormatter, "CPDateFormatter"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_allowNaturalLanguage", "BOOL"), new objj_ivar("_doesRelativeDateFormatting", "BOOL"), new objj_ivar("_defaultDate", "CPDate"), new objj_ivar("_twoDigitStartDate", "CPDate"), new objj_ivar("_formatterBehavior", "CPDateFormatterBehavior"), new objj_ivar("_dateStyle", "CPDateFormatterStyle"), new objj_ivar("_timeStyle", "CPDateFormatterStyle"), new objj_ivar("_locale", "CPLocale"), new objj_ivar("_AMSymbol", "CPString"), new objj_ivar("_dateFormat", "CPString"), new objj_ivar("_PMSymbol", "CPString"), new objj_ivar("_timeZone", "CPTimeZone"), new objj_ivar("_symbols", "CPDictionary")]);objj_registerClassPair(the_class);
@@ -1700,14 +1701,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
     {
         self._dateStyle = nil;
         self._timeStyle = nil;
-        (self == null ? null : (self.isa.method_msgSend["_init"] || _objj_forward)(self, "_init"));
+        (self == null ? self : (self.isa.method_msgSend["_init"] || _objj_forward)(self, "_init"));
     }
     return self;
 }
 
 ,["id"]), new objj_method(sel_getUid("initWithDateFormat:allowNaturalLanguage:"), function $CPDateFormatter__initWithDateFormat_allowNaturalLanguage_(self, _cmd, format, flag)
 {
-    if (self = (self == null ? null : (self.isa.method_msgSend["init"] || _objj_forward)(self, "init")))
+    if (self = (self == null ? self : (self.isa.method_msgSend["init"] || _objj_forward)(self, "init")))
     {
         self._dateFormat = format;
         self._allowNaturalLanguage = flag;
@@ -1735,16 +1736,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
         shortQuarterSymbols = (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", "Q1", "Q2", "Q3", "Q4"),
         standaloneQuarterSymbols = (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", "1st quarter", "2nd quarter", "3rd quarter", "4th quarter"),
         shortStandaloneQuarterSymbols = (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", "Q1", "Q2", "Q3", "Q4");
-    self._symbols = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [(___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? null : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [AMSymbol, PMSymbol, weekdaySymbols, shortWeekdaySymbols, veryShortWeekdaySymbols, standaloneWeekdaySymbols, shortStandaloneWeekdaySymbols, veryShortStandaloneWeekdaySymbols, monthSymbols, shortMonthSymbols, veryShortMonthSymbols, standaloneMonthSymbols, shortStandaloneMonthSymbols, veryShortStandaloneMonthSymbols, quarterSymbols, shortQuarterSymbols, standaloneQuarterSymbols, shortStandaloneQuarterSymbols], ["AMSymbol", "PMSymbol", "weekdaySymbols", "shortWeekdaySymbols", "veryShortWeekdaySymbols", "standaloneWeekdaySymbols", "shortStandaloneWeekdaySymbols", "veryShortStandaloneWeekdaySymbols", "monthSymbols", "shortMonthSymbols", "veryShortMonthSymbols", "standaloneMonthSymbols", "shortStandaloneMonthSymbols", "veryShortStandaloneMonthSymbols", "quarterSymbols", "shortQuarterSymbols", "standaloneQuarterSymbols", "shortStandaloneQuarterSymbols"]))], ["root"]));
+    self._symbols = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [(___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [AMSymbol, PMSymbol, weekdaySymbols, shortWeekdaySymbols, veryShortWeekdaySymbols, standaloneWeekdaySymbols, shortStandaloneWeekdaySymbols, veryShortStandaloneWeekdaySymbols, monthSymbols, shortMonthSymbols, veryShortMonthSymbols, standaloneMonthSymbols, shortStandaloneMonthSymbols, veryShortStandaloneMonthSymbols, quarterSymbols, shortQuarterSymbols, standaloneQuarterSymbols, shortStandaloneQuarterSymbols], ["AMSymbol", "PMSymbol", "weekdaySymbols", "shortWeekdaySymbols", "veryShortWeekdaySymbols", "standaloneWeekdaySymbols", "shortStandaloneWeekdaySymbols", "veryShortStandaloneWeekdaySymbols", "monthSymbols", "shortMonthSymbols", "veryShortMonthSymbols", "standaloneMonthSymbols", "shortStandaloneMonthSymbols", "veryShortStandaloneMonthSymbols", "quarterSymbols", "shortQuarterSymbols", "standaloneQuarterSymbols", "shortStandaloneQuarterSymbols"]))], ["root"]));
     self._timeZone = (CPTimeZone.isa.method_msgSend["systemTimeZone"] || _objj_forward)(CPTimeZone, "systemTimeZone");
-    self._twoDigitStartDate = ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", "1950-01-01 00:00:00 +0000"));
+    self._twoDigitStartDate = ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", "1950-01-01 00:00:00 +0000"));
     self._locale = (CPLocale.isa.method_msgSend["currentLocale"] || _objj_forward)(CPLocale, "currentLocale");
     var ___r1, ___r2;
 }
 
 ,["void"]), new objj_method(sel_getUid("symbolsForLanguageCode:"), function $CPDateFormatter__symbolsForLanguageCode_(self, _cmd, languageCode)
 {
-    var languageSymbols = ((___r1 = self._symbols), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", languageCode));
+    var languageSymbols = ((___r1 = self._symbols), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", languageCode));
     if (!languageSymbols)
     {
         languageSymbols = (self.isa.method_msgSend["symbolsForLanguageCode:"] || _objj_forward)(self, "symbolsForLanguageCode:", "root");
@@ -1756,14 +1757,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
 
 ,["CPDictionary","CPString"]), new objj_method(sel_getUid("setSymbols:forLanguageCode:"), function $CPDateFormatter__setSymbols_forLanguageCode_(self, _cmd, symbols, languageCode)
 {
-    ((___r1 = self._symbols), ___r1 == null ? null : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", symbols, languageCode));
+    ((___r1 = self._symbols), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", symbols, languageCode));
     var ___r1;
 }
 
 ,["void","CPDictionary","CPString"]), new objj_method(sel_getUid("symbolForKey:languageCode:"), function $CPDateFormatter__symbolForKey_languageCode_(self, _cmd, aKey, languageCode)
 {
     var languageSymbols = (self.isa.method_msgSend["symbolsForLanguageCode:"] || _objj_forward)(self, "symbolsForLanguageCode:", languageCode),
-        symbol = (languageSymbols == null ? null : (languageSymbols.isa.method_msgSend["valueForKey:"] || _objj_forward)(languageSymbols, "valueForKey:", aKey));
+        symbol = (languageSymbols == null ? languageSymbols : (languageSymbols.isa.method_msgSend["valueForKey:"] || _objj_forward)(languageSymbols, "valueForKey:", aKey));
     if (!symbol)
     {
         symbol = (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", aKey, "root");
@@ -1775,222 +1776,222 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
 ,["id","CPString","CPString"]), new objj_method(sel_getUid("setSymbol:forKey:languageCode:"), function $CPDateFormatter__setSymbol_forKey_languageCode_(self, _cmd, aSymbol, aKey, languageCode)
 {
     var languageSymbols = (self.isa.method_msgSend["symbolsForLanguageCode:"] || _objj_forward)(self, "symbolsForLanguageCode:", languageCode);
-    (languageSymbols == null ? null : (languageSymbols.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(languageSymbols, "setValue:forKey:", aSymbol, aKey));
+    (languageSymbols == null ? languageSymbols : (languageSymbols.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(languageSymbols, "setValue:forKey:", aSymbol, aKey));
 }
 
 ,["void","CPString","CPString","CPString"]), new objj_method(sel_getUid("AMSymbol"), function $CPDateFormatter__AMSymbol(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "AMSymbol", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "AMSymbol", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("setAMSymbol:"), function $CPDateFormatter__setAMSymbol_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "AMSymbol", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "AMSymbol", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPString"]), new objj_method(sel_getUid("PMSymbol"), function $CPDateFormatter__PMSymbol(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "PMSymbol", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "PMSymbol", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("setPMSymbol:"), function $CPDateFormatter__setPMSymbol_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "PMSymbol", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "PMSymbol", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPString"]), new objj_method(sel_getUid("weekdaySymbols"), function $CPDateFormatter__weekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "weekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "weekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setWeekdaySymbols:"), function $CPDateFormatter__setWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "weekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "weekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortWeekdaySymbols"), function $CPDateFormatter__shortWeekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortWeekdaySymbols:"), function $CPDateFormatter__setShortWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("veryShortWeekdaySymbols"), function $CPDateFormatter__veryShortWeekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setVeryShortWeekdaySymbols:"), function $CPDateFormatter__setVeryShortWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("standaloneWeekdaySymbols"), function $CPDateFormatter__standaloneWeekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setStandaloneWeekdaySymbols:"), function $CPDateFormatter__setStandaloneWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortStandaloneWeekdaySymbols"), function $CPDateFormatter__shortStandaloneWeekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortStandaloneWeekdaySymbols:"), function $CPDateFormatter__setShortStandaloneWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("veryShortStandaloneWeekdaySymbols"), function $CPDateFormatter__veryShortStandaloneWeekdaySymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setVeryShortStandaloneWeekdaySymbols:"), function $CPDateFormatter__setVeryShortStandaloneWeekdaySymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortStandaloneWeekdaySymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("monthSymbols"), function $CPDateFormatter__monthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "monthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "monthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setMonthSymbols:"), function $CPDateFormatter__setMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "monthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "monthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortMonthSymbols"), function $CPDateFormatter__shortMonthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortMonthSymbols:"), function $CPDateFormatter__setShortMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("veryShortMonthSymbols"), function $CPDateFormatter__veryShortMonthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setVeryShortMonthSymbols:"), function $CPDateFormatter__setVeryShortMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("standaloneMonthSymbols"), function $CPDateFormatter__standaloneMonthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setStandaloneMonthSymbols:"), function $CPDateFormatter__setStandaloneMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortStandaloneMonthSymbols"), function $CPDateFormatter__shortStandaloneMonthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortStandaloneMonthSymbols:"), function $CPDateFormatter__setShortStandaloneMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("veryShortStandaloneMonthSymbols"), function $CPDateFormatter__veryShortStandaloneMonthSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "veryShortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setVeryShortStandaloneMonthSymbols:"), function $CPDateFormatter__setVeryShortStandaloneMonthSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "veryShortStandaloneMonthSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("quarterSymbols"), function $CPDateFormatter__quarterSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "quarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "quarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setQuarterSymbols:"), function $CPDateFormatter__setQuarterSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "quarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "quarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortQuarterSymbols"), function $CPDateFormatter__shortQuarterSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortQuarterSymbols:"), function $CPDateFormatter__setShortQuarterSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("standaloneQuarterSymbols"), function $CPDateFormatter__standaloneQuarterSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "standaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setStandaloneQuarterSymbols:"), function $CPDateFormatter__setStandaloneQuarterSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "standaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("shortStandaloneQuarterSymbols"), function $CPDateFormatter__shortStandaloneQuarterSymbols(self, _cmd)
 {
-    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    return (self.isa.method_msgSend["symbolForKey:languageCode:"] || _objj_forward)(self, "symbolForKey:languageCode:", "shortStandaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("setShortStandaloneQuarterSymbols:"), function $CPDateFormatter__setShortStandaloneQuarterSymbols_(self, _cmd, aValue)
 {
-    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
+    (self.isa.method_msgSend["setSymbol:forKey:languageCode:"] || _objj_forward)(self, "setSymbol:forKey:languageCode:", aValue, "shortStandaloneQuarterSymbols", ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)));
     var ___r1;
 }
 
@@ -2001,8 +2002,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
         result;
     if (!aDate)
         return;
-    aDate = (aDate == null ? null : (aDate.isa.method_msgSend["copy"] || _objj_forward)(aDate, "copy"));
-    (aDate == null ? null : (aDate.isa.method_msgSend["_dateWithTimeZone:"] || _objj_forward)(aDate, "_dateWithTimeZone:", self._timeZone));
+    aDate = (aDate == null ? aDate : (aDate.isa.method_msgSend["copy"] || _objj_forward)(aDate, "copy"));
+    (aDate == null ? aDate : (aDate.isa.method_msgSend["_dateWithTimeZone:"] || _objj_forward)(aDate, "_dateWithTimeZone:", self._timeZone));
     if (self._dateFormat)
         return (self.isa.method_msgSend["_stringFromDate:format:"] || _objj_forward)(self, "_stringFromDate:format:", aDate, self._dateFormat);
     switch(self._dateStyle) {
@@ -2013,7 +2014,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowNaturalLanguage"),
             if ((self.isa.method_msgSend["_isAmericanFormat"] || _objj_forward)(self, "_isAmericanFormat"))
                 format = "M/d/yy";
             else
-                format = "dd/MM/yy";
+            {
+                if (((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)) === 'de')
+                    format = "dd.MM.yy";
+                else
+                    format = "dd/MM/yy";
+            }
             break;
         case CPDateFormatterMediumStyle:
             if ((self.isa.method_msgSend["_isAmericanFormat"] || _objj_forward)(self, "_isAmericanFormat"))
@@ -2038,19 +2044,19 @@ default:
     }
     if ((self.isa.method_msgSend["doesRelativeDateFormatting"] || _objj_forward)(self, "doesRelativeDateFormatting"))
     {
-        var language = ((___r1 = self._locale), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)),
-            relativeWords = (relativeDateFormating == null ? null : (relativeDateFormating.isa.method_msgSend["valueForKey:"] || _objj_forward)(relativeDateFormating, "valueForKey:", language));
-        for (var i = 1; i < (relativeWords == null ? null : (relativeWords.isa.method_msgSend["count"] || _objj_forward)(relativeWords, "count")); i = i + 2)
+        var language = ((___r1 = self._locale), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPLocaleLanguageCode)),
+            relativeWords = (relativeDateFormating == null ? relativeDateFormating : (relativeDateFormating.isa.method_msgSend["valueForKey:"] || _objj_forward)(relativeDateFormating, "valueForKey:", language));
+        for (var i = 1; i < (relativeWords == null ? relativeWords : (relativeWords.isa.method_msgSend["count"] || _objj_forward)(relativeWords, "count")); i = i + 2)
         {
             var date = (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date");
-            (date == null ? null : (date.isa.method_msgSend["_dateWithTimeZone:"] || _objj_forward)(date, "_dateWithTimeZone:", self._timeZone));
+            (date == null ? date : (date.isa.method_msgSend["_dateWithTimeZone:"] || _objj_forward)(date, "_dateWithTimeZone:", self._timeZone));
             date.setHours(12);
             date.setMinutes(0);
             date.setSeconds(0);
-            date.setDate((relativeWords == null ? null : (relativeWords.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(relativeWords, "objectAtIndex:", i)) + date.getDate());
+            date.setDate((relativeWords == null ? relativeWords : (relativeWords.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(relativeWords, "objectAtIndex:", i)) + date.getDate());
             if (date.getDate() == aDate.getDate() && date.getMonth() == aDate.getMonth() && date.getFullYear() == aDate.getFullYear())
             {
-                relativeWord = (relativeWords == null ? null : (relativeWords.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(relativeWords, "objectAtIndex:", i - 1));
+                relativeWord = (relativeWords == null ? relativeWords : (relativeWords.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(relativeWords, "objectAtIndex:", i - 1));
                 format = "";
                 break;
             }
@@ -2098,7 +2104,7 @@ default:
 
 ,["CPString","CPDate"]), new objj_method(sel_getUid("stringForObjectValue:"), function $CPDateFormatter__stringForObjectValue_(self, _cmd, anObject)
 {
-    if ((anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPDate.isa.method_msgSend["class"] || _objj_forward)(CPDate, "class"))))
+    if ((anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPDate.isa.method_msgSend["class"] || _objj_forward)(CPDate, "class"))))
         return (self.isa.method_msgSend["stringFromDate:"] || _objj_forward)(self, "stringFromDate:", anObject);
     else
         return nil;
@@ -2111,16 +2117,16 @@ default:
 
 ,["CPString","id"]), new objj_method(sel_getUid("_stringFromDate:format:"), function $CPDateFormatter___stringFromDate_format_(self, _cmd, aDate, aFormat)
 {
-    var length = (aFormat == null ? null : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")),
+    var length = (aFormat == null ? aFormat : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")),
         currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new"),
         isTextToken = NO,
         result = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
     for (var i = 0; i < length; i++)
     {
-        var character = (aFormat == null ? null : (aFormat.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aFormat, "characterAtIndex:", i));
+        var character = (aFormat == null ? aFormat : (aFormat.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aFormat, "characterAtIndex:", i));
         if (isTextToken)
         {
-            if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+            if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
             {
                 isTextToken = NO;
                 result += currentToken;
@@ -2132,7 +2138,7 @@ default:
             }
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
         {
             if (!isTextToken)
             {
@@ -2142,7 +2148,7 @@ default:
             }
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")))
+        if (((___r1 = (CPDateFormatter.isa.method_msgSend["_separatorsCharacterSet"] || _objj_forward)(CPDateFormatter, "_separatorsCharacterSet")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterIsMember:"] || _objj_forward)(___r1, "characterIsMember:", character)))
         {
             result += (self.isa.method_msgSend["_stringFromToken:date:"] || _objj_forward)(self, "_stringFromToken:date:", currentToken, aDate);
             result += character;
@@ -2150,7 +2156,7 @@ default:
         }
         else
         {
-            if ((currentToken == null ? null : (currentToken.isa.method_msgSend["length"] || _objj_forward)(currentToken, "length")) && !((___r1 = (currentToken == null ? null : (currentToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(currentToken, "characterAtIndex:", 0))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", character)))
+            if ((currentToken == null ? currentToken : (currentToken.isa.method_msgSend["length"] || _objj_forward)(currentToken, "length")) && !((___r1 = (currentToken == null ? currentToken : (currentToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(currentToken, "characterAtIndex:", 0))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", character)))
             {
                 result += (self.isa.method_msgSend["_stringFromToken:date:"] || _objj_forward)(self, "_stringFromToken:date:", currentToken, aDate);
                 currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
@@ -2166,20 +2172,20 @@ default:
 
 ,["CPString","CPDate","CPString"]), new objj_method(sel_getUid("_stringFromToken:date:"), function $CPDateFormatter___stringFromToken_date_(self, _cmd, aToken, aDate)
 {
-    if (!(aToken == null ? null : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")))
+    if (!(aToken == null ? aToken : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")))
         return aToken;
-    var character = (aToken == null ? null : (aToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aToken, "characterAtIndex:", 0)),
-        length = (aToken == null ? null : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")),
+    var character = (aToken == null ? aToken : (aToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aToken, "characterAtIndex:", 0)),
+        length = (aToken == null ? aToken : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")),
         timeZone = self._timeZone;
     switch(character) {
         case "G":
             CPLog.warn("Token not yet implemented " + aToken);
             return (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
         case "y":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getFullYear())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getFullYear())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getFullYear(), length == 2 ? length : currentLength);
         case "Y":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getFullYear())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getFullYear())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getFullYear(), length == 2 ? length : currentLength);
         case "u":
             CPLog.warn("Token not yet implemented " + aToken);
@@ -2198,9 +2204,9 @@ default:
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", quarter, MIN(2, length));
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
+                return ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
             if (length >= 4)
-                return ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
+                return ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
         case "q":
             var quarter = 1;
             if (aDate.getMonth() < 6 && aDate.getMonth() > 2)
@@ -2212,34 +2218,34 @@ default:
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", quarter, MIN(2, length));
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortStandaloneQuarterSymbols"] || _objj_forward)(self, "shortStandaloneQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
+                return ((___r1 = (self.isa.method_msgSend["shortStandaloneQuarterSymbols"] || _objj_forward)(self, "shortStandaloneQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
             if (length >= 4)
-                return ((___r1 = (self.isa.method_msgSend["standaloneQuarterSymbols"] || _objj_forward)(self, "standaloneQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
+                return ((___r1 = (self.isa.method_msgSend["standaloneQuarterSymbols"] || _objj_forward)(self, "standaloneQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", quarter - 1));
         case "M":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMonth() + 1)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMonth() + 1)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getMonth() + 1, MAX(currentLength, length));
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
             if (length == 4)
-                return ((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
             if (length >= 5)
-                return ((___r1 = (self.isa.method_msgSend["veryShortMonthSymbols"] || _objj_forward)(self, "veryShortMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["veryShortMonthSymbols"] || _objj_forward)(self, "veryShortMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
         case "L":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMonth() + 1)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMonth() + 1)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getMonth() + 1, MAX(currentLength, length));
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
             if (length == 4)
-                return ((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
             if (length >= 5)
-                return ((___r1 = (self.isa.method_msgSend["veryShortStandaloneMonthSymbols"] || _objj_forward)(self, "veryShortStandaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
+                return ((___r1 = (self.isa.method_msgSend["veryShortStandaloneMonthSymbols"] || _objj_forward)(self, "veryShortStandaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", aDate.getMonth()));
         case "I":
             CPLog.warn("Depreacted - Token not yet implemented " + aToken);
             return (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
         case "w":
-            var d = (aDate == null ? null : (aDate.isa.method_msgSend["copy"] || _objj_forward)(aDate, "copy"));
+            var d = (aDate == null ? aDate : (aDate.isa.method_msgSend["copy"] || _objj_forward)(aDate, "copy"));
             d.setHours(0, 0, 0);
             d.setDate(d.getDate() + 4 - (d.getDay() || 7));
             var yearStart = new Date(d.getFullYear(), 0, 1),
@@ -2250,12 +2256,12 @@ default:
                 weekOfMonth = Math.ceil((aDate.getDate() + firstDay) / 7);
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", weekOfMonth, 1);
         case "d":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getDate())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getDate())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getDate(), MAX(length, currentLength));
         case "D":
             var oneJan = new Date(aDate.getFullYear(), 0, 1),
                 dayOfYear = Math.ceil((aDate - oneJan) / 86400000),
-                currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", dayOfYear)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+                currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", dayOfYear)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", dayOfYear, MAX(currentLength, MIN(3, length)));
         case "F":
             var dayOfWeek = 1,
@@ -2275,31 +2281,31 @@ default:
         case "E":
             var day = aDate.getDay();
             if (length <= 3)
-                return ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length == 4)
-                return ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length >= 5)
-                return ((___r1 = (self.isa.method_msgSend["veryShortWeekdaySymbols"] || _objj_forward)(self, "veryShortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["veryShortWeekdaySymbols"] || _objj_forward)(self, "veryShortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
         case "e":
             var day = aDate.getDay();
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", day + 1, MIN(2, length));
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length == 4)
-                return ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length >= 5)
-                return ((___r1 = (self.isa.method_msgSend["veryShortWeekdaySymbols"] || _objj_forward)(self, "veryShortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["veryShortWeekdaySymbols"] || _objj_forward)(self, "veryShortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
         case "c":
             var day = aDate.getDay();
             if (length <= 2)
                 return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", day + 1, ((aDate.getDay()).toString()).length);
             if (length == 3)
-                return ((___r1 = (self.isa.method_msgSend["shortStandaloneWeekdaySymbols"] || _objj_forward)(self, "shortStandaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["shortStandaloneWeekdaySymbols"] || _objj_forward)(self, "shortStandaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length == 4)
-                return ((___r1 = (self.isa.method_msgSend["standaloneWeekdaySymbols"] || _objj_forward)(self, "standaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["standaloneWeekdaySymbols"] || _objj_forward)(self, "standaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
             if (length >= 5)
-                return ((___r1 = (self.isa.method_msgSend["veryShortStandaloneWeekdaySymbols"] || _objj_forward)(self, "veryShortStandaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
+                return ((___r1 = (self.isa.method_msgSend["veryShortStandaloneWeekdaySymbols"] || _objj_forward)(self, "veryShortStandaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", day));
         case "a":
             if (aDate.getHours() > 11)
                 return (self.isa.method_msgSend["PMSymbol"] || _objj_forward)(self, "PMSymbol");
@@ -2314,31 +2320,31 @@ default:
                 else if (hours > 12)
                     hours = hours - 12;
             }
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", hours, MAX(currentLength, MIN(2, length)));
         case "H":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getHours())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getHours())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getHours(), MAX(currentLength, MIN(2, length)));
         case "K":
             var hours = aDate.getHours();
             if (hours > 12)
                 hours -= 12;
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", hours, MAX(currentLength, MIN(2, length)));
         case "k":
             var hours = aDate.getHours();
             if (aDate.getHours() == 0)
                 hours = 24;
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", hours)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", hours, MAX(currentLength, MIN(2, length)));
         case "j":
             CPLog.warn("Token not yet implemented " + aToken);
             return (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
         case "m":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMinutes())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMinutes())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getMinutes(), MAX(currentLength, MIN(2, length)));
         case "s":
-            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMinutes())), ___r1 == null ? null : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+            var currentLength = ((___r1 = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aDate.getMinutes())), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getSeconds(), MIN(2, length));
         case "S":
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", aDate.getMilliseconds(), length);
@@ -2347,11 +2353,11 @@ default:
             return (self.isa.method_msgSend["_stringValueForValue:length:"] || _objj_forward)(self, "_stringValueForValue:length:", value, (value.toString()).length);
         case "z":
             if (length <= 3)
-                return (timeZone == null ? null : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortDaylightSaving, self._locale));
+                return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortDaylightSaving, self._locale));
             else
-                return (timeZone == null ? null : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleDaylightSaving, self._locale));
+                return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleDaylightSaving, self._locale));
         case "Z":
-            var seconds = (timeZone == null ? null : (timeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(timeZone, "secondsFromGMT")),
+            var seconds = (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(timeZone, "secondsFromGMT")),
                 minutes = seconds / 60,
                 hours = minutes / 60,
                 result,
@@ -2359,10 +2365,10 @@ default:
             if (length <= 3)
             {
                 result = diffMinutes.toString();
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
                     result = "0" + result;
                 result = ABS(parseInt(hours)) + result;
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 4)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 4)
                     result = "0" + result;
                 if (seconds > 0)
                     result = "+" + result;
@@ -2373,11 +2379,11 @@ default:
             else if (length == 4)
             {
                 result = diffMinutes.toString();
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
                     result = "0" + result;
                 result = ":" + result;
                 result = ABS(parseInt(hours)) + result;
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 5)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 5)
                     result = "0" + result;
                 if (seconds > 0)
                     result = "+" + result;
@@ -2388,11 +2394,11 @@ default:
             else
             {
                 result = diffMinutes.toString();
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 2)
                     result = "0" + result;
                 result = ":" + result;
                 result = ABS(parseInt(hours)) + result;
-                while ((result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 5)
+                while ((result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 5)
                     result = "0" + result;
                 if (seconds > 0)
                     result = "+" + result;
@@ -2402,14 +2408,14 @@ default:
             }
         case "v":
             if (length == 1)
-                return (timeZone == null ? null : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortGeneric, self._locale));
+                return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortGeneric, self._locale));
             else if (length == 4)
-                return (timeZone == null ? null : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleGeneric, self._locale));
+                return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleGeneric, self._locale));
             return " ";
         case "V":
             if (length == 1)
             {
-                return (timeZone == null ? null : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortDaylightSaving, self._locale));
+                return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["localizedName:locale:"] || _objj_forward)(timeZone, "localizedName:locale:", CPTimeZoneNameStyleShortDaylightSaving, self._locale));
             }
             else if (length == 4)
             {
@@ -2511,7 +2517,7 @@ default:
 ,["BOOL","idRef","CPString","CPStringRef"]), new objj_method(sel_getUid("_dateFromString:format:"), function $CPDateFormatter___dateFromString_format_(self, _cmd, aString, aFormat)
 {
     if (!aString)
-        return ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithTimeIntervalSinceReferenceDate:"] || _objj_forward)(___r1, "initWithTimeIntervalSinceReferenceDate:", -31622400));
+        return ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithTimeIntervalSinceReferenceDate:"] || _objj_forward)(___r1, "initWithTimeIntervalSinceReferenceDate:", -31622400));
     if (aFormat == nil)
         return nil;
     var currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new"),
@@ -2519,89 +2525,89 @@ default:
         tokens = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array"),
         dateComponents = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array"),
         patternTokens = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array");
-    for (var i = 0; i < (aFormat == null ? null : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")); i++)
+    for (var i = 0; i < (aFormat == null ? aFormat : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")); i++)
     {
-        var character = (aFormat == null ? null : (aFormat.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aFormat, "characterAtIndex:", i));
+        var character = (aFormat == null ? aFormat : (aFormat.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aFormat, "characterAtIndex:", i));
         if (isTextToken)
         {
-            if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+            if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
                 currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
         {
             if (!isTextToken)
                 isTextToken = YES;
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")))
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")))
         {
-            (tokens == null ? null : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
-            if ((patternStringTokens == null ? null : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
-                (patternTokens == null ? null : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? null : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
+            (tokens == null ? tokens : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
+            if ((patternStringTokens == null ? patternStringTokens : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
+                (patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? tokens : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
             currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
         }
         else
         {
-            if ((currentToken == null ? null : (currentToken.isa.method_msgSend["length"] || _objj_forward)(currentToken, "length")) && !((___r1 = (currentToken == null ? null : (currentToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(currentToken, "characterAtIndex:", 0))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", character)))
+            if ((currentToken == null ? currentToken : (currentToken.isa.method_msgSend["length"] || _objj_forward)(currentToken, "length")) && !((___r1 = (currentToken == null ? currentToken : (currentToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(currentToken, "characterAtIndex:", 0))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", character)))
             {
-                (tokens == null ? null : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
-                if ((patternStringTokens == null ? null : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
-                    (patternTokens == null ? null : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? null : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
+                (tokens == null ? tokens : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
+                if ((patternStringTokens == null ? patternStringTokens : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
+                    (patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? tokens : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
                 currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
             }
             currentToken += character;
-            if (i == (aFormat == null ? null : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")) - 1)
+            if (i == (aFormat == null ? aFormat : (aFormat.isa.method_msgSend["length"] || _objj_forward)(aFormat, "length")) - 1)
             {
-                (tokens == null ? null : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
-                if ((patternStringTokens == null ? null : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
-                    (patternTokens == null ? null : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? null : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
+                (tokens == null ? tokens : (tokens.isa.method_msgSend["addObject:"] || _objj_forward)(tokens, "addObject:", currentToken));
+                if ((patternStringTokens == null ? patternStringTokens : (patternStringTokens.isa.method_msgSend["containsObject:"] || _objj_forward)(patternStringTokens, "containsObject:", currentToken)))
+                    (patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", (tokens == null ? tokens : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")) - 1));
             }
         }
     }
     isTextToken = NO;
     currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
     var currentIndexSpecialPattern = 0;
-    if ((patternTokens == null ? null : (patternTokens.isa.method_msgSend["count"] || _objj_forward)(patternTokens, "count")) == 0)
-        (patternTokens == null ? null : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", CPNotFound));
-    for (var i = 0; i < (aString == null ? null : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length")); i++)
+    if ((patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["count"] || _objj_forward)(patternTokens, "count")) == 0)
+        (patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["addObject:"] || _objj_forward)(patternTokens, "addObject:", CPNotFound));
+    for (var i = 0; i < (aString == null ? aString : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length")); i++)
     {
-        var character = (aString == null ? null : (aString.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aString, "characterAtIndex:", i));
+        var character = (aString == null ? aString : (aString.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aString, "characterAtIndex:", i));
         if (isTextToken)
         {
-            if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+            if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
                 currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")))
         {
             if (!isTextToken)
                 isTextToken = YES;
             continue;
         }
-        if ((dateComponents == null ? null : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")) == (patternTokens == null ? null : (patternTokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(patternTokens, "objectAtIndex:", currentIndexSpecialPattern)))
+        if ((dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")) == (patternTokens == null ? patternTokens : (patternTokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(patternTokens, "objectAtIndex:", currentIndexSpecialPattern)))
         {
-            var j = (self.isa.method_msgSend["_lastIndexMatchedString:token:index:"] || _objj_forward)(self, "_lastIndexMatchedString:token:index:", aString, (tokens == null ? null : (tokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tokens, "objectAtIndex:", (dateComponents == null ? null : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")))), i);
+            var j = (self.isa.method_msgSend["_lastIndexMatchedString:token:index:"] || _objj_forward)(self, "_lastIndexMatchedString:token:index:", aString, (tokens == null ? tokens : (tokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tokens, "objectAtIndex:", (dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")))), i);
             if (j == CPNotFound)
                 return nil;
             currentIndexSpecialPattern++;
-            (dateComponents == null ? null : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", (aString == null ? null : (aString.isa.method_msgSend["substringWithRange:"] || _objj_forward)(aString, "substringWithRange:", CPMakeRange(i, j - i)))));
+            (dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", (aString == null ? aString : (aString.isa.method_msgSend["substringWithRange:"] || _objj_forward)(aString, "substringWithRange:", CPMakeRange(i, j - i)))));
             i = j;
             continue;
         }
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")))
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")))
         {
-            (dateComponents == null ? null : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", currentToken));
+            (dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", currentToken));
             currentToken = (CPString.isa.method_msgSend["new"] || _objj_forward)(CPString, "new");
         }
         else
         {
             currentToken += character;
-            if (i == (aString == null ? null : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length")) - 1)
-                (dateComponents == null ? null : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", currentToken));
+            if (i == (aString == null ? aString : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length")) - 1)
+                (dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["addObject:"] || _objj_forward)(dateComponents, "addObject:", currentToken));
         }
     }
-    if ((dateComponents == null ? null : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")) != (tokens == null ? null : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")))
+    if ((dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["count"] || _objj_forward)(dateComponents, "count")) != (tokens == null ? tokens : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")))
         return nil;
     return (self.isa.method_msgSend["_dateFromTokens:dateComponents:"] || _objj_forward)(self, "_dateFromTokens:dateComponents:", tokens, dateComponents);
     var ___r1;
@@ -2609,19 +2615,19 @@ default:
 
 ,["CPDate","CPString","CPString"]), new objj_method(sel_getUid("_dateFromTokens:dateComponents:"), function $CPDateFormatter___dateFromTokens_dateComponents_(self, _cmd, tokens, dateComponents)
 {
-    var timeZoneseconds = ((___r1 = self._timeZone), ___r1 == null ? null : (___r1.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(___r1, "secondsFromGMT")),
+    var timeZoneseconds = ((___r1 = self._timeZone), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(___r1, "secondsFromGMT")),
         dateArray = [2000, 01, 01, 00, 00, 00, "+0000"],
         isPM = NO,
         dayOfYear,
         dayIndexInWeek,
         weekOfYear,
         weekOfMonth;
-    for (var i = 0; i < (tokens == null ? null : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")); i++)
+    for (var i = 0; i < (tokens == null ? tokens : (tokens.isa.method_msgSend["count"] || _objj_forward)(tokens, "count")); i++)
     {
-        var token = (tokens == null ? null : (tokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tokens, "objectAtIndex:", i)),
-            dateComponent = (dateComponents == null ? null : (dateComponents.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(dateComponents, "objectAtIndex:", i)),
-            character = (token == null ? null : (token.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(token, "characterAtIndex:", 0)),
-            length = (token == null ? null : (token.isa.method_msgSend["length"] || _objj_forward)(token, "length"));
+        var token = (tokens == null ? tokens : (tokens.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tokens, "objectAtIndex:", i)),
+            dateComponent = (dateComponents == null ? dateComponents : (dateComponents.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(dateComponents, "objectAtIndex:", i)),
+            character = (token == null ? token : (token.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(token, "characterAtIndex:", 0)),
+            length = (token == null ? token : (token.isa.method_msgSend["length"] || _objj_forward)(token, "length"));
         switch(character) {
             case "G":
                 CPLog.warn("Token not yet implemented " + token);
@@ -2672,15 +2678,15 @@ default:
                     month = (parseInt(dateComponent) - 1) * 3;
                 if (length == 3)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
+                    month = ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
                 }
                 if (length >= 4)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
+                    month = ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
                 }
                 if (month > 11)
                     return nil;
@@ -2692,15 +2698,15 @@ default:
                     month = (parseInt(dateComponent) - 1) * 3;
                 if (length == 3)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
+                    month = ((___r1 = (self.isa.method_msgSend["shortQuarterSymbols"] || _objj_forward)(self, "shortQuarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
                 }
                 if (length >= 4)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
+                    month = ((___r1 = (self.isa.method_msgSend["quarterSymbols"] || _objj_forward)(self, "quarterSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) * 3;
                 }
                 if (month > 11)
                     return nil;
@@ -2712,15 +2718,15 @@ default:
                     month = parseInt(dateComponent);
                 if (length == 3)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
+                    month = ((___r1 = (self.isa.method_msgSend["shortMonthSymbols"] || _objj_forward)(self, "shortMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
                 }
                 if (length == 4)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
+                    month = ((___r1 = (self.isa.method_msgSend["monthSymbols"] || _objj_forward)(self, "monthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
                 }
                 if (month > 12 || length >= 5)
                     return nil;
@@ -2732,15 +2738,15 @@ default:
                     month = parseInt(dateComponent);
                 if (length == 3)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
+                    month = ((___r1 = (self.isa.method_msgSend["shortStandaloneMonthSymbols"] || _objj_forward)(self, "shortStandaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
                 }
                 if (length == 4)
                 {
-                    if (!((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
+                    if (!((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", dateComponent)))
                         return nil;
-                    month = ((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
+                    month = ((___r1 = (self.isa.method_msgSend["standaloneMonthSymbols"] || _objj_forward)(self, "standaloneMonthSymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent)) + 1;
                 }
                 if (month > 12 || length >= 5)
                     return nil;
@@ -2786,9 +2792,9 @@ default:
                 break;
             case "E":
                 if (length <= 3)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (length == 4)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (dayIndexInWeek == CPNotFound || length >= 5)
                     return nil;
                 break;
@@ -2798,9 +2804,9 @@ default:
                 if (length <= 2)
                     dayIndexInWeek = parseInt(dateComponent);
                 if (length == 3)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortWeekdaySymbols"] || _objj_forward)(self, "shortWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (length == 4)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["weekdaySymbols"] || _objj_forward)(self, "weekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (dayIndexInWeek == CPNotFound || length >= 5)
                     return nil;
                 break;
@@ -2810,18 +2816,18 @@ default:
                 if (length <= 2)
                     dayIndexInWeek = dateComponent;
                 if (length == 3)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortStandaloneWeekdaySymbols"] || _objj_forward)(self, "shortStandaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["shortStandaloneWeekdaySymbols"] || _objj_forward)(self, "shortStandaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (length == 4)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["standaloneWeekdaySymbols"] || _objj_forward)(self, "standaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["standaloneWeekdaySymbols"] || _objj_forward)(self, "standaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (length == 5)
-                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["veryShortStandaloneWeekdaySymbols"] || _objj_forward)(self, "veryShortStandaloneWeekdaySymbols")), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
+                    dayIndexInWeek = ((___r1 = (self.isa.method_msgSend["veryShortStandaloneWeekdaySymbols"] || _objj_forward)(self, "veryShortStandaloneWeekdaySymbols")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", dateComponent));
                 if (dayIndexInWeek == CPNotFound || length >= 5)
                     return nil;
                 break;
             case "a":
-                if (!(dateComponent == null ? null : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["PMSymbol"] || _objj_forward)(self, "PMSymbol"))) && !(dateComponent == null ? null : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["AMSymbol"] || _objj_forward)(self, "AMSymbol"))))
+                if (!(dateComponent == null ? dateComponent : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["PMSymbol"] || _objj_forward)(self, "PMSymbol"))) && !(dateComponent == null ? dateComponent : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["AMSymbol"] || _objj_forward)(self, "AMSymbol"))))
                     return nil;
-                if ((dateComponent == null ? null : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["PMSymbol"] || _objj_forward)(self, "PMSymbol"))))
+                if ((dateComponent == null ? dateComponent : (dateComponent.isa.method_msgSend["isEqualToString:"] || _objj_forward)(dateComponent, "isEqualToString:", (self.isa.method_msgSend["PMSymbol"] || _objj_forward)(self, "PMSymbol"))))
                     isPM = YES;
                 break;
             case "h":
@@ -2947,13 +2953,13 @@ default:
     var tmpDate = new Date();
     tmpDate.setMonth(dateArray[1] - 1);
     tmpDate.setFullYear(dateArray[0]);
-    if (dateArray[2] <= 0 || dateArray[2] > (tmpDate == null ? null : (tmpDate.isa.method_msgSend["_daysInMonth"] || _objj_forward)(tmpDate, "_daysInMonth")))
+    if (dateArray[2] <= 0 || dateArray[2] > (tmpDate == null ? tmpDate : (tmpDate.isa.method_msgSend["_daysInMonth"] || _objj_forward)(tmpDate, "_daysInMonth")))
         return nil;
     if (isPM)
         dateArray[3] += 12;
     if (isNaN(parseInt(dateArray[0])) || isNaN(parseInt(dateArray[1])) || isNaN(parseInt(dateArray[2])) || isNaN(parseInt(dateArray[3])) || isNaN(parseInt(dateArray[4])) || isNaN(parseInt(dateArray[5])) || isNaN(parseInt(dateArray[6])))
         return nil;
-    var dateResult = ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%04d-%02d-%02d %02d:%02d:%02d %s", dateArray[0], dateArray[1], dateArray[2], dateArray[3], dateArray[4], dateArray[5], dateArray[6])));
+    var dateResult = ((___r1 = (CPDate.isa.method_msgSend["alloc"] || _objj_forward)(CPDate, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%04d-%02d-%02d %02d:%02d:%02d %s", dateArray[0], dateArray[1], dateArray[2], dateArray[3], dateArray[4], dateArray[5], dateArray[6])));
     dateResult.setSeconds(dateResult.getSeconds() - timeZoneseconds + 60 * 60);
     return dateResult;
     var ___r1;
@@ -2962,24 +2968,24 @@ default:
 ,["CPDate","CPArray","CPArray"]), new objj_method(sel_getUid("_stringValueForValue:length:"), function $CPDateFormatter___stringValueForValue_length_(self, _cmd, aValue, length)
 {
     var string = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%i", aValue);
-    if ((string == null ? null : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) == length)
+    if ((string == null ? string : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) == length)
         return string;
-    if ((string == null ? null : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) > length)
-        return (string == null ? null : (string.isa.method_msgSend["substringFromIndex:"] || _objj_forward)(string, "substringFromIndex:", (string == null ? null : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) - length));
-    while ((string == null ? null : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) < length)
+    if ((string == null ? string : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) > length)
+        return (string == null ? string : (string.isa.method_msgSend["substringFromIndex:"] || _objj_forward)(string, "substringFromIndex:", (string == null ? string : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) - length));
+    while ((string == null ? string : (string.isa.method_msgSend["length"] || _objj_forward)(string, "length")) < length)
         string = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "0%s", string);
     return string;
 }
 
 ,["CPString","id","int"]), new objj_method(sel_getUid("_isAmericanFormat"), function $CPDateFormatter___isAmericanFormat(self, _cmd)
 {
-    return ((___r1 = ((___r2 = self._locale), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", CPLocaleCountryCode))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "US"));
+    return ((___r1 = ((___r2 = self._locale), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", CPLocaleCountryCode))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "US"));
     var ___r1, ___r2;
 }
 
 ,["BOOL"]), new objj_method(sel_getUid("_isEnglishFormat"), function $CPDateFormatter___isEnglishFormat(self, _cmd)
 {
-    return ((___r1 = ((___r2 = self._locale), ___r2 == null ? null : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", CPLocaleLanguageCode))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "en"));
+    return ((___r1 = ((___r2 = self._locale), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r2, "objectForKey:", CPLocaleLanguageCode))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "en"));
     var ___r1, ___r2;
 }
 
@@ -2991,7 +2997,7 @@ default:
     if (!result)
         return nil;
     seconds = result[3] * 60 * 60 + result[5] * 60;
-    if (((___r1 = result[2]), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "-")))
+    if (((___r1 = result[2]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", "-")))
         seconds = -seconds;
     return seconds;
     var ___r1;
@@ -3002,13 +3008,13 @@ default:
     var timeZone = (CPTimeZone.isa.method_msgSend["_timeZoneFromString:style:locale:"] || _objj_forward)(CPTimeZone, "_timeZoneFromString:style:locale:", aTimeZoneString, aStyle, self._locale);
     if (!timeZone)
         return nil;
-    return (timeZone == null ? null : (timeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(timeZone, "secondsFromGMT"));
+    return (timeZone == null ? timeZone : (timeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(timeZone, "secondsFromGMT"));
 }
 
 ,["int","CPString","NSTimeZoneNameStyle"]), new objj_method(sel_getUid("_lastIndexMatchedString:token:index:"), function $CPDateFormatter___lastIndexMatchedString_token_index_(self, _cmd, aString, aToken, anIndex)
 {
-    var character = (aToken == null ? null : (aToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aToken, "characterAtIndex:", 0)),
-        length = (aToken == null ? null : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")),
+    var character = (aToken == null ? aToken : (aToken.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aToken, "characterAtIndex:", 0)),
+        length = (aToken == null ? aToken : (aToken.isa.method_msgSend["length"] || _objj_forward)(aToken, "length")),
         targetedArray,
         format = new RegExp("\\w*([HPG-GMT])?([+-])(\\d{1,2})([:])?(\\d{2})\\w*"),
         result = aString.match(new RegExp(format));
@@ -3074,11 +3080,11 @@ default:
             else
                 targetedArray = (CPTimeZone.isa.method_msgSend["_namesForStyle:locale:"] || _objj_forward)(CPTimeZone, "_namesForStyle:locale:", CPTimeZoneNameStyleDaylightSaving, self._locale);
             if (result)
-                return anIndex + (result == null ? null : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
+                return anIndex + (result == null ? result : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
             break;
         case "Z":
             if (result)
-                return anIndex + (result == null ? null : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
+                return anIndex + (result == null ? result : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
             return CPNotFound;
         case "v":
             if (length == 1)
@@ -3086,26 +3092,26 @@ default:
             else if (length == 4)
                 targetedArray = (CPTimeZone.isa.method_msgSend["_namesForStyle:locale:"] || _objj_forward)(CPTimeZone, "_namesForStyle:locale:", CPTimeZoneNameStyleGeneric, self._locale);
             if (result)
-                return anIndex + (result == null ? null : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
+                return anIndex + (result == null ? result : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
             break;
         case "V":
             if (length == 1)
                 targetedArray = (CPTimeZone.isa.method_msgSend["_namesForStyle:locale:"] || _objj_forward)(CPTimeZone, "_namesForStyle:locale:", CPTimeZoneNameStyleShortStandard, self._locale);
             if (result)
-                return anIndex + (result == null ? null : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
+                return anIndex + (result == null ? result : (result.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(result, "objectAtIndex:", 0)).length;
             break;
 default:
             CPLog.warn("No pattern found for " + aToken);
             return CPNotFound;
     }
-    for (var i = 0; i < (targetedArray == null ? null : (targetedArray.isa.method_msgSend["count"] || _objj_forward)(targetedArray, "count")); i++)
+    for (var i = 0; i < (targetedArray == null ? targetedArray : (targetedArray.isa.method_msgSend["count"] || _objj_forward)(targetedArray, "count")); i++)
     {
-        var currentObject = (targetedArray == null ? null : (targetedArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(targetedArray, "objectAtIndex:", i)),
-            range = (aString == null ? null : (aString.isa.method_msgSend["rangeOfString:"] || _objj_forward)(aString, "rangeOfString:", currentObject));
+        var currentObject = (targetedArray == null ? targetedArray : (targetedArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(targetedArray, "objectAtIndex:", i)),
+            range = (aString == null ? aString : (aString.isa.method_msgSend["rangeOfString:"] || _objj_forward)(aString, "rangeOfString:", currentObject));
         if (range.length == 0)
             continue;
-        character = (aString == null ? null : (aString.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aString, "characterAtIndex:", anIndex + range.length));
-        if ((character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")) || (character == null ? null : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "")))
+        character = (aString == null ? aString : (aString.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(aString, "characterAtIndex:", anIndex + range.length));
+        if ((character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "'")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ",")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", ":")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "/")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "-")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", " ")) || (character == null ? character : (character.isa.method_msgSend["isEqualToString:"] || _objj_forward)(character, "isEqualToString:", "")))
             return anIndex + range.length;
     }
     return CPNotFound;
@@ -3116,18 +3122,18 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 {
     if (self !== (CPDateFormatter.isa.method_msgSend["class"] || _objj_forward)(CPDateFormatter, "class"))
         return;
-    relativeDateFormating = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [["demain", 1, "apr" + String.fromCharCode(233) + "s-demain", 2, "apr" + String.fromCharCode(233) + "s-apr" + String.fromCharCode(233) + "s-demain", 3, "hier", -1, "avant-hier", -2, "avant-avant-hier", -3], ["tomorrow", 1, "yesterday", -1], [], []], ["fr", "en", "de", "es"]));
+    relativeDateFormating = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [["demain", 1, "apr" + String.fromCharCode(233) + "s-demain", 2, "apr" + String.fromCharCode(233) + "s-apr" + String.fromCharCode(233) + "s-demain", 3, "hier", -1, "avant-hier", -2, "avant-avant-hier", -3], ["tomorrow", 1, "yesterday", -1], ["morgen", 1, "gestern", -1, String.fromCharCode(129) + "bermorgen", 2, "vorgestern", -2], []], ["fr", "en", "de", "es"]));
     patternStringTokens = ["QQQ", "qqq", "QQQQ", "qqqq", "MMM", "MMMM", "LLL", "LLLL", "E", "EE", "EEE", "eee", "eeee", "eeeee", "a", "z", "zz", "zzz", "zzzz", "Z", "ZZ", "ZZZ", "ZZZZ", "ZZZZZ", "v", "vv", "vvv", "vvvv", "V", "VV", "VVV", "VVVV"];
     var ___r1;
 }
 
 ,["void"]), new objj_method(sel_getUid("localizedStringFromDate:dateStyle:timeStyle:"), function $CPDateFormatter__localizedStringFromDate_dateStyle_timeStyle_(self, _cmd, date, dateStyle, timeStyle)
 {
-    var formatter = ((___r1 = (CPDateFormatter.isa.method_msgSend["alloc"] || _objj_forward)(CPDateFormatter, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    (formatter == null ? null : (formatter.isa.method_msgSend["setFormatterBehavior:"] || _objj_forward)(formatter, "setFormatterBehavior:", CPDateFormatterBehavior10_4));
-    (formatter == null ? null : (formatter.isa.method_msgSend["setDateStyle:"] || _objj_forward)(formatter, "setDateStyle:", dateStyle));
-    (formatter == null ? null : (formatter.isa.method_msgSend["setTimeStyle:"] || _objj_forward)(formatter, "setTimeStyle:", timeStyle));
-    return (formatter == null ? null : (formatter.isa.method_msgSend["stringForObjectValue:"] || _objj_forward)(formatter, "stringForObjectValue:", date));
+    var formatter = ((___r1 = (CPDateFormatter.isa.method_msgSend["alloc"] || _objj_forward)(CPDateFormatter, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    (formatter == null ? formatter : (formatter.isa.method_msgSend["setFormatterBehavior:"] || _objj_forward)(formatter, "setFormatterBehavior:", CPDateFormatterBehavior10_4));
+    (formatter == null ? formatter : (formatter.isa.method_msgSend["setDateStyle:"] || _objj_forward)(formatter, "setDateStyle:", dateStyle));
+    (formatter == null ? formatter : (formatter.isa.method_msgSend["setTimeStyle:"] || _objj_forward)(formatter, "setTimeStyle:", timeStyle));
+    return (formatter == null ? formatter : (formatter.isa.method_msgSend["stringForObjectValue:"] || _objj_forward)(formatter, "stringForObjectValue:", date));
     var ___r1;
 }
 
@@ -3145,7 +3151,14 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
     defaultDateFormatterBehavior = behavior;
 }
 
-,["void","CPDateFormatterBehavior"])]);
+,["void","CPDateFormatterBehavior"]), new objj_method(sel_getUid("_separatorsCharacterSet"), function $CPDateFormatter___separatorsCharacterSet(self, _cmd)
+{
+    if (_separatorsCharacterSet == nil)
+        _separatorsCharacterSet = (CPCharacterSet == null ? CPCharacterSet : (CPCharacterSet.isa.method_msgSend["characterSetWithCharactersInString:"] || _objj_forward)(CPCharacterSet, "characterSetWithCharactersInString:", " ,:/-."));
+    return _separatorsCharacterSet;
+}
+
+,["CPCharacterSet"])]);
 }
 var CPDateFormatterDateStyleKey = "CPDateFormatterDateStyle",
     CPDateFormatterTimeStyleKey = "CPDateFormatterTimeStyleKey",
@@ -3162,28 +3175,28 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPDateFormatter").super_class.method_dtable["initWithCoder:"] || _objj_forward)(self, "initWithCoder:", aCoder);
     if (self)
     {
-        self._allowNaturalLanguage = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPDateFormatterAllowNaturalLanguageKey));
-        self._dateFormat = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPDateFormatterDateFormatKey));
-        self._dateStyle = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterDateStyleKey));
-        self._doesRelativeDateFormatting = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPDateFormatterDoseRelativeDateFormattingKey));
-        self._formatterBehavior = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterFormatterBehaviorKey));
-        self._locale = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPDateFormatterLocaleKey));
-        self._timeStyle = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterTimeStyleKey));
+        self._allowNaturalLanguage = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPDateFormatterAllowNaturalLanguageKey));
+        self._dateFormat = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPDateFormatterDateFormatKey));
+        self._dateStyle = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterDateStyleKey));
+        self._doesRelativeDateFormatting = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPDateFormatterDoseRelativeDateFormattingKey));
+        self._formatterBehavior = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterFormatterBehaviorKey));
+        self._locale = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPDateFormatterLocaleKey));
+        self._timeStyle = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPDateFormatterTimeStyleKey));
     }
-    (self == null ? null : (self.isa.method_msgSend["_init"] || _objj_forward)(self, "_init"));
+    (self == null ? self : (self.isa.method_msgSend["_init"] || _objj_forward)(self, "_init"));
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPDateFormatter__encodeWithCoder_(self, _cmd, aCoder)
 {
     (objj_getClass("CPDateFormatter").super_class.method_dtable["encodeWithCoder:"] || _objj_forward)(self, "encodeWithCoder:", aCoder);
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._allowNaturalLanguage, CPDateFormatterAllowNaturalLanguageKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._dateStyle, CPDateFormatterDateStyleKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._dateFormat, CPDateFormatterDateFormatKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._doesRelativeDateFormatting, CPDateFormatterDoseRelativeDateFormattingKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._formatterBehavior, CPDateFormatterFormatterBehaviorKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._locale, CPDateFormatterLocaleKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._timeStyle, CPDateFormatterTimeStyleKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._allowNaturalLanguage, CPDateFormatterAllowNaturalLanguageKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._dateStyle, CPDateFormatterDateStyleKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._dateFormat, CPDateFormatterDateFormatKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._doesRelativeDateFormatting, CPDateFormatterDoseRelativeDateFormattingKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._formatterBehavior, CPDateFormatterFormatterBehaviorKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._locale, CPDateFormatterLocaleKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._timeStyle, CPDateFormatterTimeStyleKey));
 }
 
 ,["void","CPCoder"])]);
@@ -3195,8 +3208,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     if (!aTimeZone)
         return;
-    self.setSeconds(self.getSeconds() - (aTimeZone == null ? null : (aTimeZone.isa.method_msgSend["secondsFromGMTForDate:"] || _objj_forward)(aTimeZone, "secondsFromGMTForDate:", self)));
-    self.setSeconds(self.getSeconds() + (aTimeZone == null ? null : (aTimeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(aTimeZone, "secondsFromGMT")));
+    self.setSeconds(self.getSeconds() - (aTimeZone == null ? aTimeZone : (aTimeZone.isa.method_msgSend["secondsFromGMTForDate:"] || _objj_forward)(aTimeZone, "secondsFromGMTForDate:", self)));
+    self.setSeconds(self.getSeconds() + (aTimeZone == null ? aTimeZone : (aTimeZone.isa.method_msgSend["secondsFromGMT"] || _objj_forward)(aTimeZone, "secondsFromGMT")));
 }
 
 ,["void","CPTimeZone"])]);
@@ -4042,7 +4055,7 @@ _isNumberType = function(value)
     else
         return NO;
 }
-p;20;CPAttributedString.jt;30889;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;10;CPObject.ji;9;CPRange.ji;10;CPString.jt;30776;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPString.j", YES);
+p;20;CPAttributedString.jt;32369;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;10;CPObject.ji;9;CPRange.ji;10;CPString.jt;32256;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPString.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPAttributedString"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_string", "CPString"), new objj_ivar("_rangeEntries", "CPArray")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAttributedString__init(self, _cmd)
@@ -4058,7 +4071,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 ,["id","CPString"]), new objj_method(sel_getUid("initWithAttributedString:"), function $CPAttributedString__initWithAttributedString_(self, _cmd, aString)
 {
     var string = (self.isa.method_msgSend["initWithString:attributes:"] || _objj_forward)(self, "initWithString:attributes:", "", nil);
-    (string == null ? null : (string.isa.method_msgSend["setAttributedString:"] || _objj_forward)(string, "setAttributedString:", aString));
+    (string == null ? string : (string.isa.method_msgSend["setAttributedString:"] || _objj_forward)(string, "setAttributedString:", aString));
     return string;
 }
 
@@ -4068,7 +4081,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     if (self)
     {
         if (!attributes)
-            attributes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+            attributes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         self._string = "" + aString;
         self._rangeEntries = [makeRangeEntry(CPMakeRange(0, self._string.length), attributes)];
     }
@@ -4093,7 +4106,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 
 ,["unsigned"]), new objj_method(sel_getUid("_indexOfEntryWithIndex:"), function $CPAttributedString___indexOfEntryWithIndex_(self, _cmd, anIndex)
 {
-    if (anIndex < 0 || anIndex > self._string.length || anIndex === undefined)
+    if (anIndex < 0 || anIndex > self._string.length || anIndex == nil)
         return CPNotFound;
     var sortFunction =     function(index, entry)
     {
@@ -4104,7 +4117,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
         else
             return CPOrderedAscending;
     };
-    return ((___r1 = self._rangeEntries), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:inSortedRange:options:usingComparator:"] || _objj_forward)(___r1, "indexOfObject:inSortedRange:options:usingComparator:", anIndex, nil, 0, sortFunction));
+    return ((___r1 = self._rangeEntries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:inSortedRange:options:usingComparator:"] || _objj_forward)(___r1, "indexOfObject:inSortedRange:options:usingComparator:", anIndex, nil, 0, sortFunction));
     var ___r1;
 }
 
@@ -4112,7 +4125,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 {
     var entryIndex = (self.isa.method_msgSend["_indexOfEntryWithIndex:"] || _objj_forward)(self, "_indexOfEntryWithIndex:", anIndex);
     if (entryIndex === CPNotFound)
-        return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var matchingRange = self._rangeEntries[entryIndex];
     if (aRange)
     {
@@ -4127,7 +4140,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 {
     var startingEntryIndex = (self.isa.method_msgSend["_indexOfEntryWithIndex:"] || _objj_forward)(self, "_indexOfEntryWithIndex:", anIndex);
     if (startingEntryIndex === CPNotFound)
-        return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     if (!aRange)
         return self._rangeEntries[startingEntryIndex].attributes;
     if (CPRangeInRange(self._rangeEntries[startingEntryIndex].range, rangeLimit))
@@ -4142,7 +4155,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     while (nextRangeIndex >= 0)
     {
         var nextEntry = self._rangeEntries[nextRangeIndex];
-        if (CPMaxRange(nextEntry.range) > rangeLimit.location && ((___r1 = nextEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", comparisonDict)))
+        if (CPMaxRange(nextEntry.range) > rangeLimit.location && ((___r1 = nextEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", comparisonDict)))
         {
             currentEntry = nextEntry;
             nextRangeIndex--;
@@ -4156,7 +4169,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     while (nextRangeIndex < self._rangeEntries.length)
     {
         var nextEntry = self._rangeEntries[nextRangeIndex];
-        if (nextEntry.range.location < CPMaxRange(rangeLimit) && ((___r1 = nextEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", comparisonDict)))
+        if (nextEntry.range.location < CPMaxRange(rangeLimit) && ((___r1 = nextEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", comparisonDict)))
         {
             currentEntry = nextEntry;
             nextRangeIndex++;
@@ -4180,7 +4193,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
         }
         return nil;
     }
-    return ((___r1 = (self.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(self, "attributesAtIndex:effectiveRange:", index, aRange)), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", attribute));
+    return ((___r1 = (self.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(self, "attributesAtIndex:effectiveRange:", index, aRange)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", attribute));
     var ___r1;
 }
 
@@ -4190,20 +4203,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     if (startingEntryIndex === CPNotFound || !attribute)
         return nil;
     if (!aRange)
-        return ((___r1 = self._rangeEntries[startingEntryIndex].attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
+        return ((___r1 = self._rangeEntries[startingEntryIndex].attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
     if (CPRangeInRange(self._rangeEntries[startingEntryIndex].range, rangeLimit))
     {
         aRange.location = rangeLimit.location;
         aRange.length = rangeLimit.length;
-        return ((___r1 = self._rangeEntries[startingEntryIndex].attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
+        return ((___r1 = self._rangeEntries[startingEntryIndex].attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
     }
     var nextRangeIndex = startingEntryIndex - 1,
         currentEntry = self._rangeEntries[startingEntryIndex],
-        comparisonAttribute = ((___r1 = currentEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
+        comparisonAttribute = ((___r1 = currentEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute));
     while (nextRangeIndex >= 0)
     {
         var nextEntry = self._rangeEntries[nextRangeIndex];
-        if (CPMaxRange(nextEntry.range) > rangeLimit.location && isEqual(comparisonAttribute, ((___r1 = nextEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute))))
+        if (CPMaxRange(nextEntry.range) > rangeLimit.location && isEqual(comparisonAttribute, ((___r1 = nextEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute))))
         {
             currentEntry = nextEntry;
             nextRangeIndex--;
@@ -4217,7 +4230,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     while (nextRangeIndex < self._rangeEntries.length)
     {
         var nextEntry = self._rangeEntries[nextRangeIndex];
-        if (nextEntry.range.location < CPMaxRange(rangeLimit) && isEqual(comparisonAttribute, ((___r1 = nextEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute))))
+        if (nextEntry.range.location < CPMaxRange(rangeLimit) && isEqual(comparisonAttribute, ((___r1 = nextEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", attribute))))
         {
             currentEntry = nextEntry;
             nextRangeIndex++;
@@ -4234,23 +4247,23 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 {
     if (!aString)
         return NO;
-    if (self._string !== (aString == null ? null : (aString.isa.method_msgSend["string"] || _objj_forward)(aString, "string")))
+    if (self._string !== (aString == null ? aString : (aString.isa.method_msgSend["string"] || _objj_forward)(aString, "string")))
         return NO;
     var myRange = CPMakeRange(),
         comparisonRange = CPMakeRange(),
         myAttributes = (self.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(self, "attributesAtIndex:effectiveRange:", 0, myRange),
-        comparisonAttributes = (aString == null ? null : (aString.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(aString, "attributesAtIndex:effectiveRange:", 0, comparisonRange)),
+        comparisonAttributes = (aString == null ? aString : (aString.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(aString, "attributesAtIndex:effectiveRange:", 0, comparisonRange)),
         length = self._string.length;
     do
     {
-        if ((CPIntersectionRange(myRange, comparisonRange)).length > 0 && !(myAttributes == null ? null : (myAttributes.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(myAttributes, "isEqualToDictionary:", comparisonAttributes)))
+        if ((CPIntersectionRange(myRange, comparisonRange)).length > 0 && !(myAttributes == null ? myAttributes : (myAttributes.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(myAttributes, "isEqualToDictionary:", comparisonAttributes)))
         {
             return NO;
         }
         else if (CPMaxRange(myRange) < CPMaxRange(comparisonRange))
             myAttributes = (self.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(self, "attributesAtIndex:effectiveRange:", CPMaxRange(myRange), myRange);
         else
-            comparisonAttributes = (aString == null ? null : (aString.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(aString, "attributesAtIndex:effectiveRange:", CPMaxRange(comparisonRange), comparisonRange));
+            comparisonAttributes = (aString == null ? aString : (aString.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(aString, "attributesAtIndex:effectiveRange:", CPMaxRange(comparisonRange), comparisonRange));
     }
     while (CPMaxRange(CPUnionRange(myRange, comparisonRange)) < length);
         return YES;
@@ -4260,7 +4273,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 {
     if (anObject === self)
         return YES;
-    if ((anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))))
+    if ((anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))))
         return (self.isa.method_msgSend["isEqualToAttributedString:"] || _objj_forward)(self, "isEqualToAttributedString:", anObject);
     return NO;
 }
@@ -4269,7 +4282,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 {
     if (!aRange || CPMaxRange(aRange) > self._string.length || aRange.location < 0)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "tried to get attributedSubstring for an invalid range: " + (aRange ? CPStringFromRange(aRange) : "nil"));
-    var newString = ((___r1 = (CPAttributedString.isa.method_msgSend["alloc"] || _objj_forward)(CPAttributedString, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string.substring(aRange.location, CPMaxRange(aRange)))),
+    var newString = ((___r1 = (CPAttributedString.isa.method_msgSend["alloc"] || _objj_forward)(CPAttributedString, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", self._string.substring(aRange.location, CPMaxRange(aRange)))),
         entryIndex = (self.isa.method_msgSend["_indexOfEntryWithIndex:"] || _objj_forward)(self, "_indexOfEntryWithIndex:", aRange.location);
     if (entryIndex === CPNotFound)
         _CPRaiseRangeException(self, _cmd, aRange.location, self._string.length);
@@ -4365,7 +4378,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     if (endingEntryIndex === CPNotFound)
         endingEntryIndex = self._rangeEntries.length;
     while (current < endingEntryIndex)
-        self._rangeEntries[current++].attributes = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["copy"] || _objj_forward)(aDictionary, "copy"));
+        self._rangeEntries[current++].attributes = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["copy"] || _objj_forward)(aDictionary, "copy"));
     (self.isa.method_msgSend["_coalesceRangeEntriesFromIndex:toIndex:"] || _objj_forward)(self, "_coalesceRangeEntriesFromIndex:toIndex:", startingEntryIndex, endingEntryIndex);
 }
 
@@ -4378,10 +4391,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
         endingEntryIndex = self._rangeEntries.length;
     while (current < endingEntryIndex)
     {
-        var keys = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
-            count = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
+        var keys = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
+            count = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
         while (count--)
-            ((___r1 = self._rangeEntries[current].attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (aDictionary == null ? null : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", keys[count])), keys[count]));
+            ((___r1 = self._rangeEntries[current].attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", keys[count])), keys[count]));
         current++;
     }
     (self.isa.method_msgSend["_coalesceRangeEntriesFromIndex:toIndex:"] || _objj_forward)(self, "_coalesceRangeEntriesFromIndex:toIndex:", startingEntryIndex, endingEntryIndex);
@@ -4390,7 +4403,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 
 ,["void","CPDictionary","CPRange"]), new objj_method(sel_getUid("addAttribute:value:range:"), function $CPAttributedString__addAttribute_value_range_(self, _cmd, anAttribute, aValue, aRange)
 {
-    (self.isa.method_msgSend["addAttributes:range:"] || _objj_forward)(self, "addAttributes:range:", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [aValue], [anAttribute])), aRange);
+    (self.isa.method_msgSend["addAttributes:range:"] || _objj_forward)(self, "addAttributes:range:", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [aValue], [anAttribute])), aRange);
     var ___r1;
 }
 
@@ -4402,7 +4415,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     if (endingEntryIndex === CPNotFound)
         endingEntryIndex = self._rangeEntries.length;
     while (current < endingEntryIndex)
-        ((___r1 = self._rangeEntries[current++].attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", anAttribute));
+        ((___r1 = self._rangeEntries[current++].attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", anAttribute));
     (self.isa.method_msgSend["_coalesceRangeEntriesFromIndex:toIndex:"] || _objj_forward)(self, "_coalesceRangeEntriesFromIndex:toIndex:", startingEntryIndex, endingEntryIndex);
     var ___r1;
 }
@@ -4418,7 +4431,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "tried to insert attributed string at an invalid index: " + anIndex);
     var entryIndexOfNextEntry = (self.isa.method_msgSend["_indexOfRangeEntryForIndex:splitOnMaxIndex:"] || _objj_forward)(self, "_indexOfRangeEntryForIndex:splitOnMaxIndex:", anIndex, YES),
         otherRangeEntries = aString._rangeEntries,
-        length = (aString == null ? null : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length"));
+        length = (aString == null ? aString : (aString.isa.method_msgSend["length"] || _objj_forward)(aString, "length"));
     if (entryIndexOfNextEntry === CPNotFound)
         entryIndexOfNextEntry = self._rangeEntries.length;
     self._string = self._string.substring(0, anIndex) + aString._string + self._string.substring(anIndex);
@@ -4445,7 +4458,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
 ,["void","CPRange","CPAttributedString"]), new objj_method(sel_getUid("setAttributedString:"), function $CPAttributedString__setAttributedString_(self, _cmd, aString)
 {
     self._string = aString._string;
-    self._rangeEntries = ((___r1 = aString._rangeEntries), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(entry)
+    self._rangeEntries = ((___r1 = aString._rangeEntries), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(entry)
     {
         return copyRangeEntry(entry);
     }));
@@ -4475,7 +4488,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPAtt
     {
         var a = self._rangeEntries[current],
             b = self._rangeEntries[current + 1];
-        if (a && b && ((___r1 = a.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", b.attributes)))
+        if (a && b && ((___r1 = a.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(___r1, "isEqualToDictionary:", b.attributes)))
         {
             a.range.length = CPMaxRange(b.range) - a.range.location;
             self._rangeEntries.splice(current + 1, 1);
@@ -4505,12 +4518,12 @@ var the_class = objj_getClass("CPAttributedString")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPAttributedString\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $CPAttributedString__initWithCoder_(self, _cmd, aCoder)
 {
-    self = (self == null ? null : (self.isa.method_msgSend["init"] || _objj_forward)(self, "init"));
+    self = (self == null ? self : (self.isa.method_msgSend["init"] || _objj_forward)(self, "init"));
     if (self)
     {
-        self._string = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringStringKey));
-        var decodedRanges = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringRangesKey)),
-            decodedAttributes = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringAttributesKey));
+        self._string = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringStringKey));
+        var decodedRanges = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringRangesKey)),
+            decodedAttributes = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPAttributedStringAttributesKey));
         self._rangeEntries = [];
         for (var i = 0, l = decodedRanges.length; i < l; i++)
             self._rangeEntries.push(makeRangeEntry(decodedRanges[i], decodedAttributes[i]));
@@ -4520,7 +4533,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPAttributedString__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._string, CPAttributedStringStringKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._string, CPAttributedStringStringKey));
     var rangesForEncoding = [],
         dictsForEncoding = [];
     for (var i = 0, l = self._rangeEntries.length; i < l; i++)
@@ -4528,8 +4541,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         rangesForEncoding.push(self._rangeEntries[i].range);
         dictsForEncoding.push(self._rangeEntries[i].attributes);
     }
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", rangesForEncoding, CPAttributedStringRangesKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", dictsForEncoding, CPAttributedStringAttributesKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", rangesForEncoding, CPAttributedStringRangesKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", dictsForEncoding, CPAttributedStringAttributesKey));
 }
 
 ,["void","CPCoder"])]);
@@ -4537,22 +4550,37 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 {var the_class = objj_allocateClassPair(CPAttributedString, "CPMutableAttributedString"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
+class_addMethods(the_class, [new objj_method(sel_getUid("replaceOccurrencesOfString:withString:options:range:"), function $CPMutableAttributedString__replaceOccurrencesOfString_withString_options_range_(self, _cmd, target, replacement, options, searchRange)
+{
+    var foundRange,
+        searchRangeDynamic = searchRange ? CPMakeRangeCopy(searchRange) : CPMakeRange(0, ((___r1 = self._string), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"))),
+        searchRangeLengthOffset = (replacement == null ? replacement : (replacement.isa.method_msgSend["length"] || _objj_forward)(replacement, "length")) - (target == null ? target : (target.isa.method_msgSend["length"] || _objj_forward)(target, "length"));
+    for (var replacements = 0; (foundRange = ((___r1 = self._string), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["rangeOfString:options:range:"] || _objj_forward)(___r1, "rangeOfString:options:range:", target, options, searchRangeDynamic)), foundRange.location != CPNotFound); replacements++)
+    {
+        (self.isa.method_msgSend["replaceCharactersInRange:withString:"] || _objj_forward)(self, "replaceCharactersInRange:withString:", foundRange, replacement);
+        searchRangeDynamic.length += searchRangeLengthOffset;
+    }
+    return replacements;
+    var ___r1;
+}
+
+,["CPUInteger","CPString","CPString","CPStringCompareOptions","CSRange"])]);
 }
 var isEqual = function(a, b)
 {
     if (a === b)
         return YES;
-    if ((a == null ? null : (a.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(a, "respondsToSelector:", sel_getUid("isEqual:"))) && (a == null ? null : (a.isa.method_msgSend["isEqual:"] || _objj_forward)(a, "isEqual:", b)))
+    if ((a == null ? a : (a.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(a, "respondsToSelector:", sel_getUid("isEqual:"))) && (a == null ? a : (a.isa.method_msgSend["isEqual:"] || _objj_forward)(a, "isEqual:", b)))
         return YES;
     return NO;
 };
 var makeRangeEntry = function(aRange, attributes)
 {
-    return {range: aRange, attributes: (attributes == null ? null : (attributes.isa.method_msgSend["copy"] || _objj_forward)(attributes, "copy"))};
+    return {range: aRange, attributes: (attributes == null ? attributes : (attributes.isa.method_msgSend["copy"] || _objj_forward)(attributes, "copy"))};
 };
 var copyRangeEntry = function(aRangeEntry)
 {
-    return makeRangeEntry(CPMakeRangeCopy(aRangeEntry.range), ((___r1 = aRangeEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy")));
+    return makeRangeEntry(CPMakeRangeCopy(aRangeEntry.range), ((___r1 = aRangeEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy")));
     var ___r1;
 };
 var splitRangeEntryAtIndex = function(aRangeEntry, anIndex)
@@ -4562,11 +4590,11 @@ var splitRangeEntryAtIndex = function(aRangeEntry, anIndex)
     aRangeEntry.range.length = anIndex - aRangeEntry.range.location;
     newRangeEntry.range.location = anIndex;
     newRangeEntry.range.length = cachedIndex - anIndex;
-    newRangeEntry.attributes = ((___r1 = newRangeEntry.attributes), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+    newRangeEntry.attributes = ((___r1 = newRangeEntry.attributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
     return [aRangeEntry, newRangeEntry];
     var ___r1;
 };
-p;27;_CPCollectionKVCOperators.jt;12925;@STATIC;1.0;i;10;CPObject.jt;12890;objj_executeFile("CPObject.j", YES);var _CPCollectionKVCOperatorSimpleRE = new RegExp("^@(avg|count|m(ax|in)|sum|unionOfObjects|distinctUnionOfObjects|unionOfArrays|distinctUnionOfArrays|distinctUnionOfSets)(\\.|$)");
+p;27;_CPCollectionKVCOperators.jt;13206;@STATIC;1.0;i;10;CPObject.jt;13171;objj_executeFile("CPObject.j", YES);var _CPCollectionKVCOperatorSimpleRE = new RegExp("^@(avg|count|m(ax|in)|sum|unionOfObjects|distinctUnionOfObjects|unionOfArrays|distinctUnionOfArrays|distinctUnionOfSets)(\\.|$)");
 
 {var the_class = objj_allocateClassPair(CPObject, "_CPCollectionKVCOperator"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
@@ -4579,36 +4607,36 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 {
     var selector = CPSelectorFromString(operator + "ForCollection:propertyPath:");
     if (!(self.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(self, "respondsToSelector:", selector))
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@" + operator));
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@" + operator));
     return (self.isa.method_msgSend["performSelector:withObject:withObject:"] || _objj_forward)(self, "performSelector:withObject:withObject:", selector, aCollection, propertyPath);
 }
 
 ,["id","CPString","id","CPString"]), new objj_method(sel_getUid("avgForCollection:propertyPath:"), function $_CPCollectionKVCOperator__avgForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@avg"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@avg"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
         average = 0.0,
-        enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
-        average += (object == null ? null : (object.isa.method_msgSend["doubleValue"] || _objj_forward)(object, "doubleValue"));
-    return average / (objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
+        average += (object == null ? object : (object.isa.method_msgSend["doubleValue"] || _objj_forward)(object, "doubleValue"));
+    return average / (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
 }
 
 ,["double","id","CPString"]), new objj_method(sel_getUid("minForCollection:propertyPath:"), function $_CPCollectionKVCOperator__minForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@min"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
-    if ((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) === 0)
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@min"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
+    if ((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) === 0)
         return nil;
-    var enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
-        min = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject")),
+    var enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        min = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
     {
-        if ((min == null ? null : (min.isa.method_msgSend["compare:"] || _objj_forward)(min, "compare:", object)) > 0)
+        if ((min == null ? min : (min.isa.method_msgSend["compare:"] || _objj_forward)(min, "compare:", object)) > 0)
             min = object;
     }
     return min;
@@ -4617,16 +4645,16 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 ,["double","id","CPString"]), new objj_method(sel_getUid("maxForCollection:propertyPath:"), function $_CPCollectionKVCOperator__maxForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@max"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
-    if ((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) === 0)
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@max"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
+    if ((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) === 0)
         return nil;
-    var enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
-        max = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject")),
+    var enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        max = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
     {
-        if ((max == null ? null : (max.isa.method_msgSend["compare:"] || _objj_forward)(max, "compare:", object)) < 0)
+        if ((max == null ? max : (max.isa.method_msgSend["compare:"] || _objj_forward)(max, "compare:", object)) < 0)
             max = object;
     }
     return max;
@@ -4635,43 +4663,43 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 ,["double","id","CPString"]), new objj_method(sel_getUid("sumForCollection:propertyPath:"), function $_CPCollectionKVCOperator__sumForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@sum"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@sum"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
         sum = 0.0,
-        enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
-        sum += (object == null ? null : (object.isa.method_msgSend["doubleValue"] || _objj_forward)(object, "doubleValue"));
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
+        sum += (object == null ? object : (object.isa.method_msgSend["doubleValue"] || _objj_forward)(object, "doubleValue"));
     return sum;
 }
 
 ,["double","id","CPString"]), new objj_method(sel_getUid("countForCollection:propertyPath:"), function $_CPCollectionKVCOperator__countForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
-    return (aCollection == null ? null : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
+    return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
 }
 
 ,["int","id","CPString"]), new objj_method(sel_getUid("unionOfObjectsForCollection:propertyPath:"), function $_CPCollectionKVCOperator__unionOfObjectsForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@unionOfObjects"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
-    if ((objects == null ? null : (objects.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(objects, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
-        return (objects == null ? null : (objects.isa.method_msgSend["allObjects"] || _objj_forward)(objects, "allObjects"));
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@unionOfObjects"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath));
+    if ((objects == null ? objects : (objects.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(objects, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
+        return (objects == null ? objects : (objects.isa.method_msgSend["allObjects"] || _objj_forward)(objects, "allObjects"));
     return objects;
 }
 
 ,["CPArray","id","CPString"]), new objj_method(sel_getUid("distinctUnionOfObjectsForCollection:propertyPath:"), function $_CPCollectionKVCOperator__distinctUnionOfObjectsForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfObjects"));
-    var objects = (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfObjects"));
+    var objects = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(aCollection, "valueForKeyPath:", propertyPath)),
         distinctObjects = (CPMutableArray.isa.method_msgSend["new"] || _objj_forward)(CPMutableArray, "new"),
-        enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
     {
-        if ((distinctObjects == null ? null : (distinctObjects.isa.method_msgSend["indexOfObject:"] || _objj_forward)(distinctObjects, "indexOfObject:", object)) == CPNotFound)
-            (distinctObjects == null ? null : (distinctObjects.isa.method_msgSend["addObject:"] || _objj_forward)(distinctObjects, "addObject:", object));
+        if ((distinctObjects == null ? distinctObjects : (distinctObjects.isa.method_msgSend["indexOfObject:"] || _objj_forward)(distinctObjects, "indexOfObject:", object)) == CPNotFound)
+            (distinctObjects == null ? distinctObjects : (distinctObjects.isa.method_msgSend["addObject:"] || _objj_forward)(distinctObjects, "addObject:", object));
     }
     return distinctObjects;
 }
@@ -4679,11 +4707,11 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 ,["CPArray","id","CPString"]), new objj_method(sel_getUid("unionOfArraysForCollection:propertyPath:"), function $_CPCollectionKVCOperator__unionOfArraysForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@unionOfArrays"));
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@unionOfArrays"));
     var objects = [],
-        number = (aCollection == null ? null : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
+        number = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
     for (var i = 0; i < number; i++)
-        (objects == null ? null : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = aCollection[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", propertyPath))));
+        (objects == null ? objects : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = aCollection[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", propertyPath))));
     return objects;
     var ___r1;
 }
@@ -4691,18 +4719,18 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 ,["CPArray","id","CPString"]), new objj_method(sel_getUid("distinctUnionOfArraysForCollection:propertyPath:"), function $_CPCollectionKVCOperator__distinctUnionOfArraysForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfArrays"));
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfArrays"));
     var objects = [],
-        number = (aCollection == null ? null : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
+        number = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count"));
     for (var i = 0; i < number; i++)
-        (objects == null ? null : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = aCollection[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", propertyPath))));
+        (objects == null ? objects : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = aCollection[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", propertyPath))));
     var distinctObjects = (CPMutableArray.isa.method_msgSend["new"] || _objj_forward)(CPMutableArray, "new"),
-        enumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
+        enumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator")),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
     {
-        if ((distinctObjects == null ? null : (distinctObjects.isa.method_msgSend["indexOfObject:"] || _objj_forward)(distinctObjects, "indexOfObject:", object)) == CPNotFound)
-            (distinctObjects == null ? null : (distinctObjects.isa.method_msgSend["addObject:"] || _objj_forward)(distinctObjects, "addObject:", object));
+        if ((distinctObjects == null ? distinctObjects : (distinctObjects.isa.method_msgSend["indexOfObject:"] || _objj_forward)(distinctObjects, "indexOfObject:", object)) == CPNotFound)
+            (distinctObjects == null ? distinctObjects : (distinctObjects.isa.method_msgSend["addObject:"] || _objj_forward)(distinctObjects, "addObject:", object));
     }
     return distinctObjects;
     var ___r1;
@@ -4711,12 +4739,12 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("isSimpleCollectionOper
 ,["CPArray","id","CPString"]), new objj_method(sel_getUid("distinctUnionOfSetsForCollection:propertyPath:"), function $_CPCollectionKVCOperator__distinctUnionOfSetsForCollection_propertyPath_(self, _cmd, aCollection, propertyPath)
 {
     if (!propertyPath)
-        return (aCollection == null ? null : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfSets"));
+        return (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(aCollection, "valueForUndefinedKey:", "@distinctUnionOfSets"));
     var objects = (CPMutableSet.isa.method_msgSend["new"] || _objj_forward)(CPMutableSet, "new"),
-        number = (aCollection == null ? null : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count")),
-        sets = (aCollection == null ? null : (aCollection.isa.method_msgSend["allObjects"] || _objj_forward)(aCollection, "allObjects"));
+        number = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["count"] || _objj_forward)(aCollection, "count")),
+        sets = (aCollection == null ? aCollection : (aCollection.isa.method_msgSend["allObjects"] || _objj_forward)(aCollection, "allObjects"));
     for (var i = 0; i < number; i++)
-        (objects == null ? null : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = ((___r2 = sets[i]), ___r2 == null ? null : (___r2.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r2, "valueForKeyPath:", propertyPath))), ___r1 == null ? null : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"))));
+        (objects == null ? objects : (objects.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(objects, "addObjectsFromArray:", ((___r1 = ((___r2 = sets[i]), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r2, "valueForKeyPath:", propertyPath))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"))));
     return objects;
     var ___r1, ___r2;
 }
@@ -5275,12 +5303,12 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["id"])]);
 }
-p;13;CPArray+KVO.jt;31393;@STATIC;1.0;i;9;CPArray.ji;8;CPNull.ji;27;_CPCollectionKVCOperators.jt;31316;objj_executeFile("CPArray.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("_CPCollectionKVCOperators.j", YES);{
+p;13;CPArray+KVO.jt;31584;@STATIC;1.0;i;9;CPArray.ji;8;CPNull.ji;27;_CPCollectionKVCOperators.jt;31507;objj_executeFile("CPArray.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("_CPCollectionKVCOperators.j", YES);{
 var the_class = objj_getClass("CPObject")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPObject\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("mutableArrayValueForKey:"), function $CPObject__mutableArrayValueForKey_(self, _cmd, aKey)
 {
-    return ((___r1 = (_CPKVCArray == null ? null : (_CPKVCArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVCArray, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithKey:forProxyObject:"] || _objj_forward)(___r1, "initWithKey:forProxyObject:", aKey, self));
+    return ((___r1 = (_CPKVCArray == null ? _CPKVCArray : (_CPKVCArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVCArray, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithKey:forProxyObject:"] || _objj_forward)(___r1, "initWithKey:forProxyObject:", aKey, self));
     var ___r1;
 }
 
@@ -5291,7 +5319,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         return (self.isa.method_msgSend["mutableArrayValueForKey:"] || _objj_forward)(self, "mutableArrayValueForKey:", aKeyPath);
     var firstPart = aKeyPath.substring(0, dotIndex),
         lastPart = aKeyPath.substring(dotIndex + 1);
-    return ((___r1 = (self.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(self, "valueForKeyPath:", firstPart)), ___r1 == null ? null : (___r1.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r1, "mutableArrayValueForKeyPath:", lastPart));
+    return ((___r1 = (self.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(self, "valueForKeyPath:", firstPart)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r1, "mutableArrayValueForKeyPath:", lastPart));
     var ___r1;
 }
 
@@ -5307,38 +5335,38 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     self._proxyObject = anObject;
     var capitalizedKey = (self._key.charAt(0)).toUpperCase() + self._key.substring(1);
     self._insertSEL = sel_getName("insertObject:in" + capitalizedKey + "AtIndex:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._insertSEL)))
-        self._insert = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._insertSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._insertSEL)))
+        self._insert = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._insertSEL));
     self._removeSEL = sel_getName("removeObjectFrom" + capitalizedKey + "AtIndex:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeSEL)))
-        self._remove = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeSEL)))
+        self._remove = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeSEL));
     self._replaceSEL = sel_getName("replaceObjectIn" + capitalizedKey + "AtIndex:withObject:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._replaceSEL)))
-        self._replace = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._replaceSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._replaceSEL)))
+        self._replace = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._replaceSEL));
     self._insertManySEL = sel_getName("insert" + capitalizedKey + ":atIndexes:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._insertManySEL)))
-        self._insertMany = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._insertManySEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._insertManySEL)))
+        self._insertMany = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._insertManySEL));
     self._removeManySEL = sel_getName("remove" + capitalizedKey + "AtIndexes:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeManySEL)))
-        self._removeMany = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeManySEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeManySEL)))
+        self._removeMany = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeManySEL));
     self._replaceManySEL = sel_getName("replace" + capitalizedKey + "AtIndexes:with" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._replaceManySEL)))
-        self._replaceMany = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._replaceManySEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._replaceManySEL)))
+        self._replaceMany = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._replaceManySEL));
     self._objectAtIndexSEL = sel_getName("objectIn" + capitalizedKey + "AtIndex:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectAtIndexSEL)))
-        self._objectAtIndex = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._objectAtIndexSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectAtIndexSEL)))
+        self._objectAtIndex = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._objectAtIndexSEL));
     self._objectsAtIndexesSEL = sel_getName(self._key + "AtIndexes:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectsAtIndexesSEL)))
-        self._objectsAtIndexes = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._objectsAtIndexesSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectsAtIndexesSEL)))
+        self._objectsAtIndexes = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._objectsAtIndexesSEL));
     self._countSEL = sel_getName("countOf" + capitalizedKey);
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._countSEL)))
-        self._count = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._countSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._countSEL)))
+        self._count = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._countSEL));
     self._accessSEL = sel_getName(self._key);
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._accessSEL)))
-        self._access = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._accessSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._accessSEL)))
+        self._access = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._accessSEL));
     self._setSEL = sel_getName("set" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._setSEL)))
-        self._set = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._setSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._setSEL)))
+        self._set = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._setSEL));
     return self;
     var ___r1;
 }
@@ -5349,7 +5377,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
         theCopy = [],
         count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
     for (; i < count; i++)
-        (theCopy == null ? null : (theCopy.isa.method_msgSend["addObject:"] || _objj_forward)(theCopy, "addObject:", (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", i)));
+        (theCopy == null ? theCopy : (theCopy.isa.method_msgSend["addObject:"] || _objj_forward)(theCopy, "addObject:", (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", i)));
     return theCopy;
 }
 
@@ -5357,7 +5385,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._access)
         return self._access(self._proxyObject, self._accessSEL);
-    return ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._key));
+    return ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._key));
     var ___r1;
 }
 
@@ -5365,7 +5393,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._set)
         return self._set(self._proxyObject, self._setSEL, anObject);
-    ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", anObject, self._key));
+    ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", anObject, self._key));
     var ___r1;
 }
 
@@ -5373,7 +5401,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._count)
         return self._count(self._proxyObject, self._countSEL);
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
     var ___r1;
 }
 
@@ -5385,7 +5413,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     for (; index < count; ++index)
     {
         var object = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index);
-        if (anObject === object || shouldIsEqual && !!object.isa && (anObject == null ? null : (anObject.isa.method_msgSend["isEqual:"] || _objj_forward)(anObject, "isEqual:", object)))
+        if (anObject === object || shouldIsEqual && !!object.isa && (anObject == null ? anObject : (anObject.isa.method_msgSend["isEqual:"] || _objj_forward)(anObject, "isEqual:", object)))
             return index;
     }
     return CPNotFound;
@@ -5413,7 +5441,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 
 ,["CPUInteger","id"]), new objj_method(sel_getUid("objectAtIndex:"), function $_CPKVCArray__objectAtIndex_(self, _cmd, anIndex)
 {
-    return ((___r1 = (self.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(self, "objectsAtIndexes:", (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)))), ___r1 == null ? null : (___r1.isa.method_msgSend["firstObject"] || _objj_forward)(___r1, "firstObject"));
+    return ((___r1 = (self.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(self, "objectsAtIndexes:", (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["firstObject"] || _objj_forward)(___r1, "firstObject"));
     var ___r1;
 }
 
@@ -5425,11 +5453,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     {
         var index = CPNotFound,
             objects = [];
-        while ((index = (theIndexes == null ? null : (theIndexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(theIndexes, "indexGreaterThanIndex:", index))) !== CPNotFound)
+        while ((index = (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(theIndexes, "indexGreaterThanIndex:", index))) !== CPNotFound)
             objects.push(self._objectAtIndex(self._proxyObject, self._objectAtIndexSEL, index));
         return objects;
     }
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", theIndexes));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", theIndexes));
     var ___r1;
 }
 
@@ -5441,13 +5469,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 ,["void","id"]), new objj_method(sel_getUid("addObjectsFromArray:"), function $_CPKVCArray__addObjectsFromArray_(self, _cmd, anArray)
 {
     var index = 0,
-        count = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
-    (self.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(self, "insertObjects:atIndexes:", anArray, (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndexesInRange:"] || _objj_forward)(CPIndexSet, "indexSetWithIndexesInRange:", CPMakeRange((self.isa.method_msgSend["count"] || _objj_forward)(self, "count"), count))));
+        count = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+    (self.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(self, "insertObjects:atIndexes:", anArray, (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndexesInRange:"] || _objj_forward)(CPIndexSet, "indexSetWithIndexesInRange:", CPMakeRange((self.isa.method_msgSend["count"] || _objj_forward)(self, "count"), count))));
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("insertObject:atIndex:"), function $_CPKVCArray__insertObject_atIndex_(self, _cmd, anObject, anIndex)
 {
-    (self.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(self, "insertObjects:atIndexes:", [anObject], (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)));
+    (self.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(self, "insertObjects:atIndexes:", [anObject], (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)));
 }
 
 ,["void","id","CPUInteger"]), new objj_method(sel_getUid("insertObjects:atIndexes:"), function $_CPKVCArray__insertObjects_atIndexes_(self, _cmd, theObjects, theIndexes)
@@ -5457,18 +5485,18 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._insert)
     {
         var indexesArray = [];
-        (theIndexes == null ? null : (theIndexes.isa.method_msgSend["getIndexes:maxCount:inIndexRange:"] || _objj_forward)(theIndexes, "getIndexes:maxCount:inIndexRange:", indexesArray, -1, nil));
-        for (var index = 0; index < (indexesArray == null ? null : (indexesArray.isa.method_msgSend["count"] || _objj_forward)(indexesArray, "count")); index++)
+        (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["getIndexes:maxCount:inIndexRange:"] || _objj_forward)(theIndexes, "getIndexes:maxCount:inIndexRange:", indexesArray, -1, nil));
+        for (var index = 0; index < (indexesArray == null ? indexesArray : (indexesArray.isa.method_msgSend["count"] || _objj_forward)(indexesArray, "count")); index++)
         {
-            var objectIndex = (indexesArray == null ? null : (indexesArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(indexesArray, "objectAtIndex:", index)),
-                object = (theObjects == null ? null : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index));
+            var objectIndex = (indexesArray == null ? indexesArray : (indexesArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(indexesArray, "objectAtIndex:", index)),
+                object = (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index));
             self._insert(self._proxyObject, self._insertSEL, object, objectIndex);
         }
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(target, "insertObjects:atIndexes:", theObjects, theIndexes));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(target, "insertObjects:atIndexes:", theObjects, theIndexes));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -5483,31 +5511,31 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._removeMany)
     {
-        var indexes = (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPIndexSet, "indexSet")),
-            index = (theObjects == null ? null : (theObjects.isa.method_msgSend["count"] || _objj_forward)(theObjects, "count")),
+        var indexes = (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPIndexSet, "indexSet")),
+            index = (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["count"] || _objj_forward)(theObjects, "count")),
             position = 0,
             count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
         while (index--)
         {
-            while ((position = (self.isa.method_msgSend["indexOfObject:inRange:"] || _objj_forward)(self, "indexOfObject:inRange:", (theObjects == null ? null : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index)), CPMakeRange(position + 1, count))) !== CPNotFound)
-                (indexes == null ? null : (indexes.isa.method_msgSend["addIndex:"] || _objj_forward)(indexes, "addIndex:", position));
+            while ((position = (self.isa.method_msgSend["indexOfObject:inRange:"] || _objj_forward)(self, "indexOfObject:inRange:", (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index)), CPMakeRange(position + 1, count))) !== CPNotFound)
+                (indexes == null ? indexes : (indexes.isa.method_msgSend["addIndex:"] || _objj_forward)(indexes, "addIndex:", position));
         }
         self._removeMany(self._proxyObject, self._removeManySEL, indexes);
     }
     else if (self._remove)
     {
-        var index = (theObjects == null ? null : (theObjects.isa.method_msgSend["count"] || _objj_forward)(theObjects, "count")),
+        var index = (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["count"] || _objj_forward)(theObjects, "count")),
             position;
         while (index--)
         {
-            while ((position = (self.isa.method_msgSend["indexOfObject:"] || _objj_forward)(self, "indexOfObject:", (theObjects == null ? null : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index)))) !== CPNotFound)
+            while ((position = (self.isa.method_msgSend["indexOfObject:"] || _objj_forward)(self, "indexOfObject:", (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", index)))) !== CPNotFound)
                 self._remove(self._proxyObject, self._removeSEL, position);
         }
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(target, "removeObjectsInArray:", theObjects));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(target, "removeObjectsInArray:", theObjects));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -5520,7 +5548,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._removeMany)
     {
         var index = (self.isa.method_msgSend["indexOfObject:inRange:"] || _objj_forward)(self, "indexOfObject:inRange:", theObject, theRange);
-        self._removeMany(self._proxyObject, self._removeManySEL, (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", index)));
+        self._removeMany(self._proxyObject, self._removeManySEL, (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", index)));
     }
     else
     {
@@ -5535,12 +5563,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 
 ,["void","id","CPRange"]), new objj_method(sel_getUid("removeLastObject"), function $_CPKVCArray__removeLastObject(self, _cmd)
 {
-    (self.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(self, "removeObjectsAtIndexes:", (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", (self.isa.method_msgSend["count"] || _objj_forward)(self, "count") - 1)));
+    (self.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(self, "removeObjectsAtIndexes:", (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", (self.isa.method_msgSend["count"] || _objj_forward)(self, "count") - 1)));
 }
 
 ,["void"]), new objj_method(sel_getUid("removeObjectAtIndex:"), function $_CPKVCArray__removeObjectAtIndex_(self, _cmd, anIndex)
 {
-    (self.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(self, "removeObjectsAtIndexes:", (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)));
+    (self.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(self, "removeObjectsAtIndexes:", (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)));
 }
 
 ,["void","CPUInteger"]), new objj_method(sel_getUid("removeObjectsAtIndexes:"), function $_CPKVCArray__removeObjectsAtIndexes_(self, _cmd, theIndexes)
@@ -5549,17 +5577,17 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
         self._removeMany(self._proxyObject, self._removeManySEL, theIndexes);
     else if (self._remove)
     {
-        var index = (theIndexes == null ? null : (theIndexes.isa.method_msgSend["lastIndex"] || _objj_forward)(theIndexes, "lastIndex"));
+        var index = (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["lastIndex"] || _objj_forward)(theIndexes, "lastIndex"));
         while (index !== CPNotFound)
         {
             self._remove(self._proxyObject, self._removeSEL, index);
-            index = (theIndexes == null ? null : (theIndexes.isa.method_msgSend["indexLessThanIndex:"] || _objj_forward)(theIndexes, "indexLessThanIndex:", index));
+            index = (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["indexLessThanIndex:"] || _objj_forward)(theIndexes, "indexLessThanIndex:", index));
         }
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(target, "removeObjectsAtIndexes:", theIndexes));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(target, "removeObjectsAtIndexes:", theIndexes));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -5567,7 +5595,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 
 ,["void","CPIndexSet"]), new objj_method(sel_getUid("replaceObjectAtIndex:withObject:"), function $_CPKVCArray__replaceObjectAtIndex_withObject_(self, _cmd, anIndex, anObject)
 {
-    (self.isa.method_msgSend["replaceObjectsAtIndexes:withObjects:"] || _objj_forward)(self, "replaceObjectsAtIndexes:withObjects:", (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)), [anObject]);
+    (self.isa.method_msgSend["replaceObjectsAtIndexes:withObjects:"] || _objj_forward)(self, "replaceObjectsAtIndexes:withObjects:", (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex)), [anObject]);
 }
 
 ,["void","CPUInteger","id"]), new objj_method(sel_getUid("replaceObjectsAtIndexes:withObjects:"), function $_CPKVCArray__replaceObjectsAtIndexes_withObjects_(self, _cmd, theIndexes, theObjects)
@@ -5577,17 +5605,17 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._replace)
     {
         var i = 0,
-            index = (theIndexes == null ? null : (theIndexes.isa.method_msgSend["firstIndex"] || _objj_forward)(theIndexes, "firstIndex"));
+            index = (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["firstIndex"] || _objj_forward)(theIndexes, "firstIndex"));
         while (index !== CPNotFound)
         {
-            self._replace(self._proxyObject, self._replaceSEL, index, (theObjects == null ? null : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", i++)));
-            index = (theIndexes == null ? null : (theIndexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(theIndexes, "indexGreaterThanIndex:", index));
+            self._replace(self._proxyObject, self._replaceSEL, index, (theObjects == null ? theObjects : (theObjects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(theObjects, "objectAtIndex:", i++)));
+            index = (theIndexes == null ? theIndexes : (theIndexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(theIndexes, "indexGreaterThanIndex:", index));
         }
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["replaceObjectsAtIndexes:withObjects:"] || _objj_forward)(target, "replaceObjectsAtIndexes:withObjects:", theIndexes, theObjects));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["replaceObjectsAtIndexes:withObjects:"] || _objj_forward)(target, "replaceObjectsAtIndexes:withObjects:", theIndexes, theObjects));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -5625,10 +5653,10 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         var newArray = [],
             enumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
             object;
-        while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+        while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
         {
-            var value = (object == null ? null : (object.isa.method_msgSend["valueForKey:"] || _objj_forward)(object, "valueForKey:", aKey));
-            if (value === nil || value === undefined)
+            var value = (object == null ? object : (object.isa.method_msgSend["valueForKey:"] || _objj_forward)(object, "valueForKey:", aKey));
+            if (value == nil)
                 value = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
             newArray.push(value);
         }
@@ -5659,10 +5687,10 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         var newArray = [],
             enumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
             object;
-        while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
+        while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
         {
-            var value = (object == null ? null : (object.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(object, "valueForKeyPath:", aKeyPath));
-            if (value === nil || value === undefined)
+            var value = (object == null ? object : (object.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(object, "valueForKeyPath:", aKeyPath));
+            if (value == nil)
                 value = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
             newArray.push(value);
         }
@@ -5674,16 +5702,16 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     var enumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
-        (object == null ? null : (object.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(object, "setValue:forKey:", aValue, aKey));
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
+        (object == null ? object : (object.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(object, "setValue:forKey:", aValue, aKey));
 }
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("setValue:forKeyPath:"), function $CPArray__setValue_forKeyPath_(self, _cmd, aValue, aKeyPath)
 {
     var enumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
         object;
-    while ((object = (enumerator == null ? null : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) !== nil)
-        (object == null ? null : (object.isa.method_msgSend["setValue:forKeyPath:"] || _objj_forward)(object, "setValue:forKeyPath:", aValue, aKeyPath));
+    while ((object = (enumerator == null ? enumerator : (enumerator.isa.method_msgSend["nextObject"] || _objj_forward)(enumerator, "nextObject"))) != nil)
+        (object == null ? object : (object.isa.method_msgSend["setValue:forKeyPath:"] || _objj_forward)(object, "setValue:forKeyPath:", aValue, aKeyPath));
 }
 
 ,["void","id","CPString"])]);
@@ -5705,22 +5733,22 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("addObserver:toObjectsAtIndexes:forKeyPath:options:context:"), function $CPArray__addObserver_toObjectsAtIndexes_forKeyPath_options_context_(self, _cmd, anObserver, indexes, aKeyPath, options, context)
 {
-    var index = (indexes == null ? null : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
+    var index = (indexes == null ? indexes : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
     while (index >= 0)
     {
-        ((___r1 = self[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", anObserver, aKeyPath, options, context));
-        index = (indexes == null ? null : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
+        ((___r1 = self[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", anObserver, aKeyPath, options, context));
+        index = (indexes == null ? indexes : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
     }
     var ___r1;
 }
 
 ,["void","id","CPIndexSet","CPString","CPKeyValueObservingOptions","id"]), new objj_method(sel_getUid("removeObserver:fromObjectsAtIndexes:forKeyPath:"), function $CPArray__removeObserver_fromObjectsAtIndexes_forKeyPath_(self, _cmd, anObserver, indexes, aKeyPath)
 {
-    var index = (indexes == null ? null : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
+    var index = (indexes == null ? indexes : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
     while (index >= 0)
     {
-        ((___r1 = self[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", anObserver, aKeyPath));
-        index = (indexes == null ? null : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
+        ((___r1 = self[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", anObserver, aKeyPath));
+        index = (indexes == null ? indexes : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
     }
     var ___r1;
 }
@@ -5728,7 +5756,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 ,["void","id","CPIndexSet","CPString"])]);
 }
 p;7;CPLog.jt;19;@STATIC;1.0;t;3;1;
-p;15;CPUndoManager.jt;35860;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;14;CPInvocation.ji;22;CPNotificationCenter.ji;10;CPObject.ji;9;CPProxy.ji;21;CPKeyValueObserving.ji;11;CPRunLoop.jt;35693;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPInvocation.j", YES);objj_executeFile("CPNotificationCenter.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPProxy.j", YES);objj_executeFile("CPKeyValueObserving.j", YES);objj_executeFile("CPRunLoop.j", YES);var CPUndoManagerNormal = 0,
+p;15;CPUndoManager.jt;36121;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;14;CPInvocation.ji;22;CPNotificationCenter.ji;10;CPObject.ji;9;CPProxy.ji;21;CPKeyValueObserving.ji;11;CPRunLoop.jt;35954;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPInvocation.j", YES);objj_executeFile("CPNotificationCenter.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPProxy.j", YES);objj_executeFile("CPKeyValueObserving.j", YES);objj_executeFile("CPRunLoop.j", YES);var CPUndoManagerNormal = 0,
     CPUndoManagerUndoing = 1,
     CPUndoManagerRedoing = 2;
 CPUndoManagerCheckpointNotification = "CPUndoManagerCheckpointNotification";
@@ -5769,7 +5797,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithParent:"), func
 
 ,["void","CPInvocation"]), new objj_method(sel_getUid("addInvocationsFromArray:"), function $_CPUndoGrouping__addInvocationsFromArray_(self, _cmd, invocations)
 {
-    ((___r1 = self._invocations), ___r1 == null ? null : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", invocations));
+    ((___r1 = self._invocations), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", invocations));
     var ___r1;
 }
 
@@ -5777,7 +5805,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithParent:"), func
 {
     var index = self._invocations.length;
     while (index--)
-        if (((___r1 = self._invocations[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["target"] || _objj_forward)(___r1, "target")) == aTarget)
+        if (((___r1 = self._invocations[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["target"] || _objj_forward)(___r1, "target")) == aTarget)
             self._invocations.splice(index, 1);
     var ___r1;
 }
@@ -5791,7 +5819,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithParent:"), func
 {
     var index = self._invocations.length;
     while (index--)
-        ((___r1 = self._invocations[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["invoke"] || _objj_forward)(___r1, "invoke"));
+        ((___r1 = self._invocations[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["invoke"] || _objj_forward)(___r1, "invoke"));
     var ___r1;
 }
 
@@ -5823,7 +5851,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("_poolUndoGrouping:"), 
             grouping._invocations = [];
         return grouping;
     }
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithParent:"] || _objj_forward)(___r1, "initWithParent:", anUndoGrouping));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithParent:"] || _objj_forward)(___r1, "initWithParent:", anUndoGrouping));
     var ___r1;
 }
 
@@ -5840,18 +5868,18 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("_CPUndoGrouping").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._parent = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingParentKey));
-        self._invocations = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingInvocationsKey));
-        self._actionName = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingActionNameKey));
+        self._parent = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingParentKey));
+        self._invocations = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingInvocationsKey));
+        self._actionName = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", _CPUndoGroupingActionNameKey));
     }
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPUndoGrouping__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._parent, _CPUndoGroupingParentKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._invocations, _CPUndoGroupingInvocationsKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._actionName, _CPUndoGroupingActionNameKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._parent, _CPUndoGroupingParentKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._invocations, _CPUndoGroupingInvocationsKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._actionName, _CPUndoGroupingActionNameKey));
 }
 
 ,["void","CPCoder"])]);
@@ -5868,9 +5896,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
         self._undoStack = [];
         self._disableCount = 0;
         self._state = CPUndoManagerNormal;
-        (self == null ? null : (self.isa.method_msgSend["setRunLoopModes:"] || _objj_forward)(self, "setRunLoopModes:", [CPDefaultRunLoopMode]));
-        (self == null ? null : (self.isa.method_msgSend["setGroupsByEvent:"] || _objj_forward)(self, "setGroupsByEvent:", YES));
-        self._undoManagerProxy = (_CPUndoManagerProxy == null ? null : (_CPUndoManagerProxy.isa.method_msgSend["alloc"] || _objj_forward)(_CPUndoManagerProxy, "alloc"));
+        (self == null ? self : (self.isa.method_msgSend["setRunLoopModes:"] || _objj_forward)(self, "setRunLoopModes:", [CPDefaultRunLoopMode]));
+        (self == null ? self : (self.isa.method_msgSend["setGroupsByEvent:"] || _objj_forward)(self, "setGroupsByEvent:", YES));
+        self._undoManagerProxy = (_CPUndoManagerProxy == null ? _CPUndoManagerProxy : (_CPUndoManagerProxy.isa.method_msgSend["alloc"] || _objj_forward)(_CPUndoManagerProxy, "alloc"));
         self._undoManagerProxy._undoManager = self;
     }
     return self;
@@ -5883,9 +5911,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
             (self.isa.method_msgSend["_beginUndoGroupingForEvent"] || _objj_forward)(self, "_beginUndoGroupingForEvent");
         else
             (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInternalInconsistencyException, "No undo group is currently open");
-    ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["addInvocation:"] || _objj_forward)(___r1, "addInvocation:", anInvocation));
+    ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addInvocation:"] || _objj_forward)(___r1, "addInvocation:", anInvocation));
     if (self._state === CPUndoManagerNormal)
-        ((___r1 = self._redoStack), ___r1 == null ? null : (___r1.isa.method_msgSend["removeAllObjects"] || _objj_forward)(___r1, "removeAllObjects"));
+        ((___r1 = self._redoStack), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeAllObjects"] || _objj_forward)(___r1, "removeAllObjects"));
     var ___r1;
 }
 
@@ -5894,9 +5922,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
     if (self._disableCount > 0)
         return;
     var invocation = (CPInvocation.isa.method_msgSend["invocationWithMethodSignature:"] || _objj_forward)(CPInvocation, "invocationWithMethodSignature:", nil);
-    (invocation == null ? null : (invocation.isa.method_msgSend["setTarget:"] || _objj_forward)(invocation, "setTarget:", aTarget));
-    (invocation == null ? null : (invocation.isa.method_msgSend["setSelector:"] || _objj_forward)(invocation, "setSelector:", aSelector));
-    (invocation == null ? null : (invocation.isa.method_msgSend["setArgument:atIndex:"] || _objj_forward)(invocation, "setArgument:atIndex:", anObject, 2));
+    (invocation == null ? invocation : (invocation.isa.method_msgSend["setTarget:"] || _objj_forward)(invocation, "setTarget:", aTarget));
+    (invocation == null ? invocation : (invocation.isa.method_msgSend["setSelector:"] || _objj_forward)(invocation, "setSelector:", aSelector));
+    (invocation == null ? invocation : (invocation.isa.method_msgSend["setArgument:atIndex:"] || _objj_forward)(invocation, "setArgument:atIndex:", anObject, 2));
     (self.isa.method_msgSend["_addUndoInvocation:"] || _objj_forward)(self, "_addUndoInvocation:", invocation);
 }
 
@@ -5908,7 +5936,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 
 ,["id","id"]), new objj_method(sel_getUid("_methodSignatureOfPreparedTargetForSelector:"), function $CPUndoManager___methodSignatureOfPreparedTargetForSelector_(self, _cmd, aSelector)
 {
-    if (((___r1 = self._preparedTarget), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", aSelector)))
+    if (((___r1 = self._preparedTarget), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", aSelector)))
         return 1;
     return nil;
     var ___r1;
@@ -5918,15 +5946,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     if (self._disableCount > 0)
         return;
-    (anInvocation == null ? null : (anInvocation.isa.method_msgSend["setTarget:"] || _objj_forward)(anInvocation, "setTarget:", self._preparedTarget));
+    (anInvocation == null ? anInvocation : (anInvocation.isa.method_msgSend["setTarget:"] || _objj_forward)(anInvocation, "setTarget:", self._preparedTarget));
     (self.isa.method_msgSend["_addUndoInvocation:"] || _objj_forward)(self, "_addUndoInvocation:", anInvocation);
     self._preparedTarget = nil;
 }
 
 ,["void","CPInvocation"]), new objj_method(sel_getUid("canRedo"), function $CPUndoManager__canRedo(self, _cmd)
 {
-    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
-    return ((___r1 = self._redoStack), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 0;
+    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
+    return ((___r1 = self._redoStack), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 0;
     var ___r1;
 }
 
@@ -5934,7 +5962,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     if (self._undoStack.length > 0)
         return YES;
-    return ((___r1 = ((___r2 = self._currentGrouping), ___r2 == null ? null : (___r2.isa.method_msgSend["invocations"] || _objj_forward)(___r2, "invocations"))), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 0;
+    return ((___r1 = ((___r2 = self._currentGrouping), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["invocations"] || _objj_forward)(___r2, "invocations"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 0;
     var ___r1, ___r2;
 }
 
@@ -5947,44 +5975,44 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 
 ,["void"]), new objj_method(sel_getUid("undoNestedGroup"), function $CPUndoManager__undoNestedGroup(self, _cmd)
 {
-    if (((___r1 = self._undoStack), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) <= 0)
+    if (((___r1 = self._undoStack), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) <= 0)
         return;
     var defaultCenter = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter");
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillUndoChangeNotification, self));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillUndoChangeNotification, self));
     var undoGrouping = self._undoStack.pop(),
-        actionName = (undoGrouping == null ? null : (undoGrouping.isa.method_msgSend["actionName"] || _objj_forward)(undoGrouping, "actionName"));
+        actionName = (undoGrouping == null ? undoGrouping : (undoGrouping.isa.method_msgSend["actionName"] || _objj_forward)(undoGrouping, "actionName"));
     self._state = CPUndoManagerUndoing;
     (self.isa.method_msgSend["_beginUndoGrouping"] || _objj_forward)(self, "_beginUndoGrouping");
-    (undoGrouping == null ? null : (undoGrouping.isa.method_msgSend["invoke"] || _objj_forward)(undoGrouping, "invoke"));
+    (undoGrouping == null ? undoGrouping : (undoGrouping.isa.method_msgSend["invoke"] || _objj_forward)(undoGrouping, "invoke"));
     (self.isa.method_msgSend["endUndoGrouping"] || _objj_forward)(self, "endUndoGrouping");
     (_CPUndoGrouping.isa.method_msgSend["_poolUndoGrouping:"] || _objj_forward)(_CPUndoGrouping, "_poolUndoGrouping:", undoGrouping);
     self._state = CPUndoManagerNormal;
-    ((___r1 = ((___r2 = self._redoStack), ___r2 == null ? null : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? null : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", actionName));
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidUndoChangeNotification, self));
+    ((___r1 = ((___r2 = self._redoStack), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", actionName));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidUndoChangeNotification, self));
     var ___r1, ___r2;
 }
 
 ,["void"]), new objj_method(sel_getUid("redo"), function $CPUndoManager__redo(self, _cmd)
 {
-    if (((___r1 = self._redoStack), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) <= 0)
+    if (((___r1 = self._redoStack), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) <= 0)
         return;
     var defaultCenter = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter");
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillRedoChangeNotification, self));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillRedoChangeNotification, self));
     var oldUndoGrouping = self._currentGrouping,
         undoGrouping = self._redoStack.pop(),
-        actionName = (undoGrouping == null ? null : (undoGrouping.isa.method_msgSend["actionName"] || _objj_forward)(undoGrouping, "actionName"));
+        actionName = (undoGrouping == null ? undoGrouping : (undoGrouping.isa.method_msgSend["actionName"] || _objj_forward)(undoGrouping, "actionName"));
     self._currentGrouping = nil;
     self._state = CPUndoManagerRedoing;
     (self.isa.method_msgSend["_beginUndoGrouping"] || _objj_forward)(self, "_beginUndoGrouping");
-    (undoGrouping == null ? null : (undoGrouping.isa.method_msgSend["invoke"] || _objj_forward)(undoGrouping, "invoke"));
+    (undoGrouping == null ? undoGrouping : (undoGrouping.isa.method_msgSend["invoke"] || _objj_forward)(undoGrouping, "invoke"));
     (self.isa.method_msgSend["endUndoGrouping"] || _objj_forward)(self, "endUndoGrouping");
     (_CPUndoGrouping.isa.method_msgSend["_poolUndoGrouping:"] || _objj_forward)(_CPUndoGrouping, "_poolUndoGrouping:", undoGrouping);
     self._currentGrouping = oldUndoGrouping;
     self._state = CPUndoManagerNormal;
-    ((___r1 = ((___r2 = self._undoStack), ___r2 == null ? null : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? null : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", actionName));
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidRedoChangeNotification, self));
+    ((___r1 = ((___r2 = self._undoStack), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", actionName));
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidRedoChangeNotification, self));
     var ___r1, ___r2;
 }
 
@@ -5992,7 +6020,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     if (!self._currentGrouping && (self.isa.method_msgSend["groupsByEvent"] || _objj_forward)(self, "groupsByEvent"))
         (self.isa.method_msgSend["_beginUndoGroupingForEvent"] || _objj_forward)(self, "_beginUndoGroupingForEvent");
-    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
+    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
     (self.isa.method_msgSend["_beginUndoGrouping"] || _objj_forward)(self, "_beginUndoGrouping");
     var ___r1;
 }
@@ -6013,20 +6041,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
     if (!self._currentGrouping)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInternalInconsistencyException, "endUndoGrouping. No undo group is currently open.");
     var defaultCenter = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter");
-    (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
-    var parent = ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["parent"] || _objj_forward)(___r1, "parent"));
-    if (!parent && ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["invocations"] || _objj_forward)(___r1, "invocations")).length > 0)
+    (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerCheckpointNotification, self));
+    var parent = ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["parent"] || _objj_forward)(___r1, "parent"));
+    if (!parent && ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["invocations"] || _objj_forward)(___r1, "invocations")).length > 0)
     {
-        (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillCloseUndoGroupNotification, self));
+        (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerWillCloseUndoGroupNotification, self));
         var stack = self._state === CPUndoManagerUndoing ? self._redoStack : self._undoStack;
         stack.push(self._currentGrouping);
         if (self._levelsOfUndo > 0 && stack.length > self._levelsOfUndo)
             stack.splice(0, 1);
-        (defaultCenter == null ? null : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidCloseUndoGroupNotification, self));
+        (defaultCenter == null ? defaultCenter : (defaultCenter.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(defaultCenter, "postNotificationName:object:", CPUndoManagerDidCloseUndoGroupNotification, self));
     }
     else
     {
-        (parent == null ? null : (parent.isa.method_msgSend["addInvocationsFromArray:"] || _objj_forward)(parent, "addInvocationsFromArray:", ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["invocations"] || _objj_forward)(___r1, "invocations"))));
+        (parent == null ? parent : (parent.isa.method_msgSend["addInvocationsFromArray:"] || _objj_forward)(parent, "addInvocationsFromArray:", ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["invocations"] || _objj_forward)(___r1, "invocations"))));
         (_CPUndoGrouping.isa.method_msgSend["_poolUndoGrouping:"] || _objj_forward)(_CPUndoGrouping, "_poolUndoGrouping:", self._currentGrouping);
     }
     self._currentGrouping = parent;
@@ -6059,7 +6087,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     var grouping = self._currentGrouping,
         level = self._currentGrouping ? 1 : 0;
-    while (grouping = (grouping == null ? null : (grouping.isa.method_msgSend["parent"] || _objj_forward)(grouping, "parent")))
+    while (grouping = (grouping == null ? grouping : (grouping.isa.method_msgSend["parent"] || _objj_forward)(grouping, "parent")))
         ++level;
     return level;
 }
@@ -6097,21 +6125,21 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 
 ,["void"]), new objj_method(sel_getUid("removeAllActionsWithTarget:"), function $CPUndoManager__removeAllActionsWithTarget_(self, _cmd, aTarget)
 {
-    ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(___r1, "removeInvocationsWithTarget:", aTarget));
+    ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(___r1, "removeInvocationsWithTarget:", aTarget));
     var index = self._redoStack.length;
     while (index--)
     {
         var grouping = self._redoStack[index];
-        (grouping == null ? null : (grouping.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(grouping, "removeInvocationsWithTarget:", aTarget));
-        if (!(grouping == null ? null : (grouping.isa.method_msgSend["invocations"] || _objj_forward)(grouping, "invocations")).length)
+        (grouping == null ? grouping : (grouping.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(grouping, "removeInvocationsWithTarget:", aTarget));
+        if (!(grouping == null ? grouping : (grouping.isa.method_msgSend["invocations"] || _objj_forward)(grouping, "invocations")).length)
             self._redoStack.splice(index, 1);
     }
     index = self._undoStack.length;
     while (index--)
     {
         var grouping = self._undoStack[index];
-        (grouping == null ? null : (grouping.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(grouping, "removeInvocationsWithTarget:", aTarget));
-        if (!(grouping == null ? null : (grouping.isa.method_msgSend["invocations"] || _objj_forward)(grouping, "invocations")).length)
+        (grouping == null ? grouping : (grouping.isa.method_msgSend["removeInvocationsWithTarget:"] || _objj_forward)(grouping, "removeInvocationsWithTarget:", aTarget));
+        if (!(grouping == null ? grouping : (grouping.isa.method_msgSend["invocations"] || _objj_forward)(grouping, "invocations")).length)
             self._undoStack.splice(index, 1);
     }
     var ___r1;
@@ -6119,8 +6147,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 
 ,["void","id"]), new objj_method(sel_getUid("setActionName:"), function $CPUndoManager__setActionName_(self, _cmd, anActionName)
 {
-    if (anActionName !== nil && self._currentGrouping)
-        ((___r1 = self._currentGrouping), ___r1 == null ? null : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", anActionName));
+    if (anActionName != nil && self._currentGrouping)
+        ((___r1 = self._currentGrouping), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setActionName:"] || _objj_forward)(___r1, "setActionName:", anActionName));
     var ___r1;
 }
 
@@ -6128,7 +6156,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     if (!(self.isa.method_msgSend["canRedo"] || _objj_forward)(self, "canRedo"))
         return nil;
-    return ((___r1 = ((___r2 = self._redoStack), ___r2 == null ? null : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? null : (___r1.isa.method_msgSend["actionName"] || _objj_forward)(___r1, "actionName"));
+    return ((___r1 = ((___r2 = self._redoStack), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["actionName"] || _objj_forward)(___r1, "actionName"));
     var ___r1, ___r2;
 }
 
@@ -6148,7 +6176,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 {
     if (!(self.isa.method_msgSend["canUndo"] || _objj_forward)(self, "canUndo"))
         return nil;
-    return ((___r1 = ((___r2 = self._undoStack), ___r2 == null ? null : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? null : (___r1.isa.method_msgSend["actionName"] || _objj_forward)(___r1, "actionName"));
+    return ((___r1 = ((___r2 = self._undoStack), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["lastObject"] || _objj_forward)(___r2, "lastObject"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["actionName"] || _objj_forward)(___r1, "actionName"));
     var ___r1, ___r2;
 }
 
@@ -6171,7 +6199,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
 
 ,["CPArray"]), new objj_method(sel_getUid("setRunLoopModes:"), function $CPUndoManager__setRunLoopModes_(self, _cmd, modes)
 {
-    self._runLoopModes = (modes == null ? null : (modes.isa.method_msgSend["copy"] || _objj_forward)(modes, "copy"));
+    self._runLoopModes = (modes == null ? modes : (modes.isa.method_msgSend["copy"] || _objj_forward)(modes, "copy"));
     if (self._registeredWithRunLoop)
     {
         (self.isa.method_msgSend["_unregisterWithRunLoop"] || _objj_forward)(self, "_unregisterWithRunLoop");
@@ -6190,7 +6218,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
     if (self._registeredWithRunLoop)
         return;
     self._registeredWithRunLoop = YES;
-    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? null : (___r1.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "performSelector:target:argument:order:modes:", sel_getUid("_runLoopEndUndoGrouping"), self, nil, CPUndoCloseGroupingRunLoopOrdering, self._runLoopModes));
+    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "performSelector:target:argument:order:modes:", sel_getUid("_runLoopEndUndoGrouping"), self, nil, CPUndoCloseGroupingRunLoopOrdering, self._runLoopModes));
     var ___r1;
 }
 
@@ -6199,27 +6227,27 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUnd
     if (!self._registeredWithRunLoop)
         return;
     self._registeredWithRunLoop = NO;
-    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? null : (___r1.isa.method_msgSend["cancelPerformSelector:target:argument:"] || _objj_forward)(___r1, "cancelPerformSelector:target:argument:", sel_getUid("_runLoopEndUndoGrouping"), self, nil));
+    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["cancelPerformSelector:target:argument:"] || _objj_forward)(___r1, "cancelPerformSelector:target:argument:", sel_getUid("_runLoopEndUndoGrouping"), self, nil));
     var ___r1;
 }
 
 ,["void"]), new objj_method(sel_getUid("observeChangesForKeyPath:ofObject:"), function $CPUndoManager__observeChangesForKeyPath_ofObject_(self, _cmd, aKeyPath, anObject)
 {
-    (anObject == null ? null : (anObject.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(anObject, "addObserver:forKeyPath:options:context:", self, aKeyPath, CPKeyValueObservingOptionOld | CPKeyValueObservingOptionNew, NULL));
+    (anObject == null ? anObject : (anObject.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(anObject, "addObserver:forKeyPath:options:context:", self, aKeyPath, CPKeyValueObservingOptionOld | CPKeyValueObservingOptionNew, NULL));
 }
 
 ,["void","CPString","id"]), new objj_method(sel_getUid("stopObservingChangesForKeyPath:ofObject:"), function $CPUndoManager__stopObservingChangesForKeyPath_ofObject_(self, _cmd, aKeyPath, anObject)
 {
-    (anObject == null ? null : (anObject.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(anObject, "removeObserver:forKeyPath:", self, aKeyPath));
+    (anObject == null ? anObject : (anObject.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(anObject, "removeObserver:forKeyPath:", self, aKeyPath));
 }
 
 ,["void","CPString","id"]), new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"), function $CPUndoManager__observeValueForKeyPath_ofObject_change_context_(self, _cmd, aKeyPath, anObject, aChange, aContext)
 {
-    var before = (aChange == null ? null : (aChange.isa.method_msgSend["valueForKey:"] || _objj_forward)(aChange, "valueForKey:", CPKeyValueChangeOldKey)),
-        after = (aChange == null ? null : (aChange.isa.method_msgSend["valueForKey:"] || _objj_forward)(aChange, "valueForKey:", CPKeyValueChangeNewKey));
-    if (before === after || before !== nil && before.isa && (after === nil || after.isa) && (before == null ? null : (before.isa.method_msgSend["isEqual:"] || _objj_forward)(before, "isEqual:", after)))
+    var before = (aChange == null ? aChange : (aChange.isa.method_msgSend["valueForKey:"] || _objj_forward)(aChange, "valueForKey:", CPKeyValueChangeOldKey)),
+        after = (aChange == null ? aChange : (aChange.isa.method_msgSend["valueForKey:"] || _objj_forward)(aChange, "valueForKey:", CPKeyValueChangeNewKey));
+    if (before === after || before != nil && before.isa && (after == nil || after.isa) && (before == null ? before : (before.isa.method_msgSend["isEqual:"] || _objj_forward)(before, "isEqual:", after)))
         return;
-    ((___r1 = (self.isa.method_msgSend["prepareWithInvocationTarget:"] || _objj_forward)(self, "prepareWithInvocationTarget:", anObject)), ___r1 == null ? null : (___r1.isa.method_msgSend["applyChange:toKeyPath:"] || _objj_forward)(___r1, "applyChange:toKeyPath:", (aChange == null ? null : (aChange.isa.method_msgSend["inverseChangeDictionary"] || _objj_forward)(aChange, "inverseChangeDictionary")), aKeyPath));
+    ((___r1 = (self.isa.method_msgSend["prepareWithInvocationTarget:"] || _objj_forward)(self, "prepareWithInvocationTarget:", anObject)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["applyChange:toKeyPath:"] || _objj_forward)(___r1, "applyChange:toKeyPath:", (aChange == null ? aChange : (aChange.isa.method_msgSend["inverseChangeDictionary"] || _objj_forward)(aChange, "inverseChangeDictionary")), aKeyPath));
     var ___r1;
 }
 
@@ -6240,25 +6268,25 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPUndoManager").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._redoStack = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerRedoStackKey));
-        self._undoStack = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerUndoStackKey));
-        self._levelsOfUndo = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerLevelsOfUndoKey));
-        self._currentGrouping = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerCurrentGroupingKey));
+        self._redoStack = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerRedoStackKey));
+        self._undoStack = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerUndoStackKey));
+        self._levelsOfUndo = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerLevelsOfUndoKey));
+        self._currentGrouping = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerCurrentGroupingKey));
         self._state = CPUndoManagerNormal;
-        (self == null ? null : (self.isa.method_msgSend["setRunLoopModes:"] || _objj_forward)(self, "setRunLoopModes:", (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerRunLoopModesKey))));
-        (self == null ? null : (self.isa.method_msgSend["setGroupsByEvent:"] || _objj_forward)(self, "setGroupsByEvent:", (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPUndoManagerGroupsByEventKey))));
+        (self == null ? self : (self.isa.method_msgSend["setRunLoopModes:"] || _objj_forward)(self, "setRunLoopModes:", (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPUndoManagerRunLoopModesKey))));
+        (self == null ? self : (self.isa.method_msgSend["setGroupsByEvent:"] || _objj_forward)(self, "setGroupsByEvent:", (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPUndoManagerGroupsByEventKey))));
     }
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPUndoManager__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._redoStack, CPUndoManagerRedoStackKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._undoStack, CPUndoManagerUndoStackKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._levelsOfUndo, CPUndoManagerLevelsOfUndoKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currentGrouping, CPUndoManagerCurrentGroupingKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._runLoopModes, CPUndoManagerRunLoopModesKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._groupsByEvent, CPUndoManagerGroupsByEventKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._redoStack, CPUndoManagerRedoStackKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._undoStack, CPUndoManagerUndoStackKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._levelsOfUndo, CPUndoManagerLevelsOfUndoKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currentGrouping, CPUndoManagerCurrentGroupingKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._runLoopModes, CPUndoManagerRunLoopModesKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._groupsByEvent, CPUndoManagerGroupsByEventKey));
 }
 
 ,["void","CPCoder"])]);
@@ -6268,19 +6296,19 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_undoManager", "CPUndoManager")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelector:"), function $_CPUndoManagerProxy__methodSignatureForSelector_(self, _cmd, aSelector)
 {
-    return ((___r1 = self._undoManager), ___r1 == null ? null : (___r1.isa.method_msgSend["_methodSignatureOfPreparedTargetForSelector:"] || _objj_forward)(___r1, "_methodSignatureOfPreparedTargetForSelector:", aSelector));
+    return ((___r1 = self._undoManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_methodSignatureOfPreparedTargetForSelector:"] || _objj_forward)(___r1, "_methodSignatureOfPreparedTargetForSelector:", aSelector));
     var ___r1;
 }
 
 ,["CPMethodSignature","SEL"]), new objj_method(sel_getUid("forwardInvocation:"), function $_CPUndoManagerProxy__forwardInvocation_(self, _cmd, anInvocation)
 {
-    ((___r1 = self._undoManager), ___r1 == null ? null : (___r1.isa.method_msgSend["_forwardInvocationToPreparedTarget:"] || _objj_forward)(___r1, "_forwardInvocationToPreparedTarget:", anInvocation));
+    ((___r1 = self._undoManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_forwardInvocationToPreparedTarget:"] || _objj_forward)(___r1, "_forwardInvocationToPreparedTarget:", anInvocation));
     var ___r1;
 }
 
 ,["void","CPInvocation"])]);
 }
-p;17;CPURLConnection.jt;20782;@STATIC;1.0;i;8;CPData.ji;9;CPError.ji;10;CPObject.ji;11;CPRunLoop.ji;14;CPURLRequest.ji;15;CPURLResponse.ji;18;CPOperationQueue.ji;13;CPOperation.jt;20626;objj_executeFile("CPData.j", YES);objj_executeFile("CPError.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRunLoop.j", YES);objj_executeFile("CPURLRequest.j", YES);objj_executeFile("CPURLResponse.j", YES);objj_executeFile("CPOperationQueue.j", YES);objj_executeFile("CPOperation.j", YES);{var the_protocol = objj_allocateProtocol("CPURLConnectionDelegate");
+p;17;CPURLConnection.jt;20918;@STATIC;1.0;i;8;CPData.ji;9;CPError.ji;10;CPObject.ji;11;CPRunLoop.ji;14;CPURLRequest.ji;15;CPURLResponse.ji;18;CPOperationQueue.ji;13;CPOperation.jt;20762;objj_executeFile("CPData.j", YES);objj_executeFile("CPError.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRunLoop.j", YES);objj_executeFile("CPURLRequest.j", YES);objj_executeFile("CPURLResponse.j", YES);objj_executeFile("CPOperationQueue.j", YES);objj_executeFile("CPOperation.j", YES);{var the_protocol = objj_allocateProtocol("CPURLConnectionDelegate");
 var aProtocol = objj_getProtocol("CPObject");
 if (!aProtocol) throw new SyntaxError("*** Could not find definition for protocol \"CPURLConnectionDelegate\"");
 protocol_addProtocol(the_protocol, aProtocol);
@@ -6320,24 +6348,24 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
         self._delegate = aDelegate;
         self._operationQueue = nil;
         self._connectionOperation = nil;
-        (self == null ? null : (self.isa.method_msgSend["_initWithRequest:"] || _objj_forward)(self, "_initWithRequest:", aRequest));
+        (self == null ? self : (self.isa.method_msgSend["_initWithRequest:"] || _objj_forward)(self, "_initWithRequest:", aRequest));
     }
     if (shouldStartImmediately)
-        (self == null ? null : (self.isa.method_msgSend["start"] || _objj_forward)(self, "start"));
+        (self == null ? self : (self.isa.method_msgSend["start"] || _objj_forward)(self, "start"));
     return self;
 }
 
 ,["id","CPURLRequest","id","BOOL"]), new objj_method(sel_getUid("_initWithRequest:"), function $CPURLConnection___initWithRequest_(self, _cmd, aRequest)
 {
     self._request = aRequest;
-    self._originalRequest = (aRequest == null ? null : (aRequest.isa.method_msgSend["copy"] || _objj_forward)(aRequest, "copy"));
+    self._originalRequest = (aRequest == null ? aRequest : (aRequest.isa.method_msgSend["copy"] || _objj_forward)(aRequest, "copy"));
     self._isCanceled = NO;
-    var URL = ((___r1 = self._request), ___r1 == null ? null : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL")),
-        scheme = (URL == null ? null : (URL.isa.method_msgSend["scheme"] || _objj_forward)(URL, "scheme"));
+    var URL = ((___r1 = self._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL")),
+        scheme = (URL == null ? URL : (URL.isa.method_msgSend["scheme"] || _objj_forward)(URL, "scheme"));
     self._isLocalFileConnection = scheme === "file" || (scheme === "http" || scheme === "https") && window.location && (window.location.protocol === "file:" || window.location.protocol === "app:");
     self._HTTPRequest = new CFHTTPRequest();
-    self._HTTPRequest.setTimeout((aRequest == null ? null : (aRequest.isa.method_msgSend["timeoutInterval"] || _objj_forward)(aRequest, "timeoutInterval")) * 1000);
-    self._HTTPRequest.setWithCredentials((aRequest == null ? null : (aRequest.isa.method_msgSend["withCredentials"] || _objj_forward)(aRequest, "withCredentials")));
+    self._HTTPRequest.setTimeout((aRequest == null ? aRequest : (aRequest.isa.method_msgSend["timeoutInterval"] || _objj_forward)(aRequest, "timeoutInterval")) * 1000);
+    self._HTTPRequest.setWithCredentials((aRequest == null ? aRequest : (aRequest.isa.method_msgSend["withCredentials"] || _objj_forward)(aRequest, "withCredentials")));
     var ___r1;
 }
 
@@ -6348,9 +6376,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
     {
         self._delegate = nil;
         self._operationQueue = aQueue;
-        self._connectionOperation = ((___r1 = (_AsynchronousConnectionOperation == null ? null : (_AsynchronousConnectionOperation.isa.method_msgSend["alloc"] || _objj_forward)(_AsynchronousConnectionOperation, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithFunction:"] || _objj_forward)(___r1, "initWithFunction:", aHandler));
-        (self == null ? null : (self.isa.method_msgSend["_initWithRequest:"] || _objj_forward)(self, "_initWithRequest:", aRequest));
-        (self == null ? null : (self.isa.method_msgSend["start"] || _objj_forward)(self, "start"));
+        self._connectionOperation = ((___r1 = (_AsynchronousConnectionOperation == null ? _AsynchronousConnectionOperation : (_AsynchronousConnectionOperation.isa.method_msgSend["alloc"] || _objj_forward)(_AsynchronousConnectionOperation, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFunction:"] || _objj_forward)(___r1, "initWithFunction:", aHandler));
+        (self == null ? self : (self.isa.method_msgSend["_initWithRequest:"] || _objj_forward)(self, "_initWithRequest:", aRequest));
+        (self == null ? self : (self.isa.method_msgSend["start"] || _objj_forward)(self, "start"));
     }
     return self;
     var ___r1;
@@ -6370,7 +6398,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
 {
     self._isCanceled = NO;
     try {
-        self._HTTPRequest.open(((___r1 = self._request), ___r1 == null ? null : (___r1.isa.method_msgSend["HTTPMethod"] || _objj_forward)(___r1, "HTTPMethod")), ((___r1 = ((___r2 = self._request), ___r2 == null ? null : (___r2.isa.method_msgSend["URL"] || _objj_forward)(___r2, "URL"))), ___r1 == null ? null : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString")), YES);
+        self._HTTPRequest.open(((___r1 = self._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["HTTPMethod"] || _objj_forward)(___r1, "HTTPMethod")), ((___r1 = ((___r2 = self._request), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["URL"] || _objj_forward)(___r2, "URL"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString")), YES);
         self._HTTPRequest.onreadystatechange =         function()
         {
             (self.isa.method_msgSend["_readyStateDidChange"] || _objj_forward)(self, "_readyStateDidChange");
@@ -6379,12 +6407,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
         {
             (self.isa.method_msgSend["_didTimeout"] || _objj_forward)(self, "_didTimeout");
         };
-        var fields = ((___r1 = self._request), ___r1 == null ? null : (___r1.isa.method_msgSend["allHTTPHeaderFields"] || _objj_forward)(___r1, "allHTTPHeaderFields")),
+        var fields = ((___r1 = self._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allHTTPHeaderFields"] || _objj_forward)(___r1, "allHTTPHeaderFields")),
             key = nil,
-            keys = (fields == null ? null : (fields.isa.method_msgSend["keyEnumerator"] || _objj_forward)(fields, "keyEnumerator"));
-        while ((key = (keys == null ? null : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) !== nil)
-            self._HTTPRequest.setRequestHeader(key, (fields == null ? null : (fields.isa.method_msgSend["objectForKey:"] || _objj_forward)(fields, "objectForKey:", key)));
-        self._HTTPRequest.send(((___r1 = self._request), ___r1 == null ? null : (___r1.isa.method_msgSend["HTTPBody"] || _objj_forward)(___r1, "HTTPBody")));
+            keys = (fields == null ? fields : (fields.isa.method_msgSend["keyEnumerator"] || _objj_forward)(fields, "keyEnumerator"));
+        while ((key = (keys == null ? keys : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) != nil)
+            self._HTTPRequest.setRequestHeader(key, (fields == null ? fields : (fields.isa.method_msgSend["objectForKey:"] || _objj_forward)(fields, "objectForKey:", key)));
+        self._HTTPRequest.send(((___r1 = self._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["HTTPBody"] || _objj_forward)(___r1, "HTTPBody")));
     }
     catch(anException) {
         (self.isa.method_msgSend["_sendDelegateDidFailWithError:"] || _objj_forward)(self, "_sendDelegateDidFailWithError:", anException);
@@ -6394,9 +6422,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
 
 ,["void"]), new objj_method(sel_getUid("_sendDelegateDidFailWithError:"), function $CPURLConnection___sendDelegateDidFailWithError_(self, _cmd, anException)
 {
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didFailWithError:"))))
-        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["connection:didFailWithError:"] || _objj_forward)(___r1, "connection:didFailWithError:", self, anException));
-    else if (self._connectionOperation !== nil)
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didFailWithError:"))))
+        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["connection:didFailWithError:"] || _objj_forward)(___r1, "connection:didFailWithError:", self, anException));
+    else if (self._connectionOperation != nil)
         (self.isa.method_msgSend["_connectionOperationDidReceiveResponse:data:error:"] || _objj_forward)(self, "_connectionOperationDidReceiveResponse:data:error:", nil, nil, anException);
     var ___r1;
 }
@@ -6407,7 +6435,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
     try {
         self._HTTPRequest.abort();
         if (self._connectionOperation)
-            ((___r1 = self._connectionOperation), ___r1 == null ? null : (___r1.isa.method_msgSend["cancel"] || _objj_forward)(___r1, "cancel"));
+            ((___r1 = self._connectionOperation), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["cancel"] || _objj_forward)(___r1, "cancel"));
     }
     catch(anException) {
     }
@@ -6426,7 +6454,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
 
 ,["BOOL"]), new objj_method(sel_getUid("_didTimeout"), function $CPURLConnection___didTimeout(self, _cmd)
 {
-    var exception = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", "Timeout exception", "The request timed out.", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")));
+    var exception = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", "Timeout exception", "The request timed out.", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")));
     (self.isa.method_msgSend["_sendDelegateDidFailWithError:"] || _objj_forward)(self, "_sendDelegateDidFailWithError:", exception);
     var ___r1;
 }
@@ -6436,34 +6464,34 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
     if (self._HTTPRequest.readyState() === CFHTTPRequest.CompleteState && !self._HTTPRequest.isTimeoutRequest())
     {
         var statusCode = self._HTTPRequest.status(),
-            URL = ((___r1 = self._request), ___r1 == null ? null : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL"));
-        if (statusCode === 401 && (CPURLConnectionDelegate == null ? null : (CPURLConnectionDelegate.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(CPURLConnectionDelegate, "respondsToSelector:", sel_getUid("connectionDidReceiveAuthenticationChallenge:"))))
-            (CPURLConnectionDelegate == null ? null : (CPURLConnectionDelegate.isa.method_msgSend["connectionDidReceiveAuthenticationChallenge:"] || _objj_forward)(CPURLConnectionDelegate, "connectionDidReceiveAuthenticationChallenge:", self));
+            URL = ((___r1 = self._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL"));
+        if (statusCode === 401 && (CPURLConnectionDelegate == null ? CPURLConnectionDelegate : (CPURLConnectionDelegate.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(CPURLConnectionDelegate, "respondsToSelector:", sel_getUid("connectionDidReceiveAuthenticationChallenge:"))))
+            (CPURLConnectionDelegate == null ? CPURLConnectionDelegate : (CPURLConnectionDelegate.isa.method_msgSend["connectionDidReceiveAuthenticationChallenge:"] || _objj_forward)(CPURLConnectionDelegate, "connectionDidReceiveAuthenticationChallenge:", self));
         else
         {
             var response;
             if (self._isLocalFileConnection)
-                response = ((___r1 = (CPURLResponse.isa.method_msgSend["alloc"] || _objj_forward)(CPURLResponse, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithURL:"] || _objj_forward)(___r1, "initWithURL:", URL));
+                response = ((___r1 = (CPURLResponse.isa.method_msgSend["alloc"] || _objj_forward)(CPURLResponse, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithURL:"] || _objj_forward)(___r1, "initWithURL:", URL));
             else
             {
-                response = ((___r1 = (CPHTTPURLResponse.isa.method_msgSend["alloc"] || _objj_forward)(CPHTTPURLResponse, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithURL:"] || _objj_forward)(___r1, "initWithURL:", URL));
-                (response == null ? null : (response.isa.method_msgSend["_setStatusCode:"] || _objj_forward)(response, "_setStatusCode:", statusCode));
-                (response == null ? null : (response.isa.method_msgSend["_setAllResponseHeaders:"] || _objj_forward)(response, "_setAllResponseHeaders:", self._HTTPRequest.getAllResponseHeaders()));
+                response = ((___r1 = (CPHTTPURLResponse.isa.method_msgSend["alloc"] || _objj_forward)(CPHTTPURLResponse, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithURL:"] || _objj_forward)(___r1, "initWithURL:", URL));
+                (response == null ? response : (response.isa.method_msgSend["_setStatusCode:"] || _objj_forward)(response, "_setStatusCode:", statusCode));
+                (response == null ? response : (response.isa.method_msgSend["_setAllResponseHeaders:"] || _objj_forward)(response, "_setAllResponseHeaders:", self._HTTPRequest.getAllResponseHeaders()));
             }
-            if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didReceiveResponse:"))))
-                ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["connection:didReceiveResponse:"] || _objj_forward)(___r1, "connection:didReceiveResponse:", self, response));
+            if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didReceiveResponse:"))))
+                ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["connection:didReceiveResponse:"] || _objj_forward)(___r1, "connection:didReceiveResponse:", self, response));
             if (!self._isCanceled)
             {
-                if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didReceiveData:"))))
-                    ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["connection:didReceiveData:"] || _objj_forward)(___r1, "connection:didReceiveData:", self, self._HTTPRequest.responseText()));
-                else if (self._connectionOperation !== nil)
+                if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connection:didReceiveData:"))))
+                    ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["connection:didReceiveData:"] || _objj_forward)(___r1, "connection:didReceiveData:", self, self._HTTPRequest.responseText()));
+                else if (self._connectionOperation != nil)
                     (self.isa.method_msgSend["_connectionOperationDidReceiveResponse:data:error:"] || _objj_forward)(self, "_connectionOperationDidReceiveResponse:data:error:", response, self._HTTPRequest.responseText(), nil);
-                if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connectionDidFinishLoading:"))))
-                    ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["connectionDidFinishLoading:"] || _objj_forward)(___r1, "connectionDidFinishLoading:", self));
+                if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("connectionDidFinishLoading:"))))
+                    ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["connectionDidFinishLoading:"] || _objj_forward)(___r1, "connectionDidFinishLoading:", self));
             }
         }
     }
-    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? null : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+    ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
     var ___r1;
 }
 
@@ -6474,12 +6502,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("originalRequest"), func
 
 ,["HTTPRequest"]), new objj_method(sel_getUid("_connectionOperationDidReceiveResponse:data:error:"), function $CPURLConnection___connectionOperationDidReceiveResponse_data_error_(self, _cmd, aResponse, aData, anError)
 {
-    ((___r1 = self._connectionOperation), ___r1 == null ? null : (___r1.isa.method_msgSend["_setResponse:data:error:"] || _objj_forward)(___r1, "_setResponse:data:error:", aResponse, aData, anError));
+    ((___r1 = self._connectionOperation), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_setResponse:data:error:"] || _objj_forward)(___r1, "_setResponse:data:error:", aResponse, aData, anError));
     if (self._operationQueue)
-        ((___r1 = self._operationQueue), ___r1 == null ? null : (___r1.isa.method_msgSend["addOperation:"] || _objj_forward)(___r1, "addOperation:", self._connectionOperation));
+        ((___r1 = self._operationQueue), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addOperation:"] || _objj_forward)(___r1, "addOperation:", self._connectionOperation));
     else
     {
-        ((___r1 = self._connectionOperation), ___r1 == null ? null : (___r1.isa.method_msgSend["main"] || _objj_forward)(___r1, "main"));
+        ((___r1 = self._connectionOperation), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["main"] || _objj_forward)(___r1, "main"));
     }
     var ___r1;
 }
@@ -6494,14 +6522,14 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("setClassDelegate:"), f
 {
     try {
         var aCFHTTPRequest = new CFHTTPRequest();
-        aCFHTTPRequest.setWithCredentials((aRequest == null ? null : (aRequest.isa.method_msgSend["withCredentials"] || _objj_forward)(aRequest, "withCredentials")));
-        aCFHTTPRequest.open((aRequest == null ? null : (aRequest.isa.method_msgSend["HTTPMethod"] || _objj_forward)(aRequest, "HTTPMethod")), ((___r1 = (aRequest == null ? null : (aRequest.isa.method_msgSend["URL"] || _objj_forward)(aRequest, "URL"))), ___r1 == null ? null : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString")), NO);
-        var fields = (aRequest == null ? null : (aRequest.isa.method_msgSend["allHTTPHeaderFields"] || _objj_forward)(aRequest, "allHTTPHeaderFields")),
+        aCFHTTPRequest.setWithCredentials((aRequest == null ? aRequest : (aRequest.isa.method_msgSend["withCredentials"] || _objj_forward)(aRequest, "withCredentials")));
+        aCFHTTPRequest.open((aRequest == null ? aRequest : (aRequest.isa.method_msgSend["HTTPMethod"] || _objj_forward)(aRequest, "HTTPMethod")), ((___r1 = (aRequest == null ? aRequest : (aRequest.isa.method_msgSend["URL"] || _objj_forward)(aRequest, "URL"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString")), NO);
+        var fields = (aRequest == null ? aRequest : (aRequest.isa.method_msgSend["allHTTPHeaderFields"] || _objj_forward)(aRequest, "allHTTPHeaderFields")),
             key = nil,
-            keys = (fields == null ? null : (fields.isa.method_msgSend["keyEnumerator"] || _objj_forward)(fields, "keyEnumerator"));
-        while ((key = (keys == null ? null : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) !== nil)
-            aCFHTTPRequest.setRequestHeader(key, (fields == null ? null : (fields.isa.method_msgSend["objectForKey:"] || _objj_forward)(fields, "objectForKey:", key)));
-        aCFHTTPRequest.send((aRequest == null ? null : (aRequest.isa.method_msgSend["HTTPBody"] || _objj_forward)(aRequest, "HTTPBody")));
+            keys = (fields == null ? fields : (fields.isa.method_msgSend["keyEnumerator"] || _objj_forward)(fields, "keyEnumerator"));
+        while ((key = (keys == null ? keys : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) != nil)
+            aCFHTTPRequest.setRequestHeader(key, (fields == null ? fields : (fields.isa.method_msgSend["objectForKey:"] || _objj_forward)(fields, "objectForKey:", key)));
+        aCFHTTPRequest.send((aRequest == null ? aRequest : (aRequest.isa.method_msgSend["HTTPBody"] || _objj_forward)(aRequest, "HTTPBody")));
         if (!aCFHTTPRequest.success())
             return nil;
         return (CPData.isa.method_msgSend["dataWithRawString:"] || _objj_forward)(CPData, "dataWithRawString:", aCFHTTPRequest.responseText());
@@ -6514,13 +6542,13 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("setClassDelegate:"), f
 
 ,["CPData","CPURLRequest","CPURLResponse"]), new objj_method(sel_getUid("sendAsynchronousRequest:queue:completionHandler:"), function $CPURLConnection__sendAsynchronousRequest_queue_completionHandler_(self, _cmd, aRequest, aQueue, aHandler)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["_initWithRequest:queue:completionHandler:"] || _objj_forward)(___r1, "_initWithRequest:queue:completionHandler:", aRequest, aQueue, aHandler));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_initWithRequest:queue:completionHandler:"] || _objj_forward)(___r1, "_initWithRequest:queue:completionHandler:", aRequest, aQueue, aHandler));
     var ___r1;
 }
 
 ,["CPURLConnection","CPURLRequest","CPOperationQueue","Function"]), new objj_method(sel_getUid("connectionWithRequest:delegate:"), function $CPURLConnection__connectionWithRequest_delegate_(self, _cmd, aRequest, aDelegate)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithRequest:delegate:"] || _objj_forward)(___r1, "initWithRequest:delegate:", aRequest, aDelegate));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRequest:delegate:"] || _objj_forward)(___r1, "initWithRequest:delegate:", aRequest, aDelegate));
     var ___r1;
 }
 
@@ -6806,7 +6834,7 @@ var meta_class = the_class.isa;class_addMethods(meta_class, [new objj_method(sel
 
 ,["id","CPData","CPPropertyListFormat","id"])]);
 }
-p;21;CPKeyValueObserving.jt;70685;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;12;CPIndexSet.ji;8;CPNull.ji;10;CPObject.ji;7;CPSet.ji;13;CPArray+KVO.ji;11;CPSet+KVO.jt;70526;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPIndexSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPSet.j", YES);{
+p;21;CPKeyValueObserving.jt;71515;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;12;CPIndexSet.ji;8;CPNull.ji;10;CPObject.ji;7;CPSet.ji;13;CPArray+KVO.ji;11;CPSet+KVO.jt;71356;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPIndexSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPSet.j", YES);{
 var the_class = objj_getClass("CPObject")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPObject\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"), function $CPObject__willChangeValueForKey_(self, _cmd, aKey)
@@ -6907,7 +6935,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     if (!anObserver || !aPath)
         return;
-    ((___r1 = (_CPKVOProxy == null ? null : (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self))), ___r1 == null ? null : (___r1.isa.method_msgSend["_addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "_addObserver:forKeyPath:options:context:", anObserver, aPath, options, aContext));
+    ((___r1 = (_CPKVOProxy == null ? _CPKVOProxy : (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "_addObserver:forKeyPath:options:context:", anObserver, aPath, options, aContext));
     var ___r1;
 }
 
@@ -6915,48 +6943,53 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     if (!anObserver || !aPath)
         return;
-    ((___r1 = self[KVOProxyKey]), ___r1 == null ? null : (___r1.isa.method_msgSend["_removeObserver:forKeyPath:"] || _objj_forward)(___r1, "_removeObserver:forKeyPath:", anObserver, aPath));
+    ((___r1 = self[KVOProxyKey]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_removeObserver:forKeyPath:"] || _objj_forward)(___r1, "_removeObserver:forKeyPath:", anObserver, aPath));
     var ___r1;
 }
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("applyChange:toKeyPath:"), function $CPObject__applyChange_toKeyPath_(self, _cmd, aChange, aKeyPath)
 {
-    var changeKind = (aChange == null ? null : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeKindKey)),
-        oldValue = (aChange == null ? null : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeOldKey)),
-        newValue = (aChange == null ? null : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeNewKey));
+    var changeKind = (aChange == null ? aChange : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeKindKey)),
+        oldValue = (aChange == null ? aChange : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeOldKey)),
+        newValue = (aChange == null ? aChange : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeNewKey));
     if (newValue === (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"))
         newValue = nil;
     if (changeKind === CPKeyValueChangeSetting)
         return (self.isa.method_msgSend["setValue:forKeyPath:"] || _objj_forward)(self, "setValue:forKeyPath:", newValue, aKeyPath);
-    var indexes = (aChange == null ? null : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeIndexesKey));
+    var indexes = (aChange == null ? aChange : (aChange.isa.method_msgSend["objectForKey:"] || _objj_forward)(aChange, "objectForKey:", CPKeyValueChangeIndexesKey));
     if (indexes)
     {
         if (changeKind === CPKeyValueChangeInsertion)
-            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(___r1, "insertObjects:atIndexes:", newValue, indexes));
+            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(___r1, "insertObjects:atIndexes:", newValue, indexes));
         else if (changeKind === CPKeyValueChangeRemoval)
-            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(___r1, "removeObjectsAtIndexes:", indexes));
+            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectsAtIndexes:"] || _objj_forward)(___r1, "removeObjectsAtIndexes:", indexes));
         else if (changeKind === CPKeyValueChangeReplacement)
-            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["replaceObjectAtIndexes:withObjects:"] || _objj_forward)(___r1, "replaceObjectAtIndexes:withObjects:", indexes, newValue));
+            ((___r1 = (self.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(self, "mutableArrayValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["replaceObjectsAtIndexes:withObjects:"] || _objj_forward)(___r1, "replaceObjectsAtIndexes:withObjects:", indexes, newValue));
     }
     else
     {
         if (changeKind === CPKeyValueChangeInsertion)
-            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["unionSet:"] || _objj_forward)(___r1, "unionSet:", newValue));
+            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unionSet:"] || _objj_forward)(___r1, "unionSet:", newValue));
         else if (changeKind === CPKeyValueChangeRemoval)
-            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["minusSet:"] || _objj_forward)(___r1, "minusSet:", oldValue));
+            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["minusSet:"] || _objj_forward)(___r1, "minusSet:", oldValue));
         else if (changeKind === CPKeyValueChangeReplacement)
-            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? null : (___r1.isa.method_msgSend["setSet:"] || _objj_forward)(___r1, "setSet:", newValue));
+            ((___r1 = (self.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(self, "mutableSetValueForKeyPath:", aKeyPath)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setSet:"] || _objj_forward)(___r1, "setSet:", newValue));
     }
     var ___r1;
 }
 
-,["void","CPDictionary","CPString"])]);
+,["void","CPDictionary","CPString"]), new objj_method(sel_getUid("kvoValueForKey:"), function $CPObject__kvoValueForKey_(self, _cmd, aKey)
+{
+    return (self.isa.method_msgSend["valueForKey:"] || _objj_forward)(self, "valueForKey:", aKey);
+}
+
+,["id","CPString"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("automaticallyNotifiesObserversForKey:"), function $CPObject__automaticallyNotifiesObserversForKey_(self, _cmd, aKey)
 {
     var capitalizedKey = (aKey.charAt(0)).toUpperCase() + aKey.substring(1),
         selector = "automaticallyNotifiesObserversOf" + capitalizedKey,
         aClass = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class");
-    if ((aClass == null ? null : (aClass.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aClass, "respondsToSelector:", selector)))
+    if ((aClass == null ? aClass : (aClass.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aClass, "respondsToSelector:", selector)))
         return aClass.isa.objj_msgSend0(aClass, selector);
     return YES;
 }
@@ -6966,7 +6999,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("automaticallyNotifiesO
     var capitalizedKey = (aKey.charAt(0)).toUpperCase() + aKey.substring(1),
         selector = "keyPathsForValuesAffecting" + capitalizedKey,
         aClass = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class");
-    if ((aClass == null ? null : (aClass.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aClass, "respondsToSelector:", selector)))
+    if ((aClass == null ? aClass : (aClass.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aClass, "respondsToSelector:", selector)))
         return aClass.isa.objj_msgSend0(aClass, selector);
     return (CPSet.isa.method_msgSend["set"] || _objj_forward)(CPSet, "set");
 }
@@ -6982,20 +7015,20 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         changeKind = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeKindKey);
     if (changeKind === CPKeyValueChangeSetting || changeKind === CPKeyValueChangeReplacement)
     {
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeOldKey), CPKeyValueChangeNewKey));
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeNewKey), CPKeyValueChangeOldKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeOldKey), CPKeyValueChangeNewKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeNewKey), CPKeyValueChangeOldKey));
     }
     else if (changeKind === CPKeyValueChangeInsertion)
     {
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", CPKeyValueChangeRemoval, CPKeyValueChangeKindKey));
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeNewKey), CPKeyValueChangeOldKey));
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(inverseChangeDictionary, "removeObjectForKey:", CPKeyValueChangeNewKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", CPKeyValueChangeRemoval, CPKeyValueChangeKindKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeNewKey), CPKeyValueChangeOldKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(inverseChangeDictionary, "removeObjectForKey:", CPKeyValueChangeNewKey));
     }
     else if (changeKind === CPKeyValueChangeRemoval)
     {
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", CPKeyValueChangeInsertion, CPKeyValueChangeKindKey));
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeOldKey), CPKeyValueChangeNewKey));
-        (inverseChangeDictionary == null ? null : (inverseChangeDictionary.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(inverseChangeDictionary, "removeObjectForKey:", CPKeyValueChangeOldKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", CPKeyValueChangeInsertion, CPKeyValueChangeKindKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(inverseChangeDictionary, "setObject:forKey:", (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", CPKeyValueChangeOldKey), CPKeyValueChangeNewKey));
+        (inverseChangeDictionary == null ? inverseChangeDictionary : (inverseChangeDictionary.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(inverseChangeDictionary, "removeObjectForKey:", CPKeyValueChangeOldKey));
     }
     return inverseChangeDictionary;
 }
@@ -7056,13 +7089,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
     if (self = (objj_getClass("_CPKVOProxy").super_class.method_dtable["init"] || _objj_forward)(self, "init"))
     {
         self._targetObject = aTarget;
-        self._nativeClass = (aTarget == null ? null : (aTarget.isa.method_msgSend["class"] || _objj_forward)(aTarget, "class"));
+        self._nativeClass = (aTarget == null ? aTarget : (aTarget.isa.method_msgSend["class"] || _objj_forward)(aTarget, "class"));
         self._observersForKey = {};
         self._changesForKey = {};
         self._nestingForKey = {};
         self._minOptionsForKey = {};
         self._observersForKeyLength = 0;
-        (self == null ? null : (self.isa.method_msgSend["_replaceClass"] || _objj_forward)(self, "_replaceClass"));
+        (self == null ? self : (self.isa.method_msgSend["_replaceClass"] || _objj_forward)(self, "_replaceClass"));
         aTarget[KVOProxyKey] = self;
     }
     return self;
@@ -7084,7 +7117,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
     self._replacedKeys = (CPSet.isa.method_msgSend["set"] || _objj_forward)(CPSet, "set");
     kvoClass._replacedKeys = self._replacedKeys;
     var methods = class_copyMethodList(_CPKVOModelSubclass);
-    if (((___r1 = self._targetObject), ___r1 == null ? null : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
+    if (((___r1 = self._targetObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
         methods = methods.concat(class_copyMethodList(_CPKVOModelDictionarySubclass));
     class_addMethods(kvoClass, methods);
     self._targetObject.isa = kvoClass;
@@ -7093,9 +7126,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
 
 ,["void"]), new objj_method(sel_getUid("_replaceModifiersForKey:"), function $_CPKVOProxy___replaceModifiersForKey_(self, _cmd, aKey)
 {
-    if (!((___r1 = self._replacedKeys), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aKey)) && ((___r1 = self._nativeClass), ___r1 == null ? null : (___r1.isa.method_msgSend["automaticallyNotifiesObserversForKey:"] || _objj_forward)(___r1, "automaticallyNotifiesObserversForKey:", aKey)))
+    if (!((___r1 = self._replacedKeys), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aKey)) && ((___r1 = self._nativeClass), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["automaticallyNotifiesObserversForKey:"] || _objj_forward)(___r1, "automaticallyNotifiesObserversForKey:", aKey)))
     {
-        ((___r1 = self._replacedKeys), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aKey));
+        ((___r1 = self._replacedKeys), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aKey));
         var theClass = self._nativeClass,
             KVOClass = self._targetObject.isa,
             capitalizedKey = (aKey.charAt(0)).toUpperCase() + aKey.substring(1);
@@ -7106,9 +7139,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
             var setKey_method_imp = setKey_method.method_imp;
             class_addMethod(KVOClass, setKey_selector,             function(self, _cmd, anObject)
             {
-                (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", aKey));
+                (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", aKey));
                 setKey_method_imp(self, _cmd, anObject);
-                (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", aKey));
+                (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", aKey));
             }, setKey_method.method_types);
         }
         var _setKey_selector = sel_getUid("_set" + capitalizedKey + ":"),
@@ -7118,9 +7151,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
             var _setKey_method_imp = _setKey_method.method_imp;
             class_addMethod(KVOClass, _setKey_selector,             function(self, _cmd, anObject)
             {
-                (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", aKey));
+                (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", aKey));
                 _setKey_method_imp(self, _cmd, anObject);
-                (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", aKey));
+                (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", aKey));
             }, _setKey_method.method_types);
         }
         var insertObject_inKeyAtIndex_selector = sel_getUid("insertObject:in" + capitalizedKey + "AtIndex:"),
@@ -7138,9 +7171,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var insertObject_inKeyAtIndex_method_imp = insertObject_inKeyAtIndex_method.method_imp;
                 class_addMethod(KVOClass, insertObject_inKeyAtIndex_selector,                 function(self, _cmd, anObject, anIndex)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                     insertObject_inKeyAtIndex_method_imp(self, _cmd, anObject, anIndex);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                 }, insertObject_inKeyAtIndex_method.method_types);
             }
             if (insertKey_atIndexes_method)
@@ -7148,9 +7181,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var insertKey_atIndexes_method_imp = insertKey_atIndexes_method.method_imp;
                 class_addMethod(KVOClass, insertKey_atIndexes_selector,                 function(self, _cmd, objects, indexes)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                     insertKey_atIndexes_method_imp(self, _cmd, objects, indexes);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeInsertion, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                 }, insertKey_atIndexes_method.method_types);
             }
             if (removeObjectFromKeyAtIndex_method)
@@ -7158,9 +7191,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var removeObjectFromKeyAtIndex_method_imp = removeObjectFromKeyAtIndex_method.method_imp;
                 class_addMethod(KVOClass, removeObjectFromKeyAtIndex_selector,                 function(self, _cmd, anIndex)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                     removeObjectFromKeyAtIndex_method_imp(self, _cmd, anIndex);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                 }, removeObjectFromKeyAtIndex_method.method_types);
             }
             if (removeKeyAtIndexes_method)
@@ -7168,9 +7201,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var removeKeyAtIndexes_method_imp = removeKeyAtIndexes_method.method_imp;
                 class_addMethod(KVOClass, removeKeyAtIndexes_selector,                 function(self, _cmd, indexes)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                     removeKeyAtIndexes_method_imp(self, _cmd, indexes);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeRemoval, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                 }, removeKeyAtIndexes_method.method_types);
             }
             var replaceObjectInKeyAtIndex_withObject_selector = sel_getUid("replaceObjectIn" + capitalizedKey + "AtIndex:withObject:"),
@@ -7180,9 +7213,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var replaceObjectInKeyAtIndex_withObject_method_imp = replaceObjectInKeyAtIndex_withObject_method.method_imp;
                 class_addMethod(KVOClass, replaceObjectInKeyAtIndex_withObject_selector,                 function(self, _cmd, anIndex, anObject)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                     replaceObjectInKeyAtIndex_withObject_method_imp(self, _cmd, anIndex, anObject);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (CPIndexSet.isa.method_msgSend["indexSetWithIndex:"] || _objj_forward)(CPIndexSet, "indexSetWithIndex:", anIndex), aKey));
                 }, replaceObjectInKeyAtIndex_withObject_method.method_types);
             }
             var replaceKeyAtIndexes_withKey_selector = sel_getUid("replace" + capitalizedKey + "AtIndexes:with" + capitalizedKey + ":"),
@@ -7192,9 +7225,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var replaceKeyAtIndexes_withKey_method_imp = replaceKeyAtIndexes_withKey_method.method_imp;
                 class_addMethod(KVOClass, replaceKeyAtIndexes_withKey_selector,                 function(self, _cmd, indexes, objects)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["willChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "willChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                     replaceObjectInKeyAtIndex_withObject_method_imp(self, _cmd, indexes, objects);
-                    (self == null ? null : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (indexes == null ? null : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
+                    (self == null ? self : (self.isa.method_msgSend["didChange:valuesAtIndexes:forKey:"] || _objj_forward)(self, "didChange:valuesAtIndexes:forKey:", CPKeyValueChangeReplacement, (indexes == null ? indexes : (indexes.isa.method_msgSend["copy"] || _objj_forward)(indexes, "copy")), aKey));
                 }, replaceKeyAtIndexes_withKey_method.method_types);
             }
         }
@@ -7213,9 +7246,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var addKeyObject_method_imp = addKeyObject_method.method_imp;
                 class_addMethod(KVOClass, addKeyObject_selector,                 function(self, _cmd, anObject)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
+                    (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
                     addKeyObject_method_imp(self, _cmd, anObject);
-                    (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
+                    (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
                 }, addKeyObject_method.method_types);
             }
             if (addKey_method)
@@ -7223,9 +7256,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var addKey_method_imp = addKey_method.method_imp;
                 class_addMethod(KVOClass, addKey_selector,                 function(self, _cmd, objects)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (objects == null ? null : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (objects == null ? objects : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
                     addKey_method_imp(self, _cmd, objects);
-                    (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (objects == null ? null : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueUnionSetMutation, (objects == null ? objects : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
                 }, addKey_method.method_types);
             }
             if (removeKeyObject_method)
@@ -7233,9 +7266,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var removeKeyObject_method_imp = removeKeyObject_method.method_imp;
                 class_addMethod(KVOClass, removeKeyObject_selector,                 function(self, _cmd, anObject)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
+                    (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
                     removeKeyObject_method_imp(self, _cmd, anObject);
-                    (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
+                    (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (CPSet.isa.method_msgSend["setWithObject:"] || _objj_forward)(CPSet, "setWithObject:", anObject)));
                 }, removeKeyObject_method.method_types);
             }
             if (removeKey_method)
@@ -7243,9 +7276,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var removeKey_method_imp = removeKey_method.method_imp;
                 class_addMethod(KVOClass, removeKey_selector,                 function(self, _cmd, objects)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (objects == null ? null : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (objects == null ? objects : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
                     removeKey_method_imp(self, _cmd, objects);
-                    (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (objects == null ? null : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueMinusSetMutation, (objects == null ? objects : (objects.isa.method_msgSend["copy"] || _objj_forward)(objects, "copy"))));
                 }, removeKey_method.method_types);
             }
             var intersectKey_selector = sel_getUid("intersect" + capitalizedKey + ":"),
@@ -7255,14 +7288,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 var intersectKey_method_imp = intersectKey_method.method_imp;
                 class_addMethod(KVOClass, intersectKey_selector,                 function(self, _cmd, aSet)
                 {
-                    (self == null ? null : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueIntersectSetMutation, (aSet == null ? null : (aSet.isa.method_msgSend["copy"] || _objj_forward)(aSet, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["willChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "willChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueIntersectSetMutation, (aSet == null ? aSet : (aSet.isa.method_msgSend["copy"] || _objj_forward)(aSet, "copy"))));
                     intersectKey_method_imp(self, _cmd, aSet);
-                    (self == null ? null : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueIntersectSetMutation, (aSet == null ? null : (aSet.isa.method_msgSend["copy"] || _objj_forward)(aSet, "copy"))));
+                    (self == null ? self : (self.isa.method_msgSend["didChangeValueForKey:withSetMutation:usingObjects:"] || _objj_forward)(self, "didChangeValueForKey:withSetMutation:usingObjects:", aKey, CPKeyValueIntersectSetMutation, (aSet == null ? aSet : (aSet.isa.method_msgSend["copy"] || _objj_forward)(aSet, "copy"))));
                 }, intersectKey_method.method_types);
             }
         }
     }
-    var affectingKeys = ((___r1 = ((___r2 = self._nativeClass), ___r2 == null ? null : (___r2.isa.method_msgSend["keyPathsForValuesAffectingValueForKey:"] || _objj_forward)(___r2, "keyPathsForValuesAffectingValueForKey:", aKey))), ___r1 == null ? null : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects")),
+    var affectingKeys = ((___r1 = ((___r2 = self._nativeClass), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["keyPathsForValuesAffectingValueForKey:"] || _objj_forward)(___r2, "keyPathsForValuesAffectingValueForKey:", aKey))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects")),
         affectingKeysCount = affectingKeys ? affectingKeys.length : 0;
     if (!affectingKeysCount)
         return;
@@ -7281,9 +7314,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
             affectedKeys = (CPSet.isa.method_msgSend["new"] || _objj_forward)(CPSet, "new");
             dependentKeysForClass[affectingKey] = affectedKeys;
         }
-        (affectedKeys == null ? null : (affectedKeys.isa.method_msgSend["addObject:"] || _objj_forward)(affectedKeys, "addObject:", aKey));
+        (affectedKeys == null ? affectedKeys : (affectedKeys.isa.method_msgSend["addObject:"] || _objj_forward)(affectedKeys, "addObject:", aKey));
         if (affectingKey.indexOf(".") !== -1)
-            ((___r1 = self._targetObject), ___r1 == null ? null : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, affectingKey, CPKeyValueObservingOptionPrior | kvoNewAndOld, nil));
+            ((___r1 = self._targetObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, affectingKey, CPKeyValueObservingOptionPrior | kvoNewAndOld, nil));
         else
             (self.isa.method_msgSend["_replaceModifiersForKey:"] || _objj_forward)(self, "_replaceModifiersForKey:", affectingKey);
     }
@@ -7293,11 +7326,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
 ,["void","CPString"]), new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"), function $_CPKVOProxy__observeValueForKeyPath_ofObject_change_context_(self, _cmd, theKeyPath, theObject, theChanges, theContext)
 {
     var dependentKeysForClass = self._nativeClass[DependentKeysKey],
-        dependantKeys = ((___r1 = dependentKeysForClass[theKeyPath]), ___r1 == null ? null : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects")),
-        isBeforeFlag = !!(theChanges == null ? null : (theChanges.isa.method_msgSend["objectForKey:"] || _objj_forward)(theChanges, "objectForKey:", CPKeyValueChangeNotificationIsPriorKey));
-    for (var i = 0; i < (dependantKeys == null ? null : (dependantKeys.isa.method_msgSend["count"] || _objj_forward)(dependantKeys, "count")); i++)
+        dependantKeys = ((___r1 = dependentKeysForClass[theKeyPath]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects")),
+        isBeforeFlag = !!(theChanges == null ? theChanges : (theChanges.isa.method_msgSend["objectForKey:"] || _objj_forward)(theChanges, "objectForKey:", CPKeyValueChangeNotificationIsPriorKey));
+    for (var i = 0; i < (dependantKeys == null ? dependantKeys : (dependantKeys.isa.method_msgSend["count"] || _objj_forward)(dependantKeys, "count")); i++)
     {
-        var dependantKey = (dependantKeys == null ? null : (dependantKeys.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(dependantKeys, "objectAtIndex:", i));
+        var dependantKey = (dependantKeys == null ? dependantKeys : (dependantKeys.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(dependantKeys, "objectAtIndex:", i));
         (self.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(self, "_sendNotificationsForKey:changeOptions:isBefore:", dependantKey, theChanges, isBeforeFlag);
     }
     var ___r1;
@@ -7309,32 +7342,32 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
         return;
     var forwarder = nil;
     if (aPath.indexOf('.') !== CPNotFound && aPath.charAt(0) !== '@')
-        forwarder = ((___r1 = (_CPKVOForwardingObserver == null ? null : (_CPKVOForwardingObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVOForwardingObserver, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithKeyPath:object:observer:options:context:"] || _objj_forward)(___r1, "initWithKeyPath:object:observer:options:context:", aPath, self._targetObject, anObserver, options, aContext));
+        forwarder = ((___r1 = (_CPKVOForwardingObserver == null ? _CPKVOForwardingObserver : (_CPKVOForwardingObserver.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVOForwardingObserver, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithKeyPath:object:observer:options:context:"] || _objj_forward)(___r1, "initWithKeyPath:object:observer:options:context:", aPath, self._targetObject, anObserver, options, aContext));
     else
         (self.isa.method_msgSend["_replaceModifiersForKey:"] || _objj_forward)(self, "_replaceModifiersForKey:", aPath);
     var observers = self._observersForKey[aPath];
     if (!observers)
     {
-        observers = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        observers = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         self._observersForKey[aPath] = observers;
         self._observersForKeyLength++;
     }
-    (observers == null ? null : (observers.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(observers, "setObject:forKey:", _CPKVOInfoMake(anObserver, options, aContext, forwarder), (anObserver == null ? null : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID"))));
+    (observers == null ? observers : (observers.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(observers, "setObject:forKey:", _CPKVOInfoMake(anObserver, options, aContext, forwarder), (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID"))));
     if (options & CPKeyValueObservingOptionInitial)
     {
         var changes;
         if (options & CPKeyValueObservingOptionNew)
         {
-            var newValue = ((___r1 = self._targetObject), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", aPath));
+            var newValue = ((___r1 = self._targetObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", aPath));
             if (newValue == nil)
                 newValue = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
-            changes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting, newValue], [CPKeyValueChangeKindKey, CPKeyValueChangeNewKey]));
+            changes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting, newValue], [CPKeyValueChangeKindKey, CPKeyValueChangeNewKey]));
         }
         else
         {
-            changes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting], [CPKeyValueChangeKindKey]));
+            changes = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting], [CPKeyValueChangeKindKey]));
         }
-        (anObserver == null ? null : (anObserver.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(anObserver, "observeValueForKeyPath:ofObject:change:context:", aPath, self._targetObject, changes, aContext));
+        (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(anObserver, "observeValueForKeyPath:ofObject:change:context:", aPath, self._targetObject, changes, aContext));
     }
     var ___r1;
 }
@@ -7350,12 +7383,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
     }
     if (aPath.indexOf('.') != CPNotFound)
     {
-        var observer = (observers == null ? null : (observers.isa.method_msgSend["objectForKey:"] || _objj_forward)(observers, "objectForKey:", (anObserver == null ? null : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID")))),
+        var observer = (observers == null ? observers : (observers.isa.method_msgSend["objectForKey:"] || _objj_forward)(observers, "objectForKey:", (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID")))),
             forwarder = observer ? observer.forwarder : nil;
-        (forwarder == null ? null : (forwarder.isa.method_msgSend["finalize"] || _objj_forward)(forwarder, "finalize"));
+        (forwarder == null ? forwarder : (forwarder.isa.method_msgSend["finalize"] || _objj_forward)(forwarder, "finalize"));
     }
-    (observers == null ? null : (observers.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observers, "removeObjectForKey:", (anObserver == null ? null : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID"))));
-    if (!(observers == null ? null : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
+    (observers == null ? observers : (observers.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observers, "removeObjectForKey:", (anObserver == null ? anObserver : (anObserver.isa.method_msgSend["UID"] || _objj_forward)(anObserver, "UID"))));
+    if (!(observers == null ? observers : (observers.isa.method_msgSend["count"] || _objj_forward)(observers, "count")))
     {
         self._observersForKeyLength--;
         delete self._observersForKey[aPath];
@@ -7370,7 +7403,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
 ,["void","id","CPString"]), new objj_method(sel_getUid("_sendNotificationsForKey:changeOptions:isBefore:"), function $_CPKVOProxy___sendNotificationsForKey_changeOptions_isBefore_(self, _cmd, aKey, changeOptions, isBefore)
 {
     var changes = self._changesForKey[aKey],
-        observers = ((___r1 = self._observersForKey[aKey]), ___r1 == null ? null : (___r1.isa.method_msgSend["allValues"] || _objj_forward)(___r1, "allValues")),
+        observers = ((___r1 = self._observersForKey[aKey]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allValues"] || _objj_forward)(___r1, "allValues")),
         observersMinimumOptions = 0;
     if (isBefore)
     {
@@ -7393,46 +7426,46 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
         changes = changeOptions;
         if (observersMinimumOptions & CPKeyValueObservingOptionOld)
         {
-            var indexes = (changes == null ? null : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeIndexesKey)),
+            var indexes = (changes == null ? changes : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeIndexesKey)),
                 setMutationKind = changes[_CPKeyValueChangeSetMutationKindKey];
             if (setMutationKind)
             {
-                var setMutationObjects = ((___r1 = changes[_CPKeyValueChangeSetMutationObjectsKey]), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy")),
-                    setExistingObjects = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? null : (___r2.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r2, "valueForKey:", aKey))), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+                var setMutationObjects = ((___r1 = changes[_CPKeyValueChangeSetMutationObjectsKey]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy")),
+                    setExistingObjects = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r2, "valueForKey:", aKey))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
                 if (setMutationKind == CPKeyValueMinusSetMutation)
                 {
-                    (setExistingObjects == null ? null : (setExistingObjects.isa.method_msgSend["intersectSet:"] || _objj_forward)(setExistingObjects, "intersectSet:", setMutationObjects));
-                    (changes == null ? null : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", setExistingObjects, CPKeyValueChangeOldKey));
+                    (setExistingObjects == null ? setExistingObjects : (setExistingObjects.isa.method_msgSend["intersectSet:"] || _objj_forward)(setExistingObjects, "intersectSet:", setMutationObjects));
+                    (changes == null ? changes : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", setExistingObjects, CPKeyValueChangeOldKey));
                 }
                 else if (setMutationKind === CPKeyValueIntersectSetMutation || setMutationKind === CPKeyValueSetSetMutation)
                 {
-                    (setExistingObjects == null ? null : (setExistingObjects.isa.method_msgSend["minusSet:"] || _objj_forward)(setExistingObjects, "minusSet:", setMutationObjects));
-                    (changes == null ? null : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", setExistingObjects, CPKeyValueChangeOldKey));
+                    (setExistingObjects == null ? setExistingObjects : (setExistingObjects.isa.method_msgSend["minusSet:"] || _objj_forward)(setExistingObjects, "minusSet:", setMutationObjects));
+                    (changes == null ? changes : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", setExistingObjects, CPKeyValueChangeOldKey));
                 }
                 if (setMutationKind === CPKeyValueUnionSetMutation || setMutationKind === CPKeyValueSetSetMutation)
                 {
-                    (setMutationObjects == null ? null : (setMutationObjects.isa.method_msgSend["minusSet:"] || _objj_forward)(setMutationObjects, "minusSet:", setExistingObjects));
+                    (setMutationObjects == null ? setMutationObjects : (setMutationObjects.isa.method_msgSend["minusSet:"] || _objj_forward)(setMutationObjects, "minusSet:", setExistingObjects));
                     changes[_CPKeyValueChangeSetMutationNewValueKey] = setMutationObjects;
                 }
             }
             else if (indexes)
             {
-                var type = (changes == null ? null : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeKindKey));
+                var type = (changes == null ? changes : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeKindKey));
                 if (type === CPKeyValueChangeReplacement || type === CPKeyValueChangeRemoval)
                 {
-                    var newValues = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? null : (___r2.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r2, "mutableArrayValueForKeyPath:", aKey))), ___r1 == null ? null : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", indexes));
-                    (changes == null ? null : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValues, CPKeyValueChangeOldKey));
+                    var newValues = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r2, "mutableArrayValueForKeyPath:", aKey))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", indexes));
+                    (changes == null ? changes : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValues, CPKeyValueChangeOldKey));
                 }
             }
             else
             {
-                var oldValue = ((___r1 = self._targetObject), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", aKey));
-                if (oldValue === nil || oldValue === undefined)
+                var oldValue = ((___r1 = self._targetObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", aKey));
+                if (oldValue == nil)
                     oldValue = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
-                (changes == null ? null : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", oldValue, CPKeyValueChangeOldKey));
+                (changes == null ? changes : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", oldValue, CPKeyValueChangeOldKey));
             }
         }
-        (changes == null ? null : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", 1, CPKeyValueChangeNotificationIsPriorKey));
+        (changes == null ? changes : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", 1, CPKeyValueChangeNotificationIsPriorKey));
         self._changesForKey[aKey] = changes;
         observersMinimumOptions &= ~CPKeyValueObservingOptionNew;
     }
@@ -7457,35 +7490,35 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
             return;
         }
         delete self._nestingForKey[aKey];
-        (changes == null ? null : (changes.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(changes, "removeObjectForKey:", CPKeyValueChangeNotificationIsPriorKey));
+        (changes == null ? changes : (changes.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(changes, "removeObjectForKey:", CPKeyValueChangeNotificationIsPriorKey));
         observersMinimumOptions = self._minOptionsForKey[aKey];
         if (observersMinimumOptions & CPKeyValueObservingOptionNew)
         {
-            var indexes = (changes == null ? null : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeIndexesKey)),
+            var indexes = (changes == null ? changes : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeIndexesKey)),
                 setMutationKind = changes[_CPKeyValueChangeSetMutationKindKey];
             if (setMutationKind)
             {
                 var newValue = changes[_CPKeyValueChangeSetMutationNewValueKey];
-                (changes == null ? null : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValue, CPKeyValueChangeNewKey));
+                (changes == null ? changes : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValue, CPKeyValueChangeNewKey));
                 delete changes[_CPKeyValueChangeSetMutationNewValueKey];
                 delete changes[_CPKeyValueChangeSetMutationObjectsKey];
                 delete changes[_CPKeyValueChangeSetMutationKindKey];
             }
             else if (indexes)
             {
-                var type = (changes == null ? null : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeKindKey));
+                var type = (changes == null ? changes : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeKindKey));
                 if (type == CPKeyValueChangeReplacement || type == CPKeyValueChangeInsertion)
                 {
-                    var newValues = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? null : (___r2.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r2, "mutableArrayValueForKeyPath:", aKey))), ___r1 == null ? null : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", indexes));
-                    (changes == null ? null : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValues, CPKeyValueChangeNewKey));
+                    var newValues = ((___r1 = ((___r2 = self._targetObject), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["mutableArrayValueForKeyPath:"] || _objj_forward)(___r2, "mutableArrayValueForKeyPath:", aKey))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectsAtIndexes:"] || _objj_forward)(___r1, "objectsAtIndexes:", indexes));
+                    (changes == null ? changes : (changes.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(changes, "setValue:forKey:", newValues, CPKeyValueChangeNewKey));
                 }
             }
             else
             {
-                var newValue = ((___r1 = self._targetObject), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", aKey));
-                if (newValue === nil || newValue === undefined)
+                var newValue = ((___r1 = self._targetObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", aKey));
+                if (newValue == nil)
                     newValue = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
-                (changes == null ? null : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", newValue, CPKeyValueChangeNewKey));
+                (changes == null ? changes : (changes.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(changes, "setObject:forKey:", newValue, CPKeyValueChangeNewKey));
             }
         }
         delete self._minOptionsForKey[aKey];
@@ -7518,28 +7551,28 @@ class_addMethods(the_class, [new objj_method(sel_getUid("adding"), function $_CP
                 observerChanges = changesCache[onlyNewAndOldOptions];
                 if (!observerChanges)
                 {
-                    changesCache[onlyNewAndOldOptions] = observerChanges = (changes == null ? null : (changes.isa.method_msgSend["mutableCopy"] || _objj_forward)(changes, "mutableCopy"));
+                    changesCache[onlyNewAndOldOptions] = observerChanges = (changes == null ? changes : (changes.isa.method_msgSend["mutableCopy"] || _objj_forward)(changes, "mutableCopy"));
                     if (!(onlyNewAndOldOptions & CPKeyValueObservingOptionOld))
-                        (observerChanges == null ? null : (observerChanges.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observerChanges, "removeObjectForKey:", CPKeyValueChangeOldKey));
+                        (observerChanges == null ? observerChanges : (observerChanges.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observerChanges, "removeObjectForKey:", CPKeyValueChangeOldKey));
                     if (!(onlyNewAndOldOptions & CPKeyValueObservingOptionNew))
-                        (observerChanges == null ? null : (observerChanges.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observerChanges, "removeObjectForKey:", CPKeyValueChangeNewKey));
+                        (observerChanges == null ? observerChanges : (observerChanges.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(observerChanges, "removeObjectForKey:", CPKeyValueChangeNewKey));
                 }
             }
-            ((___r1 = observerInfo.observer), ___r1 == null ? null : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", aKey, self._targetObject, observerChanges, observerInfo.context));
+            ((___r1 = observerInfo.observer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", aKey, self._targetObject, observerChanges, observerInfo.context));
         }
     }
     var dependentKeysMap = self._nativeClass[DependentKeysKey];
     if (!dependentKeysMap)
         return;
-    var dependentKeyPaths = ((___r1 = dependentKeysMap[aKey]), ___r1 == null ? null : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"));
+    var dependentKeyPaths = ((___r1 = dependentKeysMap[aKey]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"));
     if (!dependentKeyPaths)
         return;
     var index = 0,
-        count = (dependentKeyPaths == null ? null : (dependentKeyPaths.isa.method_msgSend["count"] || _objj_forward)(dependentKeyPaths, "count"));
+        count = (dependentKeyPaths == null ? dependentKeyPaths : (dependentKeyPaths.isa.method_msgSend["count"] || _objj_forward)(dependentKeyPaths, "count"));
     for (; index < count; ++index)
     {
         var keyPath = dependentKeyPaths[index];
-        (self.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(self, "_sendNotificationsForKey:changeOptions:isBefore:", keyPath, isBefore ? (changeOptions == null ? null : (changeOptions.isa.method_msgSend["copy"] || _objj_forward)(changeOptions, "copy")) : self._changesForKey[keyPath], isBefore);
+        (self.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(self, "_sendNotificationsForKey:changeOptions:isBefore:", keyPath, isBefore ? (changeOptions == null ? changeOptions : (changeOptions.isa.method_msgSend["copy"] || _objj_forward)(changeOptions, "copy")) : self._changesForKey[keyPath], isBefore);
     }
     var ___r1, ___r2;
 }
@@ -7550,7 +7583,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("proxyForObject:"), fun
     var proxy = anObject[KVOProxyKey];
     if (proxy)
         return proxy;
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithTarget:"] || _objj_forward)(___r1, "initWithTarget:", anObject));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithTarget:"] || _objj_forward)(___r1, "initWithTarget:", anObject));
     var ___r1;
 }
 
@@ -7567,8 +7600,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     methodImp(self, methodSelector, aKey);
     if (!aKey)
         return;
-    var changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting], [CPKeyValueChangeKindKey]));
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
+    var changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [CPKeyValueChangeSetting], [CPKeyValueChangeKindKey]));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
     var ___r1;
 }
 
@@ -7580,7 +7613,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     methodImp(self, methodSelector, aKey);
     if (!aKey)
         return;
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
     var ___r1;
 }
 
@@ -7592,8 +7625,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     methodImp(self, methodSelector, change, indexes, aKey);
     if (!aKey)
         return;
-    var changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [change, indexes], [CPKeyValueChangeKindKey, CPKeyValueChangeIndexesKey]));
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
+    var changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [change, indexes], [CPKeyValueChangeKindKey, CPKeyValueChangeIndexesKey]));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
     var ___r1;
 }
 
@@ -7605,7 +7638,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     methodImp(self, methodSelector, change, indexes, aKey);
     if (!aKey)
         return;
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
     var ___r1;
 }
 
@@ -7618,10 +7651,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     if (!aKey)
         return;
     var changeKind = _changeKindForSetMutationKind(mutationKind),
-        changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [changeKind], [CPKeyValueChangeKindKey]));
+        changeOptions = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [changeKind], [CPKeyValueChangeKindKey]));
     changeOptions[_CPKeyValueChangeSetMutationObjectsKey] = objects;
     changeOptions[_CPKeyValueChangeSetMutationKindKey] = mutationKind;
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, changeOptions, YES));
     var ___r1;
 }
 
@@ -7633,7 +7666,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
     methodImp(self, methodSelector, aKey, mutationKind, objects);
     if (!aKey)
         return;
-    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? null : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
+    ((___r1 = (_CPKVOProxy.isa.method_msgSend["proxyForObject:"] || _objj_forward)(_CPKVOProxy, "proxyForObject:", self)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_sendNotificationsForKey:changeOptions:isBefore:"] || _objj_forward)(___r1, "_sendNotificationsForKey:changeOptions:isBefore:", aKey, nil, NO));
     var ___r1;
 }
 
@@ -7644,13 +7677,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("willChangeValueForKey:"
 
 ,["Class"]), new objj_method(sel_getUid("superclass"), function $_CPKVOModelSubclass__superclass(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["superclass"] || _objj_forward)(___r1, "superclass"));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["superclass"] || _objj_forward)(___r1, "superclass"));
     var ___r1;
 }
 
 ,["Class"]), new objj_method(sel_getUid("isKindOfClass:"), function $_CPKVOModelSubclass__isKindOfClass_(self, _cmd, aClass)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["isSubclassOfClass:"] || _objj_forward)(___r1, "isSubclassOfClass:", aClass));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isSubclassOfClass:"] || _objj_forward)(___r1, "isSubclassOfClass:", aClass));
     var ___r1;
 }
 
@@ -7672,7 +7705,7 @@ meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("removeAllObjects"), function $_CPKVOModelDictionarySubclass__removeAllObjects(self, _cmd)
 {
     var keys = (self.isa.method_msgSend["allKeys"] || _objj_forward)(self, "allKeys"),
-        count = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
+        count = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
         i = 0;
     for (; i < count; i++)
         (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", keys[i]);
@@ -7721,10 +7754,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKeyPath:object:
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Created _CPKVOForwardingObserver without compound key path: " + aKeyPath);
     self._firstPart = aKeyPath.substring(0, dotIndex);
     self._secondPart = aKeyPath.substring(dotIndex + 1);
-    ((___r1 = self._object), ___r1 == null ? null : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._firstPart, self._options, nil));
-    self._value = ((___r1 = self._object), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._firstPart));
+    ((___r1 = self._object), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._firstPart, self._options, nil));
+    self._value = ((___r1 = self._object), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["kvoValueForKey:"] || _objj_forward)(___r1, "kvoValueForKey:", self._firstPart));
     if (self._value)
-        ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._secondPart, self._options, nil));
+        ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._secondPart, self._options, nil));
     return self;
     var ___r1;
 }
@@ -7734,41 +7767,41 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKeyPath:object:
     if (aKeyPath === self._firstPart)
     {
         var pathChanges = (CPMutableDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPMutableDictionary, "dictionaryWithObject:forKey:", CPKeyValueChangeSetting, CPKeyValueChangeKindKey);
-        var isBeforeFlag = !!(changes == null ? null : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeNotificationIsPriorKey));
+        var isBeforeFlag = !!(changes == null ? changes : (changes.isa.method_msgSend["objectForKey:"] || _objj_forward)(changes, "objectForKey:", CPKeyValueChangeNotificationIsPriorKey));
         if (isBeforeFlag)
-            (pathChanges == null ? null : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", 1, CPKeyValueChangeNotificationIsPriorKey));
+            (pathChanges == null ? pathChanges : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", 1, CPKeyValueChangeNotificationIsPriorKey));
         if (self._options & CPKeyValueObservingOptionOld)
         {
-            var oldValue = ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", self._secondPart));
-            (pathChanges == null ? null : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", oldValue != null ? oldValue : (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), CPKeyValueChangeOldKey));
+            var oldValue = ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", self._secondPart));
+            (pathChanges == null ? pathChanges : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", oldValue != null ? oldValue : (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), CPKeyValueChangeOldKey));
         }
         if (!isBeforeFlag && self._options & CPKeyValueObservingOptionNew)
         {
-            var newValue = ((___r1 = self._object), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", self._firstPart + "." + self._secondPart));
-            (pathChanges == null ? null : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", newValue != null ? newValue : (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), CPKeyValueChangeNewKey));
+            var newValue = ((___r1 = ((___r2 = self._object), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["kvoValueForKey:"] || _objj_forward)(___r2, "kvoValueForKey:", self._firstPart))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", self._secondPart));
+            (pathChanges == null ? pathChanges : (pathChanges.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(pathChanges, "setObject:forKey:", newValue != null ? newValue : (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), CPKeyValueChangeNewKey));
         }
-        ((___r1 = self._observer), ___r1 == null ? null : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", self._firstPart + "." + self._secondPart, self._object, pathChanges, self._context));
+        ((___r1 = self._observer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", self._firstPart + "." + self._secondPart, self._object, pathChanges, self._context));
         if (!isBeforeFlag)
         {
             if (self._value)
-                ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._secondPart));
-            self._value = ((___r1 = self._object), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._firstPart));
+                ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._secondPart));
+            self._value = ((___r1 = self._object), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["kvoValueForKey:"] || _objj_forward)(___r1, "kvoValueForKey:", self._firstPart));
             if (self._value)
-                ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._secondPart, self._options, nil));
+                ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:forKeyPath:options:context:"] || _objj_forward)(___r1, "addObserver:forKeyPath:options:context:", self, self._secondPart, self._options, nil));
         }
     }
     else
     {
-        ((___r1 = self._observer), ___r1 == null ? null : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", self._firstPart + "." + aKeyPath, self._object, changes, self._context));
+        ((___r1 = self._observer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["observeValueForKeyPath:ofObject:change:context:"] || _objj_forward)(___r1, "observeValueForKeyPath:ofObject:change:context:", self._firstPart + "." + aKeyPath, self._object, changes, self._context));
     }
-    var ___r1;
+    var ___r1, ___r2;
 }
 
 ,["void","CPString","id","CPDictionary","id"]), new objj_method(sel_getUid("finalize"), function $_CPKVOForwardingObserver__finalize(self, _cmd)
 {
     if (self._value)
-        ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._secondPart));
-    ((___r1 = self._object), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._firstPart));
+        ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._secondPart));
+    ((___r1 = self._object), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObserver:forKeyPath:"] || _objj_forward)(___r1, "removeObserver:forKeyPath:", self, self._firstPart));
     self._object = nil;
     self._observer = nil;
     self._context = nil;
@@ -8294,7 +8327,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 
 ,["CPArray"])]);
 }
-p;11;CPDecimal.jt;28762;@STATIC;1.0;i;9;CPArray.ji;10;CPNumber.jt;28714;objj_executeFile("CPArray.j", YES);objj_executeFile("CPNumber.j", YES);{var the_typedef = objj_allocateTypeDef("CPDecimal");
+p;11;CPDecimal.jt;28763;@STATIC;1.0;i;9;CPArray.ji;10;CPNumber.jt;28715;objj_executeFile("CPArray.j", YES);objj_executeFile("CPNumber.j", YES);{var the_typedef = objj_allocateTypeDef("CPDecimal");
 objj_registerTypeDef(the_typedef);
 }CPDecimalMaxDigits = 38;
 CPDecimalMaxExponent = 127;
@@ -8894,7 +8927,7 @@ CPDecimalDivide = function(result, leftOperand, rightOperand, roundingMode)
         error = CPCalculationLossOfPrecision;
         if (result._exponent + exp < CPDecimalMinExponent)
         {
-            CPDecimalSetZero(result);
+            _CPDecimalSetZero(result);
             return error;
         }
     }
@@ -9297,16 +9330,16 @@ CPDecimalString = function(dcm, locale)
     }
     return string;
 }
-p;14;CPDictionary.jt;22641;@STATIC;1.0;i;9;CPArray.ji;14;CPEnumerator.ji;13;CPException.ji;8;CPNull.ji;10;CPObject.jt;22544;objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);var CPDictionaryMaxDescriptionRecursion = 10;
+p;14;CPDictionary.jt;22730;@STATIC;1.0;i;9;CPArray.ji;14;CPEnumerator.ji;13;CPException.ji;8;CPNull.ji;10;CPObject.jt;22633;objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);var CPDictionaryMaxDescriptionRecursion = 10;
 
 {var the_class = objj_allocateClassPair(CPObject, "CPDictionary"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), function $CPDictionary__initWithDictionary_(self, _cmd, aDictionary)
 {
     var key = "",
-        dictionary = ((___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        dictionary = ((___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     for (key in aDictionary._buckets)
-        (dictionary == null ? null : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (aDictionary == null ? null : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key));
+        (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key));
     return dictionary;
     var ___r1;
 }
@@ -9314,20 +9347,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 ,["id","CPDictionary"]), new objj_method(sel_getUid("initWithObjects:forKeys:"), function $CPDictionary__initWithObjects_forKeys_(self, _cmd, objects, keyArray)
 {
     self = (objj_getClass("CPDictionary").super_class.method_dtable["init"] || _objj_forward)(self, "init");
-    var i = (keyArray == null ? null : (keyArray.isa.method_msgSend["count"] || _objj_forward)(keyArray, "count"));
-    if ((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) != i)
-        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "Counts are different.(%d != %d)", (objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")), (keyArray == null ? null : (keyArray.isa.method_msgSend["count"] || _objj_forward)(keyArray, "count"))));
+    var i = (keyArray == null ? keyArray : (keyArray.isa.method_msgSend["count"] || _objj_forward)(keyArray, "count"));
+    if ((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")) != i)
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "Counts are different.(%d != %d)", (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")), (keyArray == null ? keyArray : (keyArray.isa.method_msgSend["count"] || _objj_forward)(keyArray, "count"))));
     if (self)
     {
         while (i--)
         {
             var value = objects[i],
                 key = keyArray[i];
-            if (value === nil)
+            if (value == nil)
                 (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Attempt to insert nil object from objects[" + i + "]");
-            if (key === nil)
+            if (key == nil)
                 (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Attempt to insert nil key from keys[" + i + "]");
-            (self == null ? null : (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", value, key));
+            (self == null ? self : (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", value, key));
         }
     }
     return self;
@@ -9345,11 +9378,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
         {
             var key = arguments[argCount--],
                 value = arguments[argCount];
-            if (value === nil)
+            if (value == nil)
                 (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Attempt to insert nil object from objects[" + (argCount / 2 - 1) + "]");
-            if (key === nil)
+            if (key == nil)
                 (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Attempt to insert nil key from keys[" + (argCount / 2 - 1) + "]");
-            (self == null ? null : (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", value, key));
+            (self == null ? self : (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", value, key));
         }
     }
     return self;
@@ -9367,7 +9400,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 
 ,["int"]), new objj_method(sel_getUid("allKeys"), function $CPDictionary__allKeys(self, _cmd)
 {
-    return ((___r1 = self._keys), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+    return ((___r1 = self._keys), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
     var ___r1;
 }
 
@@ -9393,7 +9426,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
     {
         key = keys[index];
         value = self._buckets[key];
-        if (value.isa && anObject && anObject.isa && (value == null ? null : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("isEqual:"))) && (value == null ? null : (value.isa.method_msgSend["isEqual:"] || _objj_forward)(value, "isEqual:", anObject)))
+        if (value.isa && anObject && anObject.isa && (value == null ? value : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("isEqual:"))) && (value == null ? value : (value.isa.method_msgSend["isEqual:"] || _objj_forward)(value, "isEqual:", anObject)))
             matchingKeys.push(key);
         else if (value === anObject)
             matchingKeys.push(key);
@@ -9411,14 +9444,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
     var keys = self._keys;
     if (options & CPEnumerationReverse)
     {
-        var index = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")) - 1,
+        var index = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")) - 1,
             stop = -1,
             increment = -1;
     }
     else
     {
         var index = 0,
-            stop = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
+            stop = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
             increment = 1;
     }
     var matchingKeys = [],
@@ -9440,7 +9473,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 
 ,["CPArray","CPEnumerationOptions","Function"]), new objj_method(sel_getUid("keysSortedByValueUsingComparator:"), function $CPDictionary__keysSortedByValueUsingComparator_(self, _cmd, comparator)
 {
-    return ((___r1 = (self.isa.method_msgSend["allKeys"] || _objj_forward)(self, "allKeys")), ___r1 == null ? null : (___r1.isa.method_msgSend["sortedArrayUsingFunction:"] || _objj_forward)(___r1, "sortedArrayUsingFunction:",     function(a, b)
+    return ((___r1 = (self.isa.method_msgSend["allKeys"] || _objj_forward)(self, "allKeys")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortedArrayUsingFunction:"] || _objj_forward)(___r1, "sortedArrayUsingFunction:",     function(a, b)
     {
         a = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", a);
         b = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", b);
@@ -9451,24 +9484,24 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 
 ,["CPArray","Function"]), new objj_method(sel_getUid("keysSortedByValueUsingSelector:"), function $CPDictionary__keysSortedByValueUsingSelector_(self, _cmd, theSelector)
 {
-    return ((___r1 = (self.isa.method_msgSend["allKeys"] || _objj_forward)(self, "allKeys")), ___r1 == null ? null : (___r1.isa.method_msgSend["sortedArrayUsingFunction:"] || _objj_forward)(___r1, "sortedArrayUsingFunction:",     function(a, b)
+    return ((___r1 = (self.isa.method_msgSend["allKeys"] || _objj_forward)(self, "allKeys")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortedArrayUsingFunction:"] || _objj_forward)(___r1, "sortedArrayUsingFunction:",     function(a, b)
     {
         a = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", a);
         b = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", b);
-        return (a == null ? null : (a.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(a, "performSelector:withObject:", theSelector, b));
+        return (a == null ? a : (a.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(a, "performSelector:withObject:", theSelector, b));
     }));
     var ___r1;
 }
 
 ,["CPArray","SEL"]), new objj_method(sel_getUid("keyEnumerator"), function $CPDictionary__keyEnumerator(self, _cmd)
 {
-    return ((___r1 = self._keys), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
+    return ((___r1 = self._keys), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
     var ___r1;
 }
 
 ,["CPEnumerator"]), new objj_method(sel_getUid("objectEnumerator"), function $CPDictionary__objectEnumerator(self, _cmd)
 {
-    return ((___r1 = (_CPDictionaryValueEnumerator == null ? null : (_CPDictionaryValueEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPDictionaryValueEnumerator, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithDictionary:"] || _objj_forward)(___r1, "initWithDictionary:", self));
+    return ((___r1 = (_CPDictionaryValueEnumerator == null ? _CPDictionaryValueEnumerator : (_CPDictionaryValueEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPDictionaryValueEnumerator, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithDictionary:"] || _objj_forward)(___r1, "initWithDictionary:", self));
     var ___r1;
 }
 
@@ -9477,7 +9510,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
     if (self === aDictionary)
         return YES;
     var count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
-    if (count !== (aDictionary == null ? null : (aDictionary.isa.method_msgSend["count"] || _objj_forward)(aDictionary, "count")))
+    if (count !== (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["count"] || _objj_forward)(aDictionary, "count")))
         return NO;
     var index = count,
         keys = self._keys;
@@ -9488,7 +9521,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
             rhsObject = aDictionary._buckets[currentKey];
         if (lhsObject === rhsObject)
             continue;
-        if (lhsObject && lhsObject.isa && rhsObject && rhsObject.isa && (lhsObject == null ? null : (lhsObject.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(lhsObject, "respondsToSelector:", sel_getUid("isEqual:"))) && (lhsObject == null ? null : (lhsObject.isa.method_msgSend["isEqual:"] || _objj_forward)(lhsObject, "isEqual:", rhsObject)))
+        if (lhsObject && lhsObject.isa && rhsObject && rhsObject.isa && (lhsObject == null ? lhsObject : (lhsObject.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(lhsObject, "respondsToSelector:", sel_getUid("isEqual:"))) && (lhsObject == null ? lhsObject : (lhsObject.isa.method_msgSend["isEqual:"] || _objj_forward)(lhsObject, "isEqual:", rhsObject)))
             continue;
         return NO;
     }
@@ -9499,7 +9532,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 {
     if (self === anObject)
         return YES;
-    if (!(anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
+    if (!(anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
         return NO;
     return (self.isa.method_msgSend["isEqualToDictionary:"] || _objj_forward)(self, "isEqualToDictionary:", anObject);
 }
@@ -9529,9 +9562,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 
 ,["void","CPArray"]), new objj_method(sel_getUid("setObject:forKey:"), function $CPDictionary__setObject_forKey_(self, _cmd, anObject, aKey)
 {
-    if (aKey === nil)
+    if (aKey == nil)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "key cannot be nil");
-    if (anObject === nil)
+    if (anObject == nil)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "object cannot be nil (key: " + aKey + ")");
     self.setValueForKey(aKey, anObject);
 }
@@ -9540,12 +9573,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 {
     if (!aDictionary)
         return;
-    var keys = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
-        index = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
+    var keys = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
+        index = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
     while (index--)
     {
         var key = keys[index];
-        (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", (aDictionary == null ? null : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key);
+        (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key);
     }
 }
 
@@ -9570,7 +9603,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 ,["CPString"]), new objj_method(sel_getUid("containsKey:"), function $CPDictionary__containsKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    return value !== nil && value !== undefined;
+    return value != nil;
 }
 
 ,["BOOL","id"]), new objj_method(sel_getUid("enumerateKeysAndObjectsUsingBlock:"), function $CPDictionary__enumerateKeysAndObjectsUsingBlock_(self, _cmd, aFunction)
@@ -9604,25 +9637,25 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPD
 
 ,["id"]), new objj_method(sel_getUid("dictionary"), function $CPDictionary__dictionary(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("dictionaryWithDictionary:"), function $CPDictionary__dictionaryWithDictionary_(self, _cmd, aDictionary)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithDictionary:"] || _objj_forward)(___r1, "initWithDictionary:", aDictionary));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithDictionary:"] || _objj_forward)(___r1, "initWithDictionary:", aDictionary));
     var ___r1;
 }
 
 ,["id","CPDictionary"]), new objj_method(sel_getUid("dictionaryWithObject:forKey:"), function $CPDictionary__dictionaryWithObject_forKey_(self, _cmd, anObject, aKey)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [anObject], [aKey]));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [anObject], [aKey]));
     var ___r1;
 }
 
 ,["id","id","id"]), new objj_method(sel_getUid("dictionaryWithObjects:forKeys:"), function $CPDictionary__dictionaryWithObjects_forKeys_(self, _cmd, objects, keys)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", objects, keys));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", objects, keys));
     var ___r1;
 }
 
@@ -9634,22 +9667,22 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPD
 ,["id","JSObject"]), new objj_method(sel_getUid("dictionaryWithJSObject:recursively:"), function $CPDictionary__dictionaryWithJSObject_recursively_(self, _cmd, object, recursively)
 {
     var key = "",
-        dictionary = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        dictionary = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     for (key in object)
     {
         if (!object.hasOwnProperty(key))
             continue;
         var value = object[key];
-        if (value === null)
+        if (value == null)
         {
-            (dictionary == null ? null : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), key));
+            (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), key));
             continue;
         }
         if (recursively)
         {
             if (value.constructor === Object)
                 value = (CPDictionary.isa.method_msgSend["dictionaryWithJSObject:recursively:"] || _objj_forward)(CPDictionary, "dictionaryWithJSObject:recursively:", value, YES);
-            else if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
+            else if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
             {
                 var newValue = [],
                     i = 0,
@@ -9657,7 +9690,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPD
                 for (; i < count; i++)
                 {
                     var thisValue = value[i];
-                    if (thisValue === null)
+                    if (thisValue == null)
                     {
                         newValue.push((CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"));
                     }
@@ -9672,7 +9705,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPD
                 value = newValue;
             }
         }
-        (dictionary == null ? null : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", value, key));
+        (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", value, key));
     }
     return dictionary;
     var ___r1;
@@ -9692,12 +9725,12 @@ var the_class = objj_getClass("CPDictionary")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPDictionary\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $CPDictionary__initWithCoder_(self, _cmd, aCoder)
 {
-    return (aCoder == null ? null : (aCoder.isa.method_msgSend["_decodeDictionaryOfObjectsForKey:"] || _objj_forward)(aCoder, "_decodeDictionaryOfObjectsForKey:", "CP.objects"));
+    return (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["_decodeDictionaryOfObjectsForKey:"] || _objj_forward)(aCoder, "_decodeDictionaryOfObjectsForKey:", "CP.objects"));
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPDictionary__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["_encodeDictionaryOfObjects:forKey:"] || _objj_forward)(aCoder, "_encodeDictionaryOfObjects:forKey:", self, "CP.objects"));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["_encodeDictionaryOfObjects:forKey:"] || _objj_forward)(aCoder, "_encodeDictionaryOfObjects:forKey:", self, "CP.objects"));
 }
 
 ,["void","CPCoder"])]);
@@ -9710,7 +9743,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
     self = (objj_getClass("_CPDictionaryValueEnumerator").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._keyEnumerator = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["keyEnumerator"] || _objj_forward)(aDictionary, "keyEnumerator"));
+        self._keyEnumerator = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["keyEnumerator"] || _objj_forward)(aDictionary, "keyEnumerator"));
         self._dictionary = aDictionary;
     }
     return self;
@@ -9718,10 +9751,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithDictionary:"), 
 
 ,["id","CPDictionary"]), new objj_method(sel_getUid("nextObject"), function $_CPDictionaryValueEnumerator__nextObject(self, _cmd)
 {
-    var key = ((___r1 = self._keyEnumerator), ___r1 == null ? null : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
-    if (key === nil)
+    var key = ((___r1 = self._keyEnumerator), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
+    if (key == nil)
         return nil;
-    return ((___r1 = self._dictionary), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key));
+    return ((___r1 = self._dictionary), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", key));
     var ___r1;
 }
 
@@ -9760,22 +9793,22 @@ CPURLErrorFileDoesNotExist = kCFURLErrorFileDoesNotExist;
 CPURLErrorFileIsDirectory = kCFURLErrorFileIsDirectory;
 CPURLErrorNoPermissionsToReadFile = kCFURLErrorNoPermissionsToReadFile;
 CPURLErrorDataLengthExceedsMaximum = kCFURLErrorDataLengthExceedsMaximum;
-p;17;CPWebDAVManager.jt;10532;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;10;CPObject.ji;10;CPString.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.jt;10398;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPURLConnection.j", YES);objj_executeFile("CPURLRequest.j", YES);var setURLResourceValuesForKeysFromProperties = function(aURL, keys, properties)
+p;17;CPWebDAVManager.jt;10613;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;10;CPObject.ji;10;CPString.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.jt;10479;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPURLConnection.j", YES);objj_executeFile("CPURLRequest.j", YES);var setURLResourceValuesForKeysFromProperties = function(aURL, keys, properties)
 {
-    var resourceType = (properties == null ? null : (properties.isa.method_msgSend["objectForKey:"] || _objj_forward)(properties, "objectForKey:", "resourcetype"));
+    var resourceType = (properties == null ? properties : (properties.isa.method_msgSend["objectForKey:"] || _objj_forward)(properties, "objectForKey:", "resourcetype"));
     if (resourceType === CPWebDAVManagerCollectionResourceType)
     {
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", YES, CPURLIsDirectoryKey));
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", NO, CPURLIsRegularFileKey));
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", YES, CPURLIsDirectoryKey));
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", NO, CPURLIsRegularFileKey));
     }    else if (resourceType === CPWebDAVManagerNonCollectionResourceType)
     {
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", NO, CPURLIsDirectoryKey));
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", YES, CPURLIsRegularFileKey));
-    }    var displayName = (properties == null ? null : (properties.isa.method_msgSend["objectForKey:"] || _objj_forward)(properties, "objectForKey:", "displayname"));
-    if (displayName !== nil)
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", NO, CPURLIsDirectoryKey));
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", YES, CPURLIsRegularFileKey));
+    }    var displayName = (properties == null ? properties : (properties.isa.method_msgSend["objectForKey:"] || _objj_forward)(properties, "objectForKey:", "displayname"));
+    if (displayName != nil)
     {
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", displayName, CPURLNameKey));
-        (aURL == null ? null : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", displayName, CPURLLocalizedNameKey));
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", displayName, CPURLNameKey));
+        (aURL == null ? aURL : (aURL.isa.method_msgSend["setResourceValue:forKey:"] || _objj_forward)(aURL, "setResourceValue:forKey:", displayName, CPURLLocalizedNameKey));
     }};
 CPWebDAVManagerCollectionResourceType = 1;
 CPWebDAVManagerNonCollectionResourceType = 0;
@@ -9786,7 +9819,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPWeb
 {
     self = (objj_getClass("CPWebDAVManager").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
-        self._blocksForConnections = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._blocksForConnections = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     return self;
     var ___r1;
 }
@@ -9794,19 +9827,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPWeb
 ,["id"]), new objj_method(sel_getUid("contentsOfDirectoryAtURL:includingPropertiesForKeys:options:block:"), function $CPWebDAVManager__contentsOfDirectoryAtURL_includingPropertiesForKeys_options_block_(self, _cmd, aURL, keys, aMask, aBlock)
 {
     var properties = [],
-        count = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
+        count = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count"));
     while (count--)
         properties.push(WebDAVPropertiesForURLKeys[keys[count]]);
     var makeContents =     function(aURL, response)
     {
         var contents = [],
             URLString = nil,
-            URLStrings = (response == null ? null : (response.isa.method_msgSend["keyEnumerator"] || _objj_forward)(response, "keyEnumerator"));
-        while ((URLString = (URLStrings == null ? null : (URLStrings.isa.method_msgSend["nextObject"] || _objj_forward)(URLStrings, "nextObject"))) !== nil)
+            URLStrings = (response == null ? response : (response.isa.method_msgSend["keyEnumerator"] || _objj_forward)(response, "keyEnumerator"));
+        while ((URLString = (URLStrings == null ? URLStrings : (URLStrings.isa.method_msgSend["nextObject"] || _objj_forward)(URLStrings, "nextObject"))) != nil)
         {
             var URL = (CPURL.isa.method_msgSend["URLWithString:"] || _objj_forward)(CPURL, "URLWithString:", URLString),
-                properties = (response == null ? null : (response.isa.method_msgSend["objectForKey:"] || _objj_forward)(response, "objectForKey:", URLString));
-            if (!((___r1 = (URL == null ? null : (URL.isa.method_msgSend["absoluteString"] || _objj_forward)(URL, "absoluteString"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (aURL == null ? null : (aURL.isa.method_msgSend["absoluteString"] || _objj_forward)(aURL, "absoluteString")))))
+                properties = (response == null ? response : (response.isa.method_msgSend["objectForKey:"] || _objj_forward)(response, "objectForKey:", URLString));
+            if (!((___r1 = (URL == null ? URL : (URL.isa.method_msgSend["absoluteString"] || _objj_forward)(URL, "absoluteString"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (aURL == null ? aURL : (aURL.isa.method_msgSend["absoluteString"] || _objj_forward)(aURL, "absoluteString")))))
             {
                 contents.push(URL);
                 setURLResourceValuesForKeysFromProperties(URL, keys, properties);
@@ -9824,29 +9857,29 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPWeb
 ,["CPArray","CPURL","CPArray","CPDirectoryEnumerationOptions","Function"]), new objj_method(sel_getUid("PROPFIND:properties:depth:block:"), function $CPWebDAVManager__PROPFIND_properties_depth_block_(self, _cmd, aURL, properties, aDepth, aBlock)
 {
     var request = (CPURLRequest.isa.method_msgSend["requestWithURL:"] || _objj_forward)(CPURLRequest, "requestWithURL:", aURL);
-    (request == null ? null : (request.isa.method_msgSend["setHTTPMethod:"] || _objj_forward)(request, "setHTTPMethod:", "PROPFIND"));
-    (request == null ? null : (request.isa.method_msgSend["setValue:forHTTPHeaderField:"] || _objj_forward)(request, "setValue:forHTTPHeaderField:", aDepth, "Depth"));
+    (request == null ? request : (request.isa.method_msgSend["setHTTPMethod:"] || _objj_forward)(request, "setHTTPMethod:", "PROPFIND"));
+    (request == null ? request : (request.isa.method_msgSend["setValue:forHTTPHeaderField:"] || _objj_forward)(request, "setValue:forHTTPHeaderField:", aDepth, "Depth"));
     var HTTPBody = ["<?xml version=\"1.0\"?><a:propfind xmlns:a=\"DAV:\">"],
         index = 0,
         count = properties.length;
     for (; index < count; ++index)
         HTTPBody.push("<a:prop><a:", properties[index], "/></a:prop>");
     HTTPBody.push("</a:propfind>");
-    (request == null ? null : (request.isa.method_msgSend["setHTTPBody:"] || _objj_forward)(request, "setHTTPBody:", HTTPBody.join("")));
+    (request == null ? request : (request.isa.method_msgSend["setHTTPBody:"] || _objj_forward)(request, "setHTTPBody:", HTTPBody.join("")));
     if (!aBlock)
-        return parsePROPFINDResponse(((___r1 = (CPURLConnection.isa.method_msgSend["sendSynchronousRequest:returningResponse:"] || _objj_forward)(CPURLConnection, "sendSynchronousRequest:returningResponse:", request, nil)), ___r1 == null ? null : (___r1.isa.method_msgSend["rawString"] || _objj_forward)(___r1, "rawString")));
+        return parsePROPFINDResponse(((___r1 = (CPURLConnection.isa.method_msgSend["sendSynchronousRequest:returningResponse:"] || _objj_forward)(CPURLConnection, "sendSynchronousRequest:returningResponse:", request, nil)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["rawString"] || _objj_forward)(___r1, "rawString")));
     else
     {
         var connection = (CPURLConnection.isa.method_msgSend["connectionWithRequest:delegate:"] || _objj_forward)(CPURLConnection, "connectionWithRequest:delegate:", request, self);
-        ((___r1 = self._blocksForConnections), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", aBlock, (connection == null ? null : (connection.isa.method_msgSend["UID"] || _objj_forward)(connection, "UID"))));
+        ((___r1 = self._blocksForConnections), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", aBlock, (connection == null ? connection : (connection.isa.method_msgSend["UID"] || _objj_forward)(connection, "UID"))));
     }
     var ___r1;
 }
 
 ,["CPDictionary","CPURL","CPDictionary","CPString","Function"]), new objj_method(sel_getUid("connection:didReceiveData:"), function $CPWebDAVManager__connection_didReceiveData_(self, _cmd, aURLConnection, aString)
 {
-    var block = ((___r1 = self._blocksForConnections), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (aURLConnection == null ? null : (aURLConnection.isa.method_msgSend["UID"] || _objj_forward)(aURLConnection, "UID"))));
-    block(((___r1 = aURLConnection._request), ___r1 == null ? null : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL")), parsePROPFINDResponse(aString));
+    var block = ((___r1 = self._blocksForConnections), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (aURLConnection == null ? aURLConnection : (aURLConnection.isa.method_msgSend["UID"] || _objj_forward)(aURLConnection, "UID"))));
+    block(((___r1 = aURLConnection._request), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["URL"] || _objj_forward)(___r1, "URL")), parsePROPFINDResponse(aString));
     var ___r1;
 }
 
@@ -9873,14 +9906,14 @@ var parsePROPFINDResponse = function(anXMLString)
         responses = XMLDocument.getElementsByTagNameNS("*", "response"),
         responseIndex = 0,
         responseCount = responses.length,
-        propertiesForURLs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        propertiesForURLs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     for (; responseIndex < responseCount; ++responseIndex)
     {
         var response = responses[responseIndex],
             elements = ((response.getElementsByTagNameNS("*", "prop")).item(0)).childNodes,
             index = 0,
             count = elements.length,
-            properties = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+            properties = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         for (; index < count; ++index)
         {
             var element = elements[index];
@@ -9891,18 +9924,18 @@ var parsePROPFINDResponse = function(anXMLString)
             if (colonIndex > -1)
                 nodeName = nodeName.substr(colonIndex + 1);
             if (nodeName === "resourcetype")
-                (properties == null ? null : (properties.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(properties, "setObject:forKey:", element.firstChild ? CPWebDAVManagerCollectionResourceType : CPWebDAVManagerNonCollectionResourceType, nodeName));
+                (properties == null ? properties : (properties.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(properties, "setObject:forKey:", element.firstChild ? CPWebDAVManagerCollectionResourceType : CPWebDAVManagerNonCollectionResourceType, nodeName));
             else
-                (properties == null ? null : (properties.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(properties, "setObject:forKey:", element.firstChild.nodeValue, nodeName));
+                (properties == null ? properties : (properties.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(properties, "setObject:forKey:", element.firstChild.nodeValue, nodeName));
         }        var href = (response.getElementsByTagNameNS("*", "href")).item(0);
-        (propertiesForURLs == null ? null : (propertiesForURLs.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(propertiesForURLs, "setObject:forKey:", properties, href.firstChild.nodeValue));
+        (propertiesForURLs == null ? propertiesForURLs : (propertiesForURLs.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(propertiesForURLs, "setObject:forKey:", properties, href.firstChild.nodeValue));
     }    return propertiesForURLs;
     var ___r1;
 };
 var mapURLsAndProperties = function(properties, ignoredURL)
 {
 };
-p;9;CPProxy.jt;6101;@STATIC;1.0;i;13;CPException.ji;14;CPInvocation.ji;10;CPObject.ji;10;CPString.jt;6015;objj_executeFile("CPException.j", YES);objj_executeFile("CPInvocation.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);{var the_class = objj_allocateClassPair(Nil, "CPProxy"),
+p;9;CPProxy.jt;6118;@STATIC;1.0;i;13;CPException.ji;14;CPInvocation.ji;10;CPObject.ji;10;CPString.jt;6032;objj_executeFile("CPException.j", YES);objj_executeFile("CPInvocation.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);{var the_class = objj_allocateClassPair(Nil, "CPProxy"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("isa", "Class")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelector:"), function $CPProxy__methodSignatureForSelector_(self, _cmd, aSelector)
 {
@@ -9919,7 +9952,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelec
     return (CPObject.isa.method_msgSend["methodForSelector:"] || _objj_forward)(CPObject, "methodForSelector:", _cmd)(self, _cmd, aSelector, args);
 }
 
-,["void","SEL","marg_list"]), new objj_method(sel_getUid("hash"), function $CPProxy__hash(self, _cmd)
+,["id","SEL","marg_list"]), new objj_method(sel_getUid("hash"), function $CPProxy__hash(self, _cmd)
 {
     return (self.isa.method_msgSend["UID"] || _objj_forward)(self, "UID");
 }
@@ -9976,7 +10009,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelec
     var signature = (self.isa.method_msgSend["methodSignatureForSelector:"] || _objj_forward)(self, "methodSignatureForSelector:", _cmd),
         invocation = (CPInvocation.isa.method_msgSend["invocationWithMethodSignature:"] || _objj_forward)(CPInvocation, "invocationWithMethodSignature:", signature);
     (self.isa.method_msgSend["forwardInvocation:"] || _objj_forward)(self, "forwardInvocation:", invocation);
-    return (invocation == null ? null : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
+    return (invocation == null ? invocation : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
 }
 
 ,["BOOL","Class"]), new objj_method(sel_getUid("isMemberOfClass:"), function $CPProxy__isMemberOfClass_(self, _cmd, aClass)
@@ -9984,7 +10017,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelec
     var signature = (self.isa.method_msgSend["methodSignatureForSelector:"] || _objj_forward)(self, "methodSignatureForSelector:", _cmd),
         invocation = (CPInvocation.isa.method_msgSend["invocationWithMethodSignature:"] || _objj_forward)(CPInvocation, "invocationWithMethodSignature:", signature);
     (self.isa.method_msgSend["forwardInvocation:"] || _objj_forward)(self, "forwardInvocation:", invocation);
-    return (invocation == null ? null : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
+    return (invocation == null ? invocation : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
 }
 
 ,["BOOL","Class"]), new objj_method(sel_getUid("respondsToSelector:"), function $CPProxy__respondsToSelector_(self, _cmd, aSelector)
@@ -9992,7 +10025,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("methodSignatureForSelec
     var signature = (self.isa.method_msgSend["methodSignatureForSelector:"] || _objj_forward)(self, "methodSignatureForSelector:", _cmd),
         invocation = (CPInvocation.isa.method_msgSend["invocationWithMethodSignature:"] || _objj_forward)(CPInvocation, "invocationWithMethodSignature:", signature);
     (self.isa.method_msgSend["forwardInvocation:"] || _objj_forward)(self, "forwardInvocation:", invocation);
-    return (invocation == null ? null : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
+    return (invocation == null ? invocation : (invocation.isa.method_msgSend["returnValue"] || _objj_forward)(invocation, "returnValue"));
 }
 
 ,["BOOL","SEL"]), new objj_method(sel_getUid("description"), function $CPProxy__description(self, _cmd)
@@ -10019,7 +10052,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("load"), function $CPPr
     return class_createInstance(self);
 }
 
-,["id"]), new objj_method(sel_getUid("respondsToSelector:"), function $CPProxy__respondsToSelector_(self, _cmd, selector)
+,["id"]), new objj_method(sel_getUid("respondsToSelector:"), function $CPProxy__respondsToSelector_(self, _cmd, aSelector)
 {
     return !!class_getInstanceMethod(isa, aSelector);
 }
@@ -10218,7 +10251,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","CPUserNotification"])]);
 }
-p;10;CPString.jt;24079;@STATIC;1.0;i;13;CPException.ji;10;CPObject.ji;15;CPObjJRuntime.ji;9;CPRange.ji;18;CPSortDescriptor.ji;7;CPURL.ji;9;CPValue.ji;8;CPNull.jt;23934;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPObjJRuntime.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPSortDescriptor.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("CPNull.j", YES);CPCaseInsensitiveSearch = 1;
+p;10;CPString.jt;24135;@STATIC;1.0;i;13;CPException.ji;10;CPObject.ji;15;CPObjJRuntime.ji;9;CPRange.ji;18;CPSortDescriptor.ji;7;CPURL.ji;9;CPValue.ji;8;CPNull.jt;23990;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPObjJRuntime.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPSortDescriptor.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("CPNull.j", YES);CPCaseInsensitiveSearch = 1;
 CPLiteralSearch = 2;
 CPBackwardsSearch = 4;
 CPAnchoredSearch = 8;
@@ -10244,7 +10277,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 ,["id","CPString"]), new objj_method(sel_getUid("initWithFormat:"), function $CPString__initWithFormat_(self, _cmd, format)
 {
     if (!format)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
     self = ObjectiveJ.sprintf.apply(this, Array.prototype.slice.call(arguments, 2));
     return self;
 }
@@ -10267,7 +10300,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 ,["CPString","CPUInteger"]), new objj_method(sel_getUid("stringByAppendingFormat:"), function $CPString__stringByAppendingFormat_(self, _cmd, format)
 {
     if (!format)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
     return self + ObjectiveJ.sprintf.apply(this, Array.prototype.slice.call(arguments, 2));
 }
 
@@ -10305,14 +10338,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 ,["CPString","unsigned"]), new objj_method(sel_getUid("substringWithRange:"), function $CPString__substringWithRange_(self, _cmd, aRange)
 {
     if (aRange.location < 0 || CPMaxRange(aRange) > self.length)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "aRange out of bounds"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "aRange out of bounds"));
     return self.substr(aRange.location, aRange.length);
 }
 
 ,["CPString","CPRange"]), new objj_method(sel_getUid("substringToIndex:"), function $CPString__substringToIndex_(self, _cmd, anIndex)
 {
     if (anIndex > self.length)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "index out of bounds"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "index out of bounds"));
     return self.substring(0, anIndex);
 }
 
@@ -10364,7 +10397,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 
 ,["CPString"]), new objj_method(sel_getUid("stringByReplacingOccurrencesOfString:withString:"), function $CPString__stringByReplacingOccurrencesOfString_withString_(self, _cmd, target, replacement)
 {
-    return self.replace(new RegExp((target == null ? null : (target.isa.method_msgSend["stringByEscapingRegexControlCharacters"] || _objj_forward)(target, "stringByEscapingRegexControlCharacters")), "g"), replacement);
+    return self.replace(new RegExp((target == null ? target : (target.isa.method_msgSend["stringByEscapingRegexControlCharacters"] || _objj_forward)(target, "stringByEscapingRegexControlCharacters")), "g"), replacement);
 }
 
 ,["CPString","CPString","CPString"]), new objj_method(sel_getUid("stringByReplacingOccurrencesOfString:withString:options:range:"), function $CPString__stringByReplacingOccurrencesOfString_withString_options_range_(self, _cmd, target, replacement, options, searchRange)
@@ -10372,7 +10405,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
     var start = self.substring(0, searchRange.location),
         stringSegmentToSearch = self.substr(searchRange.location, searchRange.length),
         end = self.substring(searchRange.location + searchRange.length, self.length),
-        target = (target == null ? null : (target.isa.method_msgSend["stringByEscapingRegexControlCharacters"] || _objj_forward)(target, "stringByEscapingRegexControlCharacters")),
+        target = (target == null ? target : (target.isa.method_msgSend["stringByEscapingRegexControlCharacters"] || _objj_forward)(target, "stringByEscapingRegexControlCharacters")),
         regExp;
     if (options & CPCaseInsensitiveSearch)
         regExp = new RegExp(target, "gi");
@@ -10403,10 +10436,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 
 ,["CPComparisonResult","CPString"]), new objj_method(sel_getUid("compare:options:"), function $CPString__compare_options_(self, _cmd, aString, aMask)
 {
-    if (aString === nil)
+    if (aString == nil)
         return CPOrderedDescending;
     if (aString === CPStringNull)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "compare: argument can't be 'CPNull'"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "compare: argument can't be 'CPNull'"));
     var lhs = self,
         rhs = aString;
     if (aMask & CPCaseInsensitiveSearch)
@@ -10430,7 +10463,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 {
     var lhs = (self.isa.method_msgSend["substringWithRange:"] || _objj_forward)(self, "substringWithRange:", range),
         rhs = aString;
-    return (lhs == null ? null : (lhs.isa.method_msgSend["compare:options:"] || _objj_forward)(lhs, "compare:options:", rhs, aMask));
+    return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:options:"] || _objj_forward)(lhs, "compare:options:", rhs, aMask));
 }
 
 ,["CPComparisonResult","CPString","int","CPRange"]), new objj_method(sel_getUid("hasPrefix:"), function $CPString__hasPrefix_(self, _cmd, aString)
@@ -10447,7 +10480,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 {
     if (self === anObject)
         return YES;
-    if (!anObject || !(anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
+    if (!anObject || !(anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
         return NO;
     return (self.isa.method_msgSend["isEqualToString:"] || _objj_forward)(self, "isEqualToString:", anObject);
 }
@@ -10478,15 +10511,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
     var len = 0,
         lhs = self,
         rhs = aString,
-        min = MIN((lhs == null ? null : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? null : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length")));
+        min = MIN((lhs == null ? lhs : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? rhs : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length")));
     if (aMask & CPCaseInsensitiveSearch)
     {
-        lhs = (lhs == null ? null : (lhs.isa.method_msgSend["lowercaseString"] || _objj_forward)(lhs, "lowercaseString"));
-        rhs = (rhs == null ? null : (rhs.isa.method_msgSend["lowercaseString"] || _objj_forward)(rhs, "lowercaseString"));
+        lhs = (lhs == null ? lhs : (lhs.isa.method_msgSend["lowercaseString"] || _objj_forward)(lhs, "lowercaseString"));
+        rhs = (rhs == null ? rhs : (rhs.isa.method_msgSend["lowercaseString"] || _objj_forward)(rhs, "lowercaseString"));
     }
     for (; len < min; len++)
     {
-        if ((lhs == null ? null : (lhs.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(lhs, "characterAtIndex:", len)) !== (rhs == null ? null : (rhs.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(rhs, "characterAtIndex:", len)))
+        if ((lhs == null ? lhs : (lhs.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(lhs, "characterAtIndex:", len)) !== (rhs == null ? rhs : (rhs.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(rhs, "characterAtIndex:", len)))
             break;
     }
     return (self.isa.method_msgSend["substringToIndex:"] || _objj_forward)(self, "substringToIndex:", len);
@@ -10589,7 +10622,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 ,["CPString"]), new objj_method(sel_getUid("stringByAppendingPathComponent:"), function $CPString__stringByAppendingPathComponent_(self, _cmd, aString)
 {
     var components = (self.isa.method_msgSend["pathComponents"] || _objj_forward)(self, "pathComponents"),
-        addComponents = aString && aString !== "/" ? (aString == null ? null : (aString.isa.method_msgSend["pathComponents"] || _objj_forward)(aString, "pathComponents")) : [];
+        addComponents = aString && aString !== "/" ? (aString == null ? aString : (aString.isa.method_msgSend["pathComponents"] || _objj_forward)(aString, "pathComponents")) : [];
     return (CPString.isa.method_msgSend["pathWithComponents:"] || _objj_forward)(CPString, "pathWithComponents:", components.concat(addComponents));
 }
 
@@ -10631,7 +10664,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:"), func
 
 ,["CPString"]), new objj_method(sel_getUid("stringByStandardizingPath"), function $CPString__stringByStandardizingPath(self, _cmd)
 {
-    return ((___r1 = (CPURL == null ? null : (CPURL.isa.method_msgSend["URLWithString:"] || _objj_forward)(CPURL, "URLWithString:", self))), ___r1 == null ? null : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString"));
+    return ((___r1 = (CPURL == null ? CPURL : (CPURL.isa.method_msgSend["URLWithString:"] || _objj_forward)(CPURL, "URLWithString:", self))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["absoluteString"] || _objj_forward)(___r1, "absoluteString"));
     var ___r1;
 }
 
@@ -10645,7 +10678,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPS
 
 ,["id"]), new objj_method(sel_getUid("string"), function $CPString__string(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
@@ -10658,15 +10691,15 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPS
 ,["id","unsigned"]), new objj_method(sel_getUid("stringWithString:"), function $CPString__stringWithString_(self, _cmd, aString)
 {
     if (!aString)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "stringWithString: the string can't be 'nil'"));
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", aString));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "stringWithString: the string can't be 'nil'"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:"] || _objj_forward)(___r1, "initWithString:", aString));
     var ___r1;
 }
 
 ,["id","CPString"]), new objj_method(sel_getUid("stringWithFormat:"), function $CPString__stringWithFormat_(self, _cmd, format)
 {
     if (!format)
-        (CPException == null ? null : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
+        (CPException == null ? CPException : (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithFormat: the format can't be 'nil'"));
     return ObjectiveJ.sprintf.apply(this, Array.prototype.slice.call(arguments, 2));
 }
 
@@ -10752,14 +10785,15 @@ String.prototype.stripDiacritics = function()
     }    return output;
 };
 String.prototype.isa = CPString;
-p;20;CPUserNotification.jt;6001;@STATIC;1.0;i;20;CPAttributedString.ji;9;CPArray.ji;8;CPDate.ji;14;CPDictionary.ji;10;CPObject.ji;12;CPTimeZone.jt;5881;objj_executeFile("CPAttributedString.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPTimeZone.j", YES);{var the_typedef = objj_allocateTypeDef("CPUserNotificationAction");
+p;20;CPUserNotification.jt;5999;@STATIC;1.0;i;20;CPAttributedString.ji;9;CPArray.ji;8;CPDate.ji;14;CPDictionary.ji;10;CPObject.ji;12;CPTimeZone.jt;5879;objj_executeFile("CPAttributedString.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPTimeZone.j", YES);{var the_typedef = objj_allocateTypeDef("CPUserNotificationAction");
 objj_registerTypeDef(the_typedef);
 }{var the_typedef = objj_allocateTypeDef("CPUserNotificationActivationType");
 objj_registerTypeDef(the_typedef);
 }CPUserNotificationActivationTypeNone = 0;
 CPUserNotificationActivationTypeContentsClicked = 1;
 CPUserNotificationActivationTypeActionButtonClicked = 2;
-(CPUserNotificationActivationTypeReplied = 3, CPUserNotificationActivationTypeAdditionalActionClicked = 4);
+CPUserNotificationActivationTypeReplied = 3;
+CPUserNotificationActivationTypeAdditionalActionClicked = 4;
 
 {var the_class = objj_allocateClassPair(CPObject, "CPUserNotification"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_presented", "BOOL"), new objj_ivar("_remote", "BOOL"), new objj_ivar("_actualDeliveryDate", "CPDate"), new objj_ivar("_deliveryDate", "CPDate"), new objj_ivar("_userInfo", "CPDictionary"), new objj_ivar("_contentImage", "CPImage"), new objj_ivar("_identifier", "CPString"), new objj_ivar("_informativeText", "CPString"), new objj_ivar("_title", "CPString"), new objj_ivar("_deliveryRepeatInterval", "CPTimeInterval"), new objj_ivar("_deliveryTimeZone", "CPTimeZone"), new objj_ivar("_activationType", "CPUserNotificationActivationType")]);objj_registerClassPair(the_class);
@@ -10888,19 +10922,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("isPresented"), function
     self = (objj_getClass("CPUserNotification").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._identifier = (self == null ? null : (self.isa.method_msgSend["UID"] || _objj_forward)(self, "UID"));
+        self._identifier = (self == null ? self : (self.isa.method_msgSend["UID"] || _objj_forward)(self, "UID"));
     }
     return self;
 }
 
 ,["id"])]);
 }
-p;11;CPSet+KVO.jt;24366;@STATIC;1.0;i;13;CPException.ji;10;CPObject.ji;14;CPMutableSet.ji;8;CPNull.ji;27;_CPCollectionKVCOperators.jt;24250;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPMutableSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("_CPCollectionKVCOperators.j", YES);{
+p;11;CPSet+KVO.jt;24526;@STATIC;1.0;i;13;CPException.ji;10;CPObject.ji;14;CPMutableSet.ji;8;CPNull.ji;27;_CPCollectionKVCOperators.jt;24410;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPMutableSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("_CPCollectionKVCOperators.j", YES);{
 var the_class = objj_getClass("CPObject")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPObject\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("mutableSetValueForKey:"), function $CPObject__mutableSetValueForKey_(self, _cmd, aKey)
 {
-    return ((___r1 = (_CPKVCSet == null ? null : (_CPKVCSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVCSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithKey:forProxyObject:"] || _objj_forward)(___r1, "initWithKey:forProxyObject:", aKey, self));
+    return ((___r1 = (_CPKVCSet == null ? _CPKVCSet : (_CPKVCSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPKVCSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithKey:forProxyObject:"] || _objj_forward)(___r1, "initWithKey:forProxyObject:", aKey, self));
     var ___r1;
 }
 
@@ -10911,7 +10945,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         return (self.isa.method_msgSend["mutableSetValueForKey:"] || _objj_forward)(self, "mutableSetValueForKey:", aKeyPath);
     var firstPart = aKeyPath.substring(0, dotIndex),
         lastPart = aKeyPath.substring(dotIndex + 1);
-    return ((___r1 = (self.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(self, "valueForKeyPath:", firstPart)), ___r1 == null ? null : (___r1.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(___r1, "mutableSetValueForKeyPath:", lastPart));
+    return ((___r1 = (self.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(self, "valueForKeyPath:", firstPart)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableSetValueForKeyPath:"] || _objj_forward)(___r1, "mutableSetValueForKeyPath:", lastPart));
     var ___r1;
 }
 
@@ -10927,35 +10961,35 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     self._proxyObject = anObject;
     var capitalizedKey = (self._key.charAt(0)).toUpperCase() + self._key.substring(1);
     self._accessSEL = sel_getName(self._key);
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._accessSEL)))
-        self._access = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._accessSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._accessSEL)))
+        self._access = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._accessSEL));
     self._setSEL = sel_getName("set" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._setSEL)))
-        self._set = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._setSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._setSEL)))
+        self._set = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._setSEL));
     self._countSEL = sel_getName("countOf" + capitalizedKey);
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._countSEL)))
-        self._count = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._countSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._countSEL)))
+        self._count = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._countSEL));
     self._enumeratorSEL = sel_getName("enumeratorOf" + capitalizedKey);
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._enumeratorSEL)))
-        self._enumerator = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._enumeratorSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._enumeratorSEL)))
+        self._enumerator = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._enumeratorSEL));
     self._memberSEL = sel_getName("memberOf" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._memberSEL)))
-        self._member = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._memberSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._memberSEL)))
+        self._member = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._memberSEL));
     self._addSEL = sel_getName("add" + capitalizedKey + "Object:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._addSEL)))
-        self._add = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._addSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._addSEL)))
+        self._add = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._addSEL));
     self._addManySEL = sel_getName("add" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._addManySEL)))
-        self._addMany = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._addManySEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._addManySEL)))
+        self._addMany = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._addManySEL));
     self._removeSEL = sel_getName("remove" + capitalizedKey + "Object:");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeSEL)))
-        self._remove = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeSEL)))
+        self._remove = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeSEL));
     self._removeManySEL = sel_getName("remove" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeManySEL)))
-        self._removeMany = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeManySEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._removeManySEL)))
+        self._removeMany = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._removeManySEL));
     self._intersectSEL = sel_getName("intersect" + capitalizedKey + ":");
-    if (((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._intersectSEL)))
-        self._intersect = ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._intersectSEL));
+    if (((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._intersectSEL)))
+        self._intersect = ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["methodForSelector:"] || _objj_forward)(___r1, "methodForSelector:", self._intersectSEL));
     return self;
     var ___r1;
 }
@@ -10964,7 +10998,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._access)
         return self._access(self._proxyObject, self._accessSEL);
-    return ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._key));
+    return ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKey:"] || _objj_forward)(___r1, "valueForKey:", self._key));
     var ___r1;
 }
 
@@ -10972,7 +11006,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._set)
         return self._set(self._proxyObject, self._setSEL, anObject);
-    ((___r1 = self._proxyObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", anObject, self._key));
+    ((___r1 = self._proxyObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(___r1, "setValue:forKey:", anObject, self._key));
     var ___r1;
 }
 
@@ -10980,7 +11014,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._count)
         return self._count(self._proxyObject, self._countSEL);
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
     var ___r1;
 }
 
@@ -10988,7 +11022,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._enumerator)
         return self._enumerator(self._proxyObject, self._enumeratorSEL);
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
     var ___r1;
 }
 
@@ -10996,7 +11030,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._member)
         return self._member(self._proxyObject, self._memberSEL, anObject);
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["member:"] || _objj_forward)(___r1, "member:", anObject));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["member:"] || _objj_forward)(___r1, "member:", anObject));
     var ___r1;
 }
 
@@ -11011,8 +11045,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["addObject:"] || _objj_forward)(target, "addObject:", anObject));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["addObject:"] || _objj_forward)(target, "addObject:", anObject));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11028,14 +11062,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._add)
     {
         var object,
-            objectEnumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator"));
-        while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+            objectEnumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator"));
+        while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
             self._add(self._proxyObject, self._addSEL, object);
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(target, "addObjectsFromArray:", objects));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(target, "addObjectsFromArray:", objects));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11048,14 +11082,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._add)
     {
         var object,
-            objectEnumerator = (aSet == null ? null : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
-        while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+            objectEnumerator = (aSet == null ? aSet : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
+        while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
             self._add(self._proxyObject, self._addSEL, object);
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["unionSet:"] || _objj_forward)(target, "unionSet:", aSet));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["unionSet:"] || _objj_forward)(target, "unionSet:", aSet));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11072,8 +11106,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["removeObject:"] || _objj_forward)(target, "removeObject:", anObject));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["removeObject:"] || _objj_forward)(target, "removeObject:", anObject));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11086,14 +11120,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._remove)
     {
         var object,
-            objectEnumerator = (aSet == null ? null : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
-        while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+            objectEnumerator = (aSet == null ? aSet : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
+        while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
             self._remove(self._proxyObject, self._removeSEL, object);
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["minusSet:"] || _objj_forward)(target, "minusSet:", aSet));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["minusSet:"] || _objj_forward)(target, "minusSet:", aSet));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11109,14 +11143,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
     else if (self._remove)
     {
         var object,
-            objectEnumerator = (objects == null ? null : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator"));
-        while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+            objectEnumerator = (objects == null ? objects : (objects.isa.method_msgSend["objectEnumerator"] || _objj_forward)(objects, "objectEnumerator"));
+        while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
             self._remove(self._proxyObject, self._removeSEL, object);
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(target, "removeObjectsInArray:", objects));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(target, "removeObjectsInArray:", objects));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11126,20 +11160,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 {
     if (self._removeMany)
     {
-        var allObjectsSet = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        var allObjectsSet = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
         self._removeMany(self._proxyObject, self._removeManySEL, allObjectsSet);
     }
     else if (self._remove)
     {
         var object,
-            objectEnumerator = ((___r1 = ((___r2 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r2 == null ? null : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy"))), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
-        while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+            objectEnumerator = ((___r1 = ((___r2 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
+        while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
             self._remove(self._proxyObject, self._removeSEL, object);
     }
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["removeAllObjects"] || _objj_forward)(target, "removeAllObjects"));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["removeAllObjects"] || _objj_forward)(target, "removeAllObjects"));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1, ___r2;
@@ -11151,8 +11185,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
         self._intersect(self._proxyObject, self._intersectSEL, aSet);
     else
     {
-        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
-        (target == null ? null : (target.isa.method_msgSend["intersectSet:"] || _objj_forward)(target, "intersectSet:", aSet));
+        var target = ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+        (target == null ? target : (target.isa.method_msgSend["intersectSet:"] || _objj_forward)(target, "intersectSet:", aSet));
         (self.isa.method_msgSend["_setRepresentedObject:"] || _objj_forward)(self, "_setRepresentedObject:", target);
     }
     var ___r1;
@@ -11165,37 +11199,37 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKey:forProxyObj
 
 ,["void","CPSet"]), new objj_method(sel_getUid("allObjects"), function $_CPKVCSet__allObjects(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["allObjects"] || _objj_forward)(___r1, "allObjects"));
     var ___r1;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("anyObject"), function $_CPKVCSet__anyObject(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["anyObject"] || _objj_forward)(___r1, "anyObject"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["anyObject"] || _objj_forward)(___r1, "anyObject"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("containsObject:"), function $_CPKVCSet__containsObject_(self, _cmd, anObject)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", anObject));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", anObject));
     var ___r1;
 }
 
 ,["BOOL","id"]), new objj_method(sel_getUid("intersectsSet:"), function $_CPKVCSet__intersectsSet_(self, _cmd, aSet)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["intersectsSet:"] || _objj_forward)(___r1, "intersectsSet:", aSet));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["intersectsSet:"] || _objj_forward)(___r1, "intersectsSet:", aSet));
     var ___r1;
 }
 
 ,["BOOL","CPSet"]), new objj_method(sel_getUid("isEqualToSet:"), function $_CPKVCSet__isEqualToSet_(self, _cmd, aSet)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToSet:"] || _objj_forward)(___r1, "isEqualToSet:", aSet));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToSet:"] || _objj_forward)(___r1, "isEqualToSet:", aSet));
     var ___r1;
 }
 
 ,["BOOL","CPSet"]), new objj_method(sel_getUid("copy"), function $_CPKVCSet__copy(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? null : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
+    return ((___r1 = (self.isa.method_msgSend["_representedObject"] || _objj_forward)(self, "_representedObject")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["copy"] || _objj_forward)(___r1, "copy"));
     var ___r1;
 }
 
@@ -11240,12 +11274,12 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             containedObject,
             containedObjectValue,
             containedObjectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-        while ((containedObject = (containedObjectEnumerator == null ? null : (containedObjectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(containedObjectEnumerator, "nextObject"))) !== nil)
+        while ((containedObject = (containedObjectEnumerator == null ? containedObjectEnumerator : (containedObjectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(containedObjectEnumerator, "nextObject"))) != nil)
         {
-            containedObjectValue = (containedObject == null ? null : (containedObject.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(containedObject, "valueForKeyPath:", aKeyPath));
-            if (containedObjectValue === nil || containedObjectValue === undefined)
+            containedObjectValue = (containedObject == null ? containedObject : (containedObject.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(containedObject, "valueForKeyPath:", aKeyPath));
+            if (containedObjectValue == nil)
                 containedObjectValue = (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null");
-            (valuesForKeySet == null ? null : (valuesForKeySet.isa.method_msgSend["addObject:"] || _objj_forward)(valuesForKeySet, "addObject:", containedObjectValue));
+            (valuesForKeySet == null ? valuesForKeySet : (valuesForKeySet.isa.method_msgSend["addObject:"] || _objj_forward)(valuesForKeySet, "addObject:", containedObjectValue));
         }
         return valuesForKeySet;
     }
@@ -11255,8 +11289,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     var containedObject,
         containedObjectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((containedObject = (containedObjectEnumerator == null ? null : (containedObjectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(containedObjectEnumerator, "nextObject"))) !== nil)
-        (containedObject == null ? null : (containedObject.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(containedObject, "setValue:forKey:", aValue, aKey));
+    while ((containedObject = (containedObjectEnumerator == null ? containedObjectEnumerator : (containedObjectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(containedObjectEnumerator, "nextObject"))) != nil)
+        (containedObject == null ? containedObject : (containedObject.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(containedObject, "setValue:forKey:", aValue, aKey));
 }
 
 ,["void","id","CPString"])]);
@@ -11466,7 +11500,7 @@ CPCopyLocalizedStringFromTableInBundle = function(key, table, bundle, comment)
 {
     return CFCopyLocalizedStringFromTableInBundle(key, table, bundle._bundle, comment);
 }
-p;19;CPNumberFormatter.jt;20143;@STATIC;1.0;i;10;CPString.ji;13;CPFormatter.ji;17;CPDecimalNumber.jt;20068;objj_executeFile("CPString.j", YES);objj_executeFile("CPFormatter.j", YES);objj_executeFile("CPDecimalNumber.j", YES);{var the_typedef = objj_allocateTypeDef("CPNumberFormatterStyle");
+p;19;CPNumberFormatter.jt;20226;@STATIC;1.0;i;10;CPString.ji;13;CPFormatter.ji;17;CPDecimalNumber.jt;20151;objj_executeFile("CPString.j", YES);objj_executeFile("CPFormatter.j", YES);objj_executeFile("CPDecimalNumber.j", YES);{var the_typedef = objj_allocateTypeDef("CPNumberFormatterStyle");
 objj_registerTypeDef(the_typedef);
 }CPNumberFormatterNoStyle = 0;
 CPNumberFormatterDecimalStyle = 1;
@@ -11620,27 +11654,27 @@ class_addMethods(the_class, [new objj_method(sel_getUid("numberStyle"), function
     {
         number *= 100.0;
     }
-    var dcmn = (number == null ? null : (number.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(number, "isKindOfClass:", CPDecimalNumber)) ? number : ((___r1 = (CPDecimalNumber.isa.method_msgSend["alloc"] || _objj_forward)(CPDecimalNumber, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["_initWithJSNumber:"] || _objj_forward)(___r1, "_initWithJSNumber:", number));
+    var dcmn = (number == null ? number : (number.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(number, "isKindOfClass:", CPDecimalNumber)) ? number : ((___r1 = (CPDecimalNumber.isa.method_msgSend["alloc"] || _objj_forward)(CPDecimalNumber, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_initWithJSNumber:"] || _objj_forward)(___r1, "_initWithJSNumber:", number));
     switch(self._numberStyle) {
         case CPNumberFormatterCurrencyStyle:
         case CPNumberFormatterDecimalStyle:
         case CPNumberFormatterPercentStyle:
             (self.isa.method_msgSend["_updateNumberHandlerIfNecessary"] || _objj_forward)(self, "_updateNumberHandlerIfNecessary");
-            dcmn = (dcmn == null ? null : (dcmn.isa.method_msgSend["decimalNumberByRoundingAccordingToBehavior:"] || _objj_forward)(dcmn, "decimalNumberByRoundingAccordingToBehavior:", self._numberHandler));
-            var output = (dcmn == null ? null : (dcmn.isa.method_msgSend["descriptionWithLocale:"] || _objj_forward)(dcmn, "descriptionWithLocale:", nil)),
+            dcmn = (dcmn == null ? dcmn : (dcmn.isa.method_msgSend["decimalNumberByRoundingAccordingToBehavior:"] || _objj_forward)(dcmn, "decimalNumberByRoundingAccordingToBehavior:", self._numberHandler));
+            var output = (dcmn == null ? dcmn : (dcmn.isa.method_msgSend["descriptionWithLocale:"] || _objj_forward)(dcmn, "descriptionWithLocale:", nil)),
                 parts = output.match(NumberRegex) || ["", undefined, "", undefined, undefined],
                 negativePrefix = parts[1] || "",
                 preFraction = parts[2] || "",
                 fraction = parts[4] || "",
-                preFractionLength = (preFraction == null ? null : (preFraction.isa.method_msgSend["length"] || _objj_forward)(preFraction, "length")),
+                preFractionLength = (preFraction == null ? preFraction : (preFraction.isa.method_msgSend["length"] || _objj_forward)(preFraction, "length")),
                 commaPosition = 3;
             while (fraction.length < self._minimumFractionDigits)
                 fraction += "0";
             if (self._groupingSeparator)
             {
-                for (var commaPosition = 3, prefLength = (preFraction == null ? null : (preFraction.isa.method_msgSend["length"] || _objj_forward)(preFraction, "length")); commaPosition < prefLength; commaPosition += 4)
+                for (var commaPosition = 3, prefLength = (preFraction == null ? preFraction : (preFraction.isa.method_msgSend["length"] || _objj_forward)(preFraction, "length")); commaPosition < prefLength; commaPosition += 4)
                 {
-                    preFraction = (preFraction == null ? null : (preFraction.isa.method_msgSend["stringByReplacingCharactersInRange:withString:"] || _objj_forward)(preFraction, "stringByReplacingCharactersInRange:withString:", CPMakeRange(prefLength - commaPosition, 0), self._groupingSeparator));
+                    preFraction = (preFraction == null ? preFraction : (preFraction.isa.method_msgSend["stringByReplacingCharactersInRange:withString:"] || _objj_forward)(preFraction, "stringByReplacingCharactersInRange:withString:", CPMakeRange(prefLength - commaPosition, 0), self._groupingSeparator));
                     prefLength += 1;
                 }
             }
@@ -11660,7 +11694,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("numberStyle"), function
                 string = negativePrefix + string;
             return string;
 default:
-            return (number == null ? null : (number.isa.method_msgSend["description"] || _objj_forward)(number, "description"));
+            return (number == null ? number : (number.isa.method_msgSend["description"] || _objj_forward)(number, "description"));
     }
     var ___r1;
 }
@@ -11675,10 +11709,10 @@ default:
 
 ,["CPNumber","CPString"]), new objj_method(sel_getUid("stringForObjectValue:"), function $CPNumberFormatter__stringForObjectValue_(self, _cmd, anObject)
 {
-    if ((anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPNumber.isa.method_msgSend["class"] || _objj_forward)(CPNumber, "class"))))
+    if ((anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPNumber.isa.method_msgSend["class"] || _objj_forward)(CPNumber, "class"))))
         return (self.isa.method_msgSend["stringFromNumber:"] || _objj_forward)(self, "stringFromNumber:", anObject);
     else
-        return (anObject == null ? null : (anObject.isa.method_msgSend["description"] || _objj_forward)(anObject, "description"));
+        return (anObject == null ? anObject : (anObject.isa.method_msgSend["description"] || _objj_forward)(anObject, "description"));
 }
 
 ,["CPString","id"]), new objj_method(sel_getUid("editingStringForObjectValue:"), function $CPNumberFormatter__editingStringForObjectValue_(self, _cmd, anObject)
@@ -11697,9 +11731,9 @@ default:
         error = "";
     if (!isFinite(value))
         error = "Value is not a number";
-    else if (self._minimum !== nil && value < self._minimum)
+    else if (self._minimum != nil && value < self._minimum)
         error = "Value is less than the minimum allowed value";
-    else if (self._maximum !== nil && value > self._maximum)
+    else if (self._maximum != nil && value > self._maximum)
         error = "Value is greater than the maximum allowed value";
     if (error)
     {
@@ -11767,9 +11801,9 @@ default:
 ,["void"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("localizedStringFromNumber:numberStyle:"), function $CPNumberFormatter__localizedStringFromNumber_numberStyle_(self, _cmd, num, localizationStyle)
 {
-    var formatter = ((___r1 = (CPNumberFormatter.isa.method_msgSend["alloc"] || _objj_forward)(CPNumberFormatter, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    (formatter == null ? null : (formatter.isa.method_msgSend["setNumberStyle:"] || _objj_forward)(formatter, "setNumberStyle:", localizationStyle));
-    return (formatter == null ? null : (formatter.isa.method_msgSend["stringFromNumber:"] || _objj_forward)(formatter, "stringFromNumber:", num));
+    var formatter = ((___r1 = (CPNumberFormatter.isa.method_msgSend["alloc"] || _objj_forward)(CPNumberFormatter, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    (formatter == null ? formatter : (formatter.isa.method_msgSend["setNumberStyle:"] || _objj_forward)(formatter, "setNumberStyle:", localizationStyle));
+    return (formatter == null ? formatter : (formatter.isa.method_msgSend["stringFromNumber:"] || _objj_forward)(formatter, "stringFromNumber:", num));
     var ___r1;
 }
 
@@ -11793,16 +11827,16 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPNumberFormatter").super_class.method_dtable["initWithCoder:"] || _objj_forward)(self, "initWithCoder:", aCoder);
     if (self)
     {
-        self._numberStyle = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterStyleKey));
-        self._minimumFractionDigits = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterMinimumFractionDigitsKey));
-        self._maximumFractionDigits = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterMaximumFractionDigitsKey));
-        self._roundingMode = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterRoundingModeKey));
-        self._groupingSeparator = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterGroupingSeparatorKey));
-        self._currencyCode = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterCurrencyCodeKey));
-        self._currencySymbol = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterCurrencySymbolKey));
-        self._generatesDecimalNumbers = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPNumberFormatterGeneratesDecimalNumbers));
-        self._minimum = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterMinimumKey));
-        self._maximum = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterMaximumKey));
+        self._numberStyle = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterStyleKey));
+        self._minimumFractionDigits = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterMinimumFractionDigitsKey));
+        self._maximumFractionDigits = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterMaximumFractionDigitsKey));
+        self._roundingMode = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPNumberFormatterRoundingModeKey));
+        self._groupingSeparator = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterGroupingSeparatorKey));
+        self._currencyCode = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterCurrencyCodeKey));
+        self._currencySymbol = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterCurrencySymbolKey));
+        self._generatesDecimalNumbers = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeBoolForKey:"] || _objj_forward)(aCoder, "decodeBoolForKey:", CPNumberFormatterGeneratesDecimalNumbers));
+        self._minimum = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterMinimumKey));
+        self._maximum = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPNumberFormatterMaximumKey));
     }
     return self;
 }
@@ -11810,16 +11844,16 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPNumberFormatter__encodeWithCoder_(self, _cmd, aCoder)
 {
     (objj_getClass("CPNumberFormatter").super_class.method_dtable["encodeWithCoder:"] || _objj_forward)(self, "encodeWithCoder:", aCoder);
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._numberStyle, CPNumberFormatterStyleKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._minimumFractionDigits, CPNumberFormatterMinimumFractionDigitsKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._maximumFractionDigits, CPNumberFormatterMaximumFractionDigitsKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._minimum, CPNumberFormatterMinimumKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._maximum, CPNumberFormatterMaximumKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._roundingMode, CPNumberFormatterRoundingModeKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._groupingSeparator, CPNumberFormatterGroupingSeparatorKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currencyCode, CPNumberFormatterCurrencyCodeKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currencySymbol, CPNumberFormatterCurrencySymbolKey));
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._generatesDecimalNumbers, CPNumberFormatterGeneratesDecimalNumbers));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._numberStyle, CPNumberFormatterStyleKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._minimumFractionDigits, CPNumberFormatterMinimumFractionDigitsKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._maximumFractionDigits, CPNumberFormatterMaximumFractionDigitsKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._minimum, CPNumberFormatterMinimumKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._maximum, CPNumberFormatterMaximumKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._roundingMode, CPNumberFormatterRoundingModeKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._groupingSeparator, CPNumberFormatterGroupingSeparatorKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currencyCode, CPNumberFormatterCurrencyCodeKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._currencySymbol, CPNumberFormatterCurrencySymbolKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._generatesDecimalNumbers, CPNumberFormatterGeneratesDecimalNumbers));
 }
 
 ,["void","CPCoder"])]);
@@ -12680,7 +12714,7 @@ CPJSObjectCreateWithJSON = function(aString)
     CPLog.warn("CPJSObjectCreateWithJSON deprecated, use JSON.parse() or CPString's JSONFromObject");
     return JSON.parse(aString);
 }
-p;18;CPKeyValueCoding.jt;21215;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;12;CPIndexSet.ji;8;CPNull.ji;10;CPObject.ji;7;CPSet.ji;21;CPKeyValueObserving.jt;21064;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPIndexSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPSet.j", YES);CPUndefinedKeyException = "CPUndefinedKeyException";
+p;18;CPKeyValueCoding.jt;21357;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;13;CPException.ji;12;CPIndexSet.ji;8;CPNull.ji;10;CPObject.ji;7;CPSet.ji;21;CPKeyValueObserving.jt;21206;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPIndexSet.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPSet.j", YES);CPUndefinedKeyException = "CPUndefinedKeyException";
 CPTargetObjectUserInfoKey = "CPTargetObjectUserInfoKey";
 CPUnknownUserInfoKey = "CPUnknownUserInfoKey";
 var CPObjectAccessorsForClassKey = "$CPObjectAccessorsForClassKey",
@@ -12703,13 +12737,13 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             capitalizedKey = (aKey.charAt(0)).toUpperCase() + aKey.substr(1),
             underscoreKey = nil,
             isKey = nil;
-        if ((theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("get" + capitalizedKey))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(aKey))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(isKey = "is" + capitalizedKey))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_get" + capitalizedKey))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(underscoreKey = "_" + aKey))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_" + isKey))))
+        if ((theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("get" + capitalizedKey))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(aKey))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(isKey = "is" + capitalizedKey))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_get" + capitalizedKey))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid(underscoreKey = "_" + aKey))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_" + isKey))))
             accessor = accessors[aKey] = [0, string];
-        else if ((theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("countOf" + capitalizedKey))))
+        else if ((theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("countOf" + capitalizedKey))))
         {
-            if ((theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("objectIn" + capitalizedKey + "AtIndex:"))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid(aKey + "AtIndexes:"))))
+            if ((theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("objectIn" + capitalizedKey + "AtIndex:"))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid(aKey + "AtIndexes:"))))
                 accessor = accessors[aKey] = [1];
-            else if ((theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("enumeratorOf" + capitalizedKey))) && (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("memberOf" + capitalizedKey + ":"))))
+            else if ((theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("enumeratorOf" + capitalizedKey))) && (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", sel_getUid("memberOf" + capitalizedKey + ":"))))
                 accessor = accessors[aKey] = [2];
         }
         if (!accessor)
@@ -12724,11 +12758,11 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         case 0:
             return self.isa.objj_msgSend0(self, accessor[1]);
         case 1:
-            return ((___r1 = (_CPKeyValueCodingArray == null ? null : (_CPKeyValueCodingArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyValueCodingArray, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithTarget:key:"] || _objj_forward)(___r1, "initWithTarget:key:", self, aKey));
+            return ((___r1 = (_CPKeyValueCodingArray == null ? _CPKeyValueCodingArray : (_CPKeyValueCodingArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyValueCodingArray, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithTarget:key:"] || _objj_forward)(___r1, "initWithTarget:key:", self, aKey));
         case 2:
-            return ((___r1 = (_CPKeyValueCodingSet == null ? null : (_CPKeyValueCodingSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyValueCodingSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithTarget:key:"] || _objj_forward)(___r1, "initWithTarget:key:", self, aKey));
+            return ((___r1 = (_CPKeyValueCodingSet == null ? _CPKeyValueCodingSet : (_CPKeyValueCodingSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyValueCodingSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithTarget:key:"] || _objj_forward)(___r1, "initWithTarget:key:", self, aKey));
         case 3:
-            if ((theClass == null ? null : (theClass.isa.method_msgSend["accessInstanceVariablesDirectly"] || _objj_forward)(theClass, "accessInstanceVariablesDirectly")))
+            if ((theClass == null ? theClass : (theClass.isa.method_msgSend["accessInstanceVariablesDirectly"] || _objj_forward)(theClass, "accessInstanceVariablesDirectly")))
                 return self[accessor[1]];
     }
     return (self.isa.method_msgSend["valueForUndefinedKey:"] || _objj_forward)(self, "valueForUndefinedKey:", aKey);
@@ -12743,22 +12777,22 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     var firstKeyComponent = aKeyPath.substring(0, firstDotIndex),
         remainingKeyPath = aKeyPath.substring(firstDotIndex + 1),
         value = (self.isa.method_msgSend["valueForKey:"] || _objj_forward)(self, "valueForKey:", firstKeyComponent);
-    return (value == null ? null : (value.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(value, "valueForKeyPath:", remainingKeyPath));
+    return (value == null ? value : (value.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(value, "valueForKeyPath:", remainingKeyPath));
 }
 
 ,["id","CPString"]), new objj_method(sel_getUid("dictionaryWithValuesForKeys:"), function $CPObject__dictionaryWithValuesForKeys_(self, _cmd, keys)
 {
     var index = 0,
         count = keys.length,
-        dictionary = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        dictionary = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     for (; index < count; ++index)
     {
         var key = keys[index],
             value = (self.isa.method_msgSend["valueForKey:"] || _objj_forward)(self, "valueForKey:", key);
-        if (value === nil)
-            (dictionary == null ? null : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), key));
+        if (value == nil)
+            (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"), key));
         else
-            (dictionary == null ? null : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", value, key));
+            (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", value, key));
     }
     return dictionary;
     var ___r1;
@@ -12766,7 +12800,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["CPDictionary","CPArray"]), new objj_method(sel_getUid("valueForUndefinedKey:"), function $CPObject__valueForUndefinedKey_(self, _cmd, aKey)
 {
-    ((___r1 = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", CPUndefinedKeyException, (self.isa.method_msgSend["_objectDescription"] || _objj_forward)(self, "_objectDescription") + " is not key value coding-compliant for the key " + aKey, (___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? null : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [self, aKey], [CPTargetObjectUserInfoKey, CPUnknownUserInfoKey])))), ___r1 == null ? null : (___r1.isa.method_msgSend["raise"] || _objj_forward)(___r1, "raise"));
+    ((___r1 = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", CPUndefinedKeyException, (self.isa.method_msgSend["_objectDescription"] || _objj_forward)(self, "_objectDescription") + " is not key value coding-compliant for the key " + aKey, (___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [self, aKey], [CPTargetObjectUserInfoKey, CPUnknownUserInfoKey])))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["raise"] || _objj_forward)(___r1, "raise"));
     var ___r1, ___r2;
 }
 
@@ -12780,13 +12814,13 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     var firstKeyComponent = aKeyPath.substring(0, firstDotIndex),
         remainingKeyPath = aKeyPath.substring(firstDotIndex + 1),
         value = (self.isa.method_msgSend["valueForKey:"] || _objj_forward)(self, "valueForKey:", firstKeyComponent);
-    return (value == null ? null : (value.isa.method_msgSend["setValue:forKeyPath:"] || _objj_forward)(value, "setValue:forKeyPath:", aValue, remainingKeyPath));
+    return (value == null ? value : (value.isa.method_msgSend["setValue:forKeyPath:"] || _objj_forward)(value, "setValue:forKeyPath:", aValue, remainingKeyPath));
 }
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("setValue:forKey:"), function $CPObject__setValue_forKey_(self, _cmd, aValue, aKey)
 {
-    if (aValue && aValue.isa && (aValue == null ? null : (aValue.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aValue, "isKindOfClass:", CPValue)))
-        aValue = (aValue == null ? null : (aValue.isa.method_msgSend["JSObject"] || _objj_forward)(aValue, "JSObject"));
+    if (aValue && aValue.isa && (aValue == null ? aValue : (aValue.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aValue, "isKindOfClass:", CPValue)))
+        aValue = (aValue == null ? aValue : (aValue.isa.method_msgSend["JSObject"] || _objj_forward)(aValue, "JSObject"));
     var theClass = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"),
         modifier = nil,
         modifiers = theClass[CPObjectModifiersForClassKey];
@@ -12799,7 +12833,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         var string = nil,
             capitalizedKey = (aKey.charAt(0)).toUpperCase() + aKey.substr(1),
             isKey = nil;
-        if ((theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("set" + capitalizedKey + ":"))) || (theClass == null ? null : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_set" + capitalizedKey + ":"))))
+        if ((theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("set" + capitalizedKey + ":"))) || (theClass == null ? theClass : (theClass.isa.method_msgSend["instancesRespondToSelector:"] || _objj_forward)(theClass, "instancesRespondToSelector:", string = sel_getUid("_set" + capitalizedKey + ":"))))
             modifier = modifiers[aKey] = [0, string];
         else if (class_getInstanceVariable(theClass, string = "_" + aKey) || class_getInstanceVariable(theClass, string = "_" + (isKey = "is" + capitalizedKey)) || class_getInstanceVariable(theClass, string = aKey) || class_getInstanceVariable(theClass, string = isKey))
             modifier = modifiers[aKey] = [1, string];
@@ -12810,7 +12844,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         case 0:
             return self.isa.objj_msgSend1(self, modifier[1], aValue);
         case 1:
-            if ((theClass == null ? null : (theClass.isa.method_msgSend["accessInstanceVariablesDirectly"] || _objj_forward)(theClass, "accessInstanceVariablesDirectly")))
+            if ((theClass == null ? theClass : (theClass.isa.method_msgSend["accessInstanceVariablesDirectly"] || _objj_forward)(theClass, "accessInstanceVariablesDirectly")))
             {
                 (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", aKey);
                 self[modifier[1]] = aValue;
@@ -12824,10 +12858,10 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     var value,
         key,
-        keyEnumerator = (keyedValues == null ? null : (keyedValues.isa.method_msgSend["keyEnumerator"] || _objj_forward)(keyedValues, "keyEnumerator"));
-    while ((key = (keyEnumerator == null ? null : (keyEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(keyEnumerator, "nextObject"))) !== nil)
+        keyEnumerator = (keyedValues == null ? keyedValues : (keyedValues.isa.method_msgSend["keyEnumerator"] || _objj_forward)(keyedValues, "keyEnumerator"));
+    while ((key = (keyEnumerator == null ? keyEnumerator : (keyEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(keyEnumerator, "nextObject"))) != nil)
     {
-        value = (keyedValues == null ? null : (keyedValues.isa.method_msgSend["objectForKey:"] || _objj_forward)(keyedValues, "objectForKey:", key));
+        value = (keyedValues == null ? keyedValues : (keyedValues.isa.method_msgSend["objectForKey:"] || _objj_forward)(keyedValues, "objectForKey:", key));
         if (value === (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"))
             (self.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(self, "setValue:forKey:", nil, key);
         else
@@ -12837,7 +12871,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","CPDictionary"]), new objj_method(sel_getUid("setValue:forUndefinedKey:"), function $CPObject__setValue_forUndefinedKey_(self, _cmd, aValue, aKey)
 {
-    ((___r1 = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", CPUndefinedKeyException, (self.isa.method_msgSend["_objectDescription"] || _objj_forward)(self, "_objectDescription") + " is not key value coding-compliant for the key " + aKey, (___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? null : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [self, aKey], [CPTargetObjectUserInfoKey, CPUnknownUserInfoKey])))), ___r1 == null ? null : (___r1.isa.method_msgSend["raise"] || _objj_forward)(___r1, "raise"));
+    ((___r1 = (CPException.isa.method_msgSend["exceptionWithName:reason:userInfo:"] || _objj_forward)(CPException, "exceptionWithName:reason:userInfo:", CPUndefinedKeyException, (self.isa.method_msgSend["_objectDescription"] || _objj_forward)(self, "_objectDescription") + " is not key value coding-compliant for the key " + aKey, (___r2 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r2, "initWithObjects:forKeys:", [self, aKey], [CPTargetObjectUserInfoKey, CPUnknownUserInfoKey])))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["raise"] || _objj_forward)(___r1, "raise"));
     var ___r1, ___r2;
 }
 
@@ -12859,14 +12893,14 @@ var the_class = objj_getClass("CPDictionary")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPDictionary\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("valueForKey:"), function $CPDictionary__valueForKey_(self, _cmd, aKey)
 {
-    if ((aKey == null ? null : (aKey.isa.method_msgSend["hasPrefix:"] || _objj_forward)(aKey, "hasPrefix:", "@")))
+    if ((aKey == null ? aKey : (aKey.isa.method_msgSend["hasPrefix:"] || _objj_forward)(aKey, "hasPrefix:", "@")))
         return (objj_getClass("CPDictionary").super_class.method_dtable["valueForKey:"] || _objj_forward)(self, "valueForKey:", aKey.substr(1));
     return (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
 }
 
 ,["id","CPString"]), new objj_method(sel_getUid("setValue:forKey:"), function $CPDictionary__setValue_forKey_(self, _cmd, aValue, aKey)
 {
-    if (aValue !== nil)
+    if (aValue != nil)
         (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", aValue, aKey);
     else
         (self.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(self, "removeObjectForKey:", aKey);
@@ -12896,10 +12930,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithTarget:key:"), 
         self._target = aTarget;
         self._countOfSelector = CPSelectorFromString("countOf" + capitalizedKey);
         self._objectInAtIndexSelector = CPSelectorFromString("objectIn" + capitalizedKey + "AtIndex:");
-        if (!((___r1 = self._target), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectInAtIndexSelector)))
+        if (!((___r1 = self._target), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._objectInAtIndexSelector)))
             self._objectInAtIndexSelector = nil;
         self._atIndexesSelector = CPSelectorFromString(aKey + "AtIndexes:");
-        if (!((___r1 = self._target), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._atIndexesSelector)))
+        if (!((___r1 = self._target), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", self._atIndexesSelector)))
             self._atIndexesSelector = nil;
     }
     return self;
@@ -12942,7 +12976,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithTarget:key:"), 
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_target", "id"), new objj_ivar("_countOfSelector", "SEL"), new objj_ivar("_enumeratorOfSelector", "SEL"), new objj_ivar("_memberOfSelector", "SEL")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"), function $_CPKeyValueCodingSet__initWithObjects_count_(self, _cmd, objects, aCount)
 {
-    return ((___r1 = (CPSet.isa.method_msgSend["alloc"] || _objj_forward)(CPSet, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
+    return ((___r1 = (CPSet.isa.method_msgSend["alloc"] || _objj_forward)(CPSet, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
     var ___r1;
 }
 
@@ -13140,10 +13174,10 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","CPCoder"])]);
 }
-p;11;CPRunLoop.jt;17366;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;10;CPObject.ji;10;CPString.jt;17291;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);CPDefaultRunLoopMode = "CPDefaultRunLoopMode";
+p;11;CPRunLoop.jt;17410;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;10;CPObject.ji;10;CPString.jt;17335;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);CPDefaultRunLoopMode = "CPDefaultRunLoopMode";
 _CPRunLoopPerformCompare = function(lhs, rhs)
 {
-    return (rhs == null ? null : (rhs.isa.method_msgSend["order"] || _objj_forward)(rhs, "order")) - (lhs == null ? null : (lhs.isa.method_msgSend["order"] || _objj_forward)(lhs, "order"));
+    return (rhs == null ? rhs : (rhs.isa.method_msgSend["order"] || _objj_forward)(rhs, "order")) - (lhs == null ? lhs : (lhs.isa.method_msgSend["order"] || _objj_forward)(lhs, "order"));
 }
 var _CPRunLoopPerformPool = [],
     _CPRunLoopPerformPoolCapacity = 5;
@@ -13203,12 +13237,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithSelector:target
 {
     if (!self._isValid)
         return YES;
-    if (((___r1 = self._runLoopModes), ___r1 == null ? null : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aRunLoopMode)))
+    if (((___r1 = self._runLoopModes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aRunLoopMode)))
     {
         if (self._block)
             self._block(self._argument);
         else
-            ((___r1 = self._target), ___r1 == null ? null : (___r1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(___r1, "performSelector:withObject:", self._selector, self._argument));
+            ((___r1 = self._target), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(___r1, "performSelector:withObject:", self._selector, self._argument));
         return YES;
     }
     return NO;
@@ -13242,7 +13276,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("_poolPerform:"), funct
         perform._isValid = YES;
         return perform;
     }
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "initWithSelector:target:argument:order:modes:", aSelector, aTarget, anArgument, anOrder, modes));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "initWithSelector:target:argument:order:modes:", aSelector, aTarget, anArgument, anOrder, modes));
     var ___r1;
 }
 
@@ -13260,7 +13294,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("_poolPerform:"), funct
         perform._isValid = YES;
         return perform;
     }
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithBlock:argument:order:modes:"] || _objj_forward)(___r1, "initWithBlock:argument:order:modes:", aBlock, anArgument, anOrder, modes));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithBlock:argument:order:modes:"] || _objj_forward)(___r1, "initWithBlock:argument:order:modes:", aBlock, anArgument, anOrder, modes));
     var ___r1;
 }
 
@@ -13289,7 +13323,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     var perform = (_CPRunLoopPerform.isa.method_msgSend["performWithSelector:target:argument:order:modes:"] || _objj_forward)(_CPRunLoopPerform, "performWithSelector:target:argument:order:modes:", aSelector, aTarget, anArgument, anOrder, modes),
         count = self._orderedPerforms.length;
     while (count--)
-        if (anOrder < ((___r1 = self._orderedPerforms[count]), ___r1 == null ? null : (___r1.isa.method_msgSend["order"] || _objj_forward)(___r1, "order")))
+        if (anOrder < ((___r1 = self._orderedPerforms[count]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["order"] || _objj_forward)(___r1, "order")))
             break;
     self._orderedPerforms.splice(count + 1, 0, perform);
     var ___r1;
@@ -13300,7 +13334,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     var perform = (_CPRunLoopPerform.isa.method_msgSend["performWithBlock:argument:order:modes:"] || _objj_forward)(_CPRunLoopPerform, "performWithBlock:argument:order:modes:", aBlock, anArgument, anOrder, modes),
         count = self._orderedPerforms.length;
     while (count--)
-        if (anOrder < ((___r1 = self._orderedPerforms[count]), ___r1 == null ? null : (___r1.isa.method_msgSend["order"] || _objj_forward)(___r1, "order")))
+        if (anOrder < ((___r1 = self._orderedPerforms[count]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["order"] || _objj_forward)(___r1, "order")))
             break;
     self._orderedPerforms.splice(count + 1, 0, perform);
     var ___r1;
@@ -13312,8 +13346,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     while (count--)
     {
         var perform = self._orderedPerforms[count];
-        if ((perform == null ? null : (perform.isa.method_msgSend["selector"] || _objj_forward)(perform, "selector")) === aSelector && (perform == null ? null : (perform.isa.method_msgSend["target"] || _objj_forward)(perform, "target")) == aTarget && (perform == null ? null : (perform.isa.method_msgSend["argument"] || _objj_forward)(perform, "argument")) == anArgument)
-            ((___r1 = self._orderedPerforms[count]), ___r1 == null ? null : (___r1.isa.method_msgSend["invalidate"] || _objj_forward)(___r1, "invalidate"));
+        if ((perform == null ? perform : (perform.isa.method_msgSend["selector"] || _objj_forward)(perform, "selector")) === aSelector && (perform == null ? perform : (perform.isa.method_msgSend["target"] || _objj_forward)(perform, "target")) == aTarget && (perform == null ? perform : (perform.isa.method_msgSend["argument"] || _objj_forward)(perform, "argument")) == anArgument)
+            ((___r1 = self._orderedPerforms[count]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["invalidate"] || _objj_forward)(___r1, "invalidate"));
     }
     var ___r1;
 }
@@ -13333,7 +13367,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     if (!aTimer._lastNativeRunLoopsForModes)
         aTimer._lastNativeRunLoopsForModes = {};
     aTimer._lastNativeRunLoopsForModes[aMode] = CPRunLoopLastNativeRunLoop;
-    if (((___r1 = CFBundle.environments()), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound)
+    if (((___r1 = CFBundle.environments()), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound)
     {
         if (!self._runLoopInsuranceTimer)
             self._runLoopInsuranceTimer = window.setNativeTimeout(            function()
@@ -13349,7 +13383,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     if (self._runLoopLock)
         return;
     self._runLoopLock = YES;
-    if (((___r1 = CFBundle.environments()), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound)
+    if (((___r1 = CFBundle.environments()), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound)
     {
         if (self._runLoopInsuranceTimer)
         {
@@ -13357,13 +13391,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
             self._runLoopInsuranceTimer = nil;
         }
     }
-    var now = self._effectiveDate ? ((___r1 = self._effectiveDate), ___r1 == null ? null : (___r1.isa.method_msgSend["laterDate:"] || _objj_forward)(___r1, "laterDate:", (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date"))) : (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date"),
+    var now = self._effectiveDate ? ((___r1 = self._effectiveDate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["laterDate:"] || _objj_forward)(___r1, "laterDate:", (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date"))) : (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date"),
         nextFireDate = nil,
         nextTimerFireDate = self._nextTimerFireDatesForModes[aMode];
     if (self._didAddTimer || nextTimerFireDate && nextTimerFireDate <= now)
     {
         self._didAddTimer = NO;
-        if (self._nativeTimersForModes[aMode] !== nil)
+        if (self._nativeTimersForModes[aMode] != nil)
         {
             window.clearNativeTimeout(self._nativeTimersForModes[aMode]);
             self._nativeTimersForModes[aMode] = nil;
@@ -13371,14 +13405,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
         var timers = self._timersForModes[aMode],
             index = timers.length;
         self._timersForModes[aMode] = nil;
-        var hasNativeTimers = ((___r1 = CFBundle.environments()), ___r1 == null ? null : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound;
+        var hasNativeTimers = ((___r1 = CFBundle.environments()), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObject:"] || _objj_forward)(___r1, "indexOfObject:", "Browser")) !== CPNotFound;
         while (index--)
         {
             var timer = timers[index];
             if ((!hasNativeTimers || timer._lastNativeRunLoopsForModes[aMode] < CPRunLoopLastNativeRunLoop) && timer._isValid && timer._fireDate <= now)
-                (timer == null ? null : (timer.isa.method_msgSend["fire"] || _objj_forward)(timer, "fire"));
+                (timer == null ? timer : (timer.isa.method_msgSend["fire"] || _objj_forward)(timer, "fire"));
             if (timer._isValid)
-                nextFireDate = nextFireDate === nil ? timer._fireDate : (nextFireDate == null ? null : (nextFireDate.isa.method_msgSend["earlierDate:"] || _objj_forward)(nextFireDate, "earlierDate:", timer._fireDate));
+                nextFireDate = nextFireDate == nil ? timer._fireDate : (nextFireDate == null ? nextFireDate : (nextFireDate.isa.method_msgSend["earlierDate:"] || _objj_forward)(nextFireDate, "earlierDate:", timer._fireDate));
             else
             {
                 timer._lastNativeRunLoopsForModes[aMode] = 0;
@@ -13392,8 +13426,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
             while (index--)
             {
                 var timer = newTimers[index];
-                if ((timer == null ? null : (timer.isa.method_msgSend["isValid"] || _objj_forward)(timer, "isValid")))
-                    nextFireDate = nextFireDate === nil ? timer._fireDate : (nextFireDate == null ? null : (nextFireDate.isa.method_msgSend["earlierDate:"] || _objj_forward)(nextFireDate, "earlierDate:", timer._fireDate));
+                if ((timer == null ? timer : (timer.isa.method_msgSend["isValid"] || _objj_forward)(timer, "isValid")))
+                    nextFireDate = nextFireDate == nil ? timer._fireDate : (nextFireDate == null ? nextFireDate : (nextFireDate.isa.method_msgSend["earlierDate:"] || _objj_forward)(nextFireDate, "earlierDate:", timer._fireDate));
                 else
                     newTimers.splice(index, 1);
             }
@@ -13402,7 +13436,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
         else
             self._timersForModes[aMode] = timers;
         self._nextTimerFireDatesForModes[aMode] = nextFireDate;
-        if (self._nextTimerFireDatesForModes[aMode] !== nil)
+        if (self._nextTimerFireDatesForModes[aMode] != nil)
             self._nativeTimersForModes[aMode] = window.setNativeTimeout(            function()
             {
                 self._effectiveDate = nextFireDate;
@@ -13410,7 +13444,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
                 ++CPRunLoopLastNativeRunLoop;
                 (self.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(self, "limitDateForMode:", aMode);
                 self._effectiveDate = nil;
-            }, MAX(0, (nextFireDate == null ? null : (nextFireDate.isa.method_msgSend["timeIntervalSinceNow"] || _objj_forward)(nextFireDate, "timeIntervalSinceNow")) * 1000));
+            }, MAX(0, (nextFireDate == null ? nextFireDate : (nextFireDate.isa.method_msgSend["timeIntervalSinceNow"] || _objj_forward)(nextFireDate, "timeIntervalSinceNow")) * 1000));
     }
     var performs = self._orderedPerforms,
         index = performs.length;
@@ -13418,7 +13452,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPRun
     while (index--)
     {
         var perform = performs[index];
-        if ((perform == null ? null : (perform.isa.method_msgSend["fireInMode:"] || _objj_forward)(perform, "fireInMode:", CPDefaultRunLoopMode)))
+        if ((perform == null ? perform : (perform.isa.method_msgSend["fireInMode:"] || _objj_forward)(perform, "fireInMode:", CPDefaultRunLoopMode)))
         {
             (_CPRunLoopPerform.isa.method_msgSend["_poolPerform:"] || _objj_forward)(_CPRunLoopPerform, "_poolPerform:", perform);
             performs.splice(index, 1);
@@ -13452,7 +13486,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 {
     if (self !== (CPRunLoop.isa.method_msgSend["class"] || _objj_forward)(CPRunLoop, "class"))
         return;
-    CPMainRunLoop = ((___r1 = (CPRunLoop.isa.method_msgSend["alloc"] || _objj_forward)(CPRunLoop, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    CPMainRunLoop = ((___r1 = (CPRunLoop.isa.method_msgSend["alloc"] || _objj_forward)(CPRunLoop, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
@@ -13507,7 +13541,7 @@ CFRunLoopRemoveObserver = function(runloop, observer, mode)
         }
     }
 }
-p;19;CPKeyedUnarchiver.jt;18438;@STATIC;1.0;i;9;CPArray.ji;9;CPCoder.ji;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;8;CPNull.ji;10;CPNumber.ji;10;CPString.jt;18279;objj_executeFile("CPArray.j", YES);objj_executeFile("CPCoder.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPString.j", YES);CPInvalidUnarchiveOperationException = "CPInvalidUnarchiveOperationException";
+p;19;CPKeyedUnarchiver.jt;18475;@STATIC;1.0;i;9;CPArray.ji;9;CPCoder.ji;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;8;CPNull.ji;10;CPNumber.ji;10;CPString.jt;18316;objj_executeFile("CPArray.j", YES);objj_executeFile("CPCoder.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPString.j", YES);CPInvalidUnarchiveOperationException = "CPInvalidUnarchiveOperationException";
 var _CPKeyedUnarchiverCannotDecodeObjectOfClassNameOriginalClassesSelector = 1 << 0,
     _CPKeyedUnarchiverDidDecodeObjectSelector = 1 << 1,
     _CPKeyedUnarchiverWillReplaceObjectWithObjectSelector = 1 << 2,
@@ -13539,10 +13573,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForReadingWithData:
     self = (objj_getClass("CPKeyedUnarchiver").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._archive = (data == null ? null : (data.isa.method_msgSend["plistObject"] || _objj_forward)(data, "plistObject"));
+        self._archive = (data == null ? data : (data.isa.method_msgSend["plistObject"] || _objj_forward)(data, "plistObject"));
         self._objects = [(CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null")];
-        self._plistObject = ((___r1 = self._archive), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", _CPKeyedArchiverTopKey));
-        self._plistObjects = ((___r1 = self._archive), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", _CPKeyedArchiverObjectsKey));
+        self._plistObject = ((___r1 = self._archive), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", _CPKeyedArchiverTopKey));
+        self._plistObjects = ((___r1 = self._archive), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", _CPKeyedArchiverObjectsKey));
         self._replacementClasses = new CFMutableDictionary();
     }
     return self;
@@ -13582,19 +13616,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForReadingWithData:
 ,["BOOL","CPString"]), new objj_method(sel_getUid("decodeFloatForKey:"), function $CPKeyedUnarchiver__decodeFloatForKey_(self, _cmd, aKey)
 {
     var f = (self.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(self, "decodeObjectForKey:", aKey);
-    return f === nil ? 0.0 : f;
+    return f == nil ? 0.0 : f;
 }
 
 ,["float","CPString"]), new objj_method(sel_getUid("decodeDoubleForKey:"), function $CPKeyedUnarchiver__decodeDoubleForKey_(self, _cmd, aKey)
 {
     var d = (self.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(self, "decodeObjectForKey:", aKey);
-    return d === nil ? 0.0 : d;
+    return d == nil ? 0.0 : d;
 }
 
 ,["double","CPString"]), new objj_method(sel_getUid("decodeIntForKey:"), function $CPKeyedUnarchiver__decodeIntForKey_(self, _cmd, aKey)
 {
     var i = (self.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(self, "decodeObjectForKey:", aKey);
-    return i === nil ? 0 : i;
+    return i == nil ? 0 : i;
 }
 
 ,["int","CPString"]), new objj_method(sel_getUid("decodePointForKey:"), function $CPKeyedUnarchiver__decodePointForKey_(self, _cmd, aKey)
@@ -13658,9 +13692,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForReadingWithData:
 ,["id","CPString"]), new objj_method(sel_getUid("finishDecoding"), function $CPKeyedUnarchiver__finishDecoding(self, _cmd)
 {
     if (self._delegateSelectors & _CPKeyedUnarchiverWillFinishSelector)
-        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiverWillFinish:"] || _objj_forward)(___r1, "unarchiverWillFinish:", self));
+        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiverWillFinish:"] || _objj_forward)(___r1, "unarchiverWillFinish:", self));
     if (self._delegateSelectors & _CPKeyedUnarchiverDidFinishSelector)
-        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiverDidFinish:"] || _objj_forward)(___r1, "unarchiverDidFinish:", self));
+        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiverDidFinish:"] || _objj_forward)(___r1, "unarchiverDidFinish:", self));
     var ___r1;
 }
 
@@ -13672,17 +13706,17 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForReadingWithData:
 ,["id"]), new objj_method(sel_getUid("setDelegate:"), function $CPKeyedUnarchiver__setDelegate_(self, _cmd, aDelegate)
 {
     self._delegate = aDelegate;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:cannotDecodeObjectOfClassName:originalClasses:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:cannotDecodeObjectOfClassName:originalClasses:"))))
         self._delegateSelectors |= _CPKeyedUnarchiverCannotDecodeObjectOfClassNameOriginalClassesSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:didDecodeObject:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:didDecodeObject:"))))
         self._delegateSelectors |= _CPKeyedUnarchiverDidDecodeObjectSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:willReplaceObject:withObject:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:willReplaceObject:withObject:"))))
         self._delegateSelectors |= _CPKeyedUnarchiverWillReplaceObjectWithObjectSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiverWillFinish:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiverWillFinish:"))))
         self._delegateSelectors |= _CPKeyedUnarchiverWillFinishSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiverDidFinish:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiverDidFinish:"))))
         self._delegateSelectors |= _CPKeyedUnarchiverDidFinishSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:cannotDecodeObjectOfClassName:originalClasses:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("unarchiver:cannotDecodeObjectOfClassName:originalClasses:"))))
         self._delegateSelectors |= CPKeyedUnarchiverDelegate_unarchiver_cannotDecodeObjectOfClassName_originalClasses_;
     var ___r1;
 }
@@ -13724,9 +13758,9 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
         CPLog.error("Null data passed to -[CPKeyedUnarchiver unarchiveObjectWithData:].");
         return nil;
     }
-    var unarchiver = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initForReadingWithData:"] || _objj_forward)(___r1, "initForReadingWithData:", aData)),
-        object = (unarchiver == null ? null : (unarchiver.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(unarchiver, "decodeObjectForKey:", "root"));
-    (unarchiver == null ? null : (unarchiver.isa.method_msgSend["finishDecoding"] || _objj_forward)(unarchiver, "finishDecoding"));
+    var unarchiver = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initForReadingWithData:"] || _objj_forward)(___r1, "initForReadingWithData:", aData)),
+        object = (unarchiver == null ? unarchiver : (unarchiver.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(unarchiver, "decodeObjectForKey:", "root"));
+    (unarchiver == null ? unarchiver : (unarchiver.isa.method_msgSend["finishDecoding"] || _objj_forward)(unarchiver, "finishDecoding"));
     return object;
     var ___r1;
 }
@@ -13757,47 +13791,47 @@ var _CPKeyedUnarchiverDecodeObjectAtIndex = function(self, anIndex)
             var plistClass = self._plistObjects[(plistObject.valueForKey(_CPKeyedArchiverClassKey)).valueForKey(_CPKeyedArchiverUIDKey)],
                 className = plistClass.valueForKey(_CPKeyedArchiverClassNameKey),
                 classes = plistClass.valueForKey(_CPKeyedArchiverClassesKey),
-                theClass = (self == null ? null : (self.isa.method_msgSend["classForClassName:"] || _objj_forward)(self, "classForClassName:", className));
+                theClass = (self == null ? self : (self.isa.method_msgSend["classForClassName:"] || _objj_forward)(self, "classForClassName:", className));
             if (!theClass)
                 theClass = CPClassFromString(className);
             if (!theClass && self._delegateSelectors & CPKeyedUnarchiverDelegate_unarchiver_cannotDecodeObjectOfClassName_originalClasses_)
             {
-                theClass = ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiver:cannotDecodeObjectOfClassName:originalClasses:"] || _objj_forward)(___r1, "unarchiver:cannotDecodeObjectOfClassName:originalClasses:", self, className, classes));
+                theClass = ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiver:cannotDecodeObjectOfClassName:originalClasses:"] || _objj_forward)(___r1, "unarchiver:cannotDecodeObjectOfClassName:originalClasses:", self, className, classes));
             }            if (!theClass)
                 (CPException.isa.method_msgSend["raise:format:"] || _objj_forward)(CPException, "raise:format:", CPInvalidUnarchiveOperationException, "-[CPKeyedUnarchiver decodeObjectForKey:]: cannot decode object of class (%@)", className);
             var savedPlistObject = self._plistObject;
             self._plistObject = plistObject;
-            object = (theClass == null ? null : (theClass.isa.method_msgSend["allocWithCoder:"] || _objj_forward)(theClass, "allocWithCoder:", self));
+            object = (theClass == null ? theClass : (theClass.isa.method_msgSend["allocWithCoder:"] || _objj_forward)(theClass, "allocWithCoder:", self));
             self._objects[anIndex] = object;
-            var processedObject = (object == null ? null : (object.isa.method_msgSend["initWithCoder:"] || _objj_forward)(object, "initWithCoder:", self));
+            var processedObject = (object == null ? object : (object.isa.method_msgSend["initWithCoder:"] || _objj_forward)(object, "initWithCoder:", self));
             self._plistObject = savedPlistObject;
             if (processedObject !== object)
             {
                 if (self._delegateSelectors & _CPKeyedUnarchiverWillReplaceObjectWithObjectSelector)
-                    ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
+                    ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
                 object = processedObject;
                 self._objects[anIndex] = processedObject;
-            }            processedObject = (object == null ? null : (object.isa.method_msgSend["awakeAfterUsingCoder:"] || _objj_forward)(object, "awakeAfterUsingCoder:", self));
+            }            processedObject = (object == null ? object : (object.isa.method_msgSend["awakeAfterUsingCoder:"] || _objj_forward)(object, "awakeAfterUsingCoder:", self));
             if (processedObject !== object)
             {
                 if (self._delegateSelectors & _CPKeyedUnarchiverWillReplaceObjectWithObjectSelector)
-                    ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
+                    ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
                 object = processedObject;
                 self._objects[anIndex] = processedObject;
             }            if (self._delegate)
             {
                 if (self._delegateSelectors & _CPKeyedUnarchiverDidDecodeObjectSelector)
-                    processedObject = ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiver:didDecodeObject:"] || _objj_forward)(___r1, "unarchiver:didDecodeObject:", self, object));
+                    processedObject = ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiver:didDecodeObject:"] || _objj_forward)(___r1, "unarchiver:didDecodeObject:", self, object));
                 if (processedObject && processedObject != object)
                 {
                     if (self._delegateSelectors & _CPKeyedUnarchiverWillReplaceObjectWithObjectSelector)
-                        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
+                        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["unarchiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "unarchiver:willReplaceObject:withObject:", self, object, processedObject));
                     object = processedObject;
                     self._objects[anIndex] = processedObject;
                 }            }        }        else
         {
             self._objects[anIndex] = object = plistObject;
-            if ((object == null ? null : (object.isa.method_msgSend["class"] || _objj_forward)(object, "class")) === CPStringClass)
+            if ((object == null ? object : (object.isa.method_msgSend["class"] || _objj_forward)(object, "class")) === CPStringClass)
             {
                 if (object === _CPKeyedArchiverNullString)
                 {
@@ -13806,7 +13840,7 @@ var _CPKeyedUnarchiverDecodeObjectAtIndex = function(self, anIndex)
                 }                else
                     self._objects[anIndex] = object = plistObject;
             }        }    }    if (object != nil && object.isa === _CPKeyedArchiverValueClass)
-        object = (object == null ? null : (object.isa.method_msgSend["JSObject"] || _objj_forward)(object, "JSObject"));
+        object = (object == null ? object : (object.isa.method_msgSend["JSObject"] || _objj_forward)(object, "JSObject"));
     return object;
     var ___r1;
 };
@@ -14624,7 +14658,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("main"), function $CPOpe
 
 ,["void"])]);
 }
-p;12;CPIndexSet.jt;32558;@STATIC;1.0;i;9;CPArray.ji;10;CPObject.ji;9;CPRange.jt;32497;objj_executeFile("CPArray.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);
+p;12;CPIndexSet.jt;32672;@STATIC;1.0;i;9;CPArray.ji;10;CPObject.ji;9;CPRange.jt;32611;objj_executeFile("CPArray.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPIndexSet"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_count", "unsigned"), new objj_ivar("_ranges", "CPArray")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPIndexSet__init(self, _cmd)
@@ -14660,7 +14694,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
     self = (objj_getClass("CPIndexSet").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._count = (anIndexSet == null ? null : (anIndexSet.isa.method_msgSend["count"] || _objj_forward)(anIndexSet, "count"));
+        self._count = (anIndexSet == null ? anIndexSet : (anIndexSet.isa.method_msgSend["count"] || _objj_forward)(anIndexSet, "count"));
         self._ranges = [];
         var otherRanges = anIndexSet._ranges,
             otherRangesCount = otherRanges.length;
@@ -14674,7 +14708,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
 {
     if (self === anObject)
         return YES;
-    if (!anObject || !(anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPIndexSet.isa.method_msgSend["class"] || _objj_forward)(CPIndexSet, "class"))))
+    if (!anObject || !(anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (CPIndexSet.isa.method_msgSend["class"] || _objj_forward)(CPIndexSet, "class"))))
         return NO;
     return (self.isa.method_msgSend["isEqualToIndexSet:"] || _objj_forward)(self, "isEqualToIndexSet:", anObject);
 }
@@ -14697,7 +14731,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
 
 ,["BOOL","CPIndexSet"]), new objj_method(sel_getUid("isEqual:"), function $CPIndexSet__isEqual_(self, _cmd, anObject)
 {
-    return self === anObject || (anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))) && (self.isa.method_msgSend["isEqualToIndexSet:"] || _objj_forward)(self, "isEqualToIndexSet:", anObject);
+    return self === anObject || (anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))) && (self.isa.method_msgSend["isEqualToIndexSet:"] || _objj_forward)(self, "isEqualToIndexSet:", anObject);
 }
 
 ,["BOOL","id"]), new objj_method(sel_getUid("containsIndex:"), function $CPIndexSet__containsIndex_(self, _cmd, anIndex)
@@ -14906,7 +14940,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
         increment;
     if (options & CPEnumerationReverse)
     {
-        (index = self._ranges.length - 1, stop = -1, increment = -1);
+        index = self._ranges.length - 1;
+        stop = -1;
+        increment = -1;
     }
     else
     {
@@ -14978,7 +15014,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
         increment;
     if (anOptions & CPEnumerationReverse)
     {
-        (index = self._ranges.length - 1, stop = -1, increment = -1);
+        index = self._ranges.length - 1;
+        stop = -1;
+        increment = -1;
     }
     else
     {
@@ -15028,7 +15066,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
         increment;
     if (anOptions & CPEnumerationReverse)
     {
-        (index = self._ranges.length - 1, stop = -1, increment = -1);
+        index = self._ranges.length - 1;
+        stop = -1;
+        increment = -1;
     }
     else
     {
@@ -15036,7 +15076,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
         stop = self._ranges.length;
         increment = 1;
     }
-    var indexesPassingTest = (CPMutableIndexSet == null ? null : (CPMutableIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPMutableIndexSet, "indexSet"));
+    var indexesPassingTest = (CPMutableIndexSet == null ? CPMutableIndexSet : (CPMutableIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPMutableIndexSet, "indexSet"));
     for (; index !== stop; index += increment)
     {
         var range = self._ranges[index],
@@ -15060,7 +15100,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
             if (CPLocationInRange(rangeIndex, aRange))
             {
                 if (aPredicate(rangeIndex, function(__input) { if (arguments.length) return shouldStop = __input; return shouldStop; }))
-                    (indexesPassingTest == null ? null : (indexesPassingTest.isa.method_msgSend["addIndex:"] || _objj_forward)(indexesPassingTest, "addIndex:", rangeIndex));
+                    (indexesPassingTest == null ? indexesPassingTest : (indexesPassingTest.isa.method_msgSend["addIndex:"] || _objj_forward)(indexesPassingTest, "addIndex:", rangeIndex));
                 if (shouldStop)
                     return indexesPassingTest;
             }
@@ -15072,19 +15112,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPInd
 ,["CPIndexSet","CPRange","CPEnumerationOptions","Function"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("indexSet"), function $CPIndexSet__indexSet(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("indexSetWithIndex:"), function $CPIndexSet__indexSetWithIndex_(self, _cmd, anIndex)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithIndex:"] || _objj_forward)(___r1, "initWithIndex:", anIndex));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithIndex:"] || _objj_forward)(___r1, "initWithIndex:", anIndex));
     var ___r1;
 }
 
 ,["id","int"]), new objj_method(sel_getUid("indexSetWithIndexesInRange:"), function $CPIndexSet__indexSetWithIndexesInRange_(self, _cmd, aRange)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithIndexesInRange:"] || _objj_forward)(___r1, "initWithIndexesInRange:", aRange));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithIndexesInRange:"] || _objj_forward)(___r1, "initWithIndexesInRange:", aRange));
     var ___r1;
 }
 
@@ -15148,9 +15188,9 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
                 lastRemoval = lhsRangeIndexCEIL + removalCount - 1;
             for (; removal <= lastRemoval; ++removal)
                 self._count -= self._ranges[removal].length;
-            ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(lhsRangeIndexCEIL, removalCount)));
+            ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(lhsRangeIndexCEIL, removalCount)));
         }
-        ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", aRange, lhsRangeIndexCEIL));
+        ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", aRange, lhsRangeIndexCEIL));
         self._count += aRange.length;
     }
     var ___r1;
@@ -15195,7 +15235,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             if (maxRange < existingMaxRange)
             {
                 self._count -= aRange.length;
-                ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", CPMakeRange(maxRange, existingMaxRange - maxRange), lhsRangeIndexCEIL + 1));
+                ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", CPMakeRange(maxRange, existingMaxRange - maxRange), lhsRangeIndexCEIL + 1));
                 return;
             }
             else
@@ -15227,7 +15267,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             lastRemoval = lhsRangeIndexCEIL + removalCount - 1;
         for (; removal <= lastRemoval; ++removal)
             self._count -= self._ranges[removal].length;
-        ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(lhsRangeIndexCEIL, removalCount)));
+        ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(lhsRangeIndexCEIL, removalCount)));
     }
     var ___r1;
 }
@@ -15249,7 +15289,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             shifted = CPMakeRange(anIndex + aDelta, maximum - anIndex);
             range.length = anIndex - range.location;
             if (aDelta > 0)
-                ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", shifted, i + 1));
+                ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", shifted, i + 1));
             else if (shifted.location < 0)
             {
                 shifted.length = CPMaxRange(shifted);
@@ -15271,12 +15311,12 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
             shifts = [];
         for (; j < count; ++j)
         {
-            (shifts == null ? null : (shifts.isa.method_msgSend["addObject:"] || _objj_forward)(shifts, "addObject:", self._ranges[j]));
+            (shifts == null ? shifts : (shifts.isa.method_msgSend["addObject:"] || _objj_forward)(shifts, "addObject:", self._ranges[j]));
             self._count -= self._ranges[j].length;
         }
         if ((j = i + 1) < count)
         {
-            ((___r1 = self._ranges), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(j, count - j)));
+            ((___r1 = self._ranges), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(___r1, "removeObjectsInRange:", CPMakeRange(j, count - j)));
             for ((j = 0, count = shifts.length); j < count; ++j)
                 (self.isa.method_msgSend["addIndexesInRange:"] || _objj_forward)(self, "addIndexesInRange:", shifts[j]);
         }
@@ -15298,9 +15338,9 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPIndexSet").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._count = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPIndexSetCountKey));
-        var rangeStrings = (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPIndexSetRangeStringsKey));
-        self._ranges = (rangeStrings == null ? null : (rangeStrings.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(rangeStrings, "arrayByApplyingBlock:",         function(range)
+        self._count = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", CPIndexSetCountKey));
+        var rangeStrings = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPIndexSetRangeStringsKey));
+        self._ranges = (rangeStrings == null ? rangeStrings : (rangeStrings.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(rangeStrings, "arrayByApplyingBlock:",         function(range)
         {
             return CPRangeFromString(range);
         }));
@@ -15310,13 +15350,13 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPIndexSet__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._count, CPIndexSetCountKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._count, CPIndexSetCountKey));
     var index = 0,
         count = self._ranges.length,
         rangeStrings = [];
     for (; index < count; ++index)
         rangeStrings[index] = CPStringFromRange(self._ranges[index]);
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", rangeStrings, CPIndexSetRangeStringsKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", rangeStrings, CPIndexSetRangeStringsKey));
 }
 
 ,["void","CPCoder"])]);
@@ -15326,13 +15366,13 @@ var the_class = objj_getClass("CPIndexSet")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPIndexSet\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("copy"), function $CPIndexSet__copy(self, _cmd)
 {
-    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? null : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithIndexSet:"] || _objj_forward)(___r1, "initWithIndexSet:", self));
+    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithIndexSet:"] || _objj_forward)(___r1, "initWithIndexSet:", self));
     var ___r1, ___r2;
 }
 
 ,["id"]), new objj_method(sel_getUid("mutableCopy"), function $CPIndexSet__mutableCopy(self, _cmd)
 {
-    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? null : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithIndexSet:"] || _objj_forward)(___r1, "initWithIndexSet:", self));
+    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithIndexSet:"] || _objj_forward)(___r1, "initWithIndexSet:", self));
     var ___r1, ___r2;
 }
 
@@ -15389,7 +15429,7 @@ var assumedPositionOfIndex = function(ranges, anIndex)
                 return positionFLOOR;
         }    }    return CPNotFound;
 };
-p;10;CPNumber.jt;9480;@STATIC;1.0;i;13;CPException.ji;8;CPNull.ji;10;CPObject.ji;15;CPObjJRuntime.jt;9396;objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPObjJRuntime.j", YES);var CPNumberUIDs = new CFMutableDictionary();
+p;10;CPNumber.jt;9505;@STATIC;1.0;i;13;CPException.ji;8;CPNull.ji;10;CPObject.ji;15;CPObjJRuntime.jt;9421;objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPObjJRuntime.j", YES);var CPNumberUIDs = new CFMutableDictionary();
 
 {var the_class = objj_allocateClassPair(CPObject, "CPNumber"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
@@ -15561,7 +15601,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithBool:"), functi
 
 ,["unsigned short"]), new objj_method(sel_getUid("compare:"), function $CPNumber__compare_(self, _cmd, aNumber)
 {
-    if (aNumber === nil || aNumber['isa'] === CPNull)
+    if (aNumber == nil || aNumber['isa'] === CPNull)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "nil argument");
     if (self > aNumber)
         return CPOrderedDescending;
@@ -15654,12 +15694,12 @@ var the_class = objj_getClass("CPNumber")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPNumber\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $CPNumber__initWithCoder_(self, _cmd, aCoder)
 {
-    return (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeNumber"] || _objj_forward)(aCoder, "decodeNumber"));
+    return (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "self"));
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPNumber__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeNumber:forKey:"] || _objj_forward)(aCoder, "encodeNumber:forKey:", self, "self"));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeNumber:forKey:"] || _objj_forward)(aCoder, "encodeNumber:forKey:", self, "self"));
 }
 
 ,["void","CPCoder"])]);
@@ -15667,7 +15707,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 Number.prototype.isa = CPNumber;
 Boolean.prototype.isa = CPNumber;
 (CPNumber.isa.method_msgSend["initialize"] || _objj_forward)(CPNumber, "initialize");
-p;21;CPNotificationQueue.jt;11791;@STATIC;1.0;i;10;CPObject.ji;16;CPNotification.ji;22;CPNotificationCenter.jt;11708;objj_executeFile("CPObject.j", YES);objj_executeFile("CPNotification.j", YES);objj_executeFile("CPNotificationCenter.j", YES);{var the_typedef = objj_allocateTypeDef("CPPostingStyle");
+p;21;CPNotificationQueue.jt;11949;@STATIC;1.0;i;10;CPObject.ji;16;CPNotification.ji;22;CPNotificationCenter.jt;11866;objj_executeFile("CPObject.j", YES);objj_executeFile("CPNotification.j", YES);objj_executeFile("CPNotificationCenter.j", YES);{var the_typedef = objj_allocateTypeDef("CPPostingStyle");
 objj_registerTypeDef(the_typedef);
 }CPPostWhenIdle = 1;
 CPPostASAP = 2;
@@ -15704,21 +15744,21 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithNotificationCen
     (self.isa.method_msgSend["_removeNotification:coalesceMask:"] || _objj_forward)(self, "_removeNotification:coalesceMask:", notification, coalesceMask);
     switch(postingStyle) {
         case CPPostWhenIdle:
-            ((___r1 = self._postIdleNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
+            ((___r1 = self._postIdleNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
             break;
         case CPPostASAP:
-            ((___r1 = self._postASAPNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
+            ((___r1 = self._postASAPNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
             break;
         case CPPostNow:
-            ((___r1 = self._postNowNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
+            ((___r1 = self._postNowNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", notification));
             break;
     }
-    if (((___r1 = self._postIdleNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) || ((___r1 = self._postASAPNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) || ((___r1 = self._postNowNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
+    if (((___r1 = self._postIdleNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) || ((___r1 = self._postASAPNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) || ((___r1 = self._postNowNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
         (self.isa.method_msgSend["_runRunLoop"] || _objj_forward)(self, "_runRunLoop");
     if (postingStyle == CPPostNow)
     {
-        for (var i = (modes == null ? null : (modes.isa.method_msgSend["count"] || _objj_forward)(modes, "count")) - 1; i >= 0; i--)
-            ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? null : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", modes[i]));
+        for (var i = (modes == null ? modes : (modes.isa.method_msgSend["count"] || _objj_forward)(modes, "count")) - 1; i >= 0; i--)
+            ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", modes[i]));
     }
     var ___r1;
 }
@@ -15732,7 +15772,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithNotificationCen
 {
     if (!self._runLoopLaunched)
     {
-        (runLoop == null ? null : (runLoop.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(runLoop, "performSelector:target:argument:order:modes:", sel_getUid("_launchNotificationsInQueue"), self, nil, 0, [CPDefaultRunLoopMode]));
+        (runLoop == null ? runLoop : (runLoop.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(runLoop, "performSelector:target:argument:order:modes:", sel_getUid("_launchNotificationsInQueue"), self, nil, 0, [CPDefaultRunLoopMode]));
         self._runLoopLaunched = YES;
     }
 }
@@ -15740,19 +15780,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithNotificationCen
 ,["void"]), new objj_method(sel_getUid("_launchNotificationsInQueue"), function $CPNotificationQueue___launchNotificationsInQueue(self, _cmd)
 {
     self._runLoopLaunched = NO;
-    if (((___r1 = self._postNowNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
+    if (((___r1 = self._postNowNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
     {
         (self.isa.method_msgSend["_launchNotificationsForArray:"] || _objj_forward)(self, "_launchNotificationsForArray:", self._postNowNotifications);
         (self.isa.method_msgSend["_runRunLoop"] || _objj_forward)(self, "_runRunLoop");
         return;
     }
-    if (((___r1 = self._postASAPNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
+    if (((___r1 = self._postASAPNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
     {
         (self.isa.method_msgSend["_launchNotificationsForArray:"] || _objj_forward)(self, "_launchNotificationsForArray:", self._postASAPNotifications);
         (self.isa.method_msgSend["_runRunLoop"] || _objj_forward)(self, "_runRunLoop");
         return;
     }
-    if (((___r1 = self._postIdleNotifications), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
+    if (((___r1 = self._postIdleNotifications), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
     {
         (self.isa.method_msgSend["_launchNotificationsForArray:"] || _objj_forward)(self, "_launchNotificationsForArray:", self._postIdleNotifications);
         (self.isa.method_msgSend["_runRunLoop"] || _objj_forward)(self, "_runRunLoop");
@@ -15763,12 +15803,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithNotificationCen
 
 ,["void"]), new objj_method(sel_getUid("_launchNotificationsForArray:"), function $CPNotificationQueue___launchNotificationsForArray_(self, _cmd, anArray)
 {
-    for (var i = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")) - 1; i >= 0; i--)
+    for (var i = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")) - 1; i >= 0; i--)
     {
         var notification = anArray[i];
-        ((___r1 = self._notificationCenter), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", notification));
+        ((___r1 = self._notificationCenter), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotification:"] || _objj_forward)(___r1, "postNotification:", notification));
     }
-    (anArray == null ? null : (anArray.isa.method_msgSend["removeAllObjects"] || _objj_forward)(anArray, "removeAllObjects"));
+    (anArray == null ? anArray : (anArray.isa.method_msgSend["removeAllObjects"] || _objj_forward)(anArray, "removeAllObjects"));
     var ___r1;
 }
 
@@ -15782,45 +15822,45 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithNotificationCen
 ,["void","CPNotification","CPUInteger"]), new objj_method(sel_getUid("_removeNotification:coalesceMask:inNotifications:"), function $CPNotificationQueue___removeNotification_coalesceMask_inNotifications_(self, _cmd, aNotification, coalesceMask, notifications)
 {
     var notificationsToRemove = [],
-        name = (aNotification == null ? null : (aNotification.isa.method_msgSend["name"] || _objj_forward)(aNotification, "name")),
-        sender = (aNotification == null ? null : (aNotification.isa.method_msgSend["object"] || _objj_forward)(aNotification, "object"));
-    for (var i = (notifications == null ? null : (notifications.isa.method_msgSend["count"] || _objj_forward)(notifications, "count")) - 1; i >= 0; i--)
+        name = (aNotification == null ? aNotification : (aNotification.isa.method_msgSend["name"] || _objj_forward)(aNotification, "name")),
+        sender = (aNotification == null ? aNotification : (aNotification.isa.method_msgSend["object"] || _objj_forward)(aNotification, "object"));
+    for (var i = (notifications == null ? notifications : (notifications.isa.method_msgSend["count"] || _objj_forward)(notifications, "count")) - 1; i >= 0; i--)
     {
         var notification = notifications[i];
         if (notification == aNotification)
         {
-            (notificationsToRemove == null ? null : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
+            (notificationsToRemove == null ? notificationsToRemove : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
             continue;
         }
         if (coalesceMask & CPNotificationNoCoalescing)
             continue;
         if (coalesceMask & CPNotificationCoalescingOnName && coalesceMask & CPNotificationCoalescingOnSender)
         {
-            if ((notification == null ? null : (notification.isa.method_msgSend["object"] || _objj_forward)(notification, "object")) == sender && (notification == null ? null : (notification.isa.method_msgSend["name"] || _objj_forward)(notification, "name")) == name)
-                (notificationsToRemove == null ? null : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
+            if ((notification == null ? notification : (notification.isa.method_msgSend["object"] || _objj_forward)(notification, "object")) == sender && (notification == null ? notification : (notification.isa.method_msgSend["name"] || _objj_forward)(notification, "name")) == name)
+                (notificationsToRemove == null ? notificationsToRemove : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
             continue;
         }
         if (coalesceMask & CPNotificationCoalescingOnName)
         {
-            if ((notification == null ? null : (notification.isa.method_msgSend["name"] || _objj_forward)(notification, "name")) == name)
-                (notificationsToRemove == null ? null : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
+            if ((notification == null ? notification : (notification.isa.method_msgSend["name"] || _objj_forward)(notification, "name")) == name)
+                (notificationsToRemove == null ? notificationsToRemove : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
             continue;
         }
         if (coalesceMask & CPNotificationCoalescingOnSender)
         {
-            if ((notification == null ? null : (notification.isa.method_msgSend["object"] || _objj_forward)(notification, "object")) == sender)
-                (notificationsToRemove == null ? null : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
+            if ((notification == null ? notification : (notification.isa.method_msgSend["object"] || _objj_forward)(notification, "object")) == sender)
+                (notificationsToRemove == null ? notificationsToRemove : (notificationsToRemove.isa.method_msgSend["addObject:"] || _objj_forward)(notificationsToRemove, "addObject:", notification));
             continue;
         }
     }
-    (notifications == null ? null : (notifications.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(notifications, "removeObjectsInArray:", notificationsToRemove));
+    (notifications == null ? notifications : (notifications.isa.method_msgSend["removeObjectsInArray:"] || _objj_forward)(notifications, "removeObjectsInArray:", notificationsToRemove));
 }
 
 ,["void","CPNotification","CPUInteger","CPArray"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("defaultQueue"), function $CPNotificationQueue__defaultQueue(self, _cmd)
 {
     if (!CPNotificationDefaultQueue)
-        CPNotificationDefaultQueue = ((___r1 = (CPNotificationQueue.isa.method_msgSend["alloc"] || _objj_forward)(CPNotificationQueue, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithNotificationCenter:"] || _objj_forward)(___r1, "initWithNotificationCenter:", (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")));
+        CPNotificationDefaultQueue = ((___r1 = (CPNotificationQueue.isa.method_msgSend["alloc"] || _objj_forward)(CPNotificationQueue, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithNotificationCenter:"] || _objj_forward)(___r1, "initWithNotificationCenter:", (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")));
     return CPNotificationDefaultQueue;
     var ___r1;
 }
@@ -16191,7 +16231,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("defaultManager"), func
 
 ,["id"])]);
 }
-p;9;CPCoder.jt;3092;@STATIC;1.0;i;13;CPException.ji;10;CPObject.jt;3040;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);
+p;9;CPCoder.jt;2650;@STATIC;1.0;i;13;CPException.ji;10;CPObject.jt;2598;objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPCoder"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("allowsKeyedCoding"), function $CPCoder__allowsKeyedCoding(self, _cmd)
@@ -16215,20 +16255,17 @@ class_addMethods(the_class, [new objj_method(sel_getUid("allowsKeyedCoding"), fu
 
 ,["void","id"]), new objj_method(sel_getUid("encodePoint:"), function $CPCoder__encodePoint_(self, _cmd, aPoint)
 {
-    (self.isa.method_msgSend["encodeNumber:"] || _objj_forward)(self, "encodeNumber:", aPoint.x);
-    (self.isa.method_msgSend["encodeNumber:"] || _objj_forward)(self, "encodeNumber:", aPoint.y);
+    _CPRaiseInvalidAbstractInvocation(self, _cmd);
 }
 
 ,["void","CGPoint"]), new objj_method(sel_getUid("encodeRect:"), function $CPCoder__encodeRect_(self, _cmd, aRect)
 {
-    (self.isa.method_msgSend["encodePoint:"] || _objj_forward)(self, "encodePoint:", aRect.origin);
-    (self.isa.method_msgSend["encodeSize:"] || _objj_forward)(self, "encodeSize:", aRect.size);
+    _CPRaiseInvalidAbstractInvocation(self, _cmd);
 }
 
 ,["void","CGRect"]), new objj_method(sel_getUid("encodeSize:"), function $CPCoder__encodeSize_(self, _cmd, aSize)
 {
-    (self.isa.method_msgSend["encodeNumber:"] || _objj_forward)(self, "encodeNumber:", aSize.width);
-    (self.isa.method_msgSend["encodeNumber:"] || _objj_forward)(self, "encodeNumber:", aSize.height);
+    _CPRaiseInvalidAbstractInvocation(self, _cmd);
 }
 
 ,["void","CGSize"]), new objj_method(sel_getUid("encodePropertyList:"), function $CPCoder__encodePropertyList_(self, _cmd, aPropertyList)
@@ -16262,7 +16299,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["id","CPCoder"])]);
 }
-p;17;CPKeyedArchiver.jt;26332;@STATIC;1.0;i;9;CPArray.ji;9;CPCoder.ji;8;CPData.ji;14;CPDictionary.ji;10;CPNumber.ji;10;CPString.ji;9;CPValue.ji;13;_CGGeometry.jt;26194;objj_executeFile("CPArray.j", YES);objj_executeFile("CPCoder.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("_CGGeometry.j", YES);var CPArchiverReplacementClassNames = nil;
+p;17;CPKeyedArchiver.jt;26492;@STATIC;1.0;i;9;CPArray.ji;9;CPCoder.ji;8;CPData.ji;14;CPDictionary.ji;10;CPNumber.ji;10;CPString.ji;9;CPValue.ji;13;_CGGeometry.jt;26354;objj_executeFile("CPArray.j", YES);objj_executeFile("CPCoder.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("_CGGeometry.j", YES);var CPArchiverReplacementClassNames = nil;
 var _CPKeyedArchiverDidEncodeObjectSelector = 1,
     _CPKeyedArchiverWillEncodeObjectSelector = 2,
     _CPKeyedArchiverWillReplaceObjectWithObjectSelector = 4,
@@ -16294,10 +16331,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForWritingWithMutab
     {
         self._data = data;
         self._objects = [];
-        self._UIDs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._conditionalUIDs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._replacementObjects = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._UIDs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._conditionalUIDs = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._replacementObjects = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         self._plistObjects = (CPArray.isa.method_msgSend["arrayWithObject:"] || _objj_forward)(CPArray, "arrayWithObject:", _CPKeyedArchiverNullString);
     }
     return self;
@@ -16307,26 +16344,26 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForWritingWithMutab
 ,["id","CPMutableData"]), new objj_method(sel_getUid("finishEncoding"), function $CPKeyedArchiver__finishEncoding(self, _cmd)
 {
     if (self._delegate && self._delegateSelectors & _CPKeyedArchiverDidFinishEncodingSelector)
-        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiverWillFinish:"] || _objj_forward)(___r1, "archiverWillFinish:", self));
+        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiverWillFinish:"] || _objj_forward)(___r1, "archiverWillFinish:", self));
     var i = 0,
         topObject = self._plistObject,
         classes = [];
     for (; i < self._objects.length; ++i)
     {
         var object = self._objects[i];
-        self._plistObject = self._plistObjects[((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (object == null ? null : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))))];
-        (object == null ? null : (object.isa.method_msgSend["encodeWithCoder:"] || _objj_forward)(object, "encodeWithCoder:", self));
+        self._plistObject = self._plistObjects[((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", (object == null ? object : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))))];
+        (object == null ? object : (object.isa.method_msgSend["encodeWithCoder:"] || _objj_forward)(object, "encodeWithCoder:", self));
         if (self._delegate && self._delegateSelectors & _CPKeyedArchiverDidEncodeObjectSelector)
-            ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiver:didEncodeObject:"] || _objj_forward)(___r1, "archiver:didEncodeObject:", self, object));
+            ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiver:didEncodeObject:"] || _objj_forward)(___r1, "archiver:didEncodeObject:", self, object));
     }
-    self._plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", topObject, _CPKeyedArchiverTopKey));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", self._plistObjects, _CPKeyedArchiverObjectsKey));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (self.isa.method_msgSend["className"] || _objj_forward)(self, "className"), _CPKeyedArchiverArchiverKey));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", "100000", _CPKeyedArchiverVersionKey));
-    ((___r1 = self._data), ___r1 == null ? null : (___r1.isa.method_msgSend["setPlistObject:"] || _objj_forward)(___r1, "setPlistObject:", self._plistObject));
+    self._plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", topObject, _CPKeyedArchiverTopKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", self._plistObjects, _CPKeyedArchiverObjectsKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (self.isa.method_msgSend["className"] || _objj_forward)(self, "className"), _CPKeyedArchiverArchiverKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", "100000", _CPKeyedArchiverVersionKey));
+    ((___r1 = self._data), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setPlistObject:"] || _objj_forward)(___r1, "setPlistObject:", self._plistObject));
     if (self._delegate && self._delegateSelectors & _CPKeyedArchiverDidFinishEncodingSelector)
-        ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiverDidFinish:"] || _objj_forward)(___r1, "archiverDidFinish:", self));
+        ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiverDidFinish:"] || _objj_forward)(___r1, "archiverDidFinish:", self));
     var ___r1;
 }
 
@@ -16342,40 +16379,40 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForWritingWithMutab
 
 ,["void","CPPropertyListFormat"]), new objj_method(sel_getUid("encodeBool:forKey:"), function $CPKeyedArchiver__encodeBool_forKey_(self, _cmd, aBOOL, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aBOOL, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aBOOL, NO), aKey));
     var ___r1;
 }
 
 ,["void","BOOL","CPString"]), new objj_method(sel_getUid("encodeDouble:forKey:"), function $CPKeyedArchiver__encodeDouble_forKey_(self, _cmd, aDouble, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aDouble, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aDouble, NO), aKey));
     var ___r1;
 }
 
 ,["void","double","CPString"]), new objj_method(sel_getUid("encodeFloat:forKey:"), function $CPKeyedArchiver__encodeFloat_forKey_(self, _cmd, aFloat, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aFloat, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aFloat, NO), aKey));
     var ___r1;
 }
 
 ,["void","float","CPString"]), new objj_method(sel_getUid("encodeInt:forKey:"), function $CPKeyedArchiver__encodeInt_forKey_(self, _cmd, anInt, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anInt, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anInt, NO), aKey));
     var ___r1;
 }
 
 ,["void","float","CPString"]), new objj_method(sel_getUid("setDelegate:"), function $CPKeyedArchiver__setDelegate_(self, _cmd, aDelegate)
 {
     self._delegate = aDelegate;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:didEncodeObject:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:didEncodeObject:"))))
         self._delegateSelectors |= _CPKeyedArchiverDidEncodeObjectSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willEncodeObject:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willEncodeObject:"))))
         self._delegateSelectors |= _CPKeyedArchiverWillEncodeObjectSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willReplaceObject:withObject:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willReplaceObject:withObject:"))))
         self._delegateSelectors |= _CPKeyedArchiverWillReplaceObjectWithObjectSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:didFinishEncoding:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:didFinishEncoding:"))))
         self._delegateSelectors |= _CPKeyedArchiverDidFinishEncodingSelector;
-    if (((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willFinishEncoding:"))))
+    if (((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(___r1, "respondsToSelector:", sel_getUid("archiver:willFinishEncoding:"))))
         self._delegateSelectors |= _CPKeyedArchiverWillFinishEncodingSelector;
     var ___r1;
 }
@@ -16387,66 +16424,66 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForWritingWithMutab
 
 ,["id"]), new objj_method(sel_getUid("encodePoint:forKey:"), function $CPKeyedArchiver__encodePoint_forKey_(self, _cmd, aPoint, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromPoint(aPoint), NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromPoint(aPoint), NO), aKey));
     var ___r1;
 }
 
 ,["void","CGPoint","CPString"]), new objj_method(sel_getUid("encodeRect:forKey:"), function $CPKeyedArchiver__encodeRect_forKey_(self, _cmd, aRect, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromRect(aRect), NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromRect(aRect), NO), aKey));
     var ___r1;
 }
 
 ,["void","CGRect","CPString"]), new objj_method(sel_getUid("encodeSize:forKey:"), function $CPKeyedArchiver__encodeSize_forKey_(self, _cmd, aSize, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromSize(aSize), NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, CGStringFromSize(aSize), NO), aKey));
     var ___r1;
 }
 
 ,["void","CGSize","CPString"]), new objj_method(sel_getUid("encodeConditionalObject:forKey:"), function $CPKeyedArchiver__encodeConditionalObject_forKey_(self, _cmd, anObject, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anObject, YES), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anObject, YES), aKey));
     var ___r1;
 }
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("encodeNumber:forKey:"), function $CPKeyedArchiver__encodeNumber_forKey_(self, _cmd, aNumber, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aNumber, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, aNumber, NO), aKey));
     var ___r1;
 }
 
 ,["void","CPNumber","CPString"]), new objj_method(sel_getUid("encodeObject:forKey:"), function $CPKeyedArchiver__encodeObject_forKey_(self, _cmd, anObject, aKey)
 {
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anObject, NO), aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, anObject, NO), aKey));
     var ___r1;
 }
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("_encodeArrayOfObjects:forKey:"), function $CPKeyedArchiver___encodeArrayOfObjects_forKey_(self, _cmd, objects, aKey)
 {
-    var references = (objects == null ? null : (objects.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(objects, "arrayByApplyingBlock:",     function(object)
+    var references = (objects == null ? objects : (objects.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(objects, "arrayByApplyingBlock:",     function(object)
     {
         return _CPKeyedArchiverEncodeObject(self, object, NO);
     }));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", references, aKey));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", references, aKey));
     var ___r1;
 }
 
 ,["void","CPArray","CPString"]), new objj_method(sel_getUid("_encodeDictionaryOfObjects:forKey:"), function $CPKeyedArchiver___encodeDictionaryOfObjects_forKey_(self, _cmd, aDictionary, aKey)
 {
     var key,
-        keys = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["keyEnumerator"] || _objj_forward)(aDictionary, "keyEnumerator")),
-        references = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    while ((key = (keys == null ? null : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) !== nil)
-        (references == null ? null : (references.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(references, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, (aDictionary == null ? null : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), NO), key));
-    ((___r1 = self._plistObject), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", references, aKey));
+        keys = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["keyEnumerator"] || _objj_forward)(aDictionary, "keyEnumerator")),
+        references = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    while ((key = (keys == null ? keys : (keys.isa.method_msgSend["nextObject"] || _objj_forward)(keys, "nextObject"))) != nil)
+        (references == null ? references : (references.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(references, "setObject:forKey:", _CPKeyedArchiverEncodeObject(self, (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), NO), key));
+    ((___r1 = self._plistObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", references, aKey));
     var ___r1;
 }
 
 ,["void","CPDictionary","CPString"]), new objj_method(sel_getUid("setClassName:forClass:"), function $CPKeyedArchiver__setClassName_forClass_(self, _cmd, aClassName, aClass)
 {
     if (!self._replacementClassNames)
-        self._replacementClassNames = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    ((___r1 = self._replacementClassNames), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", aClassName, CPStringFromClass(aClass)));
+        self._replacementClassNames = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    ((___r1 = self._replacementClassNames), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", aClassName, CPStringFromClass(aClass)));
     var ___r1;
 }
 
@@ -16454,7 +16491,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initForWritingWithMutab
 {
     if (!self._replacementClassNames)
         return aClass.name;
-    var className = ((___r1 = self._replacementClassNames), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPStringFromClass(aClass)));
+    var className = ((___r1 = self._replacementClassNames), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPStringFromClass(aClass)));
     return className ? className : aClass.name;
     var ___r1;
 }
@@ -16466,7 +16503,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
         return;
     _CPKeyedArchiverStringClass = (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class");
     _CPKeyedArchiverNumberClass = (CPNumber.isa.method_msgSend["class"] || _objj_forward)(CPNumber, "class");
-    _CPKeyedArchiverNullReference = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [0], [_CPKeyedArchiverUIDKey]));
+    _CPKeyedArchiverNullReference = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [0], [_CPKeyedArchiverUIDKey]));
     var ___r1;
 }
 
@@ -16478,9 +16515,9 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 ,["BOOL"]), new objj_method(sel_getUid("archivedDataWithRootObject:"), function $CPKeyedArchiver__archivedDataWithRootObject_(self, _cmd, anObject)
 {
     var data = (CPData.isa.method_msgSend["dataWithPlistObject:"] || _objj_forward)(CPData, "dataWithPlistObject:", nil),
-        archiver = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initForWritingWithMutableData:"] || _objj_forward)(___r1, "initForWritingWithMutableData:", data));
-    (archiver == null ? null : (archiver.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(archiver, "encodeObject:forKey:", anObject, "root"));
-    (archiver == null ? null : (archiver.isa.method_msgSend["finishEncoding"] || _objj_forward)(archiver, "finishEncoding"));
+        archiver = ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initForWritingWithMutableData:"] || _objj_forward)(___r1, "initForWritingWithMutableData:", data));
+    (archiver == null ? archiver : (archiver.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(archiver, "encodeObject:forKey:", anObject, "root"));
+    (archiver == null ? archiver : (archiver.isa.method_msgSend["finishEncoding"] || _objj_forward)(archiver, "finishEncoding"));
     return data;
     var ___r1;
 }
@@ -16488,8 +16525,8 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 ,["CPData","id"]), new objj_method(sel_getUid("setClassName:forClass:"), function $CPKeyedArchiver__setClassName_forClass_(self, _cmd, aClassName, aClass)
 {
     if (!CPArchiverReplacementClassNames)
-        CPArchiverReplacementClassNames = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    (CPArchiverReplacementClassNames == null ? null : (CPArchiverReplacementClassNames.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(CPArchiverReplacementClassNames, "setObject:forKey:", aClassName, CPStringFromClass(aClass)));
+        CPArchiverReplacementClassNames = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    (CPArchiverReplacementClassNames == null ? CPArchiverReplacementClassNames : (CPArchiverReplacementClassNames.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(CPArchiverReplacementClassNames, "setObject:forKey:", aClassName, CPStringFromClass(aClass)));
     var ___r1;
 }
 
@@ -16497,7 +16534,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 {
     if (!CPArchiverReplacementClassNames)
         return aClass.name;
-    var className = (CPArchiverReplacementClassNames == null ? null : (CPArchiverReplacementClassNames.isa.method_msgSend["objectForKey:"] || _objj_forward)(CPArchiverReplacementClassNames, "objectForKey:", CPStringFromClass(aClass)));
+    var className = (CPArchiverReplacementClassNames == null ? CPArchiverReplacementClassNames : (CPArchiverReplacementClassNames.isa.method_msgSend["objectForKey:"] || _objj_forward)(CPArchiverReplacementClassNames, "objectForKey:", CPStringFromClass(aClass)));
     return className ? className : aClass.name;
 }
 
@@ -16505,78 +16542,78 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 }
 var _CPKeyedArchiverEncodeObject = function(self, anObject, isConditional)
 {
-    if (anObject !== nil && anObject !== undefined && !anObject.isa)
+    if (anObject != nil && !anObject.isa)
         anObject = (_CPKeyedArchiverValue.isa.method_msgSend["valueWithJSObject:"] || _objj_forward)(_CPKeyedArchiverValue, "valueWithJSObject:", anObject);
-    var GUID = (anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID")),
-        object = ((___r1 = self._replacementObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID));
-    if (object === nil)
+    var GUID = (anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID")),
+        object = ((___r1 = self._replacementObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID));
+    if (object == nil)
     {
-        object = (anObject == null ? null : (anObject.isa.method_msgSend["replacementObjectForKeyedArchiver:"] || _objj_forward)(anObject, "replacementObjectForKeyedArchiver:", self));
+        object = (anObject == null ? anObject : (anObject.isa.method_msgSend["replacementObjectForKeyedArchiver:"] || _objj_forward)(anObject, "replacementObjectForKeyedArchiver:", self));
         if (self._delegate)
         {
             if (object !== anObject && self._delegateSelectors & _CPKeyedArchiverWillReplaceObjectWithObjectSelector)
-                ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "archiver:willReplaceObject:withObject:", self, anObject, object));
+                ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "archiver:willReplaceObject:withObject:", self, anObject, object));
             if (self._delegateSelectors & _CPKeyedArchiverWillEncodeObjectSelector)
             {
-                anObject = ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiver:willEncodeObject:"] || _objj_forward)(___r1, "archiver:willEncodeObject:", self, object));
+                anObject = ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiver:willEncodeObject:"] || _objj_forward)(___r1, "archiver:willEncodeObject:", self, object));
                 if (anObject !== object && self._delegateSelectors & _CPKeyedArchiverWillReplaceObjectWithObjectSelector)
-                    ((___r1 = self._delegate), ___r1 == null ? null : (___r1.isa.method_msgSend["archiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "archiver:willReplaceObject:withObject:", self, object, anObject));
+                    ((___r1 = self._delegate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["archiver:willReplaceObject:withObject:"] || _objj_forward)(___r1, "archiver:willReplaceObject:withObject:", self, object, anObject));
                 object = anObject;
             }        }        if (object != nil && GUID != nil)
-            ((___r1 = self._replacementObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", object, GUID));
-    }    if (object === nil)
+            ((___r1 = self._replacementObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", object, GUID));
+    }    if (object == nil)
         return _CPKeyedArchiverNullReference;
-    var UID = ((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID = (object == null ? null : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))));
-    if (UID === nil)
+    var UID = ((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID = (object == null ? object : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))));
+    if (UID == nil)
     {
         if (isConditional)
         {
-            if ((UID = ((___r1 = self._conditionalUIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID))) === nil)
+            if ((UID = ((___r1 = self._conditionalUIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID))) == nil)
             {
-                ((___r1 = self._conditionalUIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID = ((___r2 = self._plistObjects), ___r2 == null ? null : (___r2.isa.method_msgSend["count"] || _objj_forward)(___r2, "count")), GUID));
-                ((___r1 = self._plistObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", _CPKeyedArchiverNullString));
+                ((___r1 = self._conditionalUIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID = ((___r2 = self._plistObjects), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["count"] || _objj_forward)(___r2, "count")), GUID));
+                ((___r1 = self._plistObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", _CPKeyedArchiverNullString));
             }        }        else
         {
-            var theClass = (object == null ? null : (object.isa.method_msgSend["classForKeyedArchiver"] || _objj_forward)(object, "classForKeyedArchiver")),
+            var theClass = (object == null ? object : (object.isa.method_msgSend["classForKeyedArchiver"] || _objj_forward)(object, "classForKeyedArchiver")),
                 plistObject = nil;
             if (theClass === _CPKeyedArchiverStringClass || theClass === _CPKeyedArchiverNumberClass)
                 plistObject = object;
             else
             {
-                plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-                ((___r1 = self._objects), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", object));
-                var className = (self == null ? null : (self.isa.method_msgSend["classNameForClass:"] || _objj_forward)(self, "classNameForClass:", theClass));
+                plistObject = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+                ((___r1 = self._objects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", object));
+                var className = (self == null ? self : (self.isa.method_msgSend["classNameForClass:"] || _objj_forward)(self, "classNameForClass:", theClass));
                 if (!className)
-                    className = ((___r1 = (self == null ? null : (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))), ___r1 == null ? null : (___r1.isa.method_msgSend["classNameForClass:"] || _objj_forward)(___r1, "classNameForClass:", theClass));
+                    className = ((___r1 = (self == null ? self : (self.isa.method_msgSend["class"] || _objj_forward)(self, "class"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["classNameForClass:"] || _objj_forward)(___r1, "classNameForClass:", theClass));
                 if (!className)
                     className = theClass.name;
                 else
                     theClass = CPClassFromString(className);
-                var classUID = ((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", className));
+                var classUID = ((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", className));
                 if (!classUID)
                 {
-                    var plistClass = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")),
+                    var plistClass = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init")),
                         hierarchy = [];
-                    (plistClass == null ? null : (plistClass.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistClass, "setObject:forKey:", className, _CPKeyedArchiverClassNameKey));
+                    (plistClass == null ? plistClass : (plistClass.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistClass, "setObject:forKey:", className, _CPKeyedArchiverClassNameKey));
                     do
                     {
-                        (hierarchy == null ? null : (hierarchy.isa.method_msgSend["addObject:"] || _objj_forward)(hierarchy, "addObject:", CPStringFromClass(theClass)));
-                    }                    while (theClass = (theClass == null ? null : (theClass.isa.method_msgSend["superclass"] || _objj_forward)(theClass, "superclass")));
-                                        (plistClass == null ? null : (plistClass.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistClass, "setObject:forKey:", hierarchy, _CPKeyedArchiverClassesKey));
-                    classUID = ((___r1 = self._plistObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
-                    ((___r1 = self._plistObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", plistClass));
-                    ((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", classUID, className));
-                }                (plistObject == null ? null : (plistObject.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistObject, "setObject:forKey:", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [classUID], [_CPKeyedArchiverUIDKey])), _CPKeyedArchiverClassKey));
-            }            UID = ((___r1 = self._conditionalUIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID));
-            if (UID !== nil)
+                        (hierarchy == null ? hierarchy : (hierarchy.isa.method_msgSend["addObject:"] || _objj_forward)(hierarchy, "addObject:", CPStringFromClass(theClass)));
+                    }                    while (theClass = (theClass == null ? theClass : (theClass.isa.method_msgSend["superclass"] || _objj_forward)(theClass, "superclass")));
+                                        (plistClass == null ? plistClass : (plistClass.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistClass, "setObject:forKey:", hierarchy, _CPKeyedArchiverClassesKey));
+                    classUID = ((___r1 = self._plistObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+                    ((___r1 = self._plistObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", plistClass));
+                    ((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", classUID, className));
+                }                (plistObject == null ? plistObject : (plistObject.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(plistObject, "setObject:forKey:", (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [classUID], [_CPKeyedArchiverUIDKey])), _CPKeyedArchiverClassKey));
+            }            UID = ((___r1 = self._conditionalUIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", GUID));
+            if (UID != nil)
             {
-                ((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID, GUID));
-                ((___r1 = self._plistObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["replaceObjectAtIndex:withObject:"] || _objj_forward)(___r1, "replaceObjectAtIndex:withObject:", UID, plistObject));
+                ((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID, GUID));
+                ((___r1 = self._plistObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["replaceObjectAtIndex:withObject:"] || _objj_forward)(___r1, "replaceObjectAtIndex:withObject:", UID, plistObject));
             }            else
             {
-                ((___r1 = self._UIDs), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID = ((___r2 = self._plistObjects), ___r2 == null ? null : (___r2.isa.method_msgSend["count"] || _objj_forward)(___r2, "count")), GUID));
-                ((___r1 = self._plistObjects), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", plistObject));
-            }        }    }    return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [UID], [_CPKeyedArchiverUIDKey]));
+                ((___r1 = self._UIDs), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", UID = ((___r2 = self._plistObjects), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["count"] || _objj_forward)(___r2, "count")), GUID));
+                ((___r1 = self._plistObjects), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", plistObject));
+            }        }    }    return (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [UID], [_CPKeyedArchiverUIDKey]));
     var ___r1, ___r2;
 };
 p;18;CPSortDescriptor.jt;6334;@STATIC;1.0;i;10;CPObject.ji;15;CPObjJRuntime.ji;10;CPString.jt;6265;objj_executeFile("CPObject.j", YES);objj_executeFile("CPObjJRuntime.j", YES);objj_executeFile("CPString.j", YES);
@@ -16672,8 +16709,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","CPCoder"])]);
 }
-p;16;CPUserDefaults.jt;29386;@STATIC;1.0;i;10;CPBundle.ji;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;22;CPNotificationCenter.ji;10;CPObject.ji;11;CPRunLoop.ji;10;CPString.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.jt;29131;objj_executeFile("CPBundle.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPKeyedUnarchiver.j", YES);objj_executeFile("CPNotificationCenter.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRunLoop.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPURLConnection.j", YES);objj_executeFile("CPURLRequest.j", YES);CPArgumentDomain = "CPArgumentDomain";
-CPApplicationDomain = ((___r1 = ((___r2 = (CPBundle.isa.method_msgSend["mainBundle"] || _objj_forward)(CPBundle, "mainBundle")), ___r2 == null ? null : (___r2.isa.method_msgSend["infoDictionary"] || _objj_forward)(___r2, "infoDictionary"))), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", "CPBundleIdentifier")) || "CPApplicationDomain";
+p;16;CPUserDefaults.jt;29537;@STATIC;1.0;i;10;CPBundle.ji;8;CPData.ji;14;CPDictionary.ji;13;CPException.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;22;CPNotificationCenter.ji;10;CPObject.ji;11;CPRunLoop.ji;10;CPString.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.jt;29282;objj_executeFile("CPBundle.j", YES);objj_executeFile("CPData.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPKeyedArchiver.j", YES);objj_executeFile("CPKeyedUnarchiver.j", YES);objj_executeFile("CPNotificationCenter.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRunLoop.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPURL.j", YES);objj_executeFile("CPURLConnection.j", YES);objj_executeFile("CPURLRequest.j", YES);CPArgumentDomain = "CPArgumentDomain";
+CPApplicationDomain = ((___r1 = ((___r2 = (CPBundle.isa.method_msgSend["mainBundle"] || _objj_forward)(CPBundle, "mainBundle")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["infoDictionary"] || _objj_forward)(___r2, "infoDictionary"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", "CPBundleIdentifier")) || "CPApplicationDomain";
 CPGlobalDomain = "CPGlobalDomain";
 CPLocaleDomain = "CPLocaleDomain";
 CPRegistrationDomain = "CPRegistrationDomain";
@@ -16687,12 +16724,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
     self = (objj_getClass("CPUserDefaults").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
     {
-        self._domains = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        (self == null ? null : (self.isa.method_msgSend["_setupArgumentsDomain"] || _objj_forward)(self, "_setupArgumentsDomain"));
-        var defaultStore = (CPUserDefaultsLocalStore == null ? null : (CPUserDefaultsLocalStore.isa.method_msgSend["supportsLocalStorage"] || _objj_forward)(CPUserDefaultsLocalStore, "supportsLocalStorage")) ? CPUserDefaultsLocalStore : CPUserDefaultsCookieStore;
-        self._stores = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        (self == null ? null : (self.isa.method_msgSend["setPersistentStoreClass:forDomain:reloadData:"] || _objj_forward)(self, "setPersistentStoreClass:forDomain:reloadData:", defaultStore, CPGlobalDomain, YES));
-        (self == null ? null : (self.isa.method_msgSend["setPersistentStoreClass:forDomain:reloadData:"] || _objj_forward)(self, "setPersistentStoreClass:forDomain:reloadData:", defaultStore, CPApplicationDomain, YES));
+        self._domains = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        (self == null ? self : (self.isa.method_msgSend["_setupArgumentsDomain"] || _objj_forward)(self, "_setupArgumentsDomain"));
+        var defaultStore = (CPUserDefaultsLocalStore == null ? CPUserDefaultsLocalStore : (CPUserDefaultsLocalStore.isa.method_msgSend["supportsLocalStorage"] || _objj_forward)(CPUserDefaultsLocalStore, "supportsLocalStorage")) ? CPUserDefaultsLocalStore : CPUserDefaultsCookieStore;
+        self._stores = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        (self == null ? self : (self.isa.method_msgSend["setPersistentStoreClass:forDomain:reloadData:"] || _objj_forward)(self, "setPersistentStoreClass:forDomain:reloadData:", defaultStore, CPGlobalDomain, YES));
+        (self == null ? self : (self.isa.method_msgSend["setPersistentStoreClass:forDomain:reloadData:"] || _objj_forward)(self, "setPersistentStoreClass:forDomain:reloadData:", defaultStore, CPApplicationDomain, YES));
     }
     return self;
     var ___r1;
@@ -16700,14 +16737,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["id"]), new objj_method(sel_getUid("_setupArgumentsDomain"), function $CPUserDefaults___setupArgumentsDomain(self, _cmd)
 {
-    var args = (CPApp == null ? null : (CPApp.isa.method_msgSend["namedArguments"] || _objj_forward)(CPApp, "namedArguments")),
-        keys = (args == null ? null : (args.isa.method_msgSend["allKeys"] || _objj_forward)(args, "allKeys")),
-        count = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
+    var args = (CPApp == null ? CPApp : (CPApp.isa.method_msgSend["namedArguments"] || _objj_forward)(CPApp, "namedArguments")),
+        keys = (args == null ? args : (args.isa.method_msgSend["allKeys"] || _objj_forward)(args, "allKeys")),
+        count = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
         i = 0;
     for (; i < count; i++)
     {
         var key = keys[i];
-        (self.isa.method_msgSend["setObject:forKey:inDomain:"] || _objj_forward)(self, "setObject:forKey:inDomain:", (args == null ? null : (args.isa.method_msgSend["objectForKey:"] || _objj_forward)(args, "objectForKey:", key)), key, CPArgumentDomain);
+        (self.isa.method_msgSend["setObject:forKey:inDomain:"] || _objj_forward)(self, "setObject:forKey:inDomain:", (args == null ? args : (args.isa.method_msgSend["objectForKey:"] || _objj_forward)(args, "objectForKey:", key)), key, CPArgumentDomain);
     }
 }
 
@@ -16715,7 +16752,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 {
     if (self._searchListNeedsReload)
         (self.isa.method_msgSend["_reloadSearchList"] || _objj_forward)(self, "_reloadSearchList");
-    return ((___r1 = self._searchList), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aKey));
+    return ((___r1 = self._searchList), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aKey));
     var ___r1;
 }
 
@@ -16726,10 +16763,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["void","id","CPString"]), new objj_method(sel_getUid("objectForKey:inDomain:"), function $CPUserDefaults__objectForKey_inDomain_(self, _cmd, aKey, aDomain)
 {
-    var domain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
+    var domain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
     if (!domain)
         return nil;
-    return (domain == null ? null : (domain.isa.method_msgSend["objectForKey:"] || _objj_forward)(domain, "objectForKey:", aKey));
+    return (domain == null ? domain : (domain.isa.method_msgSend["objectForKey:"] || _objj_forward)(domain, "objectForKey:", aKey));
     var ___r1;
 }
 
@@ -16737,13 +16774,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 {
     if (!aKey || !aDomain)
         return;
-    var domain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
+    var domain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
     if (!domain)
     {
-        domain = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", domain, aDomain));
+        domain = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", domain, aDomain));
     }
-    (domain == null ? null : (domain.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(domain, "setObject:forKey:", anObject, aKey));
+    (domain == null ? domain : (domain.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(domain, "setObject:forKey:", anObject, aKey));
     self._searchListNeedsReload = YES;
     (self.isa.method_msgSend["domainDidChange:"] || _objj_forward)(self, "domainDidChange:", aDomain);
     var ___r1;
@@ -16758,10 +16795,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 {
     if (!aKey || !aDomain)
         return;
-    var domain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
+    var domain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
     if (!domain)
         return;
-    (domain == null ? null : (domain.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(domain, "removeObjectForKey:", aKey));
+    (domain == null ? domain : (domain.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(domain, "removeObjectForKey:", aKey));
     self._searchListNeedsReload = YES;
     (self.isa.method_msgSend["domainDidChange:"] || _objj_forward)(self, "domainDidChange:", aDomain);
     var ___r1;
@@ -16769,21 +16806,21 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["void","CPString","CPString"]), new objj_method(sel_getUid("registerDefaults:"), function $CPUserDefaults__registerDefaults_(self, _cmd, aDictionary)
 {
-    var keys = (aDictionary == null ? null : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
-        count = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
+    var keys = (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["allKeys"] || _objj_forward)(aDictionary, "allKeys")),
+        count = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
         i = 0;
     for (; i < count; i++)
     {
         var key = keys[i];
-        (self.isa.method_msgSend["setObject:forKey:inDomain:"] || _objj_forward)(self, "setObject:forKey:inDomain:", (aDictionary == null ? null : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key, CPRegistrationDomain);
+        (self.isa.method_msgSend["setObject:forKey:inDomain:"] || _objj_forward)(self, "setObject:forKey:inDomain:", (aDictionary == null ? aDictionary : (aDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(aDictionary, "objectForKey:", key)), key, CPRegistrationDomain);
     }
 }
 
 ,["void","CPDictionary"]), new objj_method(sel_getUid("registerDefaultsFromContentsOfFile:"), function $CPUserDefaults__registerDefaultsFromContentsOfFile_(self, _cmd, aURL)
 {
     var contents = (CPURLConnection.isa.method_msgSend["sendSynchronousRequest:returningResponse:"] || _objj_forward)(CPURLConnection, "sendSynchronousRequest:returningResponse:", (CPURLRequest.isa.method_msgSend["requestWithURL:"] || _objj_forward)(CPURLRequest, "requestWithURL:", aURL), nil),
-        data = (CPData.isa.method_msgSend["dataWithRawString:"] || _objj_forward)(CPData, "dataWithRawString:", (contents == null ? null : (contents.isa.method_msgSend["rawString"] || _objj_forward)(contents, "rawString"))),
-        plist = (data == null ? null : (data.isa.method_msgSend["plistObject"] || _objj_forward)(data, "plistObject"));
+        data = (CPData.isa.method_msgSend["dataWithRawString:"] || _objj_forward)(CPData, "dataWithRawString:", (contents == null ? contents : (contents.isa.method_msgSend["rawString"] || _objj_forward)(contents, "rawString"))),
+        plist = (data == null ? data : (data.isa.method_msgSend["plistObject"] || _objj_forward)(data, "plistObject"));
     (self.isa.method_msgSend["registerDefaults:"] || _objj_forward)(self, "registerDefaults:", plist);
 }
 
@@ -16791,21 +16828,21 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 {
     self._searchListNeedsReload = NO;
     var dicts = [CPRegistrationDomain, CPGlobalDomain, CPApplicationDomain, CPArgumentDomain],
-        count = (dicts == null ? null : (dicts.isa.method_msgSend["count"] || _objj_forward)(dicts, "count")),
+        count = (dicts == null ? dicts : (dicts.isa.method_msgSend["count"] || _objj_forward)(dicts, "count")),
         i = 0;
-    self._searchList = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    self._searchList = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     for (; i < count; i++)
     {
-        var domain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", dicts[i]));
+        var domain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", dicts[i]));
         if (!domain)
             continue;
-        var keys = (domain == null ? null : (domain.isa.method_msgSend["allKeys"] || _objj_forward)(domain, "allKeys")),
-            keysCount = (keys == null ? null : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
+        var keys = (domain == null ? domain : (domain.isa.method_msgSend["allKeys"] || _objj_forward)(domain, "allKeys")),
+            keysCount = (keys == null ? keys : (keys.isa.method_msgSend["count"] || _objj_forward)(keys, "count")),
             j = 0;
         for (; j < keysCount; j++)
         {
             var key = keys[j];
-            ((___r1 = self._searchList), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (domain == null ? null : (domain.isa.method_msgSend["objectForKey:"] || _objj_forward)(domain, "objectForKey:", key)), key));
+            ((___r1 = self._searchList), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", (domain == null ? domain : (domain.isa.method_msgSend["objectForKey:"] || _objj_forward)(domain, "objectForKey:", key)), key));
         }
     }
     var ___r1;
@@ -16823,18 +16860,18 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["CPArray"]), new objj_method(sel_getUid("persistentStoreForDomain:"), function $CPUserDefaults__persistentStoreForDomain_(self, _cmd, aDomain)
 {
-    return ((___r1 = self._stores), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
+    return ((___r1 = self._stores), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
     var ___r1;
 }
 
 ,["CPUserDefaultsStore","CPString"]), new objj_method(sel_getUid("setPersistentStoreClass:forDomain:reloadData:"), function $CPUserDefaults__setPersistentStoreClass_forDomain_reloadData_(self, _cmd, aStoreClass, aDomain, aFlag)
 {
-    var currentStore = ((___r1 = self._stores), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
-    if (currentStore && (currentStore == null ? null : (currentStore.isa.method_msgSend["class"] || _objj_forward)(currentStore, "class")) === aStoreClass)
+    var currentStore = ((___r1 = self._stores), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", aDomain));
+    if (currentStore && (currentStore == null ? currentStore : (currentStore.isa.method_msgSend["class"] || _objj_forward)(currentStore, "class")) === aStoreClass)
         return currentStore;
-    var store = ((___r1 = (aStoreClass == null ? null : (aStoreClass.isa.method_msgSend["alloc"] || _objj_forward)(aStoreClass, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    (store == null ? null : (store.isa.method_msgSend["setDomain:"] || _objj_forward)(store, "setDomain:", aDomain));
-    ((___r1 = self._stores), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", store, aDomain));
+    var store = ((___r1 = (aStoreClass == null ? aStoreClass : (aStoreClass.isa.method_msgSend["alloc"] || _objj_forward)(aStoreClass, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    (store == null ? store : (store.isa.method_msgSend["setDomain:"] || _objj_forward)(store, "setDomain:", aDomain));
+    ((___r1 = self._stores), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", store, aDomain));
     if (aFlag)
         (self.isa.method_msgSend["reloadDataFromStoreForDomain:"] || _objj_forward)(self, "reloadDataFromStoreForDomain:", aDomain);
     return store;
@@ -16843,12 +16880,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["CPUserDefaultsStore","Class","CPString","BOOL"]), new objj_method(sel_getUid("reloadDataFromStoreForDomain:"), function $CPUserDefaults__reloadDataFromStoreForDomain_(self, _cmd, aDomain)
 {
-    var data = ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", aDomain)), ___r1 == null ? null : (___r1.isa.method_msgSend["data"] || _objj_forward)(___r1, "data")),
+    var data = ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", aDomain)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["data"] || _objj_forward)(___r1, "data")),
         domain = data ? (CPKeyedUnarchiver.isa.method_msgSend["unarchiveObjectWithData:"] || _objj_forward)(CPKeyedUnarchiver, "unarchiveObjectWithData:", data) : nil;
-    if (domain === nil)
-        ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", aDomain));
+    if (domain == nil)
+        ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectForKey:"] || _objj_forward)(___r1, "removeObjectForKey:", aDomain));
     else
-        ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", domain, aDomain));
+        ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", domain, aDomain));
     self._searchListNeedsReload = YES;
     var ___r1;
 }
@@ -16856,24 +16893,24 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["void","CPString"]), new objj_method(sel_getUid("domainDidChange:"), function $CPUserDefaults__domainDidChange_(self, _cmd, aDomain)
 {
     if (aDomain === CPGlobalDomain || aDomain === CPApplicationDomain)
-        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? null : (___r1.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "performSelector:target:argument:order:modes:", sel_getUid("synchronize"), self, nil, 0, [CPDefaultRunLoopMode]));
-    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? null : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUserDefaultsDidChangeNotification, self));
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["performSelector:target:argument:order:modes:"] || _objj_forward)(___r1, "performSelector:target:argument:order:modes:", sel_getUid("synchronize"), self, nil, 0, [CPDefaultRunLoopMode]));
+    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPUserDefaultsDidChangeNotification, self));
     var ___r1;
 }
 
 ,["void","CPString"]), new objj_method(sel_getUid("synchronize"), function $CPUserDefaults__synchronize(self, _cmd)
 {
-    var globalDomain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPGlobalDomain));
+    var globalDomain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPGlobalDomain));
     if (globalDomain)
     {
         var data = (CPKeyedArchiver.isa.method_msgSend["archivedDataWithRootObject:"] || _objj_forward)(CPKeyedArchiver, "archivedDataWithRootObject:", globalDomain);
-        ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", CPGlobalDomain)), ___r1 == null ? null : (___r1.isa.method_msgSend["setData:"] || _objj_forward)(___r1, "setData:", data));
+        ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", CPGlobalDomain)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setData:"] || _objj_forward)(___r1, "setData:", data));
     }
-    var appDomain = ((___r1 = self._domains), ___r1 == null ? null : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPApplicationDomain));
+    var appDomain = ((___r1 = self._domains), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPApplicationDomain));
     if (appDomain)
     {
         var data = (CPKeyedArchiver.isa.method_msgSend["archivedDataWithRootObject:"] || _objj_forward)(CPKeyedArchiver, "archivedDataWithRootObject:", appDomain);
-        ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", CPApplicationDomain)), ___r1 == null ? null : (___r1.isa.method_msgSend["setData:"] || _objj_forward)(___r1, "setData:", data));
+        ((___r1 = (self.isa.method_msgSend["persistentStoreForDomain:"] || _objj_forward)(self, "persistentStoreForDomain:", CPApplicationDomain)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setData:"] || _objj_forward)(___r1, "setData:", data));
     }
     var ___r1;
 }
@@ -16881,7 +16918,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["void"]), new objj_method(sel_getUid("arrayForKey:"), function $CPUserDefaults__arrayForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
         return value;
     return nil;
 }
@@ -16889,15 +16926,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["CPArray","CPString"]), new objj_method(sel_getUid("boolForKey:"), function $CPUserDefaults__boolForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("boolValue"))))
-        return (value == null ? null : (value.isa.method_msgSend["boolValue"] || _objj_forward)(value, "boolValue"));
+    if ((value == null ? value : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("boolValue"))))
+        return (value == null ? value : (value.isa.method_msgSend["boolValue"] || _objj_forward)(value, "boolValue"));
     return NO;
 }
 
 ,["BOOL","CPString"]), new objj_method(sel_getUid("dataForKey:"), function $CPUserDefaults__dataForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPData)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPData)))
         return value;
     return nil;
 }
@@ -16905,7 +16942,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["CPData","CPString"]), new objj_method(sel_getUid("dictionaryForKey:"), function $CPUserDefaults__dictionaryForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPDictionary)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPDictionary)))
         return value;
     return nil;
 }
@@ -16913,20 +16950,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["CPDictionary","CPString"]), new objj_method(sel_getUid("floatForKey:"), function $CPUserDefaults__floatForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if (value === nil)
+    if (value == nil)
         return 0;
-    if ((value == null ? null : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("floatValue"))))
-        value = (value == null ? null : (value.isa.method_msgSend["floatValue"] || _objj_forward)(value, "floatValue"));
+    if ((value == null ? value : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("floatValue"))))
+        value = (value == null ? value : (value.isa.method_msgSend["floatValue"] || _objj_forward)(value, "floatValue"));
     return parseFloat(value);
 }
 
 ,["float","CPString"]), new objj_method(sel_getUid("integerForKey:"), function $CPUserDefaults__integerForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if (value === nil)
+    if (value == nil)
         return 0;
-    if ((value == null ? null : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("intValue"))))
-        value = (value == null ? null : (value.isa.method_msgSend["intValue"] || _objj_forward)(value, "intValue"));
+    if ((value == null ? value : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("intValue"))))
+        value = (value == null ? value : (value.isa.method_msgSend["intValue"] || _objj_forward)(value, "intValue"));
     return parseInt(value);
 }
 
@@ -16938,20 +16975,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["double","CPString"]), new objj_method(sel_getUid("stringForKey:"), function $CPUserDefaults__stringForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPString)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPString)))
         return value;
-    else if ((value == null ? null : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("stringValue"))))
-        return (value == null ? null : (value.isa.method_msgSend["stringValue"] || _objj_forward)(value, "stringValue"));
+    else if ((value == null ? value : (value.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(value, "respondsToSelector:", sel_getUid("stringValue"))))
+        return (value == null ? value : (value.isa.method_msgSend["stringValue"] || _objj_forward)(value, "stringValue"));
     return nil;
 }
 
 ,["CPString","CPString"]), new objj_method(sel_getUid("stringArrayForKey:"), function $CPUserDefaults__stringArrayForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if (!(value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
+    if (!(value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPArray)))
         return nil;
-    for (var i = 0, count = (value == null ? null : (value.isa.method_msgSend["count"] || _objj_forward)(value, "count")); i < count; i++)
-        if (!((___r1 = value[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", CPString)))
+    for (var i = 0, count = (value == null ? value : (value.isa.method_msgSend["count"] || _objj_forward)(value, "count")); i < count; i++)
+        if (!((___r1 = value[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", CPString)))
             return nil;
     return value;
     var ___r1;
@@ -16960,23 +16997,23 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["CPArray","CPString"]), new objj_method(sel_getUid("URLForKey:"), function $CPUserDefaults__URLForKey_(self, _cmd, aKey)
 {
     var value = (self.isa.method_msgSend["objectForKey:"] || _objj_forward)(self, "objectForKey:", aKey);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPURL)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPURL)))
         return value;
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPString)))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", CPString)))
         return (CPURL.isa.method_msgSend["URLWithString:"] || _objj_forward)(CPURL, "URLWithString:", value);
     return nil;
 }
 
 ,["CPURL","CPString"]), new objj_method(sel_getUid("setBool:forKey:"), function $CPUserDefaults__setBool_forKey_(self, _cmd, aValue, aKey)
 {
-    if ((aValue == null ? null : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("boolValue"))))
-        (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", (aValue == null ? null : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue")), aKey);
+    if ((aValue == null ? aValue : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("boolValue"))))
+        (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", (aValue == null ? aValue : (aValue.isa.method_msgSend["boolValue"] || _objj_forward)(aValue, "boolValue")), aKey);
 }
 
 ,["void","BOOL","CPString"]), new objj_method(sel_getUid("setFloat:forKey:"), function $CPUserDefaults__setFloat_forKey_(self, _cmd, aValue, aKey)
 {
-    if ((aValue == null ? null : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("floatValue"))))
-        aValue = (aValue == null ? null : (aValue.isa.method_msgSend["floatValue"] || _objj_forward)(aValue, "floatValue"));
+    if ((aValue == null ? aValue : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("floatValue"))))
+        aValue = (aValue == null ? aValue : (aValue.isa.method_msgSend["floatValue"] || _objj_forward)(aValue, "floatValue"));
     (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", parseFloat(aValue), aKey);
 }
 
@@ -16987,14 +17024,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 
 ,["void","double","CPString"]), new objj_method(sel_getUid("setInteger:forKey:"), function $CPUserDefaults__setInteger_forKey_(self, _cmd, aValue, aKey)
 {
-    if ((aValue == null ? null : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("intValue"))))
-        aValue = (aValue == null ? null : (aValue.isa.method_msgSend["intValue"] || _objj_forward)(aValue, "intValue"));
+    if ((aValue == null ? aValue : (aValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(aValue, "respondsToSelector:", sel_getUid("intValue"))))
+        aValue = (aValue == null ? aValue : (aValue.isa.method_msgSend["intValue"] || _objj_forward)(aValue, "intValue"));
     (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", parseInt(aValue), aKey);
 }
 
 ,["void","int","CPString"]), new objj_method(sel_getUid("setURL:forKey:"), function $CPUserDefaults__setURL_forKey_(self, _cmd, aValue, aKey)
 {
-    if ((aValue == null ? null : (aValue.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aValue, "isKindOfClass:", CPString)))
+    if ((aValue == null ? aValue : (aValue.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aValue, "isKindOfClass:", CPString)))
         aValue = (CPURL.isa.method_msgSend["URLWithString:"] || _objj_forward)(CPURL, "URLWithString:", aValue);
     (self.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(self, "setObject:forKey:", aValue, aKey);
 }
@@ -17003,7 +17040,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 class_addMethods(meta_class, [new objj_method(sel_getUid("standardUserDefaults"), function $CPUserDefaults__standardUserDefaults(self, _cmd)
 {
     if (!StandardUserDefaults)
-        StandardUserDefaults = ((___r1 = (CPUserDefaults.isa.method_msgSend["alloc"] || _objj_forward)(CPUserDefaults, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        StandardUserDefaults = ((___r1 = (CPUserDefaults.isa.method_msgSend["alloc"] || _objj_forward)(CPUserDefaults, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     return StandardUserDefaults;
     var ___r1;
 }
@@ -17011,7 +17048,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("standardUserDefaults")
 ,["id"]), new objj_method(sel_getUid("resetStandardUserDefaults"), function $CPUserDefaults__resetStandardUserDefaults(self, _cmd)
 {
     if (StandardUserDefaults)
-        (StandardUserDefaults == null ? null : (StandardUserDefaults.isa.method_msgSend["synchronize"] || _objj_forward)(StandardUserDefaults, "synchronize"));
+        (StandardUserDefaults == null ? StandardUserDefaults : (StandardUserDefaults.isa.method_msgSend["synchronize"] || _objj_forward)(StandardUserDefaults, "synchronize"));
     StandardUserDefaults = nil;
 }
 
@@ -17051,14 +17088,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setDomain:"), function 
     if (self._domain === aDomain)
         return;
     self._domain = aDomain;
-    self._cookie = ((___r1 = (CPCookie == null ? null : (CPCookie.isa.method_msgSend["alloc"] || _objj_forward)(CPCookie, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithName:"] || _objj_forward)(___r1, "initWithName:", self._domain));
+    self._cookie = ((___r1 = (CPCookie == null ? CPCookie : (CPCookie.isa.method_msgSend["alloc"] || _objj_forward)(CPCookie, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithName:"] || _objj_forward)(___r1, "initWithName:", self._domain));
     var ___r1;
 }
 
 ,["void","CPString"]), new objj_method(sel_getUid("data"), function $CPUserDefaultsCookieStore__data(self, _cmd)
 {
-    var result = ((___r1 = self._cookie), ___r1 == null ? null : (___r1.isa.method_msgSend["value"] || _objj_forward)(___r1, "value"));
-    if (!result || (result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 1)
+    var result = ((___r1 = self._cookie), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["value"] || _objj_forward)(___r1, "value"));
+    if (!result || (result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 1)
         return nil;
     return (CPData.isa.method_msgSend["dataWithRawString:"] || _objj_forward)(CPData, "dataWithRawString:", decodeURIComponent(result));
     var ___r1;
@@ -17066,7 +17103,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setDomain:"), function 
 
 ,["CPData"]), new objj_method(sel_getUid("setData:"), function $CPUserDefaultsCookieStore__setData_(self, _cmd, aData)
 {
-    ((___r1 = self._cookie), ___r1 == null ? null : (___r1.isa.method_msgSend["setValue:expires:domain:"] || _objj_forward)(___r1, "setValue:expires:domain:", encodeURIComponent((aData == null ? null : (aData.isa.method_msgSend["rawString"] || _objj_forward)(aData, "rawString"))), (CPDate.isa.method_msgSend["distantFuture"] || _objj_forward)(CPDate, "distantFuture"), window.location.href.hostname));
+    ((___r1 = self._cookie), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setValue:expires:domain:"] || _objj_forward)(___r1, "setValue:expires:domain:", encodeURIComponent((aData == null ? aData : (aData.isa.method_msgSend["rawString"] || _objj_forward)(aData, "rawString"))), (CPDate.isa.method_msgSend["distantFuture"] || _objj_forward)(CPDate, "distantFuture"), window.location.href.hostname));
     var ___r1;
 }
 
@@ -17078,7 +17115,7 @@ var CPUserDefaultsLocalStoreTestKey = "9961800812587769-Cappuccino-Storage-Test"
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUserDefaultsLocalStore__init(self, _cmd)
 {
-    if (!((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["supportsLocalStorage"] || _objj_forward)(___r1, "supportsLocalStorage")))
+    if (!((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["supportsLocalStorage"] || _objj_forward)(___r1, "supportsLocalStorage")))
     {
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", "UnsupportedFeature", "Browser does not support localStorage for CPUserDefaultsLocalStore");
         return self = nil;
@@ -17090,7 +17127,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["id"]), new objj_method(sel_getUid("data"), function $CPUserDefaultsLocalStore__data(self, _cmd)
 {
     var result = localStorage.getItem(self._domain);
-    if (!result || (result == null ? null : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 1)
+    if (!result || (result == null ? result : (result.isa.method_msgSend["length"] || _objj_forward)(result, "length")) < 1)
         return nil;
     return (CPData.isa.method_msgSend["dataWithRawString:"] || _objj_forward)(CPData, "dataWithRawString:", decodeURIComponent(result));
 }
@@ -17098,7 +17135,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPUse
 ,["CPData"]), new objj_method(sel_getUid("setData:"), function $CPUserDefaultsLocalStore__setData_(self, _cmd, aData)
 {
     try {
-        localStorage.setItem(self._domain, encodeURIComponent((aData == null ? null : (aData.isa.method_msgSend["rawString"] || _objj_forward)(aData, "rawString"))));
+        localStorage.setItem(self._domain, encodeURIComponent((aData == null ? aData : (aData.isa.method_msgSend["rawString"] || _objj_forward)(aData, "rawString"))));
     }
     catch(e) {
         CPLog.warn("Unable to write to local storage: " + e);
@@ -17327,7 +17364,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("notificationWithName:o
 
 ,["CPNotification","CPString","id"])]);
 }
-p;20;_CPBlockExpression.jt;3984;@STATIC;1.0;i;15;_CPExpression.jt;3945;objj_executeFile("_CPExpression.j", YES);
+p;20;_CPBlockExpression.jt;3990;@STATIC;1.0;i;15;_CPExpression.jt;3951;objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPBlockExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_block", "Function"), new objj_ivar("_arguments", "CPArray")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("expressionBlock"), function $_CPBlockExpression__expressionBlock(self, _cmd)
@@ -17365,7 +17402,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("expressionBlock"), func
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || (object == null ? null : (object.isa.method_msgSend["expressionBlock"] || _objj_forward)(object, "expressionBlock")) !== self._block || !((___r1 = (object == null ? null : (object.isa.method_msgSend["arguments"] || _objj_forward)(object, "arguments"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._arguments)))
+    if (object == nil || object.isa !== self.isa || (object == null ? object : (object.isa.method_msgSend["expressionBlock"] || _objj_forward)(object, "expressionBlock")) !== self._block || !((___r1 = (object == null ? object : (object.isa.method_msgSend["arguments"] || _objj_forward)(object, "arguments"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._arguments)))
         return NO;
     return YES;
     var ___r1;
@@ -17373,9 +17410,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("expressionBlock"), func
 
 ,["BOOL","id"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPBlockExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
-    var args = ((___r1 = self._arguments), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
+    var args = ((___r1 = self._arguments), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
     {
-        return (exp == null ? null : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
+        return (exp == null ? exp : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
     }));
     return self._block(object, args, context);
     var ___r1;
@@ -17383,23 +17420,23 @@ class_addMethods(the_class, [new objj_method(sel_getUid("expressionBlock"), func
 
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("_expressionWithSubstitutionVariables:"), function $_CPBlockExpression___expressionWithSubstitutionVariables_(self, _cmd, bindings)
 {
-    var args = ((___r1 = self._arguments), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
+    var args = ((___r1 = self._arguments), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
     {
-        return (exp == null ? null : (exp.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(exp, "_expressionWithSubstitutionVariables:", bindings));
+        return (exp == null ? exp : (exp.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(exp, "_expressionWithSubstitutionVariables:", bindings));
     }));
-    return ((___r1 = (_CPBlockExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPBlockExpression, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithBlock:arguments:"] || _objj_forward)(___r1, "initWithBlock:arguments:", self._block, args));
+    return ((___r1 = (_CPBlockExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPBlockExpression, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithBlock:arguments:"] || _objj_forward)(___r1, "initWithBlock:arguments:", self._block, args));
     var ___r1;
 }
 
 ,["CPExpression","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPBlockExpression__description(self, _cmd)
 {
-    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "Block(function, %@)", ((___r1 = self._arguments), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
+    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "Block(function, %@)", ((___r1 = self._arguments), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
     var ___r1;
 }
 
 ,["CPString"])]);
 }
-p;22;_CPKeyPathExpression.jt;3883;@STATIC;1.0;i;18;CPKeyValueCoding.ji;10;CPString.ji;15;_CPExpression.ji;23;_CPFunctionExpression.ji;28;_CPConstantValueExpression.jt;3745;objj_executeFile("CPKeyValueCoding.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPFunctionExpression.j", YES);objj_executeFile("_CPConstantValueExpression.j", YES);
+p;22;_CPKeyPathExpression.jt;3889;@STATIC;1.0;i;18;CPKeyValueCoding.ji;10;CPString.ji;15;_CPExpression.ji;23;_CPFunctionExpression.ji;28;_CPConstantValueExpression.jt;3751;objj_executeFile("CPKeyValueCoding.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPFunctionExpression.j", YES);objj_executeFile("_CPConstantValueExpression.j", YES);
 {var the_class = objj_allocateClassPair(_CPFunctionExpression, "_CPKeyPathExpression"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithKeyPath:"), function $_CPKeyPathExpression__initWithKeyPath_(self, _cmd, keyPath)
@@ -17418,7 +17455,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKeyPath:"), fun
 {
     if (object === self)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["keyPath"] || _objj_forward)(object, "keyPath"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", (self.isa.method_msgSend["keyPath"] || _objj_forward)(self, "keyPath"))))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["keyPath"] || _objj_forward)(object, "keyPath"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToString:"] || _objj_forward)(___r1, "isEqualToString:", (self.isa.method_msgSend["keyPath"] || _objj_forward)(self, "keyPath"))))
         return NO;
     return YES;
     var ___r1;
@@ -17426,21 +17463,21 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithKeyPath:"), fun
 
 ,["BOOL","id"]), new objj_method(sel_getUid("pathExpression"), function $_CPKeyPathExpression__pathExpression(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["arguments"] || _objj_forward)(self, "arguments")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", 0));
+    return ((___r1 = (self.isa.method_msgSend["arguments"] || _objj_forward)(self, "arguments")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", 0));
     var ___r1;
 }
 
 ,["CPExpression"]), new objj_method(sel_getUid("keyPath"), function $_CPKeyPathExpression__keyPath(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["pathExpression"] || _objj_forward)(self, "pathExpression")), ___r1 == null ? null : (___r1.isa.method_msgSend["keyPath"] || _objj_forward)(___r1, "keyPath"));
+    return ((___r1 = (self.isa.method_msgSend["pathExpression"] || _objj_forward)(self, "pathExpression")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["keyPath"] || _objj_forward)(___r1, "keyPath"));
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("description"), function $_CPKeyPathExpression__description(self, _cmd)
 {
     var result = "";
-    if (((___r1 = self._operand), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionType"] || _objj_forward)(___r1, "expressionType")) != CPEvaluatedObjectExpressionType)
-        result += ((___r1 = self._operand), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ".";
+    if (((___r1 = self._operand), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionType"] || _objj_forward)(___r1, "expressionType")) != CPEvaluatedObjectExpressionType)
+        result += ((___r1 = self._operand), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ".";
     result += (self.isa.method_msgSend["keyPath"] || _objj_forward)(self, "keyPath");
     return result;
     var ___r1;
@@ -17458,7 +17495,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["CPString"])]);
 }
-p;23;CPComparisonPredicate.jt;23305;@STATIC;1.0;i;33;CPComparisonPredicate_Constants.ji;9;CPArray.ji;14;CPEnumerator.ji;8;CPNull.ji;10;CPString.ji;15;_CPExpression.ji;14;_CPPredicate.jt;23149;objj_executeFile("CPComparisonPredicate_Constants.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPPredicate.j", YES);{var the_typedef = objj_allocateTypeDef("CPComparisonPredicateModifier");
+p;23;CPComparisonPredicate.jt;23416;@STATIC;1.0;i;33;CPComparisonPredicate_Constants.ji;9;CPArray.ji;14;CPEnumerator.ji;8;CPNull.ji;10;CPString.ji;15;_CPExpression.ji;14;_CPPredicate.jt;23260;objj_executeFile("CPComparisonPredicate_Constants.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPPredicate.j", YES);{var the_typedef = objj_allocateTypeDef("CPComparisonPredicateModifier");
 objj_registerTypeDef(the_typedef);
 }{var the_typedef = objj_allocateTypeDef("CPPredicateOperatorType");
 objj_registerTypeDef(the_typedef);
@@ -17599,14 +17636,14 @@ default:
             operator = CPStringFromSelector(self._customSelector);
             break;
     }
-    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%s%s %s%s %s", modifier, ((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")), operator, options, ((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
+    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%s%s %s%s %s", modifier, ((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")), operator, options, ((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("predicateWithSubstitutionVariables:"), function $CPComparisonPredicate__predicateWithSubstitutionVariables_(self, _cmd, variables)
 {
-    var left = ((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables)),
-        right = ((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables));
+    var left = ((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables)),
+        right = ((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables));
     if (self._type != CPCustomSelectorPredicateOperatorType)
         return (CPComparisonPredicate.isa.method_msgSend["predicateWithLeftExpression:rightExpression:modifier:type:options:"] || _objj_forward)(CPComparisonPredicate, "predicateWithLeftExpression:rightExpression:modifier:type:options:", left, right, self._modifier, self._type, self._options);
     else
@@ -17618,7 +17655,7 @@ default:
 {
     if (self === anObject)
         return YES;
-    if (anObject === nil || anObject.isa !== self.isa || self._modifier !== (anObject == null ? null : (anObject.isa.method_msgSend["comparisonPredicateModifier"] || _objj_forward)(anObject, "comparisonPredicateModifier")) || self._type !== (anObject == null ? null : (anObject.isa.method_msgSend["predicateOperatorType"] || _objj_forward)(anObject, "predicateOperatorType")) || self._options !== (anObject == null ? null : (anObject.isa.method_msgSend["options"] || _objj_forward)(anObject, "options")) || self._customSelector !== (anObject == null ? null : (anObject.isa.method_msgSend["customSelector"] || _objj_forward)(anObject, "customSelector")) || !((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (anObject == null ? null : (anObject.isa.method_msgSend["leftExpression"] || _objj_forward)(anObject, "leftExpression")))) || !((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (anObject == null ? null : (anObject.isa.method_msgSend["rightExpression"] || _objj_forward)(anObject, "rightExpression")))))
+    if (anObject == nil || anObject.isa !== self.isa || self._modifier !== (anObject == null ? anObject : (anObject.isa.method_msgSend["comparisonPredicateModifier"] || _objj_forward)(anObject, "comparisonPredicateModifier")) || self._type !== (anObject == null ? anObject : (anObject.isa.method_msgSend["predicateOperatorType"] || _objj_forward)(anObject, "predicateOperatorType")) || self._options !== (anObject == null ? anObject : (anObject.isa.method_msgSend["options"] || _objj_forward)(anObject, "options")) || self._customSelector !== (anObject == null ? anObject : (anObject.isa.method_msgSend["customSelector"] || _objj_forward)(anObject, "customSelector")) || !((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (anObject == null ? anObject : (anObject.isa.method_msgSend["leftExpression"] || _objj_forward)(anObject, "leftExpression")))) || !((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (anObject == null ? anObject : (anObject.isa.method_msgSend["rightExpression"] || _objj_forward)(anObject, "rightExpression")))))
         return NO;
     return YES;
     var ___r1;
@@ -17626,24 +17663,24 @@ default:
 
 ,["BOOL","id"]), new objj_method(sel_getUid("_evaluateValue:rightValue:"), function $CPComparisonPredicate___evaluateValue_rightValue_(self, _cmd, lhs, rhs)
 {
-    var leftIsNil = lhs == nil || (lhs == null ? null : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"))),
-        rightIsNil = rhs == nil || (rhs == null ? null : (rhs.isa.method_msgSend["isEqual:"] || _objj_forward)(rhs, "isEqual:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null")));
+    var leftIsNil = lhs == nil || (lhs == null ? lhs : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"))),
+        rightIsNil = rhs == nil || (rhs == null ? rhs : (rhs.isa.method_msgSend["isEqual:"] || _objj_forward)(rhs, "isEqual:", (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null")));
     if ((leftIsNil || rightIsNil) && self._type != CPCustomSelectorPredicateOperatorType)
-        return leftIsNil == rightIsNil && (self._type == CPEqualToPredicateOperatorType || self._type == CPLessThanOrEqualToPredicateOperatorType || self._type == CPGreaterThanOrEqualToPredicateOperatorType);
+        return leftIsNil === rightIsNil && (self._type === CPEqualToPredicateOperatorType || self._type === CPLessThanOrEqualToPredicateOperatorType || self._type === CPGreaterThanOrEqualToPredicateOperatorType) || leftIsNil !== rightIsNil && self._type === CPNotEqualToPredicateOperatorType;
     var string_compare_options = 0;
     switch(self._type) {
         case CPLessThanPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) == CPOrderedAscending;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) == CPOrderedAscending;
         case CPLessThanOrEqualToPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) != CPOrderedDescending;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) != CPOrderedDescending;
         case CPGreaterThanPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) == CPOrderedDescending;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) == CPOrderedDescending;
         case CPGreaterThanOrEqualToPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) != CPOrderedAscending;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs)) != CPOrderedAscending;
         case CPEqualToPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs));
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs));
         case CPNotEqualToPredicateOperatorType:
-            return !(lhs == null ? null : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs));
+            return !(lhs == null ? lhs : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs));
         case CPMatchesPredicateOperatorType:
             var commut = self._options & CPCaseInsensitivePredicateOption ? "gi" : "g";
             if (self._options & CPDiacriticInsensitivePredicateOption)
@@ -17662,41 +17699,41 @@ default:
                 reg = new RegExp(rhs.escapeForRegExp(), commut);
             return reg.test(lhs);
         case CPBeginsWithPredicateOperatorType:
-            var range = CPMakeRange(0, MIN((lhs == null ? null : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? null : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length"))));
+            var range = CPMakeRange(0, MIN((lhs == null ? lhs : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? rhs : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length"))));
             if (self._options & CPCaseInsensitivePredicateOption)
                 string_compare_options |= CPCaseInsensitiveSearch;
             if (self._options & CPDiacriticInsensitivePredicateOption)
                 string_compare_options |= CPDiacriticInsensitiveSearch;
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:options:range:"] || _objj_forward)(lhs, "compare:options:range:", rhs, string_compare_options, range)) == CPOrderedSame;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:options:range:"] || _objj_forward)(lhs, "compare:options:range:", rhs, string_compare_options, range)) == CPOrderedSame;
         case CPEndsWithPredicateOperatorType:
-            var range = CPMakeRange(MAX((lhs == null ? null : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")) - (rhs == null ? null : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length")), 0), MIN((lhs == null ? null : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? null : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length"))));
+            var range = CPMakeRange(MAX((lhs == null ? lhs : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")) - (rhs == null ? rhs : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length")), 0), MIN((lhs == null ? lhs : (lhs.isa.method_msgSend["length"] || _objj_forward)(lhs, "length")), (rhs == null ? rhs : (rhs.isa.method_msgSend["length"] || _objj_forward)(rhs, "length"))));
             if (self._options & CPCaseInsensitivePredicateOption)
                 string_compare_options |= CPCaseInsensitiveSearch;
             if (self._options & CPDiacriticInsensitivePredicateOption)
                 string_compare_options |= CPDiacriticInsensitiveSearch;
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:options:range:"] || _objj_forward)(lhs, "compare:options:range:", rhs, string_compare_options, range)) == CPOrderedSame;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:options:range:"] || _objj_forward)(lhs, "compare:options:range:", rhs, string_compare_options, range)) == CPOrderedSame;
         case CPCustomSelectorPredicateOperatorType:
-            return (lhs == null ? null : (lhs.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(lhs, "performSelector:withObject:", self._customSelector, rhs));
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(lhs, "performSelector:withObject:", self._customSelector, rhs));
         case CPInPredicateOperatorType:
             var a = lhs;
             lhs = rhs;
             rhs = a;
         case CPContainsPredicateOperatorType:
-            if (!(lhs == null ? null : (lhs.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(lhs, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
+            if (!(lhs == null ? lhs : (lhs.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(lhs, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
             {
-                if (!(lhs == null ? null : (lhs.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(lhs, "respondsToSelector:", sel_getUid("objectEnumerator"))))
+                if (!(lhs == null ? lhs : (lhs.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(lhs, "respondsToSelector:", sel_getUid("objectEnumerator"))))
                     (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "The left/right hand side for a CONTAINS/IN  operator must be a collection or a string");
-                return (lhs == null ? null : (lhs.isa.method_msgSend["containsObject:"] || _objj_forward)(lhs, "containsObject:", rhs));
+                return (lhs == null ? lhs : (lhs.isa.method_msgSend["containsObject:"] || _objj_forward)(lhs, "containsObject:", rhs));
             }
             if (self._options & CPCaseInsensitivePredicateOption)
                 string_compare_options |= CPCaseInsensitiveSearch;
             if (self._options & CPDiacriticInsensitivePredicateOption)
                 string_compare_options |= CPDiacriticInsensitiveSearch;
-            return (lhs == null ? null : (lhs.isa.method_msgSend["rangeOfString:options:"] || _objj_forward)(lhs, "rangeOfString:options:", rhs, string_compare_options)).location != CPNotFound;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["rangeOfString:options:"] || _objj_forward)(lhs, "rangeOfString:options:", rhs, string_compare_options)).location != CPNotFound;
         case CPBetweenPredicateOperatorType:
-            if ((rhs == null ? null : (rhs.isa.method_msgSend["count"] || _objj_forward)(rhs, "count")) < 2)
+            if ((rhs == null ? rhs : (rhs.isa.method_msgSend["count"] || _objj_forward)(rhs, "count")) < 2)
                 (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "The right hand side for a BETWEEN operator must contain 2 objects");
-            return (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs[0])) == CPOrderedDescending && (lhs == null ? null : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs[1])) == CPOrderedAscending;
+            return (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs[0])) == CPOrderedDescending && (lhs == null ? lhs : (lhs.isa.method_msgSend["compare:"] || _objj_forward)(lhs, "compare:", rhs[1])) == CPOrderedAscending;
 default:
             return NO;
     }
@@ -17709,20 +17746,20 @@ default:
 
 ,["BOOL","id"]), new objj_method(sel_getUid("evaluateWithObject:substitutionVariables:"), function $CPComparisonPredicate__evaluateWithObject_substitutionVariables_(self, _cmd, object, variables)
 {
-    var leftValue = ((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, variables)),
-        rightValue = ((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, variables));
+    var leftValue = ((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, variables)),
+        rightValue = ((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, variables));
     leftValue = typeof leftValue == "boolean" ? (CPNumber.isa.method_msgSend["numberWithBool:"] || _objj_forward)(CPNumber, "numberWithBool:", leftValue) : leftValue;
     rightValue = typeof rightValue == "boolean" ? (CPNumber.isa.method_msgSend["numberWithBool:"] || _objj_forward)(CPNumber, "numberWithBool:", rightValue) : rightValue;
     if (self._modifier == CPDirectPredicateModifier)
         return (self.isa.method_msgSend["_evaluateValue:rightValue:"] || _objj_forward)(self, "_evaluateValue:rightValue:", leftValue, rightValue);
     else
     {
-        if (!(leftValue == null ? null : (leftValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(leftValue, "respondsToSelector:", sel_getUid("objectEnumerator"))))
+        if (!(leftValue == null ? leftValue : (leftValue.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(leftValue, "respondsToSelector:", sel_getUid("objectEnumerator"))))
             (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "The left hand side for an ALL or ANY operator must be either a CPArray or a CPSet");
-        var e = (leftValue == null ? null : (leftValue.isa.method_msgSend["objectEnumerator"] || _objj_forward)(leftValue, "objectEnumerator")),
+        var e = (leftValue == null ? leftValue : (leftValue.isa.method_msgSend["objectEnumerator"] || _objj_forward)(leftValue, "objectEnumerator")),
             result = self._modifier == CPAllPredicateModifier,
             value;
-        while ((value = (e == null ? null : (e.isa.method_msgSend["nextObject"] || _objj_forward)(e, "nextObject"))) !== nil)
+        while ((value = (e == null ? e : (e.isa.method_msgSend["nextObject"] || _objj_forward)(e, "nextObject"))) != nil)
         {
             var eval = (self.isa.method_msgSend["_evaluateValue:rightValue:"] || _objj_forward)(self, "_evaluateValue:rightValue:", value, rightValue);
             if (eval != result)
@@ -17736,13 +17773,13 @@ default:
 ,["BOOL","id","CPDictionary"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("predicateWithLeftExpression:rightExpression:customSelector:"), function $CPComparisonPredicate__predicateWithLeftExpression_rightExpression_customSelector_(self, _cmd, left, right, selector)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithLeftExpression:rightExpression:customSelector:"] || _objj_forward)(___r1, "initWithLeftExpression:rightExpression:customSelector:", left, right, selector));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithLeftExpression:rightExpression:customSelector:"] || _objj_forward)(___r1, "initWithLeftExpression:rightExpression:customSelector:", left, right, selector));
     var ___r1;
 }
 
 ,["CPPredicate","CPExpression","CPExpression","SEL"]), new objj_method(sel_getUid("predicateWithLeftExpression:rightExpression:modifier:type:options:"), function $CPComparisonPredicate__predicateWithLeftExpression_rightExpression_modifier_type_options_(self, _cmd, left, right, modifier, type, options)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithLeftExpression:rightExpression:modifier:type:options:"] || _objj_forward)(___r1, "initWithLeftExpression:rightExpression:modifier:type:options:", left, right, modifier, type, options));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithLeftExpression:rightExpression:modifier:type:options:"] || _objj_forward)(___r1, "initWithLeftExpression:rightExpression:modifier:type:options:", left, right, modifier, type, options));
     var ___r1;
 }
 
@@ -17756,24 +17793,24 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPComparisonPredicate").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self != nil)
     {
-        self._left = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateLeftExpression"));
-        self._right = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateRightExpression"));
-        self._modifier = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateModifier"));
-        self._type = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateType"));
-        self._options = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateOptions"));
-        self._customSelector = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateCustomSelector"));
+        self._left = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateLeftExpression"));
+        self._right = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateRightExpression"));
+        self._modifier = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateModifier"));
+        self._type = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateType"));
+        self._options = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPComparisonPredicateOptions"));
+        self._customSelector = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPComparisonPredicateCustomSelector"));
     }
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPComparisonPredicate__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._left, "CPComparisonPredicateLeftExpression"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._right, "CPComparisonPredicateRightExpression"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._modifier, "CPComparisonPredicateModifier"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, "CPComparisonPredicateType"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._options, "CPComparisonPredicateOptions"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._customSelector, "CPComparisonPredicateCustomSelector"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._left, "CPComparisonPredicateLeftExpression"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._right, "CPComparisonPredicateRightExpression"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._modifier, "CPComparisonPredicateModifier"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, "CPComparisonPredicateType"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._options, "CPComparisonPredicateOptions"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._customSelector, "CPComparisonPredicateCustomSelector"));
 }
 
 ,["void","CPCoder"])]);
@@ -17846,7 +17883,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("evaluatedObject"), fun
 
 ,["id"])]);
 }
-p;13;CPPredicate.jt;286;@STATIC;1.0;i;14;_CPPredicate.ji;21;CPCompoundPredicate.ji;23;CPComparisonPredicate.ji;14;CPExpression.jt;176;objj_executeFile("_CPPredicate.j", YES);objj_executeFile("CPCompoundPredicate.j", YES);objj_executeFile("CPComparisonPredicate.j", YES);objj_executeFile("CPExpression.j", YES);p;18;_CPSetExpression.jt;7868;@STATIC;1.0;i;13;CPException.ji;7;CPSet.ji;15;_CPExpression.jt;7800;objj_executeFile("CPException.j", YES);objj_executeFile("CPSet.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;13;CPPredicate.jt;286;@STATIC;1.0;i;14;_CPPredicate.ji;21;CPCompoundPredicate.ji;23;CPComparisonPredicate.ji;14;CPExpression.jt;176;objj_executeFile("_CPPredicate.j", YES);objj_executeFile("CPCompoundPredicate.j", YES);objj_executeFile("CPComparisonPredicate.j", YES);objj_executeFile("CPExpression.j", YES);p;18;_CPSetExpression.jt;7893;@STATIC;1.0;i;13;CPException.ji;7;CPSet.ji;15;_CPExpression.jt;7825;objj_executeFile("CPException.j", YES);objj_executeFile("CPSet.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPSetExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_left", "CPExpression"), new objj_ivar("_right", "CPExpression")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("leftExpression"), function $_CPSetExpression__leftExpression(self, _cmd)
@@ -17884,7 +17921,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("leftExpression"), funct
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["leftExpression"] || _objj_forward)(object, "leftExpression"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._left)) || !((___r1 = (object == null ? null : (object.isa.method_msgSend["rightExpression"] || _objj_forward)(object, "rightExpression"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._right)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["leftExpression"] || _objj_forward)(object, "leftExpression"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._left)) || !((___r1 = (object == null ? object : (object.isa.method_msgSend["rightExpression"] || _objj_forward)(object, "rightExpression"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._right)))
         return NO;
     return YES;
     var ___r1;
@@ -17892,26 +17929,26 @@ class_addMethods(the_class, [new objj_method(sel_getUid("leftExpression"), funct
 
 ,["BOOL","id"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPSetExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
-    var right = ((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
-    if ((right == null ? null : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPArray.isa.method_msgSend["class"] || _objj_forward)(CPArray, "class"))))
+    var right = ((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
+    if ((right == null ? right : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPArray.isa.method_msgSend["class"] || _objj_forward)(CPArray, "class"))))
         right = (CPSet.isa.method_msgSend["setWithArray:"] || _objj_forward)(CPSet, "setWithArray:", right);
-    else if ((right == null ? null : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
-        right = (CPSet.isa.method_msgSend["setWithArray:"] || _objj_forward)(CPSet, "setWithArray:", (right == null ? null : (right.isa.method_msgSend["allValues"] || _objj_forward)(right, "allValues")));
-    else if (!(right == null ? null : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
+    else if ((right == null ? right : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
+        right = (CPSet.isa.method_msgSend["setWithArray:"] || _objj_forward)(CPSet, "setWithArray:", (right == null ? right : (right.isa.method_msgSend["allValues"] || _objj_forward)(right, "allValues")));
+    else if (!(right == null ? right : (right.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(right, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "The right expression for a CP*SetExpressionType expression must evaluate to a CPArray, CPDictionary or CPSet");
-    var left = ((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
-    if (!(left == null ? null : (left.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(left, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
+    var left = ((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
+    if (!(left == null ? left : (left.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(left, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))))
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "The left expression for a CP*SetExpressionType expression must evaluate to a CPSet");
-    var result = (left == null ? null : (left.isa.method_msgSend["copy"] || _objj_forward)(left, "copy"));
+    var result = (left == null ? left : (left.isa.method_msgSend["copy"] || _objj_forward)(left, "copy"));
     switch(self._type) {
         case CPIntersectSetExpressionType:
-            (result == null ? null : (result.isa.method_msgSend["intersectSet:"] || _objj_forward)(result, "intersectSet:", right));
+            (result == null ? result : (result.isa.method_msgSend["intersectSet:"] || _objj_forward)(result, "intersectSet:", right));
             break;
         case CPUnionSetExpressionType:
-            (result == null ? null : (result.isa.method_msgSend["unionSet:"] || _objj_forward)(result, "unionSet:", right));
+            (result == null ? result : (result.isa.method_msgSend["unionSet:"] || _objj_forward)(result, "unionSet:", right));
             break;
         case CPMinusSetExpressionType:
-            (result == null ? null : (result.isa.method_msgSend["minusSet:"] || _objj_forward)(result, "minusSet:", right));
+            (result == null ? result : (result.isa.method_msgSend["minusSet:"] || _objj_forward)(result, "minusSet:", right));
             break;
 default:
     }
@@ -17939,7 +17976,7 @@ default:
             break;
 default:
     }
-    return ((___r1 = self._left), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + desc + ((___r1 = self._right), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description"));
+    return ((___r1 = self._left), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + desc + ((___r1 = self._right), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description"));
     var ___r1;
 }
 
@@ -17953,22 +17990,22 @@ var the_class = objj_getClass("_CPSetExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPSetExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPSetExpression__initWithCoder_(self, _cmd, coder)
 {
-    var left = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPLeftExpressionKey)),
-        right = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPRightExpressionKey)),
-        type = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", CPExpressionType));
+    var left = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPLeftExpressionKey)),
+        right = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPRightExpressionKey)),
+        type = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", CPExpressionType));
     return (self.isa.method_msgSend["initWithType:left:right:"] || _objj_forward)(self, "initWithType:left:right:", type, left, right);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPSetExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._left, CPLeftExpressionKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._right, CPRightExpressionKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, CPExpressionType));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._left, CPLeftExpressionKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._right, CPRightExpressionKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, CPExpressionType));
 }
 
 ,["void","CPCoder"])]);
 }
-p;23;_CPSubqueryExpression.jt;9347;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;15;_CPExpression.ji;14;_CPPredicate.jt;9257;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPPredicate.j", YES);
+p;23;_CPSubqueryExpression.jt;9386;@STATIC;1.0;i;9;CPArray.ji;14;CPDictionary.ji;15;_CPExpression.ji;14;_CPPredicate.jt;9296;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("_CPExpression.j", YES);objj_executeFile("_CPPredicate.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPSubqueryExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_collection", "CPExpression"), new objj_ivar("_variableExpression", "CPExpression"), new objj_ivar("_subpredicate", "CPPredicate")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function $_CPSubqueryExpression__collection(self, _cmd)
@@ -18011,16 +18048,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 
 ,["id","CPExpression","CPExpression","CPPredicate"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPSubqueryExpression__expressionValueWithObject_context_(self, _cmd, object, aContext)
 {
-    var collection = ((___r1 = self._collection), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, aContext)),
+    var collection = ((___r1 = self._collection), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, aContext)),
         result = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array"),
         variable = (self.isa.method_msgSend["variable"] || _objj_forward)(self, "variable"),
-        context = aContext || (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-    if ((context == null ? null : (context.isa.method_msgSend["objectForKey:"] || _objj_forward)(context, "objectForKey:", variable)) == nil)
-        (context == null ? null : (context.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(context, "setObject:forKey:", (CPExpression.isa.method_msgSend["expressionForEvaluatedObject"] || _objj_forward)(CPExpression, "expressionForEvaluatedObject"), variable));
-    (collection == null ? null : (collection.isa.method_msgSend["enumerateObjectsUsingBlock:"] || _objj_forward)(collection, "enumerateObjectsUsingBlock:",     function(exp, idx, stop)
+        context = aContext || (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    if ((context == null ? context : (context.isa.method_msgSend["objectForKey:"] || _objj_forward)(context, "objectForKey:", variable)) == nil)
+        (context == null ? context : (context.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(context, "setObject:forKey:", (CPExpression.isa.method_msgSend["expressionForEvaluatedObject"] || _objj_forward)(CPExpression, "expressionForEvaluatedObject"), variable));
+    (collection == null ? collection : (collection.isa.method_msgSend["enumerateObjectsUsingBlock:"] || _objj_forward)(collection, "enumerateObjectsUsingBlock:",     function(exp, idx, stop)
     {
-        if (((___r1 = self._subpredicate), ___r1 == null ? null : (___r1.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(___r1, "evaluateWithObject:substitutionVariables:", exp, context)))
-            (result == null ? null : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", exp));
+        if (((___r1 = self._subpredicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(___r1, "evaluateWithObject:substitutionVariables:", exp, context)))
+            (result == null ? result : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", exp));
         var ___r1;
     }));
     return result;
@@ -18031,7 +18068,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = self._collection), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? null : (object.isa.method_msgSend["collection"] || _objj_forward)(object, "collection")))) || !((___r1 = self._variableExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? null : (object.isa.method_msgSend["variableExpression"] || _objj_forward)(object, "variableExpression")))) || !((___r1 = self._subpredicate), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? null : (object.isa.method_msgSend["predicate"] || _objj_forward)(object, "predicate")))))
+    if (object == nil || object.isa !== self.isa || !((___r1 = self._collection), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? object : (object.isa.method_msgSend["collection"] || _objj_forward)(object, "collection")))) || !((___r1 = self._variableExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? object : (object.isa.method_msgSend["variableExpression"] || _objj_forward)(object, "variableExpression")))) || !((___r1 = self._subpredicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (object == null ? object : (object.isa.method_msgSend["predicate"] || _objj_forward)(object, "predicate")))))
         return NO;
     return YES;
     var ___r1;
@@ -18039,7 +18076,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 
 ,["BOOL","id"]), new objj_method(sel_getUid("copy"), function $_CPSubqueryExpression__copy(self, _cmd)
 {
-    return ((___r1 = (_CPSubqueryExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPSubqueryExpression, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithExpression:usingIteratorExpression:predicate:"] || _objj_forward)(___r1, "initWithExpression:usingIteratorExpression:predicate:", ((___r2 = self._collection), ___r2 == null ? null : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy")), ((___r2 = self._variableExpression), ___r2 == null ? null : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy")), ((___r2 = self._subpredicate), ___r2 == null ? null : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy"))));
+    return ((___r1 = (_CPSubqueryExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPSubqueryExpression, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithExpression:usingIteratorExpression:predicate:"] || _objj_forward)(___r1, "initWithExpression:usingIteratorExpression:predicate:", ((___r2 = self._collection), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy")), ((___r2 = self._variableExpression), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy")), ((___r2 = self._subpredicate), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["copy"] || _objj_forward)(___r2, "copy"))));
     var ___r1, ___r2;
 }
 
@@ -18050,13 +18087,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 
 ,["CPString"]), new objj_method(sel_getUid("predicateFormat"), function $_CPSubqueryExpression__predicateFormat(self, _cmd)
 {
-    return "SUBQUERY(" + ((___r1 = self._collection), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " + ((___r1 = self._variableExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " + ((___r1 = self._subpredicate), ___r1 == null ? null : (___r1.isa.method_msgSend["predicateFormat"] || _objj_forward)(___r1, "predicateFormat")) + ")";
+    return "SUBQUERY(" + ((___r1 = self._collection), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " + ((___r1 = self._variableExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " + ((___r1 = self._subpredicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["predicateFormat"] || _objj_forward)(___r1, "predicateFormat")) + ")";
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("variable"), function $_CPSubqueryExpression__variable(self, _cmd)
 {
-    return ((___r1 = self._variableExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["variable"] || _objj_forward)(___r1, "variable"));
+    return ((___r1 = self._variableExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["variable"] || _objj_forward)(___r1, "variable"));
     var ___r1;
 }
 
@@ -18075,17 +18112,17 @@ var the_class = objj_getClass("_CPSubqueryExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPSubqueryExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPSubqueryExpression__initWithCoder_(self, _cmd, coder)
 {
-    var collection = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPExpressionKey)),
-        subpredicate = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPSubpredicateKey)),
-        variableExpression = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPVariableKey));
+    var collection = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPExpressionKey)),
+        subpredicate = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPSubpredicateKey)),
+        variableExpression = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPVariableKey));
     return (self.isa.method_msgSend["initWithExpression:usingIteratorExpression:predicate:"] || _objj_forward)(self, "initWithExpression:usingIteratorExpression:predicate:", collection, variableExpression, subpredicate);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPSubqueryExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._collection, CPExpressionKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._subpredicate, CPSubpredicateKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._variableExpression, CPVariableKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._collection, CPExpressionKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._subpredicate, CPSubpredicateKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._variableExpression, CPVariableKey));
 }
 
 ,["void","CPCoder"])]);
@@ -18279,7 +18316,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("expressionForConstantV
 
 ,["CPExpression","CPPredicate","CPExpression","CPExpression"])]);
 }
-p;21;CPCompoundPredicate.jt;11318;@STATIC;1.0;i;31;CPCompoundPredicate_Constants.ji;9;CPArray.ji;14;_CPPredicate.jt;11230;objj_executeFile("CPCompoundPredicate_Constants.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("_CPPredicate.j", YES);{var the_typedef = objj_allocateTypeDef("CPCompoundPredicateType");
+p;21;CPCompoundPredicate.jt;11388;@STATIC;1.0;i;31;CPCompoundPredicate_Constants.ji;9;CPArray.ji;14;_CPPredicate.jt;11300;objj_executeFile("CPCompoundPredicate_Constants.j", YES);objj_executeFile("CPArray.j", YES);objj_executeFile("_CPPredicate.j", YES);{var the_typedef = objj_allocateTypeDef("CPCompoundPredicateType");
 objj_registerTypeDef(the_typedef);
 }
 {var the_class = objj_allocateClassPair(CPPredicate, "CPCompoundPredicate"),
@@ -18308,15 +18345,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithType:subpredica
 ,["CPArray"]), new objj_method(sel_getUid("predicateWithSubstitutionVariables:"), function $CPCompoundPredicate__predicateWithSubstitutionVariables_(self, _cmd, variables)
 {
     var subp = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array"),
-        count = (subp == null ? null : (subp.isa.method_msgSend["count"] || _objj_forward)(subp, "count")),
+        count = (subp == null ? subp : (subp.isa.method_msgSend["count"] || _objj_forward)(subp, "count")),
         i = 0;
     for (; i < count; i++)
     {
-        var p = (subp == null ? null : (subp.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(subp, "objectAtIndex:", i)),
-            sp = (p == null ? null : (p.isa.method_msgSend["predicateWithSubstitutionVariables:"] || _objj_forward)(p, "predicateWithSubstitutionVariables:", variables));
-        (subp == null ? null : (subp.isa.method_msgSend["addObject:"] || _objj_forward)(subp, "addObject:", sp));
+        var p = (subp == null ? subp : (subp.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(subp, "objectAtIndex:", i)),
+            sp = (p == null ? p : (p.isa.method_msgSend["predicateWithSubstitutionVariables:"] || _objj_forward)(p, "predicateWithSubstitutionVariables:", variables));
+        (subp == null ? subp : (subp.isa.method_msgSend["addObject:"] || _objj_forward)(subp, "addObject:", sp));
     }
-    return ((___r1 = (CPCompoundPredicate.isa.method_msgSend["alloc"] || _objj_forward)(CPCompoundPredicate, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", self._type, subp));
+    return ((___r1 = (CPCompoundPredicate.isa.method_msgSend["alloc"] || _objj_forward)(CPCompoundPredicate, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", self._type, subp));
     var ___r1;
 }
 
@@ -18324,34 +18361,34 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithType:subpredica
 {
     var result = "",
         args = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array"),
-        count = ((___r1 = self._predicates), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")),
+        count = ((___r1 = self._predicates), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")),
         i = 0;
     if (count == 0)
         return "TRUEPREDICATE";
     for (; i < count; i++)
     {
-        var subpredicate = ((___r1 = self._predicates), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i)),
-            precedence = (subpredicate == null ? null : (subpredicate.isa.method_msgSend["predicateFormat"] || _objj_forward)(subpredicate, "predicateFormat"));
-        if ((subpredicate == null ? null : (subpredicate.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(subpredicate, "isKindOfClass:", (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class"))) && ((___r1 = (subpredicate == null ? null : (subpredicate.isa.method_msgSend["subpredicates"] || _objj_forward)(subpredicate, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 1 && (subpredicate == null ? null : (subpredicate.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(subpredicate, "compoundPredicateType")) != self._type)
+        var subpredicate = ((___r1 = self._predicates), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i)),
+            precedence = (subpredicate == null ? subpredicate : (subpredicate.isa.method_msgSend["predicateFormat"] || _objj_forward)(subpredicate, "predicateFormat"));
+        if ((subpredicate == null ? subpredicate : (subpredicate.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(subpredicate, "isKindOfClass:", (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class"))) && ((___r1 = (subpredicate == null ? subpredicate : (subpredicate.isa.method_msgSend["subpredicates"] || _objj_forward)(subpredicate, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) > 1 && (subpredicate == null ? subpredicate : (subpredicate.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(subpredicate, "compoundPredicateType")) != self._type)
             precedence = (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "(%s)", precedence);
         if (precedence != nil)
-            (args == null ? null : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", precedence));
+            (args == null ? args : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", precedence));
     }
     switch(self._type) {
         case CPNotPredicateType:
-            result += "NOT " + (args == null ? null : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
+            result += "NOT " + (args == null ? args : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
             break;
         case CPAndPredicateType:
-            result += (args == null ? null : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
-            var count = (args == null ? null : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count"));
+            result += (args == null ? args : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
+            var count = (args == null ? args : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count"));
             for (var j = 1; j < count; j++)
-                result += " AND " + (args == null ? null : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", j));
+                result += " AND " + (args == null ? args : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", j));
             break;
         case CPOrPredicateType:
-            result += (args == null ? null : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
-            var count = (args == null ? null : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count"));
+            result += (args == null ? args : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", 0));
+            var count = (args == null ? args : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count"));
             for (var j = 1; j < count; j++)
-                result += " OR " + (args == null ? null : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", j));
+                result += " OR " + (args == null ? args : (args.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(args, "objectAtIndex:", j));
             break;
     }
     return result;
@@ -18366,26 +18403,26 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithType:subpredica
 ,["BOOL","id"]), new objj_method(sel_getUid("evaluateWithObject:substitutionVariables:"), function $CPCompoundPredicate__evaluateWithObject_substitutionVariables_(self, _cmd, object, variables)
 {
     var result = NO,
-        count = ((___r1 = self._predicates), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")),
+        count = ((___r1 = self._predicates), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")),
         i = 0;
     if (count == 0)
         return YES;
     for (; i < count; i++)
     {
-        var predicate = ((___r1 = self._predicates), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i));
+        var predicate = ((___r1 = self._predicates), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i));
         switch(self._type) {
             case CPNotPredicateType:
-                return !(predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
+                return !(predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
             case CPAndPredicateType:
                 if (i == 0)
-                    result = (predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
+                    result = (predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
                 else
-                    result = result && (predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
+                    result = result && (predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables));
                 if (!result)
                     return NO;
                 break;
             case CPOrPredicateType:
-                if ((predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables)))
+                if ((predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(predicate, "evaluateWithObject:substitutionVariables:", object, variables)))
                     return YES;
                 break;
         }
@@ -18398,7 +18435,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithType:subpredica
 {
     if (self === anObject)
         return YES;
-    if (anObject === nil || anObject.isa !== self.isa || self._type !== (anObject == null ? null : (anObject.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(anObject, "compoundPredicateType")) || !((___r1 = self._predicates), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToArray:"] || _objj_forward)(___r1, "isEqualToArray:", (anObject == null ? null : (anObject.isa.method_msgSend["subpredicates"] || _objj_forward)(anObject, "subpredicates")))))
+    if (anObject == nil || anObject.isa !== self.isa || self._type !== (anObject == null ? anObject : (anObject.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(anObject, "compoundPredicateType")) || !((___r1 = self._predicates), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToArray:"] || _objj_forward)(___r1, "isEqualToArray:", (anObject == null ? anObject : (anObject.isa.method_msgSend["subpredicates"] || _objj_forward)(anObject, "subpredicates")))))
         return NO;
     return YES;
     var ___r1;
@@ -18407,19 +18444,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithType:subpredica
 ,["BOOL","id"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("notPredicateWithSubpredicate:"), function $CPCompoundPredicate__notPredicateWithSubpredicate_(self, _cmd, predicate)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPNotPredicateType, (CPArray.isa.method_msgSend["arrayWithObject:"] || _objj_forward)(CPArray, "arrayWithObject:", predicate)));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPNotPredicateType, (CPArray.isa.method_msgSend["arrayWithObject:"] || _objj_forward)(CPArray, "arrayWithObject:", predicate)));
     var ___r1;
 }
 
 ,["CPPredicate","CPPredicate"]), new objj_method(sel_getUid("andPredicateWithSubpredicates:"), function $CPCompoundPredicate__andPredicateWithSubpredicates_(self, _cmd, subpredicates)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPAndPredicateType, subpredicates));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPAndPredicateType, subpredicates));
     var ___r1;
 }
 
 ,["CPPredicate","CPArray"]), new objj_method(sel_getUid("orPredicateWithSubpredicates:"), function $CPCompoundPredicate__orPredicateWithSubpredicates_(self, _cmd, predicates)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPOrPredicateType, predicates));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:subpredicates:"] || _objj_forward)(___r1, "initWithType:subpredicates:", CPOrPredicateType, predicates));
     var ___r1;
 }
 
@@ -18433,16 +18470,16 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     self = (objj_getClass("CPCompoundPredicate").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self != nil)
     {
-        self._predicates = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPCompoundPredicateSubpredicates"));
-        self._type = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPCompoundPredicateType"));
+        self._predicates = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", "CPCompoundPredicateSubpredicates"));
+        self._type = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", "CPCompoundPredicateType"));
     }
     return self;
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPCompoundPredicate__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._predicates, "CPCompoundPredicateSubpredicates"));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, "CPCompoundPredicateType"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._predicates, "CPCompoundPredicateSubpredicates"));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, "CPCompoundPredicateType"));
 }
 
 ,["void","CPCoder"])]);
@@ -18467,7 +18504,7 @@ CPInPredicateOperatorType = 10;
 CPCustomSelectorPredicateOperatorType = 11;
 CPContainsPredicateOperatorType = 99;
 CPBetweenPredicateOperatorType = 100;
-p;23;_CPFunctionExpression.jt;15415;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;14;CPDictionary.ji;13;CPException.ji;10;CPString.ji;15;_CPExpression.jt;15298;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;23;_CPFunctionExpression.jt;15493;@STATIC;1.0;i;9;CPArray.ji;8;CPDate.ji;14;CPDictionary.ji;13;CPException.ji;10;CPString.ji;15;_CPExpression.jt;15376;objj_executeFile("CPArray.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPFunctionExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_operand", "CPExpression"), new objj_ivar("_selector", "SEL"), new objj_ivar("_arguments", "CPArray"), new objj_ivar("_argc", "int"), new objj_ivar("_maxargs", "int")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_CPFunctionExpression__operand(self, _cmd)
@@ -18492,8 +18529,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
 
 ,["void","CPArray"]), new objj_method(sel_getUid("initWithSelector:arguments:"), function $_CPFunctionExpression__initWithSelector_arguments_(self, _cmd, aSelector, parameters)
 {
-    var target = (CPPredicateUtilities == null ? null : (CPPredicateUtilities.isa.method_msgSend["class"] || _objj_forward)(CPPredicateUtilities, "class"));
-    if (!(target == null ? null : (target.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(target, "respondsToSelector:", aSelector)))
+    var target = (CPPredicateUtilities == null ? CPPredicateUtilities : (CPPredicateUtilities.isa.method_msgSend["class"] || _objj_forward)(CPPredicateUtilities, "class"));
+    if (!(target == null ? target : (target.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(target, "respondsToSelector:", aSelector)))
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Unknown function implementation: " + aSelector);
     var operand = (CPExpression.isa.method_msgSend["expressionForConstantValue:"] || _objj_forward)(CPExpression, "expressionForConstantValue:", target);
     return (self.isa.method_msgSend["initWithTarget:selector:arguments:"] || _objj_forward)(self, "initWithTarget:selector:arguments:", operand, aSelector, parameters);
@@ -18512,8 +18549,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
         self._selector = aSelector;
         self._operand = operand;
         self._arguments = parameters;
-        self._argc = (parameters == null ? null : (parameters.isa.method_msgSend["count"] || _objj_forward)(parameters, "count"));
-        self._maxargs = ((___r1 = ((___r2 = CPStringFromSelector(self._selector)), ___r2 == null ? null : (___r2.isa.method_msgSend["componentsSeparatedByString:"] || _objj_forward)(___r2, "componentsSeparatedByString:", ":"))), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) - 1;
+        self._argc = (parameters == null ? parameters : (parameters.isa.method_msgSend["count"] || _objj_forward)(parameters, "count"));
+        self._maxargs = ((___r1 = ((___r2 = CPStringFromSelector(self._selector)), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["componentsSeparatedByString:"] || _objj_forward)(___r2, "componentsSeparatedByString:", ":"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) - 1;
     }
     return self;
     var ___r1, ___r2;
@@ -18523,7 +18560,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["_function"] || _objj_forward)(object, "_function"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._selector)) || !((___r1 = (object == null ? null : (object.isa.method_msgSend["operand"] || _objj_forward)(object, "operand"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._operand)) || !((___r1 = (object == null ? null : (object.isa.method_msgSend["arguments"] || _objj_forward)(object, "arguments"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqualToArray:"] || _objj_forward)(___r1, "isEqualToArray:", self._arguments)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["_function"] || _objj_forward)(object, "_function"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._selector)) || !((___r1 = (object == null ? object : (object.isa.method_msgSend["operand"] || _objj_forward)(object, "operand"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._operand)) || !((___r1 = (object == null ? object : (object.isa.method_msgSend["arguments"] || _objj_forward)(object, "arguments"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToArray:"] || _objj_forward)(___r1, "isEqualToArray:", self._arguments)))
         return NO;
     return YES;
     var ___r1;
@@ -18541,12 +18578,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
 
 ,["CPString"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPFunctionExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
-    var target = ((___r1 = self._operand), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context)),
+    var target = ((___r1 = self._operand), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context)),
         objj_args = [target, self._selector],
         i = 0;
     for (; i < self._argc; i++)
     {
-        var arg = ((___r1 = self._arguments[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
+        var arg = ((___r1 = self._arguments[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(___r1, "expressionValueWithObject:context:", object, context));
         objj_args.push(arg);
     }
     if (self._argc > self._maxargs)
@@ -18561,16 +18598,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPFunctionExpression__description(self, _cmd)
 {
     var result = "";
-    if (((___r1 = self._operand), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (CPExpression.isa.method_msgSend["expressionForConstantValue:"] || _objj_forward)(CPExpression, "expressionForConstantValue:", (CPPredicateUtilities == null ? null : (CPPredicateUtilities.isa.method_msgSend["class"] || _objj_forward)(CPPredicateUtilities, "class"))))))
+    if (((___r1 = self._operand), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", (CPExpression.isa.method_msgSend["expressionForConstantValue:"] || _objj_forward)(CPExpression, "expressionForConstantValue:", (CPPredicateUtilities == null ? CPPredicateUtilities : (CPPredicateUtilities.isa.method_msgSend["class"] || _objj_forward)(CPPredicateUtilities, "class"))))))
         result += CPStringFromSelector(self._selector) + "(";
     else
     {
         result += "FUNCTION(";
-        result += self._operand ? ((___r1 = self._operand), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " : "";
+        result += self._operand ? ((___r1 = self._operand), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + ", " : "";
         result += self._selector ? CPStringFromSelector(self._selector) + ", " : "";
     }
     for (var i = 0; i < self._argc; i++)
-        result = result + ((___r1 = self._arguments[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + (i + 1 < self._argc ? ", " : "");
+        result = result + ((___r1 = self._arguments[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")) + (i + 1 < self._argc ? ", " : "");
     result += ")";
     return result;
     var ___r1;
@@ -18578,10 +18615,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("operand"), function $_C
 
 ,["CPString"]), new objj_method(sel_getUid("_expressionWithSubstitutionVariables:"), function $_CPFunctionExpression___expressionWithSubstitutionVariables_(self, _cmd, variables)
 {
-    var operand = ((___r1 = (self.isa.method_msgSend["operand"] || _objj_forward)(self, "operand")), ___r1 == null ? null : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables)),
-        args = ((___r1 = self._arguments), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(arg)
+    var operand = ((___r1 = (self.isa.method_msgSend["operand"] || _objj_forward)(self, "operand")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", variables)),
+        args = ((___r1 = self._arguments), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(arg)
     {
-        return (arg == null ? null : (arg.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(arg, "_expressionWithSubstitutionVariables:", variables));
+        return (arg == null ? arg : (arg.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(arg, "_expressionWithSubstitutionVariables:", variables));
     }));
     return (CPExpression.isa.method_msgSend["expressionForFunction:selectorName:arguments:"] || _objj_forward)(CPExpression, "expressionForFunction:selectorName:arguments:", operand, (self.isa.method_msgSend["_function"] || _objj_forward)(self, "_function"), args);
     var ___r1;
@@ -18598,19 +18635,19 @@ var the_class = objj_getClass("_CPFunctionExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPFunctionExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPFunctionExpression__initWithCoder_(self, _cmd, coder)
 {
-    var type = (coder == null ? null : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", CPExpressionTypeKey)),
-        operand = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPOperandKey)),
-        selector = CPSelectorFromString((coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPSelectorNameKey))),
-        parameters = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPArgumentsKey));
+    var type = (coder == null ? coder : (coder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(coder, "decodeIntForKey:", CPExpressionTypeKey)),
+        operand = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPOperandKey)),
+        selector = CPSelectorFromString((coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPSelectorNameKey))),
+        parameters = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPArgumentsKey));
     return (self.isa.method_msgSend["initWithTarget:selector:arguments:type:"] || _objj_forward)(self, "initWithTarget:selector:arguments:type:", operand, selector, parameters, type);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPFunctionExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", (self.isa.method_msgSend["_function"] || _objj_forward)(self, "_function"), CPSelectorNameKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._arguments, CPArgumentsKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._operand, CPOperandKey));
-    (coder == null ? null : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, CPExpressionTypeKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", (self.isa.method_msgSend["_function"] || _objj_forward)(self, "_function"), CPSelectorNameKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._arguments, CPArgumentsKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._operand, CPOperandKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(coder, "encodeInt:forKey:", self._type, CPExpressionTypeKey));
 }
 
 ,["void","CPCoder"])]);
@@ -18629,7 +18666,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("sum:"), function $CPPr
 
 ,["float","CPArray"]), new objj_method(sel_getUid("count:"), function $CPPredicateUtilities__count_(self, _cmd, parameters)
 {
-    return (parameters == null ? null : (parameters.isa.method_msgSend["count"] || _objj_forward)(parameters, "count"));
+    return (parameters == null ? parameters : (parameters.isa.method_msgSend["count"] || _objj_forward)(parameters, "count"));
 }
 
 ,["float","CPArray"]), new objj_method(sel_getUid("min:"), function $CPPredicateUtilities__min_(self, _cmd, parameters)
@@ -18659,11 +18696,10 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("sum:"), function $CPPr
 
 ,["id","CPArray"]), new objj_method(sel_getUid("fromObject:index:"), function $CPPredicateUtilities__fromObject_index_(self, _cmd, object, anIndex)
 {
-    if ((object == null ? null : (object.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(object, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
-        return (object == null ? null : (object.isa.method_msgSend["objectForKey:"] || _objj_forward)(object, "objectForKey:", anIndex));
-    else
-        (object == null ? null : (object.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(object, "isKindOfClass:", (CPArray.isa.method_msgSend["class"] || _objj_forward)(CPArray, "class")));
-    return (object == null ? null : (object.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(object, "objectAtIndex:", anIndex));
+    if ((object == null ? object : (object.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(object, "isKindOfClass:", (CPDictionary.isa.method_msgSend["class"] || _objj_forward)(CPDictionary, "class"))))
+        return (object == null ? object : (object.isa.method_msgSend["objectForKey:"] || _objj_forward)(object, "objectForKey:", anIndex));
+    else if ((object == null ? object : (object.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(object, "isKindOfClass:", (CPArray.isa.method_msgSend["class"] || _objj_forward)(CPArray, "class"))))
+        return (object == null ? object : (object.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(object, "objectAtIndex:", anIndex));
     (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "object[#] requires a CPDictionary or CPArray");
 }
 
@@ -18739,7 +18775,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("sum:"), function $CPPr
 
 ,["float","int"])]);
 }
-p;23;_CPVariableExpression.jt;4554;@STATIC;1.0;i;14;CPDictionary.ji;13;CPException.ji;10;CPString.ji;15;_CPExpression.jt;4463;objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;23;_CPVariableExpression.jt;4574;@STATIC;1.0;i;14;CPDictionary.ji;13;CPException.ji;10;CPString.ji;15;_CPExpression.jt;4483;objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPVariableExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_variable", "CPString")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("variable"), function $_CPVariableExpression__variable(self, _cmd)
@@ -18757,7 +18793,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("variable"), function $_
     self = (objj_getClass("_CPVariableExpression").super_class.method_dtable["initWithExpressionType:"] || _objj_forward)(self, "initWithExpressionType:", CPVariableExpressionType);
     if (self)
     {
-        self._variable = (variable == null ? null : (variable.isa.method_msgSend["copy"] || _objj_forward)(variable, "copy"));
+        self._variable = (variable == null ? variable : (variable.isa.method_msgSend["copy"] || _objj_forward)(variable, "copy"));
     }
     return self;
 }
@@ -18766,7 +18802,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("variable"), function $_
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["variable"] || _objj_forward)(object, "variable"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._variable)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["variable"] || _objj_forward)(object, "variable"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._variable)))
         return NO;
     return YES;
     var ___r1;
@@ -18775,7 +18811,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("variable"), function $_
 ,["BOOL","id"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPVariableExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
     var expression = (self.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(self, "_expressionWithSubstitutionVariables:", context);
-    return (expression == null ? null : (expression.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(expression, "expressionValueWithObject:context:", object, context));
+    return (expression == null ? expression : (expression.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(expression, "expressionValueWithObject:context:", object, context));
 }
 
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPVariableExpression__description(self, _cmd)
@@ -18785,10 +18821,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("variable"), function $_
 
 ,["CPString"]), new objj_method(sel_getUid("_expressionWithSubstitutionVariables:"), function $_CPVariableExpression___expressionWithSubstitutionVariables_(self, _cmd, variables)
 {
-    var value = (variables == null ? null : (variables.isa.method_msgSend["objectForKey:"] || _objj_forward)(variables, "objectForKey:", self._variable));
+    var value = (variables == null ? variables : (variables.isa.method_msgSend["objectForKey:"] || _objj_forward)(variables, "objectForKey:", self._variable));
     if (value == nil)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Can't get value for '" + self._variable + "' in bindings" + variables);
-    if ((value == null ? null : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", (CPExpression.isa.method_msgSend["class"] || _objj_forward)(CPExpression, "class"))))
+    if ((value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", (CPExpression.isa.method_msgSend["class"] || _objj_forward)(CPExpression, "class"))))
         return value;
     return (CPExpression.isa.method_msgSend["expressionForConstantValue:"] || _objj_forward)(CPExpression, "expressionForConstantValue:", value);
 }
@@ -18801,18 +18837,18 @@ var the_class = objj_getClass("_CPVariableExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPVariableExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPVariableExpression__initWithCoder_(self, _cmd, coder)
 {
-    var variable = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPVariableKey));
+    var variable = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPVariableKey));
     return (self.isa.method_msgSend["initWithVariable:"] || _objj_forward)(self, "initWithVariable:", variable);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPVariableExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._variable, CPVariableKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._variable, CPVariableKey));
 }
 
 ,["void","CPCoder"])]);
 }
-p;26;_CPConditionalExpression.jt;5815;@STATIC;1.0;i;14;_CPPredicate.ji;15;_CPExpression.jt;5757;objj_executeFile("_CPPredicate.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;26;_CPConditionalExpression.jt;5830;@STATIC;1.0;i;14;_CPPredicate.ji;15;_CPExpression.jt;5772;objj_executeFile("_CPPredicate.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPConditionalExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_predicate", "CPPredicate"), new objj_ivar("_trueExpression", "CPExpression"), new objj_ivar("_falseExpression", "CPExpression")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("predicate"), function $_CPConditionalExpression__predicate(self, _cmd)
@@ -18861,7 +18897,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("predicate"), function $
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["predicate"] || _objj_forward)(object, "predicate"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._predicate)) || !((___r1 = (object == null ? null : (object.isa.method_msgSend["trueExpression"] || _objj_forward)(object, "trueExpression"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._trueExpression)) || !((___r1 = (object == null ? null : (object.isa.method_msgSend["falseExpression"] || _objj_forward)(object, "falseExpression"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._falseExpression)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["predicate"] || _objj_forward)(object, "predicate"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._predicate)) || !((___r1 = (object == null ? object : (object.isa.method_msgSend["trueExpression"] || _objj_forward)(object, "trueExpression"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._trueExpression)) || !((___r1 = (object == null ? object : (object.isa.method_msgSend["falseExpression"] || _objj_forward)(object, "falseExpression"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._falseExpression)))
         return NO;
     return YES;
     var ___r1;
@@ -18869,30 +18905,30 @@ class_addMethods(the_class, [new objj_method(sel_getUid("predicate"), function $
 
 ,["BOOL","id"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPConditionalExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
-    var eval = ((___r1 = self._predicate), ___r1 == null ? null : (___r1.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(___r1, "evaluateWithObject:substitutionVariables:", object, context)),
+    var eval = ((___r1 = self._predicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["evaluateWithObject:substitutionVariables:"] || _objj_forward)(___r1, "evaluateWithObject:substitutionVariables:", object, context)),
         exp = eval ? self._trueExpression : self._falseExpression;
-    return (exp == null ? null : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
+    return (exp == null ? exp : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
     var ___r1;
 }
 
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("_expressionWithSubstitutionVariables:"), function $_CPConditionalExpression___expressionWithSubstitutionVariables_(self, _cmd, bindings)
 {
-    var predicate = ((___r1 = self._predicate), ___r1 == null ? null : (___r1.isa.method_msgSend["predicateWithSubstitutionVariables:"] || _objj_forward)(___r1, "predicateWithSubstitutionVariables:", bindings)),
-        trueExp = ((___r1 = self._trueExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", bindings)),
-        falseExp = ((___r1 = self._falseExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", bindings));
-    return ((___r1 = (_CPConditionalExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPConditionalExpression, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithPredicate:trueExpression:falseExpression:"] || _objj_forward)(___r1, "initWithPredicate:trueExpression:falseExpression:", predicate, trueExp, falseExp));
+    var predicate = ((___r1 = self._predicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["predicateWithSubstitutionVariables:"] || _objj_forward)(___r1, "predicateWithSubstitutionVariables:", bindings)),
+        trueExp = ((___r1 = self._trueExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", bindings)),
+        falseExp = ((___r1 = self._falseExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(___r1, "_expressionWithSubstitutionVariables:", bindings));
+    return ((___r1 = (_CPConditionalExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPConditionalExpression, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithPredicate:trueExpression:falseExpression:"] || _objj_forward)(___r1, "initWithPredicate:trueExpression:falseExpression:", predicate, trueExp, falseExp));
     var ___r1;
 }
 
 ,["CPExpression","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPConditionalExpression__description(self, _cmd)
 {
-    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "TERNARY(%@,%@,%@)", ((___r1 = self._predicate), ___r1 == null ? null : (___r1.isa.method_msgSend["predicateFormat"] || _objj_forward)(___r1, "predicateFormat")), ((___r1 = self._trueExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")), ((___r1 = self._falseExpression), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
+    return (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "TERNARY(%@,%@,%@)", ((___r1 = self._predicate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["predicateFormat"] || _objj_forward)(___r1, "predicateFormat")), ((___r1 = self._trueExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")), ((___r1 = self._falseExpression), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description")));
     var ___r1;
 }
 
 ,["CPString"])]);
 }
-p;24;_CPAggregateExpression.jt;4638;@STATIC;1.0;i;9;CPArray.ji;10;CPString.ji;15;_CPExpression.jt;4571;objj_executeFile("CPArray.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;24;_CPAggregateExpression.jt;4650;@STATIC;1.0;i;9;CPArray.ji;10;CPString.ji;15;_CPExpression.jt;4583;objj_executeFile("CPArray.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPAggregateExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_aggregate", "CPArray")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function $_CPAggregateExpression__collection(self, _cmd)
@@ -18917,7 +18953,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["collection"] || _objj_forward)(object, "collection"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._aggregate)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["collection"] || _objj_forward)(object, "collection"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._aggregate)))
         return NO;
     return YES;
     var ___r1;
@@ -18925,28 +18961,28 @@ class_addMethods(the_class, [new objj_method(sel_getUid("collection"), function 
 
 ,["BOOL","id"]), new objj_method(sel_getUid("expressionValueWithObject:context:"), function $_CPAggregateExpression__expressionValueWithObject_context_(self, _cmd, object, context)
 {
-    return ((___r1 = self._aggregate), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
+    return ((___r1 = self._aggregate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
     {
-        return (exp == null ? null : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
+        return (exp == null ? exp : (exp.isa.method_msgSend["expressionValueWithObject:context:"] || _objj_forward)(exp, "expressionValueWithObject:context:", object, context));
     }));
     var ___r1;
 }
 
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPAggregateExpression__description(self, _cmd)
 {
-    var descriptions = ((___r1 = self._aggregate), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
+    var descriptions = ((___r1 = self._aggregate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
     {
-        return (exp == null ? null : (exp.isa.method_msgSend["description"] || _objj_forward)(exp, "description"));
+        return (exp == null ? exp : (exp.isa.method_msgSend["description"] || _objj_forward)(exp, "description"));
     }));
-    return "{" + (descriptions == null ? null : (descriptions.isa.method_msgSend["componentsJoinedByString:"] || _objj_forward)(descriptions, "componentsJoinedByString:", ",")) + "}";
+    return "{" + (descriptions == null ? descriptions : (descriptions.isa.method_msgSend["componentsJoinedByString:"] || _objj_forward)(descriptions, "componentsJoinedByString:", ",")) + "}";
     var ___r1;
 }
 
 ,["CPString"]), new objj_method(sel_getUid("_expressionWithSubstitutionVariables:"), function $_CPAggregateExpression___expressionWithSubstitutionVariables_(self, _cmd, variables)
 {
-    var subst_array = ((___r1 = self._aggregate), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
+    var subst_array = ((___r1 = self._aggregate), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByApplyingBlock:"] || _objj_forward)(___r1, "arrayByApplyingBlock:",     function(exp)
     {
-        return (exp == null ? null : (exp.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(exp, "_expressionWithSubstitutionVariables:", variables));
+        return (exp == null ? exp : (exp.isa.method_msgSend["_expressionWithSubstitutionVariables:"] || _objj_forward)(exp, "_expressionWithSubstitutionVariables:", variables));
     }));
     return (CPExpression.isa.method_msgSend["expressionForAggregate:"] || _objj_forward)(CPExpression, "expressionForAggregate:", subst_array);
     var ___r1;
@@ -18960,18 +18996,18 @@ var the_class = objj_getClass("_CPAggregateExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPAggregateExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPAggregateExpression__initWithCoder_(self, _cmd, coder)
 {
-    var collection = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPCollectionKey));
+    var collection = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPCollectionKey));
     return (self.isa.method_msgSend["initWithAggregate:"] || _objj_forward)(self, "initWithAggregate:", collection);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPAggregateExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._aggregate, CPCollectionKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._aggregate, CPCollectionKey));
 }
 
 ,["void","CPCoder"])]);
 }
-p;14;_CPPredicate.jt;55104;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;8;CPNull.ji;10;CPObject.ji;11;CPScanner.ji;7;CPSet.ji;9;CPValue.ji;16;CPCharacterSet.ji;33;CPComparisonPredicate_Constants.ji;31;CPCompoundPredicate_Constants.ji;15;_CPExpression.jt;54871;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPScanner.j", YES);objj_executeFile("CPSet.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("CPCharacterSet.j", YES);objj_executeFile("CPComparisonPredicate_Constants.j", YES);objj_executeFile("CPCompoundPredicate_Constants.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;14;_CPPredicate.jt;55308;@STATIC;1.0;i;9;CPArray.ji;13;CPException.ji;8;CPNull.ji;10;CPObject.ji;11;CPScanner.ji;7;CPSet.ji;9;CPValue.ji;16;CPCharacterSet.ji;33;CPComparisonPredicate_Constants.ji;31;CPCompoundPredicate_Constants.ji;15;_CPExpression.jt;55075;objj_executeFile("CPArray.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPNull.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPScanner.j", YES);objj_executeFile("CPSet.j", YES);objj_executeFile("CPValue.j", YES);objj_executeFile("CPCharacterSet.j", YES);objj_executeFile("CPComparisonPredicate_Constants.j", YES);objj_executeFile("CPCompoundPredicate_Constants.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPPredicate"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("predicateWithSubstitutionVariables:"), function $CPPredicate__predicateWithSubstitutionVariables_(self, _cmd, variables)
@@ -19008,8 +19044,8 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("predicateWithFormat:")
 {
     if (!format)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, _cmd + " the format can't be 'nil'");
-    var s = ((___r1 = (CPPredicateScanner == null ? null : (CPPredicateScanner.isa.method_msgSend["alloc"] || _objj_forward)(CPPredicateScanner, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithString:args:"] || _objj_forward)(___r1, "initWithString:args:", format, args)),
-        p = (s == null ? null : (s.isa.method_msgSend["parse"] || _objj_forward)(s, "parse"));
+    var s = ((___r1 = (CPPredicateScanner == null ? CPPredicateScanner : (CPPredicateScanner.isa.method_msgSend["alloc"] || _objj_forward)(CPPredicateScanner, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithString:args:"] || _objj_forward)(___r1, "initWithString:args:", format, args)),
+        p = (s == null ? s : (s.isa.method_msgSend["parse"] || _objj_forward)(s, "parse"));
     return p;
     var ___r1;
 }
@@ -19021,7 +19057,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("predicateWithFormat:")
 
 ,["CPPredicate","CPString","va_list"]), new objj_method(sel_getUid("predicateWithValue:"), function $CPPredicate__predicateWithValue_(self, _cmd, value)
 {
-    return ((___r1 = (CPPredicate_BOOL == null ? null : (CPPredicate_BOOL.isa.method_msgSend["alloc"] || _objj_forward)(CPPredicate_BOOL, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithBool:"] || _objj_forward)(___r1, "initWithBool:", value));
+    return ((___r1 = (CPPredicate_BOOL == null ? CPPredicate_BOOL : (CPPredicate_BOOL.isa.method_msgSend["alloc"] || _objj_forward)(CPPredicate_BOOL, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithBool:"] || _objj_forward)(___r1, "initWithBool:", value));
     var ___r1;
 }
 
@@ -19040,7 +19076,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithBool:"), functi
 {
     if (self === anObject)
         return YES;
-    if (anObject === nil || self.isa !== anObject.isa || self._value !== (anObject == null ? null : (anObject.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(anObject, "evaluateWithObject:", nil)))
+    if (anObject == nil || self.isa !== anObject.isa || self._value !== (anObject == null ? anObject : (anObject.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(anObject, "evaluateWithObject:", nil)))
         return NO;
     return YES;
 }
@@ -19073,7 +19109,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     for (; i < count; i++)
     {
         var object = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", i);
-        if ((predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
+        if ((predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
             result.push(object);
     }
     return result;
@@ -19084,7 +19120,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     var count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
     while (count--)
     {
-        if (!(predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", count))))
+        if (!(predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", count))))
             self.splice(count, 1);
     }
 }
@@ -19102,8 +19138,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     for (; i < count; i++)
     {
         var object = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", i);
-        if ((predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
-            (result == null ? null : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", object));
+        if ((predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
+            (result == null ? result : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", object));
     }
     return result;
 }
@@ -19114,7 +19150,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     while (--count >= 0)
     {
         var object = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", count);
-        if (!(predicate == null ? null : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
+        if (!(predicate == null ? predicate : (predicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(predicate, "evaluateWithObject:", object)))
             (self.isa.method_msgSend["removeObjectAtIndex:"] || _objj_forward)(self, "removeObjectAtIndex:", count);
     }
 }
@@ -19129,14 +19165,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     self = (objj_getClass("CPPredicateScanner").super_class.method_dtable["initWithString:"] || _objj_forward)(self, "initWithString:", format);
     if (self)
     {
-        self._args = (args == null ? null : (args.isa.method_msgSend["objectEnumerator"] || _objj_forward)(args, "objectEnumerator"));
+        self._args = (args == null ? args : (args.isa.method_msgSend["objectEnumerator"] || _objj_forward)(args, "objectEnumerator"));
     }
     return self;
 }
 
 ,["id","CPString","CPArray"]), new objj_method(sel_getUid("nextArg"), function $CPPredicateScanner__nextArg(self, _cmd)
 {
-    return ((___r1 = self._args), ___r1 == null ? null : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
+    return ((___r1 = self._args), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
     var ___r1;
 }
 
@@ -19148,8 +19184,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         return NO;
     if ((self.isa.method_msgSend["isAtEnd"] || _objj_forward)(self, "isAtEnd"))
         return YES;
-    var c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? null : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
-    if (!((___r1 = (CPCharacterSet.isa.method_msgSend["alphanumericCharacterSet"] || _objj_forward)(CPCharacterSet, "alphanumericCharacterSet")), ___r1 == null ? null : (___r1.isa.method_msgSend["characterIsMember:"] || _objj_forward)(___r1, "characterIsMember:", c)))
+    var c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
+    if (!((___r1 = (CPCharacterSet.isa.method_msgSend["alphanumericCharacterSet"] || _objj_forward)(CPCharacterSet, "alphanumericCharacterSet")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterIsMember:"] || _objj_forward)(___r1, "characterIsMember:", c)))
         return YES;
     (self.isa.method_msgSend["setScanLocation:"] || _objj_forward)(self, "setScanLocation:", loc);
     return NO;
@@ -19171,7 +19207,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         {
             var pstr = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string"),
                 loc = (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation");
-            CPLogConsole("Format string contains extra characters: '" + (pstr == null ? null : (pstr.isa.method_msgSend["substringToIndex:"] || _objj_forward)(pstr, "substringToIndex:", loc)) + "**" + (pstr == null ? null : (pstr.isa.method_msgSend["substringFromIndex:"] || _objj_forward)(pstr, "substringFromIndex:", loc)) + "**'");
+            CPLogConsole("Format string contains extra characters: '" + (pstr == null ? pstr : (pstr.isa.method_msgSend["substringToIndex:"] || _objj_forward)(pstr, "substringToIndex:", loc)) + "**" + (pstr == null ? pstr : (pstr.isa.method_msgSend["substringFromIndex:"] || _objj_forward)(pstr, "substringFromIndex:", loc)) + "**'");
         }
     }
     return r;
@@ -19188,25 +19224,25 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     while ((self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "AND") || (self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "&&"))
     {
         var r = (self.isa.method_msgSend["parseOr"] || _objj_forward)(self, "parseOr");
-        if ((r == null ? null : (r.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(r, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (r == null ? null : (r.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(r, "compoundPredicateType")) == CPAndPredicateType)
+        if ((r == null ? r : (r.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(r, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (r == null ? r : (r.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(r, "compoundPredicateType")) == CPAndPredicateType)
         {
-            if ((l == null ? null : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? null : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPAndPredicateType)
+            if ((l == null ? l : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? l : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPAndPredicateType)
             {
-                ((___r1 = (l == null ? null : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", (r == null ? null : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))));
+                ((___r1 = (l == null ? l : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", (r == null ? r : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))));
             }
             else
             {
-                ((___r1 = (r == null ? null : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", l, 0));
+                ((___r1 = (r == null ? r : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", l, 0));
                 l = r;
             }
         }
-        else if ((l == null ? null : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? null : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPAndPredicateType)
+        else if ((l == null ? l : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? l : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPAndPredicateType)
         {
-            ((___r1 = (l == null ? null : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", r));
+            ((___r1 = (l == null ? l : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", r));
         }
         else
         {
-            l = (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["andPredicateWithSubpredicates:"] || _objj_forward)(CPCompoundPredicate, "andPredicateWithSubpredicates:", (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", l, r)));
+            l = (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["andPredicateWithSubpredicates:"] || _objj_forward)(CPCompoundPredicate, "andPredicateWithSubpredicates:", (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", l, r)));
         }
     }
     return l;
@@ -19224,7 +19260,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     }
     if ((self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "NOT") || (self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "!"))
     {
-        return (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["notPredicateWithSubpredicate:"] || _objj_forward)(CPCompoundPredicate, "notPredicateWithSubpredicate:", (self.isa.method_msgSend["parseNot"] || _objj_forward)(self, "parseNot")));
+        return (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["notPredicateWithSubpredicate:"] || _objj_forward)(CPCompoundPredicate, "notPredicateWithSubpredicate:", (self.isa.method_msgSend["parseNot"] || _objj_forward)(self, "parseNot")));
     }
     if ((self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "TRUEPREDICATE"))
     {
@@ -19243,25 +19279,25 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     while ((self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "OR") || (self.isa.method_msgSend["scanPredicateKeyword:"] || _objj_forward)(self, "scanPredicateKeyword:", "||"))
     {
         var r = (self.isa.method_msgSend["parseNot"] || _objj_forward)(self, "parseNot");
-        if ((r == null ? null : (r.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(r, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (r == null ? null : (r.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(r, "compoundPredicateType")) == CPOrPredicateType)
+        if ((r == null ? r : (r.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(r, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (r == null ? r : (r.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(r, "compoundPredicateType")) == CPOrPredicateType)
         {
-            if ((l == null ? null : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? null : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPOrPredicateType)
+            if ((l == null ? l : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? l : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPOrPredicateType)
             {
-                ((___r1 = (l == null ? null : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", (r == null ? null : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))));
+                ((___r1 = (l == null ? l : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", (r == null ? r : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))));
             }
             else
             {
-                ((___r1 = (r == null ? null : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", l, 0));
+                ((___r1 = (r == null ? r : (r.isa.method_msgSend["subpredicates"] || _objj_forward)(r, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", l, 0));
                 l = r;
             }
         }
-        else if ((l == null ? null : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? null : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPOrPredicateType)
+        else if ((l == null ? l : (l.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(l, "isKindOfClass:", (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["class"] || _objj_forward)(CPCompoundPredicate, "class")))) && (l == null ? l : (l.isa.method_msgSend["compoundPredicateType"] || _objj_forward)(l, "compoundPredicateType")) == CPOrPredicateType)
         {
-            ((___r1 = (l == null ? null : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? null : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", r));
+            ((___r1 = (l == null ? l : (l.isa.method_msgSend["subpredicates"] || _objj_forward)(l, "subpredicates"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", r));
         }
         else
         {
-            l = (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["orPredicateWithSubpredicates:"] || _objj_forward)(CPCompoundPredicate, "orPredicateWithSubpredicates:", (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", l, r)));
+            l = (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["orPredicateWithSubpredicates:"] || _objj_forward)(CPCompoundPredicate, "orPredicateWithSubpredicates:", (CPArray.isa.method_msgSend["arrayWithObjects:"] || _objj_forward)(CPArray, "arrayWithObjects:", l, r)));
         }
     }
     return l;
@@ -19363,8 +19399,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         opts = CPDiacriticInsensitivePredicateOption;
     }
     right = (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression");
-    p = (CPComparisonPredicate == null ? null : (CPComparisonPredicate.isa.method_msgSend["predicateWithLeftExpression:rightExpression:modifier:type:options:"] || _objj_forward)(CPComparisonPredicate, "predicateWithLeftExpression:rightExpression:modifier:type:options:", left, right, modifier, type, opts));
-    return negate ? (CPCompoundPredicate == null ? null : (CPCompoundPredicate.isa.method_msgSend["notPredicateWithSubpredicate:"] || _objj_forward)(CPCompoundPredicate, "notPredicateWithSubpredicate:", p)) : p;
+    p = (CPComparisonPredicate == null ? CPComparisonPredicate : (CPComparisonPredicate.isa.method_msgSend["predicateWithLeftExpression:rightExpression:modifier:type:options:"] || _objj_forward)(CPComparisonPredicate, "predicateWithLeftExpression:rightExpression:modifier:type:options:", left, right, modifier, type, opts));
+    return negate ? (CPCompoundPredicate == null ? CPCompoundPredicate : (CPCompoundPredicate.isa.method_msgSend["notPredicateWithSubpredicate:"] || _objj_forward)(CPCompoundPredicate, "notPredicateWithSubpredicate:", p)) : p;
 }
 
 ,["CPPredicate"]), new objj_method(sel_getUid("parseExpression"), function $CPPredicateScanner__parseExpression(self, _cmd)
@@ -19394,9 +19430,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         var a = [];
         if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "}", NULL))
             return (CPExpression.isa.method_msgSend["expressionForConstantValue:"] || _objj_forward)(CPExpression, "expressionForConstantValue:", a);
-        (a == null ? null : (a.isa.method_msgSend["addObject:"] || _objj_forward)(a, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
+        (a == null ? a : (a.isa.method_msgSend["addObject:"] || _objj_forward)(a, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
         while ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ",", NULL))
-            (a == null ? null : (a.isa.method_msgSend["addObject:"] || _objj_forward)(a, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
+            (a == null ? a : (a.isa.method_msgSend["addObject:"] || _objj_forward)(a, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
         if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "}", NULL))
             CPRaiseParseError(self, "expression");
         return (CPExpression.isa.method_msgSend["expressionForAggregate:"] || _objj_forward)(CPExpression, "expressionForAggregate:", a);
@@ -19420,7 +19456,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "$", NULL))
     {
         var variable = (self.isa.method_msgSend["parseSimpleExpression"] || _objj_forward)(self, "parseSimpleExpression");
-        if (!(variable == null ? null : (variable.isa.method_msgSend["keyPath"] || _objj_forward)(variable, "keyPath")))
+        if (!(variable == null ? variable : (variable.isa.method_msgSend["keyPath"] || _objj_forward)(variable, "keyPath")))
             CPRaiseParseError(self, "expression");
         return (CPExpression.isa.method_msgSend["expressionForVariable:"] || _objj_forward)(CPExpression, "expressionForVariable:", variable);
     }
@@ -19429,7 +19465,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     {
         if ((self.isa.method_msgSend["isAtEnd"] || _objj_forward)(self, "isAtEnd") == NO)
         {
-            var c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? null : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
+            var c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
             switch(c) {
                 case '%':
                     location = (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation");
@@ -19460,7 +19496,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
                     (self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "h", NULL);
                     if ((self.isa.method_msgSend["isAtEnd"] || _objj_forward)(self, "isAtEnd") == NO)
                     {
-                        c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? null : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
+                        c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
                         if (c == 'i' || c == 'u')
                         {
                             (self.isa.method_msgSend["setScanLocation:"] || _objj_forward)(self, "setScanLocation:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation") + 1);
@@ -19472,7 +19508,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
                     (self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "q", NULL);
                     if ((self.isa.method_msgSend["isAtEnd"] || _objj_forward)(self, "isAtEnd") == NO)
                     {
-                        c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? null : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
+                        c = ((___r1 = (self.isa.method_msgSend["string"] || _objj_forward)(self, "string")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["characterAtIndex:"] || _objj_forward)(___r1, "characterAtIndex:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation")));
                         if (c == 'i' || c == 'u' || c == 'x' || c == 'X')
                         {
                             (self.isa.method_msgSend["setScanLocation:"] || _objj_forward)(self, "setScanLocation:", (self.isa.method_msgSend["scanLocation"] || _objj_forward)(self, "scanLocation") + 1);
@@ -19509,9 +19545,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
     if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "@", NULL))
     {
         var e = (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression");
-        if (!(e == null ? null : (e.isa.method_msgSend["keyPath"] || _objj_forward)(e, "keyPath")))
+        if (!(e == null ? e : (e.isa.method_msgSend["keyPath"] || _objj_forward)(e, "keyPath")))
             CPRaiseParseError(self, "expression");
-        return (CPExpression.isa.method_msgSend["expressionForKeyPath:"] || _objj_forward)(CPExpression, "expressionForKeyPath:", (e == null ? null : (e.isa.method_msgSend["keyPath"] || _objj_forward)(e, "keyPath")) + "@");
+        return (CPExpression.isa.method_msgSend["expressionForKeyPath:"] || _objj_forward)(CPExpression, "expressionForKeyPath:", (e == null ? e : (e.isa.method_msgSend["keyPath"] || _objj_forward)(e, "keyPath")) + "@");
     }
     if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "SUBQUERY", NULL))
     {
@@ -19528,7 +19564,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         subpredicate = (self.isa.method_msgSend["parsePredicate"] || _objj_forward)(self, "parsePredicate");
         if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ")", NULL))
             CPRaiseParseError(self, "predicate");
-        return ((___r1 = (_CPSubqueryExpression == null ? null : (_CPSubqueryExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPSubqueryExpression, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithExpression:usingIteratorExpression:predicate:"] || _objj_forward)(___r1, "initWithExpression:usingIteratorExpression:predicate:", collection, variableExpression, subpredicate));
+        return ((___r1 = (_CPSubqueryExpression == null ? _CPSubqueryExpression : (_CPSubqueryExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPSubqueryExpression, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithExpression:usingIteratorExpression:predicate:"] || _objj_forward)(___r1, "initWithExpression:usingIteratorExpression:predicate:", collection, variableExpression, subpredicate));
     }
     if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "TERNARY", NULL))
     {
@@ -19553,10 +19589,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
             CPRaiseParseError(self, "expression");
         var args = (CPArray.isa.method_msgSend["arrayWithObject:"] || _objj_forward)(CPArray, "arrayWithObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression"));
         while ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ",", NULL))
-            (args == null ? null : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
-        if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ")", NULL) || (args == null ? null : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count")) < 2 || ((___r1 = args[1]), ___r1 == null ? null : (___r1.isa.method_msgSend["expressionType"] || _objj_forward)(___r1, "expressionType")) != CPConstantValueExpressionType)
+            (args == null ? args : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
+        if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ")", NULL) || (args == null ? args : (args.isa.method_msgSend["count"] || _objj_forward)(args, "count")) < 2 || ((___r1 = args[1]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["expressionType"] || _objj_forward)(___r1, "expressionType")) != CPConstantValueExpressionType)
             CPRaiseParseError(self, "expression");
-        return (CPExpression.isa.method_msgSend["expressionForFunction:selectorName:arguments:"] || _objj_forward)(CPExpression, "expressionForFunction:selectorName:arguments:", args[0], ((___r1 = args[1]), ___r1 == null ? null : (___r1.isa.method_msgSend["constantValue"] || _objj_forward)(___r1, "constantValue")), args.slice(2));
+        return (CPExpression.isa.method_msgSend["expressionForFunction:selectorName:arguments:"] || _objj_forward)(CPExpression, "expressionForFunction:selectorName:arguments:", args[0], ((___r1 = args[1]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["constantValue"] || _objj_forward)(___r1, "constantValue")), args.slice(2));
     }
     (self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "#", NULL);
     if (!identifier)
@@ -19575,9 +19611,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ".", NULL))
         {
             var right = (self.isa.method_msgSend["parseSimpleExpression"] || _objj_forward)(self, "parseSimpleExpression"),
-                expressionType = (right == null ? null : (right.isa.method_msgSend["expressionType"] || _objj_forward)(right, "expressionType"));
+                expressionType = (right == null ? right : (right.isa.method_msgSend["expressionType"] || _objj_forward)(right, "expressionType"));
             if (expressionType == CPKeyPathExpressionType)
-                left = ((___r1 = (_CPKeyPathExpression == null ? null : (_CPKeyPathExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyPathExpression, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithOperand:andKeyPath:"] || _objj_forward)(___r1, "initWithOperand:andKeyPath:", left, (right == null ? null : (right.isa.method_msgSend["keyPath"] || _objj_forward)(right, "keyPath"))));
+                left = ((___r1 = (_CPKeyPathExpression == null ? _CPKeyPathExpression : (_CPKeyPathExpression.isa.method_msgSend["alloc"] || _objj_forward)(_CPKeyPathExpression, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithOperand:andKeyPath:"] || _objj_forward)(___r1, "initWithOperand:andKeyPath:", left, (right == null ? right : (right.isa.method_msgSend["keyPath"] || _objj_forward)(right, "keyPath"))));
             else if (expressionType == CPVariableExpressionType)
                 left = (CPExpression.isa.method_msgSend["expressionForFunction:selectorName:arguments:"] || _objj_forward)(CPExpression, "expressionForFunction:selectorName:arguments:", left, "valueForKey:", [right]);
             else
@@ -19607,9 +19643,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
         }
         else if ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ":", NULL))
         {
-            if (!(left == null ? null : (left.isa.method_msgSend["keyPath"] || _objj_forward)(left, "keyPath")))
+            if (!(left == null ? left : (left.isa.method_msgSend["keyPath"] || _objj_forward)(left, "keyPath")))
                 CPRaiseParseError(self, "expression");
-            var selector = (left == null ? null : (left.isa.method_msgSend["keyPath"] || _objj_forward)(left, "keyPath")) + ":",
+            var selector = (left == null ? left : (left.isa.method_msgSend["keyPath"] || _objj_forward)(left, "keyPath")) + ":",
                 args = [];
             if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", "(", NULL))
             {
@@ -19621,9 +19657,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
             }
             if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ")", NULL))
             {
-                (args == null ? null : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
+                (args == null ? args : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
                 while ((self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ",", NULL))
-                    (args == null ? null : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
+                    (args == null ? args : (args.isa.method_msgSend["addObject:"] || _objj_forward)(args, "addObject:", (self.isa.method_msgSend["parseExpression"] || _objj_forward)(self, "parseExpression")));
                 if (!(self.isa.method_msgSend["scanString:intoString:"] || _objj_forward)(self, "scanString:intoString:", ")", NULL))
                     CPRaiseParseError(self, "expression");
             }
@@ -19734,9 +19770,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithString:args:"),
 }
 var CPRaiseParseError = function(aScanner, target)
 {
-    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "unable to parse " + target + " at index " + (aScanner == null ? null : (aScanner.isa.method_msgSend["scanLocation"] || _objj_forward)(aScanner, "scanLocation")));
+    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "unable to parse " + target + " at index " + (aScanner == null ? aScanner : (aScanner.isa.method_msgSend["scanLocation"] || _objj_forward)(aScanner, "scanLocation")));
 };
-p;28;_CPConstantValueExpression.jt;3482;@STATIC;1.0;i;14;CPDictionary.ji;15;_CPExpression.jt;3424;objj_executeFile("CPDictionary.j", YES);objj_executeFile("_CPExpression.j", YES);
+p;28;_CPConstantValueExpression.jt;3488;@STATIC;1.0;i;14;CPDictionary.ji;15;_CPExpression.jt;3430;objj_executeFile("CPDictionary.j", YES);objj_executeFile("_CPExpression.j", YES);
 {var the_class = objj_allocateClassPair(CPExpression, "_CPConstantValueExpression"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_value", "id")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("constantValue"), function $_CPConstantValueExpression__constantValue(self, _cmd)
@@ -19761,7 +19797,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("constantValue"), functi
 {
     if (self === object)
         return YES;
-    if (object === nil || object.isa !== self.isa || !((___r1 = (object == null ? null : (object.isa.method_msgSend["constantValue"] || _objj_forward)(object, "constantValue"))), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._value)))
+    if (object == nil || object.isa !== self.isa || !((___r1 = (object == null ? object : (object.isa.method_msgSend["constantValue"] || _objj_forward)(object, "constantValue"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", self._value)))
         return NO;
     return YES;
     var ___r1;
@@ -19774,11 +19810,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("constantValue"), functi
 
 ,["id","id","CPDictionary"]), new objj_method(sel_getUid("description"), function $_CPConstantValueExpression__description(self, _cmd)
 {
-    if (((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
+    if (((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
         return "\"" + self._value + "\"";
     if (self._value === (CPNull.isa.method_msgSend["null"] || _objj_forward)(CPNull, "null"))
         return "nil";
-    return ((___r1 = self._value), ___r1 == null ? null : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description"));
+    return ((___r1 = self._value), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["description"] || _objj_forward)(___r1, "description"));
     var ___r1;
 }
 
@@ -19790,13 +19826,13 @@ var the_class = objj_getClass("_CPConstantValueExpression")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"_CPConstantValueExpression\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $_CPConstantValueExpression__initWithCoder_(self, _cmd, coder)
 {
-    var value = (coder == null ? null : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPConstantValueKey));
+    var value = (coder == null ? coder : (coder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(coder, "decodeObjectForKey:", CPConstantValueKey));
     return (self.isa.method_msgSend["initWithValue:"] || _objj_forward)(self, "initWithValue:", value);
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $_CPConstantValueExpression__encodeWithCoder_(self, _cmd, coder)
 {
-    (coder == null ? null : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._value, CPConstantValueKey));
+    (coder == null ? coder : (coder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(coder, "encodeObject:forKey:", self._value, CPConstantValueKey));
 }
 
 ,["void","CPCoder"])]);
@@ -19804,7 +19840,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 p;31;CPCompoundPredicate_Constants.jt;88;@STATIC;1.0;t;71;CPNotPredicateType = 0;
 CPAndPredicateType = 1;
 CPOrPredicateType = 2;
-p;9;CPArray.jt;139;@STATIC;1.0;i;10;_CPArray.ji;20;_CPJavaScriptArray.jt;82;objj_executeFile("_CPArray.j", YES);objj_executeFile("_CPJavaScriptArray.j", YES);p;16;CPMutableArray.jt;18877;@STATIC;1.0;i;10;_CPArray.jt;18842;objj_executeFile("_CPArray.j", YES);
+p;9;CPArray.jt;139;@STATIC;1.0;i;10;_CPArray.ji;20;_CPJavaScriptArray.jt;82;objj_executeFile("_CPArray.j", YES);objj_executeFile("_CPJavaScriptArray.j", YES);p;16;CPMutableArray.jt;18966;@STATIC;1.0;i;10;_CPArray.jt;18931;objj_executeFile("_CPArray.j", YES);
 {var the_class = objj_allocateClassPair(CPArray, "CPMutableArray"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function $CPMutableArray__addObject_(self, _cmd, anObject)
@@ -19815,9 +19851,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 ,["void","id"]), new objj_method(sel_getUid("addObjectsFromArray:"), function $CPMutableArray__addObjectsFromArray_(self, _cmd, anArray)
 {
     var index = 0,
-        count = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+        count = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
     for (; index < count; ++index)
-        (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", (anArray == null ? null : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
+        (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", (anArray == null ? anArray : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("insertObject:atIndex:"), function $CPMutableArray__insertObject_atIndex_(self, _cmd, anObject, anIndex)
@@ -19827,29 +19863,29 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 
 ,["void","id","CPUInteger"]), new objj_method(sel_getUid("insertObjects:atIndexes:"), function $CPMutableArray__insertObjects_atIndexes_(self, _cmd, objects, indexes)
 {
-    var indexesCount = (indexes == null ? null : (indexes.isa.method_msgSend["count"] || _objj_forward)(indexes, "count")),
-        objectsCount = (objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
+    var indexesCount = (indexes == null ? indexes : (indexes.isa.method_msgSend["count"] || _objj_forward)(indexes, "count")),
+        objectsCount = (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
     if (indexesCount !== objectsCount)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "the counts of the passed-in array (" + objectsCount + ") and index set (" + indexesCount + ") must be identical.");
-    var lastIndex = (indexes == null ? null : (indexes.isa.method_msgSend["lastIndex"] || _objj_forward)(indexes, "lastIndex"));
+    var lastIndex = (indexes == null ? indexes : (indexes.isa.method_msgSend["lastIndex"] || _objj_forward)(indexes, "lastIndex"));
     if (lastIndex >= (self.isa.method_msgSend["count"] || _objj_forward)(self, "count") + indexesCount)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "the last index (" + lastIndex + ") must be less than the sum of the original count (" + (self.isa.method_msgSend["count"] || _objj_forward)(self, "count") + ") and the insertion count (" + indexesCount + ").");
     var index = 0,
-        currentIndex = (indexes == null ? null : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
-    for (; index < objectsCount; (++index, currentIndex = (indexes == null ? null : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", currentIndex))))
-        (self.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(self, "insertObject:atIndex:", (objects == null ? null : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", index)), currentIndex);
+        currentIndex = (indexes == null ? indexes : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
+    for (; index < objectsCount; (++index, currentIndex = (indexes == null ? indexes : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", currentIndex))))
+        (self.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(self, "insertObject:atIndex:", (objects == null ? objects : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", index)), currentIndex);
 }
 
 ,["void","CPArray","CPIndexSet"]), new objj_method(sel_getUid("insertObject:inArraySortedByDescriptors:"), function $CPMutableArray__insertObject_inArraySortedByDescriptors_(self, _cmd, anObject, descriptors)
 {
     var index,
-        count = (descriptors == null ? null : (descriptors.isa.method_msgSend["count"] || _objj_forward)(descriptors, "count"));
+        count = (descriptors == null ? descriptors : (descriptors.isa.method_msgSend["count"] || _objj_forward)(descriptors, "count"));
     if (count)
         index = (self.isa.method_msgSend["indexOfObject:inSortedRange:options:usingComparator:"] || _objj_forward)(self, "indexOfObject:inSortedRange:options:usingComparator:", anObject, nil, CPBinarySearchingInsertionIndex,         function(lhs, rhs)
         {
             var index = 0,
                 result = CPOrderedSame;
-            while (index < count && (result = ((___r1 = (descriptors == null ? null : (descriptors.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(descriptors, "objectAtIndex:", index))), ___r1 == null ? null : (___r1.isa.method_msgSend["compareObject:withObject:"] || _objj_forward)(___r1, "compareObject:withObject:", lhs, rhs))) === CPOrderedSame)
+            while (index < count && (result = ((___r1 = (descriptors == null ? descriptors : (descriptors.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(descriptors, "objectAtIndex:", index))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["compareObject:withObject:"] || _objj_forward)(___r1, "compareObject:withObject:", lhs, rhs))) === CPOrderedSame)
                 ++index;
             return result;
             var ___r1;
@@ -19868,20 +19904,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 ,["void","CPUInteger","id"]), new objj_method(sel_getUid("replaceObjectsAtIndexes:withObjects:"), function $CPMutableArray__replaceObjectsAtIndexes_withObjects_(self, _cmd, indexes, objects)
 {
     var i = 0,
-        index = (indexes == null ? null : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
+        index = (indexes == null ? indexes : (indexes.isa.method_msgSend["firstIndex"] || _objj_forward)(indexes, "firstIndex"));
     while (index !== CPNotFound)
     {
-        (self.isa.method_msgSend["replaceObjectAtIndex:withObject:"] || _objj_forward)(self, "replaceObjectAtIndex:withObject:", index, (objects == null ? null : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", i++)));
-        index = (indexes == null ? null : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
+        (self.isa.method_msgSend["replaceObjectAtIndex:withObject:"] || _objj_forward)(self, "replaceObjectAtIndex:withObject:", index, (objects == null ? objects : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", i++)));
+        index = (indexes == null ? indexes : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index));
     }
 }
 
 ,["void","CPIndexSet","CPArray"]), new objj_method(sel_getUid("replaceObjectsInRange:withObjectsFromArray:range:"), function $CPMutableArray__replaceObjectsInRange_withObjectsFromArray_range_(self, _cmd, aRange, anArray, otherRange)
 {
     (self.isa.method_msgSend["removeObjectsInRange:"] || _objj_forward)(self, "removeObjectsInRange:", aRange);
-    if (otherRange && (otherRange.location !== 0 || otherRange.length !== (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"))))
-        anArray = (anArray == null ? null : (anArray.isa.method_msgSend["subarrayWithRange:"] || _objj_forward)(anArray, "subarrayWithRange:", otherRange));
-    var indexes = (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSetWithIndexesInRange:"] || _objj_forward)(CPIndexSet, "indexSetWithIndexesInRange:", CPMakeRange(aRange.location, (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")))));
+    if (otherRange && (otherRange.location !== 0 || otherRange.length !== (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"))))
+        anArray = (anArray == null ? anArray : (anArray.isa.method_msgSend["subarrayWithRange:"] || _objj_forward)(anArray, "subarrayWithRange:", otherRange));
+    var indexes = (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSetWithIndexesInRange:"] || _objj_forward)(CPIndexSet, "indexSetWithIndexesInRange:", CPMakeRange(aRange.location, (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")))));
     (self.isa.method_msgSend["insertObjects:atIndexes:"] || _objj_forward)(self, "insertObjects:atIndexes:", anArray, indexes);
 }
 
@@ -19931,11 +19967,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 
 ,["void","CPUInteger"]), new objj_method(sel_getUid("removeObjectsAtIndexes:"), function $CPMutableArray__removeObjectsAtIndexes_(self, _cmd, anIndexSet)
 {
-    var index = (anIndexSet == null ? null : (anIndexSet.isa.method_msgSend["lastIndex"] || _objj_forward)(anIndexSet, "lastIndex"));
+    var index = (anIndexSet == null ? anIndexSet : (anIndexSet.isa.method_msgSend["lastIndex"] || _objj_forward)(anIndexSet, "lastIndex"));
     while (index !== CPNotFound)
     {
         (self.isa.method_msgSend["removeObjectAtIndex:"] || _objj_forward)(self, "removeObjectAtIndex:", index);
-        index = (anIndexSet == null ? null : (anIndexSet.isa.method_msgSend["indexLessThanIndex:"] || _objj_forward)(anIndexSet, "indexLessThanIndex:", index));
+        index = (anIndexSet == null ? anIndexSet : (anIndexSet.isa.method_msgSend["indexLessThanIndex:"] || _objj_forward)(anIndexSet, "indexLessThanIndex:", index));
     }
 }
 
@@ -19958,9 +19994,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 ,["void","id","CPRange"]), new objj_method(sel_getUid("removeObjectsInArray:"), function $CPMutableArray__removeObjectsInArray_(self, _cmd, anArray)
 {
     var index = 0,
-        count = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+        count = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
     for (; index < count; ++index)
-        (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", (anArray == null ? null : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
+        (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", (anArray == null ? anArray : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("removeObjectsInRange:"), function $CPMutableArray__removeObjectsInRange_(self, _cmd, aRange)
@@ -19982,12 +20018,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 
 ,["void","CPUInteger","CPUInteger"]), new objj_method(sel_getUid("sortUsingDescriptors:"), function $CPMutableArray__sortUsingDescriptors_(self, _cmd, descriptors)
 {
-    var i = (descriptors == null ? null : (descriptors.isa.method_msgSend["count"] || _objj_forward)(descriptors, "count")),
+    var i = (descriptors == null ? descriptors : (descriptors.isa.method_msgSend["count"] || _objj_forward)(descriptors, "count")),
         jsDescriptors = [];
     while (i--)
     {
-        var d = (descriptors == null ? null : (descriptors.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(descriptors, "objectAtIndex:", i));
-        (jsDescriptors == null ? null : (jsDescriptors.isa.method_msgSend["addObject:"] || _objj_forward)(jsDescriptors, "addObject:", {"k": (d == null ? null : (d.isa.method_msgSend["key"] || _objj_forward)(d, "key")), "a": (d == null ? null : (d.isa.method_msgSend["ascending"] || _objj_forward)(d, "ascending")), "s": (d == null ? null : (d.isa.method_msgSend["selector"] || _objj_forward)(d, "selector"))}));
+        var d = (descriptors == null ? descriptors : (descriptors.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(descriptors, "objectAtIndex:", i));
+        (jsDescriptors == null ? jsDescriptors : (jsDescriptors.isa.method_msgSend["addObject:"] || _objj_forward)(jsDescriptors, "addObject:", {"k": (d == null ? d : (d.isa.method_msgSend["key"] || _objj_forward)(d, "key")), "a": (d == null ? d : (d.isa.method_msgSend["ascending"] || _objj_forward)(d, "ascending")), "s": (d == null ? d : (d.isa.method_msgSend["selector"] || _objj_forward)(d, "selector"))}));
     }
     sortArrayUsingJSDescriptors(self, jsDescriptors);
 }
@@ -20005,7 +20041,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("addObject:"), function 
 ,["void","SEL"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("arrayWithCapacity:"), function $CPMutableArray__arrayWithCapacity_(self, _cmd, aCapacity)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithCapacity:"] || _objj_forward)(___r1, "initWithCapacity:", aCapacity));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithCapacity:"] || _objj_forward)(___r1, "initWithCapacity:", aCapacity));
     var ___r1;
 }
 
@@ -20017,7 +20053,7 @@ if(!the_class) throw new SyntaxError("*** Could not find definition for class \"
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("mutableCopy"), function $CPArray__mutableCopy(self, _cmd)
 {
     var r = (CPMutableArray.isa.method_msgSend["new"] || _objj_forward)(CPMutableArray, "new");
-    (r == null ? null : (r.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(r, "addObjectsFromArray:", self));
+    (r == null ? r : (r.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(r, "addObjectsFromArray:", self));
     return r;
 }
 
@@ -20025,7 +20061,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 }
 var selectorCompare = function(object1, object2, selector)
 {
-    return (object1 == null ? null : (object1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(object1, "performSelector:withObject:", selector, object2));
+    return (object1 == null ? object1 : (object1.isa.method_msgSend["performSelector:withObject:"] || _objj_forward)(object1, "performSelector:withObject:", selector, object2));
 };
 var sortArrayUsingFunction = function(array, aFunction, aContext)
 {
@@ -20102,7 +20138,7 @@ var sortArrayUsingJSDescriptors = function(a, d)
                 A = a[j];
                 aUID = A._UID;
                 if (!aUID)
-                    aUID = (A == null ? null : (A.isa.method_msgSend["UID"] || _objj_forward)(A, "UID"));
+                    aUID = (A == null ? A : (A.isa.method_msgSend["UID"] || _objj_forward)(A, "UID"));
                 C1 = c[aUID];
                 if (!C1)
                 {
@@ -20111,12 +20147,12 @@ var sortArrayUsingJSDescriptors = function(a, d)
                     do
                     {
                         key = d[cn].k;
-                        C1[key] = (A == null ? null : (A.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(A, "valueForKeyPath:", key));
+                        C1[key] = (A == null ? A : (A.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(A, "valueForKeyPath:", key));
                     }                    while (cn--);
                                         c[aUID] = C1;
                 }                bUID = B[i]._UID;
                 if (!bUID)
-                    bUID = ((___r1 = B[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["UID"] || _objj_forward)(___r1, "UID"));
+                    bUID = ((___r1 = B[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["UID"] || _objj_forward)(___r1, "UID"));
                 C2 = c[bUID];
                 if (!C2)
                 {
@@ -20125,7 +20161,7 @@ var sortArrayUsingJSDescriptors = function(a, d)
                     do
                     {
                         key = d[cn].k;
-                        C2[key] = ((___r1 = B[i]), ___r1 == null ? null : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", key));
+                        C2[key] = ((___r1 = B[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(___r1, "valueForKeyPath:", key));
                     }                    while (cn--);
                                         c[bUID] = C2;
                 }                cn = dl;
@@ -20135,10 +20171,10 @@ var sortArrayUsingJSDescriptors = function(a, d)
                     key = dd.k;
                     value1 = C1[key];
                     value2 = C2[key];
-                    if (value1 === nil || value1 === cpNull)
-                        o = value2 === nil || value2 === cpNull ? CPOrderedSame : CPOrderedAscending;
+                    if (value1 == nil || value1 === cpNull)
+                        o = value2 == nil || value2 === cpNull ? CPOrderedSame : CPOrderedAscending;
                     else
-                        o = value2 === nil || value2 === cpNull ? CPOrderedDescending : value1.isa.objj_msgSend1(value1, dd.s, value2);
+                        o = value2 == nil || value2 === cpNull ? CPOrderedDescending : value1.isa.objj_msgSend1(value1, dd.s, value2);
                     if (o && !dd.a)
                         o = -o;
                 }                while (cn-- && o == CPOrderedSame);
@@ -20152,7 +20188,7 @@ var sortArrayUsingJSDescriptors = function(a, d)
                 a[k++] = B[i++];
         }    }    var ___r1;
 };
-p;20;_CPJavaScriptArray.jt;15196;@STATIC;1.0;i;16;CPMutableArray.jt;15155;objj_executeFile("CPMutableArray.j", YES);var concat = Array.prototype.concat,
+p;20;_CPJavaScriptArray.jt;15251;@STATIC;1.0;i;16;CPMutableArray.jt;15210;objj_executeFile("CPMutableArray.j", YES);var concat = Array.prototype.concat,
     indexOf = Array.prototype.indexOf,
     join = Array.prototype.join,
     pop = Array.prototype.pop,
@@ -20169,25 +20205,25 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 
 ,["id","CPArray"]), new objj_method(sel_getUid("initWithArray:copyItems:"), function $_CPJavaScriptArray__initWithArray_copyItems_(self, _cmd, anArray, shouldCopyItems)
 {
-    if (!shouldCopyItems && (anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
+    if (!shouldCopyItems && (anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
         return slice.call(anArray, 0);
     self = (objj_getClass("_CPJavaScriptArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     var index = 0;
-    if ((anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
+    if ((anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
     {
         var count = anArray.length;
         for (; index < count; ++index)
         {
             var object = anArray[index];
-            self[index] = object && object.isa ? (object == null ? null : (object.isa.method_msgSend["copy"] || _objj_forward)(object, "copy")) : object;
+            self[index] = object && object.isa ? (object == null ? object : (object.isa.method_msgSend["copy"] || _objj_forward)(object, "copy")) : object;
         }
         return self;
     }
-    var count = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+    var count = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
     for (; index < count; ++index)
     {
-        var object = (anArray == null ? null : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index));
-        self[index] = shouldCopyItems && object && object.isa ? (object == null ? null : (object.isa.method_msgSend["copy"] || _objj_forward)(object, "copy")) : object;
+        var object = (anArray == null ? anArray : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index));
+        self[index] = shouldCopyItems && object && object.isa ? (object == null ? object : (object.isa.method_msgSend["copy"] || _objj_forward)(object, "copy")) : object;
     }
     return self;
 }
@@ -20197,19 +20233,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
     var index = 2,
         count = arguments.length;
     for (; index < count; ++index)
-        if (arguments[index] === nil)
+        if (arguments[index] == nil)
             break;
     return slice.call(arguments, 2, index);
 }
 
 ,["id","id"]), new objj_method(sel_getUid("initWithObjects:count:"), function $_CPJavaScriptArray__initWithObjects_count_(self, _cmd, objects, aCount)
 {
-    if ((objects == null ? null : (objects.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(objects, "isKindOfClass:", _CPJavaScriptArray)))
+    if ((objects == null ? objects : (objects.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(objects, "isKindOfClass:", _CPJavaScriptArray)))
         return slice.call(objects, 0, aCount);
     var array = [],
         index = 0;
     for (; index < aCount; ++index)
-        push.call(array, (objects == null ? null : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", index)));
+        push.call(array, (objects == null ? objects : (objects.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(objects, "objectAtIndex:", index)));
     return array;
 }
 
@@ -20232,7 +20268,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 
 ,["id","CPUInteger"]), new objj_method(sel_getUid("objectsAtIndexes:"), function $_CPJavaScriptArray__objectsAtIndexes_(self, _cmd, indexes)
 {
-    if ((indexes == null ? null : (indexes.isa.method_msgSend["lastIndex"] || _objj_forward)(indexes, "lastIndex")) >= self.length)
+    if ((indexes == null ? indexes : (indexes.isa.method_msgSend["lastIndex"] || _objj_forward)(indexes, "lastIndex")) >= self.length)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, _cmd + " indexes out of bounds");
     var ranges = indexes._ranges,
         count = ranges.length,
@@ -20256,7 +20292,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
         var index = aRange ? aRange.location : 0,
             count = aRange ? CPMaxRange(aRange) : self.length;
         for (; index < count; ++index)
-            if (((___r1 = self[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", anObject)))
+            if (((___r1 = self[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", anObject)))
                 return index;
         return CPNotFound;
     }
@@ -20282,9 +20318,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
         _CPRaiseInvalidArgumentException(self, _cmd, 'attempt to pass a nil selector');
     var index = 0,
         count = self.length;
-    if ((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")))
+    if ((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")))
     {
-        var argumentsArray = ((___r1 = [nil, aSelector]), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r1, "arrayByAddingObjectsFromArray:", objects));
+        var argumentsArray = ((___r1 = [nil, aSelector]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r1, "arrayByAddingObjectsFromArray:", objects));
         for (; index < count; ++index)
         {
             argumentsArray[0] = self[index];
@@ -20302,7 +20338,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 
 ,["void","SEL","CPArray"]), new objj_method(sel_getUid("arrayByAddingObject:"), function $_CPJavaScriptArray__arrayByAddingObject_(self, _cmd, anObject)
 {
-    if (anObject && anObject.isa && (anObject == null ? null : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", _CPJavaScriptArray)))
+    if (anObject && anObject.isa && (anObject == null ? anObject : (anObject.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anObject, "isKindOfClass:", _CPJavaScriptArray)))
         return concat.call(self, [anObject]);
     return concat.call(self, anObject);
 }
@@ -20311,7 +20347,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 {
     if (!anArray)
         return (self.isa.method_msgSend["copy"] || _objj_forward)(self, "copy");
-    return concat.call(self, (anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)) ? anArray : (anArray == null ? null : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy")));
+    return concat.call(self, (anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)) ? anArray : (anArray == null ? anArray : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy")));
 }
 
 ,["CPArray","CPArray"]), new objj_method(sel_getUid("subarrayWithRange:"), function $_CPJavaScriptArray__subarrayWithRange_(self, _cmd, aRange)
@@ -20405,16 +20441,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, _cmd + " aRange out of bounds");
     if (otherRange && (otherRange.location < 0 || CPMaxRange(otherRange) > anArray.length))
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, _cmd + " otherRange out of bounds");
-    if (otherRange && (otherRange.location !== 0 || otherRange.length !== (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"))))
-        anArray = (anArray == null ? null : (anArray.isa.method_msgSend["subarrayWithRange:"] || _objj_forward)(anArray, "subarrayWithRange:", otherRange));
+    if (otherRange && (otherRange.location !== 0 || otherRange.length !== (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"))))
+        anArray = (anArray == null ? anArray : (anArray.isa.method_msgSend["subarrayWithRange:"] || _objj_forward)(anArray, "subarrayWithRange:", otherRange));
     if (anArray.isa !== _CPJavaScriptArray)
-        anArray = (anArray == null ? null : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy"));
+        anArray = (anArray == null ? anArray : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy"));
     splice.apply(self, [aRange.location, aRange.length].concat(anArray));
 }
 
 ,["void","CPRange","CPArray","CPRange"]), new objj_method(sel_getUid("setArray:"), function $_CPJavaScriptArray__setArray_(self, _cmd, anArray)
 {
-    if ((anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
+    if ((anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
         splice.apply(self, [0, self.length].concat(anArray));
     else
         (objj_getClass("_CPJavaScriptArray").super_class.method_dtable["setArray:"] || _objj_forward)(self, "setArray:", anArray);
@@ -20422,7 +20458,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 
 ,["void","CPArray"]), new objj_method(sel_getUid("addObjectsFromArray:"), function $_CPJavaScriptArray__addObjectsFromArray_(self, _cmd, anArray)
 {
-    if ((anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
+    if ((anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", _CPJavaScriptArray)))
         splice.apply(self, [self.length, 0].concat(anArray));
     else
         (objj_getClass("_CPJavaScriptArray").super_class.method_dtable["addObjectsFromArray:"] || _objj_forward)(self, "addObjectsFromArray:", anArray);
@@ -20451,7 +20487,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $_CP
 
 ,["id"]), new objj_method(sel_getUid("arrayWithArray:"), function $_CPJavaScriptArray__arrayWithArray_(self, _cmd, anArray)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
     var ___r1;
 }
 
@@ -20463,7 +20499,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $_CP
 ,["id","id"])]);
 }
 Array.prototype.isa = _CPJavaScriptArray;
-p;10;_CPArray.jt;34104;@STATIC;1.0;i;14;CPEnumerator.ji;13;CPException.ji;10;CPObject.ji;9;CPRange.ji;18;CPSortDescriptor.jt;33996;objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPSortDescriptor.j", YES);CPEnumerationNormal = 0;
+p;10;_CPArray.jt;34306;@STATIC;1.0;i;14;CPEnumerator.ji;13;CPException.ji;10;CPObject.ji;9;CPRange.ji;18;CPSortDescriptor.jt;34198;objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPException.j", YES);objj_executeFile("CPObject.j", YES);objj_executeFile("CPRange.j", YES);objj_executeFile("CPSortDescriptor.j", YES);CPEnumerationNormal = 0;
 CPEnumerationConcurrent = 1 << 0;
 CPEnumerationReverse = 1 << 1;
 CPBinarySearchingFirstEqual = 1 << 8;
@@ -20480,7 +20516,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20490,7 +20526,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20500,7 +20536,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20510,7 +20546,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20520,7 +20556,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20530,7 +20566,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === _CPSharedPlaceholderArray)
     {
-        arguments[0] = (_CPJavaScriptArray == null ? null : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
+        arguments[0] = (_CPJavaScriptArray == null ? _CPJavaScriptArray : (_CPJavaScriptArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPJavaScriptArray, "alloc"));
         return objj_msgSend.apply(this, arguments);
     }
     return (objj_getClass("CPArray").super_class.method_dtable["init"] || _objj_forward)(self, "init");
@@ -20581,20 +20617,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     var index = CPNotFound,
         objects = [];
-    while ((index = (indexes == null ? null : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index))) !== CPNotFound)
+    while ((index = (indexes == null ? indexes : (indexes.isa.method_msgSend["indexGreaterThanIndex:"] || _objj_forward)(indexes, "indexGreaterThanIndex:", index))) !== CPNotFound)
         objects.push((self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index));
     return objects;
 }
 
 ,["CPArray","CPIndexSet"]), new objj_method(sel_getUid("objectEnumerator"), function $CPArray__objectEnumerator(self, _cmd)
 {
-    return ((___r1 = (_CPArrayEnumerator == null ? null : (_CPArrayEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPArrayEnumerator, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", self));
+    return ((___r1 = (_CPArrayEnumerator == null ? _CPArrayEnumerator : (_CPArrayEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPArrayEnumerator, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", self));
     var ___r1;
 }
 
 ,["CPEnumerator"]), new objj_method(sel_getUid("reverseObjectEnumerator"), function $CPArray__reverseObjectEnumerator(self, _cmd)
 {
-    return ((___r1 = (_CPReverseArrayEnumerator == null ? null : (_CPReverseArrayEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPReverseArrayEnumerator, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", self));
+    return ((___r1 = (_CPReverseArrayEnumerator == null ? _CPReverseArrayEnumerator : (_CPReverseArrayEnumerator.isa.method_msgSend["alloc"] || _objj_forward)(_CPReverseArrayEnumerator, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", self));
     var ___r1;
 }
 
@@ -20610,7 +20646,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
         var index = aRange ? aRange.location : 0,
             count = aRange ? CPMaxRange(aRange) : (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
         for (; index < count; ++index)
-            if (((___r1 = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index)), ___r1 == null ? null : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", anObject)))
+            if (((___r1 = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index)), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqual:"] || _objj_forward)(___r1, "isEqual:", anObject)))
                 return index;
         return CPNotFound;
     }
@@ -20740,10 +20776,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
             stop = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count"),
             increment = 1;
     }
-    var indexes = (CPIndexSet == null ? null : (CPIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPIndexSet, "indexSet"));
+    var indexes = (CPIndexSet == null ? CPIndexSet : (CPIndexSet.isa.method_msgSend["indexSet"] || _objj_forward)(CPIndexSet, "indexSet"));
     for (; index !== stop; index += increment)
         if (aPredicate((self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index), index, aContext))
-            (indexes == null ? null : (indexes.isa.method_msgSend["addIndex:"] || _objj_forward)(indexes, "addIndex:", index));
+            (indexes == null ? indexes : (indexes.isa.method_msgSend["addIndex:"] || _objj_forward)(indexes, "addIndex:", index));
     return indexes;
 }
 
@@ -20763,9 +20799,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "makeObjectsPerformSelector:withObjects: 'aSelector' can't be nil");
     var index = 0,
         count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
-    if ((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")))
+    if ((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")))
     {
-        var argumentsArray = ((___r1 = [nil, aSelector]), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r1, "arrayByAddingObjectsFromArray:", objects));
+        var argumentsArray = ((___r1 = [nil, aSelector]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r1, "arrayByAddingObjectsFromArray:", objects));
         for (; index < count; ++index)
         {
             argumentsArray[0] = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index);
@@ -20822,13 +20858,13 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 ,["void","CPEnumerationOptions","Function"]), new objj_method(sel_getUid("firstObjectCommonWithArray:"), function $CPArray__firstObjectCommonWithArray_(self, _cmd, anArray)
 {
     var count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count");
-    if (!(anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")) || !count)
+    if (!(anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")) || !count)
         return nil;
     var index = 0;
     for (; index < count; ++index)
     {
         var object = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index);
-        if ((anArray == null ? null : (anArray.isa.method_msgSend["containsObject:"] || _objj_forward)(anArray, "containsObject:", object)))
+        if ((anArray == null ? anArray : (anArray.isa.method_msgSend["containsObject:"] || _objj_forward)(anArray, "containsObject:", object)))
             return object;
     }
     return nil;
@@ -20838,18 +20874,18 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (self === anArray)
         return YES;
-    if (!(anArray == null ? null : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", CPArray)))
+    if (!(anArray == null ? anArray : (anArray.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(anArray, "isKindOfClass:", CPArray)))
         return NO;
     var count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count"),
-        otherCount = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
-    if (anArray === nil || count !== otherCount)
+        otherCount = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+    if (anArray == nil || count !== otherCount)
         return NO;
     var index = 0;
     for (; index < count; ++index)
     {
         var lhs = (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index),
-            rhs = (anArray == null ? null : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index));
-        if (lhs !== rhs && (lhs && !lhs.isa || rhs && !rhs.isa || !(lhs == null ? null : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs))))
+            rhs = (anArray == null ? anArray : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index));
+        if (lhs !== rhs && (lhs && !lhs.isa || rhs && !rhs.isa || !(lhs == null ? lhs : (lhs.isa.method_msgSend["isEqual:"] || _objj_forward)(lhs, "isEqual:", rhs))))
             return NO;
     }
     return YES;
@@ -20874,7 +20910,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     var argumentArray = (self.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(self, "_javaScriptArrayCopy");
     push.call(argumentArray, anObject);
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
     var ___r1;
 }
 
@@ -20882,9 +20918,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 {
     if (!anArray)
         return (self.isa.method_msgSend["copy"] || _objj_forward)(self, "copy");
-    var anArray = anArray.isa === _CPJavaScriptArray ? anArray : (anArray == null ? null : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy")),
+    var anArray = anArray.isa === _CPJavaScriptArray ? anArray : (anArray == null ? anArray : (anArray.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(anArray, "_javaScriptArrayCopy")),
         argumentArray = concat.call((self.isa.method_msgSend["_javaScriptArrayCopy"] || _objj_forward)(self, "_javaScriptArrayCopy"), anArray);
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
     var ___r1;
 }
 
@@ -20899,14 +20935,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
         argumentArray = [];
     for (; index < count; ++index)
         push.call(argumentArray, (self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", index));
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", argumentArray));
     var ___r1;
 }
 
 ,["CPArray","CPRange"]), new objj_method(sel_getUid("sortedArrayUsingDescriptors:"), function $CPArray__sortedArrayUsingDescriptors_(self, _cmd, descriptors)
 {
     var sorted = (self.isa.method_msgSend["copy"] || _objj_forward)(self, "copy");
-    (sorted == null ? null : (sorted.isa.method_msgSend["sortUsingDescriptors:"] || _objj_forward)(sorted, "sortUsingDescriptors:", descriptors));
+    (sorted == null ? sorted : (sorted.isa.method_msgSend["sortUsingDescriptors:"] || _objj_forward)(sorted, "sortUsingDescriptors:", descriptors));
     return sorted;
 }
 
@@ -20918,14 +20954,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 ,["CPArray","Function"]), new objj_method(sel_getUid("sortedArrayUsingFunction:context:"), function $CPArray__sortedArrayUsingFunction_context_(self, _cmd, aFunction, aContext)
 {
     var sorted = (self.isa.method_msgSend["copy"] || _objj_forward)(self, "copy");
-    (sorted == null ? null : (sorted.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(sorted, "sortUsingFunction:context:", aFunction, aContext));
+    (sorted == null ? sorted : (sorted.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(sorted, "sortUsingFunction:context:", aFunction, aContext));
     return sorted;
 }
 
 ,["CPArray","Function","id"]), new objj_method(sel_getUid("sortedArrayUsingSelector:"), function $CPArray__sortedArrayUsingSelector_(self, _cmd, aSelector)
 {
     var sorted = (self.isa.method_msgSend["copy"] || _objj_forward)(self, "copy");
-    (sorted == null ? null : (sorted.isa.method_msgSend["sortUsingSelector:"] || _objj_forward)(sorted, "sortUsingSelector:", aSelector));
+    (sorted == null ? sorted : (sorted.isa.method_msgSend["sortUsingSelector:"] || _objj_forward)(sorted, "sortUsingSelector:", aSelector));
     return sorted;
 }
 
@@ -20941,7 +20977,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
     for (var idx = 0; idx < count; idx++)
     {
         var obj = aFunction((self.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(self, "objectAtIndex:", idx), idx);
-        (result == null ? null : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", obj));
+        (result == null ? result : (result.isa.method_msgSend["addObject:"] || _objj_forward)(result, "addObject:", obj));
     }
     return result;
 }
@@ -20976,7 +21012,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
         count = (self.isa.method_msgSend["count"] || _objj_forward)(self, "count"),
         array = [];
     for (; index < count; ++index)
-        if (self[index].isa && ((___r1 = self[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))) && (filterTypes == null ? null : (filterTypes.isa.method_msgSend["containsObject:"] || _objj_forward)(filterTypes, "containsObject:", ((___r1 = self[index]), ___r1 == null ? null : (___r1.isa.method_msgSend["pathExtension"] || _objj_forward)(___r1, "pathExtension")))))
+        if (self[index].isa && ((___r1 = self[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))) && (filterTypes == null ? filterTypes : (filterTypes.isa.method_msgSend["containsObject:"] || _objj_forward)(filterTypes, "containsObject:", ((___r1 = self[index]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["pathExtension"] || _objj_forward)(___r1, "pathExtension")))))
             array.push(self[index]);
     return array;
     var ___r1;
@@ -20984,7 +21020,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 
 ,["CPArray","CPArray"]), new objj_method(sel_getUid("copy"), function $CPArray__copy(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", self));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(___r1, "arrayWithArray:", self));
     var ___r1;
 }
 
@@ -20992,25 +21028,25 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPArr
 class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPArray__alloc(self, _cmd)
 {
     if (self === CPArray || self === CPMutableArray)
-        return (_CPPlaceholderArray == null ? null : (_CPPlaceholderArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPPlaceholderArray, "alloc"));
+        return (_CPPlaceholderArray == null ? _CPPlaceholderArray : (_CPPlaceholderArray.isa.method_msgSend["alloc"] || _objj_forward)(_CPPlaceholderArray, "alloc"));
     return (objj_getMetaClass("CPArray").super_class.method_dtable["alloc"] || _objj_forward)(self, "alloc");
 }
 
 ,["id"]), new objj_method(sel_getUid("array"), function $CPArray__array(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("arrayWithArray:"), function $CPArray__arrayWithArray_(self, _cmd, anArray)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
     var ___r1;
 }
 
 ,["id","CPArray"]), new objj_method(sel_getUid("arrayWithObject:"), function $CPArray__arrayWithObject_(self, _cmd, anObject)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:"] || _objj_forward)(___r1, "initWithObjects:", anObject));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:"] || _objj_forward)(___r1, "initWithObjects:", anObject));
     var ___r1;
 }
 
@@ -21023,7 +21059,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPA
 
 ,["id","id"]), new objj_method(sel_getUid("arrayWithObjects:count:"), function $CPArray__arrayWithObjects_count_(self, _cmd, objects, aCount)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
     var ___r1;
 }
 
@@ -21034,12 +21070,12 @@ var the_class = objj_getClass("CPArray")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPArray\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $CPArray__initWithCoder_(self, _cmd, aCoder)
 {
-    return (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CP.objects"));
+    return (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CP.objects"));
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPArray__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["_encodeArrayOfObjects:forKey:"] || _objj_forward)(aCoder, "_encodeArrayOfObjects:forKey:", self, "CP.objects"));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["_encodeArrayOfObjects:forKey:"] || _objj_forward)(aCoder, "_encodeArrayOfObjects:forKey:", self, "CP.objects"));
 }
 
 ,["void","CPCoder"])]);
@@ -21060,9 +21096,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 
 ,["id","CPArray"]), new objj_method(sel_getUid("nextObject"), function $_CPArrayEnumerator__nextObject(self, _cmd)
 {
-    if (++self._index >= ((___r1 = self._array), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
+    if (++self._index >= ((___r1 = self._array), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")))
         return nil;
-    return ((___r1 = self._array), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", self._index));
+    return ((___r1 = self._array), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", self._index));
     var ___r1;
 }
 
@@ -21077,7 +21113,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
     if (self)
     {
         self._array = anArray;
-        self._index = ((___r1 = self._array), ___r1 == null ? null : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+        self._index = ((___r1 = self._array), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
     }
     return self;
     var ___r1;
@@ -21087,7 +21123,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithArray:"), funct
 {
     if (--self._index < 0)
         return nil;
-    return ((___r1 = self._array), ___r1 == null ? null : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", self._index));
+    return ((___r1 = self._array), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", self._index));
     var ___r1;
 }
 
@@ -21106,7 +21142,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $_CP
 
 ,["id"])]);
 }
-p;23;_CPConcreteMutableSet.jt;4412;@STATIC;1.0;i;14;CPMutableSet.jt;4374;objj_executeFile("CPMutableSet.j", YES);var hasOwnProperty = Object.prototype.hasOwnProperty;
+p;23;_CPConcreteMutableSet.jt;4373;@STATIC;1.0;i;14;CPMutableSet.jt;4335;objj_executeFile("CPMutableSet.j", YES);var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 {var the_class = objj_allocateClassPair(CPMutableSet, "_CPConcreteMutableSet"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_contents", "Object"), new objj_ivar("_count", "unsigned")]);objj_registerClassPair(the_class);
@@ -21118,9 +21154,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"
         self._count = 0;
         self._contents = {};
         var index = 0,
-            count = MIN((objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")), aCount);
+            count = MIN((objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count")), aCount);
         for (; index < count; ++index)
-            (self == null ? null : (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", objects[index]));
+            (self == null ? self : (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", objects[index]));
     }
     return self;
 }
@@ -21132,7 +21168,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"
 
 ,["CPUInteger"]), new objj_method(sel_getUid("member:"), function $_CPConcreteMutableSet__member_(self, _cmd, anObject)
 {
-    var UID = (anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"));
+    var UID = (anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"));
     if (hasOwnProperty.call(self._contents, UID))
         return self._contents[UID];
     else
@@ -21142,7 +21178,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"
             if (!hasOwnProperty.call(self._contents, objectUID))
                 continue;
             var object = self._contents[objectUID];
-            if (object === anObject || (object == null ? null : (object.isa.method_msgSend["isEqual:"] || _objj_forward)(object, "isEqual:", anObject)))
+            if (object === anObject || (object == null ? object : (object.isa.method_msgSend["isEqual:"] || _objj_forward)(object, "isEqual:", anObject)))
                 return object;
         }
     }
@@ -21163,28 +21199,28 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"
 
 ,["CPArray"]), new objj_method(sel_getUid("objectEnumerator"), function $_CPConcreteMutableSet__objectEnumerator(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r1 == null ? null : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
+    return ((___r1 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectEnumerator"] || _objj_forward)(___r1, "objectEnumerator"));
     var ___r1;
 }
 
 ,["CPEnumerator"]), new objj_method(sel_getUid("addObject:"), function $_CPConcreteMutableSet__addObject_(self, _cmd, anObject)
 {
-    if (anObject === nil || anObject === undefined)
+    if (anObject == nil)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "attempt to insert nil or undefined");
     if ((self.isa.method_msgSend["containsObject:"] || _objj_forward)(self, "containsObject:", anObject))
         return;
-    self._contents[(anObject == null ? null : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))] = anObject;
+    self._contents[(anObject == null ? anObject : (anObject.isa.method_msgSend["UID"] || _objj_forward)(anObject, "UID"))] = anObject;
     self._count++;
 }
 
 ,["void","id"]), new objj_method(sel_getUid("removeObject:"), function $_CPConcreteMutableSet__removeObject_(self, _cmd, anObject)
 {
-    if (anObject === nil || anObject === undefined)
+    if (anObject == nil)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "attempt to remove nil or undefined");
     var object = (self.isa.method_msgSend["member:"] || _objj_forward)(self, "member:", anObject);
-    if (object !== nil)
+    if (object != nil)
     {
-        delete self._contents[(object == null ? null : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))];
+        delete self._contents[(object == null ? object : (object.isa.method_msgSend["UID"] || _objj_forward)(object, "UID"))];
         self._count--;
     }
 }
@@ -21202,23 +21238,23 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithObjects:count:"
 
 ,["Class"])]);
 }
-p;7;CPSet.jt;94;@STATIC;1.0;i;23;_CPConcreteMutableSet.jt;49;objj_executeFile("_CPConcreteMutableSet.j", YES);p;8;_CPSet.jt;19138;@STATIC;1.0;i;9;CPArray.ji;14;CPEnumerator.ji;10;CPNumber.ji;10;CPObject.jt;19056;objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPObject.j", YES);
+p;7;CPSet.jt;94;@STATIC;1.0;i;23;_CPConcreteMutableSet.jt;49;objj_executeFile("_CPConcreteMutableSet.j", YES);p;8;_CPSet.jt;19647;@STATIC;1.0;i;9;CPArray.ji;14;CPEnumerator.ji;10;CPNumber.ji;10;CPObject.jt;19565;objj_executeFile("CPArray.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPNumber.j", YES);objj_executeFile("CPObject.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPSet"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), function $CPSet__setByAddingObject_(self, _cmd, anObject)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["setWithArray:"] || _objj_forward)(___r1, "setWithArray:", ((___r2 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r2 == null ? null : (___r2.isa.method_msgSend["arrayByAddingObject:"] || _objj_forward)(___r2, "arrayByAddingObject:", anObject))));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setWithArray:"] || _objj_forward)(___r1, "setWithArray:", ((___r2 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["arrayByAddingObject:"] || _objj_forward)(___r2, "arrayByAddingObject:", anObject))));
     var ___r1, ___r2;
 }
 
 ,["id","id"]), new objj_method(sel_getUid("setByAddingObjectsFromSet:"), function $CPSet__setByAddingObjectsFromSet_(self, _cmd, aSet)
 {
-    return (self.isa.method_msgSend["setByAddingObjectsFromArray:"] || _objj_forward)(self, "setByAddingObjectsFromArray:", (aSet == null ? null : (aSet.isa.method_msgSend["allObjects"] || _objj_forward)(aSet, "allObjects")));
+    return (self.isa.method_msgSend["setByAddingObjectsFromArray:"] || _objj_forward)(self, "setByAddingObjectsFromArray:", (aSet == null ? aSet : (aSet.isa.method_msgSend["allObjects"] || _objj_forward)(aSet, "allObjects")));
 }
 
 ,["id","CPSet"]), new objj_method(sel_getUid("setByAddingObjectsFromArray:"), function $CPSet__setByAddingObjectsFromArray_(self, _cmd, anArray)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["setWithArray:"] || _objj_forward)(___r1, "setWithArray:", ((___r2 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r2 == null ? null : (___r2.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r2, "arrayByAddingObjectsFromArray:", anArray))));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setWithArray:"] || _objj_forward)(___r1, "setWithArray:", ((___r2 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["arrayByAddingObjectsFromArray:"] || _objj_forward)(___r2, "arrayByAddingObjectsFromArray:", anArray))));
     var ___r1, ___r2;
 }
 
@@ -21229,7 +21265,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 
 ,["id"]), new objj_method(sel_getUid("initWithArray:"), function $CPSet__initWithArray_(self, _cmd, anArray)
 {
-    return (self.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(self, "initWithObjects:count:", anArray, (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")));
+    return (self.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(self, "initWithObjects:count:", anArray, (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count")));
 }
 
 ,["id","CPArray"]), new objj_method(sel_getUid("initWithObjects:"), function $CPSet__initWithObjects_(self, _cmd, anObject)
@@ -21245,20 +21281,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 ,["id","id"]), new objj_method(sel_getUid("initWithObjects:count:"), function $CPSet__initWithObjects_count_(self, _cmd, objects, aCount)
 {
     if (self === _CPSharedPlaceholderSet)
-        return ((___r1 = (_CPConcreteMutableSet == null ? null : (_CPConcreteMutableSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPConcreteMutableSet, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
+        return ((___r1 = (_CPConcreteMutableSet == null ? _CPConcreteMutableSet : (_CPConcreteMutableSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPConcreteMutableSet, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, aCount));
     return (objj_getClass("CPSet").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     var ___r1;
 }
 
 ,["id","CPArray","CPUInteger"]), new objj_method(sel_getUid("initWithSet:"), function $CPSet__initWithSet_(self, _cmd, aSet)
 {
-    return (self.isa.method_msgSend["initWithArray:"] || _objj_forward)(self, "initWithArray:", (aSet == null ? null : (aSet.isa.method_msgSend["allObjects"] || _objj_forward)(aSet, "allObjects")));
+    return (self.isa.method_msgSend["initWithArray:"] || _objj_forward)(self, "initWithArray:", (aSet == null ? aSet : (aSet.isa.method_msgSend["allObjects"] || _objj_forward)(aSet, "allObjects")));
 }
 
 ,["id","CPSet"]), new objj_method(sel_getUid("initWithSet:copyItems:"), function $CPSet__initWithSet_copyItems_(self, _cmd, aSet, shouldCopyItems)
 {
     if (shouldCopyItems)
-        return (aSet == null ? null : (aSet.isa.method_msgSend["valueForKey:"] || _objj_forward)(aSet, "valueForKey:", "copy"));
+        return (aSet == null ? aSet : (aSet.isa.method_msgSend["valueForKey:"] || _objj_forward)(aSet, "valueForKey:", "copy"));
     return (self.isa.method_msgSend["initWithSet:"] || _objj_forward)(self, "initWithSet:", aSet);
 }
 
@@ -21272,20 +21308,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
     var objects = [],
         object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
         objects.push(object);
     return objects;
 }
 
 ,["CPArray"]), new objj_method(sel_getUid("anyObject"), function $CPSet__anyObject(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator")), ___r1 == null ? null : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
+    return ((___r1 = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["nextObject"] || _objj_forward)(___r1, "nextObject"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("containsObject:"), function $CPSet__containsObject_(self, _cmd, anObject)
 {
-    return (self.isa.method_msgSend["member:"] || _objj_forward)(self, "member:", anObject) !== nil;
+    return (self.isa.method_msgSend["member:"] || _objj_forward)(self, "member:", anObject) != nil;
 }
 
 ,["BOOL","id"]), new objj_method(sel_getUid("filteredSetUsingPredicate:"), function $CPSet__filteredSetUsingPredicate_(self, _cmd, aPredicate)
@@ -21293,10 +21329,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
     var objects = [],
         object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if ((aPredicate == null ? null : (aPredicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(aPredicate, "evaluateWithObject:", object)))
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        if ((aPredicate == null ? aPredicate : (aPredicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(aPredicate, "evaluateWithObject:", object)))
             objects.push(object);
-    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? null : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", objects));
+    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", objects));
     var ___r1, ___r2;
 }
 
@@ -21315,7 +21351,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
     var object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
         argumentsArray = [nil, aSelector].concat(objects || []);
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
     {
         argumentsArray[0] = object;
         objj_msgSend.apply(this, argumentsArray);
@@ -21335,10 +21371,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 ,["CPEnumerator"]), new objj_method(sel_getUid("enumerateObjectsUsingBlock:"), function $CPSet__enumerateObjectsUsingBlock_(self, _cmd, aFunction)
 {
     var object,
-        objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if (aFunction(object))
-            break;
+        objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
+        shouldStop = NO;
+    while (!shouldStop && (object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+    {
+        if (aFunction(object, function(__input) { if (arguments.length) return shouldStop = __input; return shouldStop; }) !== undefined)
+        {
+            throw "DEPRECATED: The method enumerateObjectsUsingBlock: does not support returning a value in the block to stop the iteration. Please use the stop variable";
+        }
+    }
 }
 
 ,["void","Function"]), new objj_method(sel_getUid("objectsPassingTest:"), function $CPSet__objectsPassingTest_(self, _cmd, aFunction)
@@ -21346,10 +21387,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
     var objects = [],
         object = nil,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
         if (aFunction(object))
             objects.push(object);
-    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? null : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", objects));
+    return ((___r1 = ((___r2 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["alloc"] || _objj_forward)(___r2, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", objects));
     var ___r1, ___r2;
 }
 
@@ -21357,8 +21398,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 {
     var object = nil,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if (!(aSet == null ? null : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        if (!(aSet == null ? aSet : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
             return NO;
     return YES;
 }
@@ -21369,15 +21410,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
         return (self.isa.method_msgSend["count"] || _objj_forward)(self, "count") > 0;
     var object = nil,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if ((aSet == null ? null : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        if ((aSet == null ? aSet : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
             return YES;
     return NO;
 }
 
 ,["BOOL","CPSet"]), new objj_method(sel_getUid("sortedArrayUsingDescriptors:"), function $CPSet__sortedArrayUsingDescriptors_(self, _cmd, someSortDescriptors)
 {
-    return ((___r1 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r1 == null ? null : (___r1.isa.method_msgSend["sortedArrayUsingDescriptors:"] || _objj_forward)(___r1, "sortedArrayUsingDescriptors:", someSortDescriptors));
+    return ((___r1 = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortedArrayUsingDescriptors:"] || _objj_forward)(___r1, "sortedArrayUsingDescriptors:", someSortDescriptors));
     var ___r1;
 }
 
@@ -21388,7 +21429,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 
 ,["BOOL","CPSet"]), new objj_method(sel_getUid("isEqual:"), function $CPSet__isEqual_(self, _cmd, aSet)
 {
-    return self === aSet || (aSet == null ? null : (aSet.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aSet, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))) && ((self.isa.method_msgSend["count"] || _objj_forward)(self, "count") === (aSet == null ? null : (aSet.isa.method_msgSend["count"] || _objj_forward)(aSet, "count")) && (aSet == null ? null : (aSet.isa.method_msgSend["isSubsetOfSet:"] || _objj_forward)(aSet, "isSubsetOfSet:", self)));
+    return self === aSet || (aSet == null ? aSet : (aSet.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aSet, "isKindOfClass:", (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class"))) && ((self.isa.method_msgSend["count"] || _objj_forward)(self, "count") === (aSet == null ? aSet : (aSet.isa.method_msgSend["count"] || _objj_forward)(aSet, "count")) && (aSet == null ? aSet : (aSet.isa.method_msgSend["isSubsetOfSet:"] || _objj_forward)(aSet, "isSubsetOfSet:", self)));
 }
 
 ,["BOOL","CPSet"]), new objj_method(sel_getUid("description"), function $CPSet__description(self, _cmd)
@@ -21396,7 +21437,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
     var string = "{(\n",
         objects = (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects"),
         index = 0,
-        count = (objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
+        count = (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
     for (; index < count; ++index)
     {
         var object = objects[index];
@@ -21408,32 +21449,32 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setByAddingObject:"), f
 ,["CPString"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPSet__alloc(self, _cmd)
 {
-    if (self === (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class") || self === (CPMutableSet == null ? null : (CPMutableSet.isa.method_msgSend["class"] || _objj_forward)(CPMutableSet, "class")))
-        return (_CPPlaceholderSet == null ? null : (_CPPlaceholderSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPPlaceholderSet, "alloc"));
+    if (self === (CPSet.isa.method_msgSend["class"] || _objj_forward)(CPSet, "class") || self === (CPMutableSet == null ? CPMutableSet : (CPMutableSet.isa.method_msgSend["class"] || _objj_forward)(CPMutableSet, "class")))
+        return (_CPPlaceholderSet == null ? _CPPlaceholderSet : (_CPPlaceholderSet.isa.method_msgSend["alloc"] || _objj_forward)(_CPPlaceholderSet, "alloc"));
     return (objj_getMetaClass("CPSet").super_class.method_dtable["alloc"] || _objj_forward)(self, "alloc");
 }
 
 ,["id"]), new objj_method(sel_getUid("set"), function $CPSet__set(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     var ___r1;
 }
 
 ,["id"]), new objj_method(sel_getUid("setWithArray:"), function $CPSet__setWithArray_(self, _cmd, anArray)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithArray:"] || _objj_forward)(___r1, "initWithArray:", anArray));
     var ___r1;
 }
 
 ,["id","CPArray"]), new objj_method(sel_getUid("setWithObject:"), function $CPSet__setWithObject_(self, _cmd, anObject)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:"] || _objj_forward)(___r1, "initWithObjects:", anObject));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:"] || _objj_forward)(___r1, "initWithObjects:", anObject));
     var ___r1;
 }
 
 ,["id","id"]), new objj_method(sel_getUid("setWithObjects:count:"), function $CPSet__setWithObjects_count_(self, _cmd, objects, count)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, count));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:count:"] || _objj_forward)(___r1, "initWithObjects:count:", objects, count));
     var ___r1;
 }
 
@@ -21447,7 +21488,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $CPS
 
 ,["id","id"]), new objj_method(sel_getUid("setWithSet:"), function $CPSet__setWithSet_(self, _cmd, set)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithSet:"] || _objj_forward)(___r1, "initWithSet:", set));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithSet:"] || _objj_forward)(___r1, "initWithSet:", set));
     var ___r1;
 }
 
@@ -21458,7 +21499,7 @@ var the_class = objj_getClass("CPSet")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPSet\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("copy"), function $CPSet__copy(self, _cmd)
 {
-    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? null : (___r1.isa.method_msgSend["setWithSet:"] || _objj_forward)(___r1, "setWithSet:", self));
+    return ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setWithSet:"] || _objj_forward)(___r1, "setWithSet:", self));
     var ___r1;
 }
 
@@ -21475,12 +21516,12 @@ var the_class = objj_getClass("CPSet")
 if(!the_class) throw new SyntaxError("*** Could not find definition for class \"CPSet\"");
 var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_getUid("initWithCoder:"), function $CPSet__initWithCoder_(self, _cmd, aCoder)
 {
-    return (self.isa.method_msgSend["initWithArray:"] || _objj_forward)(self, "initWithArray:", (aCoder == null ? null : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPSetObjectsKey)));
+    return (self.isa.method_msgSend["initWithArray:"] || _objj_forward)(self, "initWithArray:", (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPSetObjectsKey)));
 }
 
 ,["id","CPCoder"]), new objj_method(sel_getUid("encodeWithCoder:"), function $CPSet__encodeWithCoder_(self, _cmd, aCoder)
 {
-    (aCoder == null ? null : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects"), CPSetObjectsKey));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", (self.isa.method_msgSend["allObjects"] || _objj_forward)(self, "allObjects"), CPSetObjectsKey));
 }
 
 ,["void","CPCoder"])]);
@@ -21495,10 +21536,10 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
     var valueSet = (CPSet.isa.method_msgSend["set"] || _objj_forward)(CPSet, "set"),
         object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
     {
-        var value = (object == null ? null : (object.isa.method_msgSend["valueForKey:"] || _objj_forward)(object, "valueForKey:", aKey));
-        (valueSet == null ? null : (valueSet.isa.method_msgSend["addObject:"] || _objj_forward)(valueSet, "addObject:", value));
+        var value = (object == null ? object : (object.isa.method_msgSend["valueForKey:"] || _objj_forward)(object, "valueForKey:", aKey));
+        (valueSet == null ? valueSet : (valueSet.isa.method_msgSend["addObject:"] || _objj_forward)(valueSet, "addObject:", value));
     }
     return valueSet;
 }
@@ -21507,8 +21548,8 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 {
     var object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        (object == null ? null : (object.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(object, "setValue:forKey:", aValue, aKey));
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        (object == null ? object : (object.isa.method_msgSend["setValue:forKey:"] || _objj_forward)(object, "setValue:forKey:", aValue, aKey));
 }
 
 ,["void","id","CPString"])]);
@@ -21526,7 +21567,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("alloc"), function $_CP
 
 ,["id"])]);
 }
-p;14;CPMutableSet.jt;5466;@STATIC;1.0;i;8;_CPSet.jt;5435;objj_executeFile("_CPSet.j", YES);
+p;14;CPMutableSet.jt;5548;@STATIC;1.0;i;8;_CPSet.jt;5517;objj_executeFile("_CPSet.j", YES);
 {var the_class = objj_allocateClassPair(CPSet, "CPMutableSet"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), function $CPMutableSet__initWithCapacity_(self, _cmd, aCapacity)
@@ -21538,8 +21579,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), fu
 {
     var object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if (!(aPredicate == null ? null : (aPredicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(aPredicate, "evaluateWithObject:", object)))
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        if (!(aPredicate == null ? aPredicate : (aPredicate.isa.method_msgSend["evaluateWithObject:"] || _objj_forward)(aPredicate, "evaluateWithObject:", object)))
             (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", object);
 }
 
@@ -21551,22 +21592,22 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), fu
 ,["void","id"]), new objj_method(sel_getUid("removeObjectsInArray:"), function $CPMutableSet__removeObjectsInArray_(self, _cmd, anArray)
 {
     var index = 0,
-        count = (anArray == null ? null : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
+        count = (anArray == null ? anArray : (anArray.isa.method_msgSend["count"] || _objj_forward)(anArray, "count"));
     for (; index < count; ++index)
-        (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", (anArray == null ? null : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
+        (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", (anArray == null ? anArray : (anArray.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(anArray, "objectAtIndex:", index)));
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("removeAllObjects"), function $CPMutableSet__removeAllObjects(self, _cmd)
 {
     var object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator");
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
         (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", object);
 }
 
 ,["void"]), new objj_method(sel_getUid("addObjectsFromArray:"), function $CPMutableSet__addObjectsFromArray_(self, _cmd, objects)
 {
-    var count = (objects == null ? null : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
+    var count = (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
     while (count--)
         (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", objects[count]);
 }
@@ -21574,16 +21615,16 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), fu
 ,["void","CPArray"]), new objj_method(sel_getUid("unionSet:"), function $CPMutableSet__unionSet_(self, _cmd, aSet)
 {
     var object,
-        objectEnumerator = (aSet == null ? null : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+        objectEnumerator = (aSet == null ? aSet : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
         (self.isa.method_msgSend["addObject:"] || _objj_forward)(self, "addObject:", object);
 }
 
 ,["void","CPSet"]), new objj_method(sel_getUid("minusSet:"), function $CPMutableSet__minusSet_(self, _cmd, aSet)
 {
     var object,
-        objectEnumerator = (aSet == null ? null : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
+        objectEnumerator = (aSet == null ? aSet : (aSet.isa.method_msgSend["objectEnumerator"] || _objj_forward)(aSet, "objectEnumerator"));
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
         (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", object);
 }
 
@@ -21592,10 +21633,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), fu
     var object,
         objectEnumerator = (self.isa.method_msgSend["objectEnumerator"] || _objj_forward)(self, "objectEnumerator"),
         objectsToRemove = [];
-    while ((object = (objectEnumerator == null ? null : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) !== nil)
-        if (!(aSet == null ? null : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
+    while ((object = (objectEnumerator == null ? objectEnumerator : (objectEnumerator.isa.method_msgSend["nextObject"] || _objj_forward)(objectEnumerator, "nextObject"))) != nil)
+        if (!(aSet == null ? aSet : (aSet.isa.method_msgSend["containsObject:"] || _objj_forward)(aSet, "containsObject:", object)))
             objectsToRemove.push(object);
-    var count = (objectsToRemove == null ? null : (objectsToRemove.isa.method_msgSend["count"] || _objj_forward)(objectsToRemove, "count"));
+    var count = (objectsToRemove == null ? objectsToRemove : (objectsToRemove.isa.method_msgSend["count"] || _objj_forward)(objectsToRemove, "count"));
     while (count--)
         (self.isa.method_msgSend["removeObject:"] || _objj_forward)(self, "removeObject:", objectsToRemove[count]);
 }
@@ -21609,7 +21650,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithCapacity:"), fu
 ,["void","CPSet"])]);
 class_addMethods(meta_class, [new objj_method(sel_getUid("setWithCapacity:"), function $CPMutableSet__setWithCapacity_(self, _cmd, aCapacity)
 {
-    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? null : (___r1.isa.method_msgSend["initWithCapacity:"] || _objj_forward)(___r1, "initWithCapacity:", aCapacity));
+    return ((___r1 = (self.isa.method_msgSend["alloc"] || _objj_forward)(self, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithCapacity:"] || _objj_forward)(___r1, "initWithCapacity:", aCapacity));
     var ___r1;
 }
 

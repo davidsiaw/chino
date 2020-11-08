@@ -20,8 +20,7 @@ module Chino
         config.bundle_version
       end
 
-      def install!
-      end
+      def install!; end
 
       def load_file(file)
         return {} unless exist? file

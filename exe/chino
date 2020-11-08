@@ -18,7 +18,8 @@ def config
   Config.new
 end
 
-if command == 'build'
+case command
+when 'build'
 
   FileUtils.rm_r('build') if Dir.exist?('build')
   FileUtils.rm_r('temp') if Dir.exist?('temp')
@@ -56,7 +57,7 @@ if command == 'build'
   end
   FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", 'build')
 
-elsif command == 'create'
+when 'create'
 
   folder = ARGV.shift
   if folder
@@ -66,7 +67,7 @@ elsif command == 'create'
     puts 'No folder specified'
   end
 
-elsif command == 'gen'
+when 'gen'
   class_type = ARGV.shift
 
   if File.exist?("#{config.data_path}/templates/#{class_type}.j.erb")
@@ -78,7 +79,7 @@ elsif command == 'gen'
     exit(1)
   end
 
-elsif command == 'install'
+when 'install'
   install_cfg = Config.new(install: true)
   p install_cfg.dependencies
 

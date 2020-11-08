@@ -5,10 +5,11 @@ require 'chino/dep_puller'
 
 module Chino
   class Config
-    def initialize(file: nil, install: false)
-      path = File.basename(file || '')
+    def initialize(file: nil, _install: false)
+      @path = File.basename(file || '')
       file ||= 'Chinofile'
-      @chinofile = Chinofile.new(path: path) do
+      @dir = file.sub(%r{/?#{@path}$}, '')
+      @chinofile = Chinofile.new(path: @path) do
         instance_eval File.read(file), file
       end
       @dep_puller = DepPuller.new
@@ -47,7 +48,17 @@ module Chino
     end
 
     def bundle_exports
-      @chinofile.information[:exports]
+      @bundle_exports ||= convert_export_names
+    end
+
+    def convert_export_names
+      result = {}
+
+      @chinofile.information[:exports].each do |file, file_path|
+        result[file] = file_path.sub(@path, @dir)
+      end
+
+      result
     end
 
     def data_path
@@ -63,6 +74,11 @@ module Chino
       return erb(file) if File.exist?(erb_name(file))
       return { filename: "#{common_path}/#{file}" } if File.exist?("#{common_path}/#{file}")
       return get_from_dependency(file) if dependency_has_file?(file)
+
+      splits = file.split('/', 2)
+      list = Dir[[splits[0], '**', splits[1]].join('/')]
+      log_list_length(list, splits)
+      return { filename: list.last } unless list.empty?
 
       {}
     end
@@ -84,6 +100,15 @@ module Chino
       {
         string: renderer.result(binding)
       }
+    end
+
+    private
+
+    def log_list_length(list, splits)
+      if list.length > 1
+        puts "**** NOT FOUND **** #{splits.inspect}"
+        puts "RETURNING #{list.last.inspect}"
+      end
     end
   end
 end

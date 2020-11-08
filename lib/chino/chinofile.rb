@@ -67,7 +67,7 @@ module Chino
         author: 'Incognito',
         author_email: 'incognito@example.com',
         company_name: 'Incognito',
-        identifier: "com.Incognito.UnnamedChinoProject",
+        identifier: 'com.Incognito.UnnamedChinoProject',
         created_at: Time.now
       }
     end

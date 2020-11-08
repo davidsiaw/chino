@@ -76,11 +76,13 @@ RSpec.describe DepPuller do
         expect(mock_driver_class).to receive(:new) { mock_driver }.exactly(4).times
         expect(mock_driver).to receive(:name) { 'Abc' }.exactly(4).times
         expect(mock_driver).to receive(:version) { '0.0.1' }.exactly(4).times
-        expect(mock_driver).to receive(:inner_deps) { [
-          { driver: 'mock', location: 'aaa' },
-          { driver: 'mock', location: 'aaa' },
-          { driver: 'mock', location: 'aaa' }
-        ] }
+        expect(mock_driver).to receive(:inner_deps) {
+                                 [
+                                   { driver: 'mock', location: 'aaa' },
+                                   { driver: 'mock', location: 'aaa' },
+                                   { driver: 'mock', location: 'aaa' }
+                                 ]
+                               }
 
         dp.load_dependency!(driver: 'mock', location: 'something')
       end

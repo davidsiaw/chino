@@ -16,14 +16,13 @@ module Chino
         ''
       end
 
-      def install!
-      end
+      def install!; end
 
-      def load_file(file)
+      def load_file(_file)
         {}
       end
 
-      def exist?(file)
+      def exist?(_file)
         false
       end
 

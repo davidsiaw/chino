@@ -15,18 +15,27 @@ RSpec.describe Config do
     expect(c.bundle_company_name).to eq 'Incognito'
   end
 
-
   it 'if not given a chinofile, there are no exports' do
     c = Config.new
 
     expect(c.bundle_exports).to eq({})
   end
 
-  it 'if given a chinofile, all exports are prefixed that way' do
-    allow(File).to receive(:read).with('/abc/something') { 'exports "hello.j"' }
-    c = Config.new(file: '/abc/something')
+  it 'if given a chinofile and an export that export is prefixed that way' do
+    allow(File).to receive(:read).with('abc/something') { 'exports "hello.j"' }
+    c = Config.new(file: 'abc/something')
 
     expect(c.bundle_exports).to eq('hello.j' => 'abc/hello.j')
+  end
+
+  it 'if given a chinofile, all exports are prefixed that way' do
+    allow(File).to receive(:read).with('abc/something') { <<~CHINOFILE }
+      exports "woof.j"
+      exports "meow.j"
+    CHINOFILE
+    c = Config.new(file: 'abc/something')
+
+    expect(c.bundle_exports).to eq('woof.j' => 'abc/woof.j', 'meow.j' => 'abc/meow.j')
   end
 
   describe '#get_file' do

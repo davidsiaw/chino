@@ -89,6 +89,29 @@ var ObjectiveJ = {};
                     return k;
             }            return -1;
         };
+    }    if (!Array.prototype.findIndex)
+    {
+        Object.defineProperty(Array.prototype, 'findIndex', {value:         function(predicate)
+        {
+            if (this == null)
+            {
+                throw new TypeError('"this" is null or not defined');
+            }            var o = Object(this);
+            var len = o.length >>> 0;
+            if (typeof predicate !== 'function')
+            {
+                throw new TypeError('predicate must be a function');
+            }            var thisArg = arguments[1];
+            var k = 0;
+            while (k < len)
+            {
+                var kValue = o[k];
+                if (predicate.call(thisArg, kValue, k, o))
+                {
+                    return k;
+                }                k++;
+            }            return -1;
+        }, configurable: true, writable: true});
     }    if (!String.prototype.startsWith)
     {
         String.prototype.startsWith =         function(searchString, position)
@@ -108,6 +131,51 @@ var ObjectiveJ = {};
             var lastIndex = subjectString.indexOf(searchString, position);
             return lastIndex !== -1 && lastIndex === position;
         };
+    }    if (!Array.prototype.includes)
+    {
+        Object.defineProperty(Array.prototype, 'includes', {value:         function(searchElement, fromIndex)
+        {
+            if (this == null)
+            {
+                throw new TypeError('"this" is null or not defined');
+            }            var o = Object(this);
+            var len = o.length >>> 0;
+            if (len === 0)
+            {
+                return false;
+            }            var n = fromIndex | 0;
+            var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+            while (k < len)
+            {
+                if (o[k] === searchElement)
+                {
+                    return true;
+                }                k++;
+            }            return false;
+        }});
+    }    if (!Array.prototype.find)
+    {
+        Object.defineProperty(Array.prototype, 'find', {value:         function(predicate)
+        {
+            if (this == null)
+            {
+                throw TypeError('"this" is null or not defined');
+            }            var o = Object(this);
+            var len = o.length >>> 0;
+            if (typeof predicate !== 'function')
+            {
+                throw TypeError('predicate must be a function');
+            }            var thisArg = arguments[1];
+            var k = 0;
+            while (k < len)
+            {
+                var kValue = o[k];
+                if (predicate.call(thisArg, kValue, k, o))
+                {
+                    return kValue;
+                }                k++;
+            }            return undefined;
+        }, configurable: true, writable: true});
     }    if (!this.JSON)
     {
         JSON = {};
@@ -1223,8 +1291,8 @@ ul#options li{margin:0 0 0 0;padding:0 0 0 0;display:inline;} \
         var node = anXMLNode;
     {
         node = node.firstChild;
-        if (node !== NULL && (node.nodeType === 8 || node.nodeType === 3))
-            while ((node = node.nextSibling) && (node.nodeType === 8 || node.nodeType === 3));
+        if (node != NULL && (node.nodeType === 8 || node.nodeType === 3 || node.nodeType === 7))
+            while ((node = node.nextSibling) && (node.nodeType === 8 || node.nodeType === 3 || node.nodeType === 7));
     }        if (node)
             return node;
         if (String(anXMLNode.nodeName) === PLIST_ARRAY || String(anXMLNode.nodeName) === PLIST_DICTIONARY)
@@ -1234,14 +1302,14 @@ ul#options li{margin:0 0 0 0;padding:0 0 0 0;display:inline;} \
             if (node === stayWithin)
                 return NULL;
             node = anXMLNode;
-            while ((node = node.nextSibling) && (node.nodeType === 8 || node.nodeType === 3));
+            while ((node = node.nextSibling) && (node.nodeType === 8 || node.nodeType === 3 || node.nodeType === 7));
             if (node)
                 return node;
         }        node = anXMLNode;
         while (node)
         {
             var next = node;
-            while ((next = next.nextSibling) && (next.nodeType === 8 || next.nodeType === 3));
+            while ((next = next.nextSibling) && (next.nodeType === 8 || next.nodeType === 3 || next.nodeType === 7));
             if (next)
                 return next;
             var node = node.parentNode;
@@ -1345,7 +1413,7 @@ default:
     function parseXML(aString)
     {
         if (window.DOMParser)
-            return ((new window.DOMParser()).parseFromString(aString, "text/xml")).documentElement;
+            return (new window.DOMParser()).parseFromString(aString, "text/xml") && ((new window.DOMParser()).parseFromString(aString, "text/xml")).documentElement;
         else if (window.ActiveXObject)
         {
             XMLNode = new ActiveXObject("Microsoft.XMLDOM");
@@ -1362,14 +1430,15 @@ default:
         var XMLNode = aStringOrXMLNode;
         if (aStringOrXMLNode.valueOf && typeof aStringOrXMLNode.valueOf() === "string")
             XMLNode = parseXML(aStringOrXMLNode);
-        while (String(XMLNode.nodeName) === XML_DOCUMENT || String(XMLNode.nodeName) === XML_XML)
+        while (XMLNode && (String(XMLNode.nodeName) === XML_DOCUMENT || String(XMLNode.nodeName) === XML_XML))
+        {
         {
             XMLNode = XMLNode.firstChild;
-            if (XMLNode !== NULL && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3))
-                while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3));
-        }        if (XMLNode.nodeType === 10)
-            while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3));
-        if (!(String(XMLNode.nodeName) === PLIST_PLIST))
+            if (XMLNode != NULL && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3 || XMLNode.nodeType === 7))
+                while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3 || XMLNode.nodeType === 7));
+        }        }        if (XMLNode && XMLNode.nodeType === 10)
+            while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3 || XMLNode.nodeType === 7));
+        if (!XMLNode || !(String(XMLNode.nodeName) === PLIST_PLIST))
             return NULL;
         var key = "",
             object = NULL,
@@ -1385,7 +1454,7 @@ default:
             if (String(XMLNode.nodeName) === PLIST_KEY)
             {
                 key = XMLNode.textContent || XMLNode.textContent !== "" && textContent([XMLNode]);
-                while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3));
+                while ((XMLNode = XMLNode.nextSibling) && (XMLNode.nodeType === 8 || XMLNode.nodeType === 3 || XMLNode.nodeType === 7));
             }            switch(String(String(XMLNode.nodeName))) {
                 case PLIST_ARRAY:
                     object = [];
@@ -1617,7 +1686,7 @@ default:
     CFMutableDictionary.prototype.replaceValueForKey.displayName = "CFMutableDictionary.prototype.replaceValueForKey";
     CFMutableDictionary.prototype.setValueForKey =     function(aKey, aValue)
     {
-        if (aValue === nil || aValue === undefined)
+        if (aValue == nil)
             this.removeValueForKey(aKey);
         else if (this.containsKey(aKey))
             this.replaceValueForKey(aKey, aValue);
@@ -9751,6 +9820,18 @@ default:
                 return prev.getIvarForCurrentClass(ivarName);
             return null;
         };
+        Scope.prototype.getLvarScope =         function(lvarName, stopAtMethod)
+        {
+            if (this.vars)
+            {
+                var lvar = this.vars[lvarName];
+                if (lvar)
+                    return this;
+            }            var prev = this.prev;
+            if (prev && (!stopAtMethod || !this.methodType))
+                return prev.getLvarScope(lvarName, stopAtMethod);
+            return this;
+        };
         Scope.prototype.getLvar =         function(lvarName, stopAtMethod)
         {
             if (this.vars)
@@ -9762,6 +9843,11 @@ default:
             if (prev && (!stopAtMethod || !this.methodType))
                 return prev.getLvar(lvarName, stopAtMethod);
             return null;
+        };
+        Scope.prototype.getVarScope =         function()
+        {
+            var prev = this.prev;
+            return prev ? prev.getVarScope() : this;
         };
         Scope.prototype.currentMethodType =         function()
         {
@@ -9788,6 +9874,17 @@ default:
                 if (!lastWarning.isEqualTo(warning))
                     maybeWarnings.push(warning);
             }        };
+        Scope.prototype.variablesNotReadWarnings =         function()
+        {
+            var compiler = this.compiler;
+            if (compiler.options.warnings.includes(warningUnusedButSetVariable) && this.prev && this.vars)
+                for (var key in this.vars)
+                {
+                    var lvar = this.vars[key];
+                    if (!lvar.isRead && lvar.type === "var")
+                    {
+                        compiler.addWarning(createMessage("Variable '" + key + "' is never read", lvar.node, compiler.source));
+                    }                }        };
         Scope.prototype.maybeWarnings =         function()
         {
             return (this.rootScope())._maybeWarnings;
@@ -9872,6 +9969,37 @@ default:
                             return priorFormatDescription;
                     }                    return currentFormatDescription;
                 }            }        };
+        var FunctionScope =         function(prev, base)
+        {
+            Scope.call(this, prev, base);
+        };
+        FunctionScope.prototype = Object.create(Scope.prototype);
+        FunctionScope.prototype.constructor = FunctionScope;
+        FunctionScope.prototype.getVarScope =         function()
+        {
+            return this;
+        };
+        FunctionScope.prototype.variablesNotReadWarnings =         function()
+        {
+            Scope.prototype.variablesNotReadWarnings.call(this);
+            var prev = this.prev;
+            if (prev && this.possibleHoistedVariables)
+                for (var key in this.possibleHoistedVariables)
+                {
+                    var possibleHoistedVariable = this.possibleHoistedVariables[key];
+                    if (possibleHoistedVariable)
+                    {
+                        var varInPrevScope = prev.vars && prev.vars[key];
+                        if (varInPrevScope != null)
+                        {
+                            var prevPossibleHoistedVariable = (prev.possibleHoistedVariables || (prev.possibleHoistedVariables = Object.create(null)))[key];
+                            if (prevPossibleHoistedVariable == null)
+                            {
+                                prev.possibleHoistedVariables[key] = possibleHoistedVariable;
+                            }                            else
+                            {
+                                throw new Error("Internal inconsistency, previous scope should not have this possible hoisted variable '" + key + "'");
+                            }                        }                    }                }        };
         var GlobalVariableMaybeWarning =         function(aMessage, node, code)
         {
             this.message = createMessage(aMessage, node, code);
@@ -9992,8 +10120,15 @@ default:
         };
         StringBuffer.prototype.appendStringBufferString =         function(stringBuffer)
         {
-            this.atoms.push.apply(this.atoms, stringBuffer.atoms);
-        };
+            var thisAtoms = this.atoms;
+            var thisLength = thisAtoms.length;
+            var stringBufferAtoms = stringBuffer.atoms;
+            var stringBufferLength = stringBufferAtoms.length;
+            thisAtoms.length = thisLength + stringBufferLength;
+            for (var i = 0; i < stringBufferLength; i++)
+            {
+                thisAtoms[thisLength + i] = stringBufferAtoms[i];
+            }        };
         StringBuffer.prototype.appendStringBufferSourceNode =         function(stringBuffer)
         {
             this.rootNode.add(stringBuffer.rootNode);
@@ -10179,6 +10314,17 @@ default:
         var wordPrefixOperators = acorn.makePredicate("delete in instanceof new typeof void");
         var isLogicalBinary = acorn.makePredicate("LogicalExpression BinaryExpression");
         var isInInstanceof = acorn.makePredicate("in instanceof");
+        var warningUnusedButSetVariable = {name: "unused-but-set-variable"};
+        var warningShadowIvar = {name: "shadow-ivar"};
+        var warningCreateGlobalInsideFunctionOrMethod = {name: "create-global-inside-function-or-method"};
+        var warningUnknownClassOrGlobal = {name: "unknown-class-or-global"};
+        var warningUnknownIvarType = {name: "unknown-ivar-type"};
+        var AllWarnings = [warningUnusedButSetVariable, warningShadowIvar, warningCreateGlobalInsideFunctionOrMethod, warningUnknownClassOrGlobal, warningUnknownIvarType];
+        exports.warningUnusedButSetVariable = warningUnusedButSetVariable;
+        exports.warningShadowIvar = warningShadowIvar;
+        exports.warningCreateGlobalInsideFunctionOrMethod = warningCreateGlobalInsideFunctionOrMethod;
+        exports.warningUnknownClassOrGlobal = warningUnknownClassOrGlobal;
+        exports.warningUnknownIvarType = warningUnknownIvarType;
         var defaultOptions = {acornOptions:         function()
         {
             return Object.create(null);
@@ -10191,7 +10337,7 @@ default:
         }, typeDefs:         function()
         {
             return Object.create(null);
-        }, generate: true, generateObjJ: false, formatDescription: null, indentationSpaces: 4, indentationType: " ", includeComments: false, transformNamedFunctionDeclarationToAssignment: false, includeMethodFunctionNames: true, includeMethodArgumentTypeSignatures: true, includeIvarTypeSignatures: true, inlineMsgSendFunctions: true, macros: null};
+        }, generate: true, generateObjJ: false, formatDescription: null, indentationSpaces: 4, indentationType: " ", includeComments: false, transformNamedFunctionDeclarationToAssignment: false, includeMethodFunctionNames: true, includeMethodArgumentTypeSignatures: true, includeIvarTypeSignatures: true, inlineMsgSendFunctions: true, warnings: [warningUnusedButSetVariable, warningShadowIvar, warningCreateGlobalInsideFunctionOrMethod, warningUnknownClassOrGlobal, warningUnknownIvarType], macros: null};
         function setupOptions(opts)
         {
             var options = Object.create(null);
@@ -10465,7 +10611,30 @@ default:
                 {
                     var macroDefinition = argument.substring(2);
                     (objjcFlags.macros || (objjcFlags.macros = [])).push(macroDefinition);
-                }            }            return objjcFlags;
+                }                else if (argument.indexOf("-W") === 0)
+                {
+                    var isNo = argument.indexOf("no-", 2) === 2;
+                    var warningName = argument.substring(isNo ? 5 : 2);
+                    var indexOfWarning = (objjcFlags.warnings || (objjcFlags.warnings = defaultOptions.warnings.slice())).findIndex(                    function(element)
+                    {
+                        return element.name === warningName;
+                    });
+                    if (isNo)
+                    {
+                        if (indexOfWarning !== -1)
+                        {
+                            objjcFlags.warnings.splice(indexOfWarning, 1);
+                        }                    }                    else
+                    {
+                        if (indexOfWarning === -1)
+                        {
+                            var theWarning = AllWarnings.find(                            function(element)
+                            {
+                                return element.name === warningName;
+                            });
+                            if (theWarning)
+                                objjcFlags.warnings.push(theWarning);
+                        }                    }                }            }            return objjcFlags;
         };
         ObjJAcornCompiler.methodDefsFromMethodList =         function(methodList)
         {
@@ -10507,7 +10676,7 @@ default:
             message += (new Array((aMessage.messageOnColumn || 0) + 1)).join(" ");
             if (line)
                 message += (new Array(Math.min(1, line.length || 1) + 1)).join("^") + "\n";
-            message += aMessage.messageType + " line " + aMessage.messageOnLine + " in " + this.URL + ": " + aMessage.message;
+            message += aMessage.messageType + " line " + aMessage.messageOnLine + " in " + this.URL + ":" + aMessage.messageOnLine + ": " + aMessage.message;
             return message;
         };
         ObjJAcornCompiler.prototype.error_message =         function(errorMessage, node)
@@ -11066,6 +11235,7 @@ default:
                 inner.skipIndentation = true;
                 inner.endOfScopeBody = true;
                 c(handler.body, inner, "ScopeBody");
+                inner.variablesNotReadWarnings();
                 indentation = indentation.substring(indentationSize);
                 inner.copyAddedSelfToIvarsToParent();
             }            if (node.finalizer)
@@ -11259,7 +11429,7 @@ default:
             var compiler = st.compiler,
                 generate = compiler.generate,
                 buffer = compiler.jsBuffer,
-                inner = new Scope(st),
+                inner = new FunctionScope(st),
                 decl = node.type == "FunctionDeclaration",
                 id = node.id;
             inner.isDecl = decl;
@@ -11309,12 +11479,14 @@ default:
                 }            }            indentation += indentStep;
             inner.endOfScopeBody = true;
             c(node.body, inner, "ScopeBody");
+            inner.variablesNotReadWarnings();
             indentation = indentation.substring(indentationSize);
             inner.copyAddedSelfToIvarsToParent();
         }, VariableDeclaration:         function(node, st, c, format)
         {
             var compiler = st.compiler,
                 generate = compiler.generate,
+                varScope = st.getVarScope(),
                 buffer;
             if (generate)
             {
@@ -11325,7 +11497,16 @@ default:
             }            for (var i = 0; i < node.declarations.length; ++i)
             {
                 var decl = node.declarations[i],
-                    identifier = decl.id.name;
+                    identifier = decl.id.name,
+                    possibleHoistedVariable = varScope.possibleHoistedVariables && varScope.possibleHoistedVariables[identifier],
+                    variableDeclaration = {type: "var", node: decl.id, isRead: possibleHoistedVariable ? possibleHoistedVariable.isRead : 0};
+                if (possibleHoistedVariable)
+                {
+                    if (possibleHoistedVariable.variable)
+                    {
+                        possibleHoistedVariable.variable.isRead -= possibleHoistedVariable.isRead;
+                    }                    varScope.possibleHoistedVariables[identifier] = null;
+                }                varScope.vars[identifier] = variableDeclaration;
                 if (i)
                     if (generate)
                     {
@@ -11341,8 +11522,7 @@ default:
                                 buffer.concat(",\n");
                                 buffer.concat(indentation);
                                 buffer.concat("    ");
-                            }                        }                    }                st.vars[identifier] = {type: "var", node: decl.id};
-                c(decl.id, st, "IdentifierName");
+                            }                        }                    }                c(decl.id, st, "IdentifierName");
                 if (decl.init)
                 {
                     if (generate)
@@ -11366,8 +11546,10 @@ default:
                         {
                             var dict = addedSelfToIvar[i];
                             atoms[dict.index] = "";
-                            compiler.addWarning(createMessage("Local declaration of '" + identifier + "' hides instance variable", dict.node, compiler.source));
-                        }                        st.addedSelfToIvars[identifier] = [];
+                            if (compiler.options.warnings.includes(warningShadowIvar))
+                                compiler.addWarning(createMessage("Local declaration of '" + identifier + "' hides instance variable", dict.node, compiler.source));
+                        }                        variableDeclaration.isRead += size;
+                        st.addedSelfToIvars[identifier] = [];
                     }                }            }            if (generate && !format && !st.isFor)
                 buffer.concat(";\n", node);
         }, ThisExpression:         function(node, st, c)
@@ -11588,9 +11770,9 @@ default:
                 var lVar = st.getLvar("self", true);
                 if (lVar)
                 {
-                    var lVarScope = lVar.scope;
-                    if (lVarScope)
-                        lVarScope.assignmentToSelf = true;
+                    var lvarScope = lVar.scope;
+                    if (lvarScope)
+                        lvarScope.assignmentToSelf = true;
                 }            }            (generate && nodePrecedence(node, nodeLeft) ? surroundExpression(c) : c)(nodeLeft, st, "Expression");
             if (generate)
             {
@@ -11699,44 +11881,76 @@ default:
             var compiler = st.compiler,
                 generate = compiler.generate,
                 identifier = node.name;
-            if (st.currentMethodType() === "-" && !st.secondMemberExpression && !st.isPropertyKey)
+            if (!st.isPropertyKey)
             {
-                var lvar = st.getLvar(identifier, true),
-                    ivar = compiler.getIvarForClass(identifier, st);
-                if (ivar)
+                var lvarScope = st.getLvarScope(identifier, true);
+                var lvar = lvarScope.vars && lvarScope.vars[identifier];
+                if (!st.secondMemberExpression && st.currentMethodType() === "-")
                 {
-                    if (lvar)
-                        compiler.addWarning(createMessage("Local declaration of '" + identifier + "' hides instance variable", node, compiler.source));
-                    else
+                    var ivar = compiler.getIvarForClass(identifier, st);
+                    if (ivar)
                     {
-                        var nodeStart = node.start;
-                        if (!generate)
-                            do
-                            {
-                                compiler.jsBuffer.concat(compiler.source.substring(compiler.lastPos, nodeStart));
-                                compiler.lastPos = nodeStart;
-                            }                            while (compiler.source.substr(nodeStart++, 1) === "(");
-                                                    ((st.addedSelfToIvars || (st.addedSelfToIvars = Object.create(null)))[identifier] || (st.addedSelfToIvars[identifier] = [])).push({node: node, index: compiler.jsBuffer.length()});
-                        compiler.jsBuffer.concat("self.", node);
-                    }                }                else if (!reservedIdentifiers(identifier))
-                {
-                    var message,
-                        classOrGlobal = typeof global[identifier] !== "undefined" || typeof window !== 'undefined' && typeof window[identifier] !== "undefined" || compiler.getClassDef(identifier),
-                        globalVar = st.getLvar(identifier);
-                    if (classOrGlobal && (!globalVar || globalVar.type !== "class"))
-                    {
-                    }                    else if (!globalVar)
-                    {
-                        if (st.assignment)
+                        if (lvar)
                         {
-                            message = new GlobalVariableMaybeWarning("Creating global variable inside function or method '" + identifier + "'", node, compiler.source);
-                            st.vars[identifier] = {type: "remove global warning", node: node};
+                            if (compiler.options.warnings.includes(warningShadowIvar))
+                                compiler.addWarning(createMessage("Local declaration of '" + identifier + "' hides instance variable", node, compiler.source));
                         }                        else
                         {
-                            message = new GlobalVariableMaybeWarning("Using unknown class or uninitialized global variable '" + identifier + "'", node, compiler.source);
-                        }                    }                    if (message)
-                        st.addMaybeWarning(message);
-                }            }            if (generate)
+                            var nodeStart = node.start;
+                            if (!generate)
+                                do
+                                {
+                                    compiler.jsBuffer.concat(compiler.source.substring(compiler.lastPos, nodeStart));
+                                    compiler.lastPos = nodeStart;
+                                }                                while (compiler.source.substr(nodeStart++, 1) === "(");
+                                                            ((st.addedSelfToIvars || (st.addedSelfToIvars = Object.create(null)))[identifier] || (st.addedSelfToIvars[identifier] = [])).push({node: node, index: compiler.jsBuffer.length()});
+                            compiler.jsBuffer.concat("self.", node);
+                        }                    }                    else if (!reservedIdentifiers(identifier))
+                    {
+                        var message,
+                            classOrGlobal = typeof global[identifier] !== "undefined" || typeof window !== 'undefined' && typeof window[identifier] !== "undefined" || compiler.getClassDef(identifier),
+                            globalVar = st.getLvar(identifier);
+                        if (classOrGlobal && (!globalVar || globalVar.type !== "class"))
+                        {
+                        }                        else if (!globalVar)
+                        {
+                            if (st.assignment && compiler.options.warnings.includes(warningCreateGlobalInsideFunctionOrMethod))
+                            {
+                                message = new GlobalVariableMaybeWarning("Creating global variable inside function or method '" + identifier + "'", node, compiler.source);
+                                st.vars[identifier] = {type: "remove global warning", node: node};
+                            }                            else if (compiler.options.warnings.includes(warningUnknownClassOrGlobal))
+                            {
+                                message = new GlobalVariableMaybeWarning("Using unknown class or uninitialized global variable '" + identifier + "'", node, compiler.source);
+                            }                        }                        if (message)
+                            st.addMaybeWarning(message);
+                    }                }                if (!st.assignment || !st.secondMemberExpression)
+                {
+                    if (lvar)
+                    {
+                        lvar.isRead++;
+                    }                    else
+                    {
+                        lvarScope = lvarScope.getLvarScope(identifier);
+                        lvar = lvarScope.vars && lvarScope.vars[identifier];
+                        if (lvar)
+                        {
+                            lvar.isRead++;
+                        }                        var possibleHoistedVariable = (lvarScope.possibleHoistedVariables || (lvarScope.possibleHoistedVariables = Object.create(null)))[identifier];
+                        if (possibleHoistedVariable == null)
+                        {
+                            var possibleHoistedVariable = {isRead: 1};
+                            lvarScope.possibleHoistedVariables[identifier] = possibleHoistedVariable;
+                        }                        else
+                        {
+                            possibleHoistedVariable.isRead++;
+                        }                        if (lvar)
+                        {
+                            if (possibleHoistedVariable.variable && possibleHoistedVariable.variable !== lvar || possibleHoistedVariable.varScope && possibleHoistedVariable.varScope !== lvarScope)
+                            {
+                                throw new Error("Internal inconsistency, var or scope is not the same");
+                            }                            possibleHoistedVariable.variable = lvar;
+                            possibleHoistedVariable.varScope = lvarScope;
+                        }                    }                }            }            if (generate)
                 compiler.jsBuffer.concat(identifier, node, identifier === "self" ? "self" : null);
         }, IdentifierName:         function(node, st, c)
         {
@@ -11791,7 +12005,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = (CPArray.isa.method_msgSend[\"alloc\"] || _objj_forward)(CPArray, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : (___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : (___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.method_msgSend[\"init\"] || _objj_forward)(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11802,7 +12018,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = CPArray.isa.objj_msgSend0(CPArray, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : ___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : ___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.objj_msgSend0(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11817,7 +12035,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = (CPArray.isa.method_msgSend[\"alloc\"] || _objj_forward)(CPArray, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : (___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : (___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.method_msgSend[\"initWithObjects:count:\"] || _objj_forward)(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11828,7 +12048,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = CPArray.isa.objj_msgSend0(CPArray, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : ___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : ___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.objj_msgSend2(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11889,7 +12111,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = (CPDictionary.isa.method_msgSend[\"alloc\"] || _objj_forward)(CPDictionary, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : (___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : (___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.method_msgSend[\"init\"] || _objj_forward)(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11900,7 +12124,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = CPDictionary.isa.objj_msgSend0(CPDictionary, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : ___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : ___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.objj_msgSend0(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11915,7 +12141,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = (CPDictionary.isa.method_msgSend[\"alloc\"] || _objj_forward)(CPDictionary, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : (___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : (___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.method_msgSend[\"initWithObjects:forKeys:\"] || _objj_forward)(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -11926,7 +12154,9 @@ default:
                     buffer.concat(++st.receiverLevel + "");
                     buffer.concat(" = CPDictionary.isa.objj_msgSend0(CPDictionary, \"alloc\"), ___r");
                     buffer.concat(st.receiverLevel + "");
-                    buffer.concat(" == null ? null : ___r");
+                    buffer.concat(" == null ? ___r");
+                    buffer.concat(st.receiverLevel + "");
+                    buffer.concat(" : ___r");
                     buffer.concat(st.receiverLevel + "");
                     buffer.concat(".isa.objj_msgSend2(___r");
                     buffer.concat(st.receiverLevel + "");
@@ -12093,7 +12323,7 @@ default:
                     };
                     checkIfIvarIsAlreadyDeclaredAndInSuperClass(classDef, checkIfIvarIsAlreadyDeclaredAndInSuperClass);
                     var isTypeDefined = !ivarTypeIsClass || typeof global[ivarType] !== "undefined" || typeof window[ivarType] !== "undefined" || compiler.getClassDef(ivarType) || compiler.getTypeDef(ivarType) || ivarType == classDef.name;
-                    if (!isTypeDefined)
+                    if (!isTypeDefined && compiler.options.warnings.includes(warningUnknownIvarType))
                         compiler.addWarning(createMessage("Unknown type '" + ivarType + "' for ivar '" + ivarName + "'", ivarDecl.ivartype, compiler.source));
                     if (generateObjJ)
                     {
@@ -12341,7 +12571,7 @@ default:
             var compiler = st.compiler,
                 generate = compiler.generate,
                 saveJSBuffer = compiler.jsBuffer,
-                methodScope = new Scope(st),
+                methodScope = new FunctionScope(st),
                 isInstanceMethodType = node.methodtype === '-',
                 selectors = node.selectors,
                 nodeArguments = node.arguments,
@@ -12453,6 +12683,7 @@ default:
                 indentation += indentStep;
                 methodScope.endOfScopeBody = true;
                 c(node.body, methodScope, "Statement");
+                methodScope.variablesNotReadWarnings();
                 indentation = indentation.substring(indentationSize);
                 if (!generate)
                     compiler.jsBuffer.concat(compiler.source.substring(compiler.lastPos, node.body.end));
@@ -12587,7 +12818,9 @@ default:
                         {
                             buffer.concat("(", node);
                             c(nodeObject, st, "Expression");
-                            buffer.concat(" == null ? null : ", node);
+                            buffer.concat(" == null ? ", node);
+                            c(nodeObject, st, "Expression");
+                            buffer.concat(" : ", node);
                         }                        if (inlineMsgSend)
                             buffer.concat("(", node);
                         c(nodeObject, st, "Expression");
@@ -12601,7 +12834,9 @@ default:
                         c(nodeObject, st, "Expression");
                         buffer.concat(")", node);
                         buffer.concat(", ___r" + st.receiverLevel, node);
-                        buffer.concat(" == null ? null : ", node);
+                        buffer.concat(" == null ? ", node);
+                        buffer.concat("___r" + st.receiverLevel, node);
+                        buffer.concat(" : ", node);
                         if (inlineMsgSend)
                             buffer.concat("(", node);
                         buffer.concat("___r" + st.receiverLevel, node);
@@ -12982,7 +13217,7 @@ default:
                 sourceMapBase64 = (new Buffer(sourceMap)).toString("base64");
         }        if (sourceMapBase64)
         {
-            code = code.substring(exports.ObjJCompiler.numberOfLinesAtTopOfFunction());
+            code = code.substring((exports.ObjJCompiler || ObjJCompiler).numberOfLinesAtTopOfFunction());
             this._base64EncodedSourceMap = sourceMapBase64;
             code += "\n//# sourceMappingURL=data:application/json;charset=utf-8;base64," + sourceMapBase64;
         }        this._function = new Function(parameters, code);
@@ -13203,7 +13438,7 @@ default:
                 {
                     if (!aStaticResource)
                     {
-                        var compilingFileUrl = exports.ObjJCompiler ? exports.ObjJCompiler.currentCompileFile : null;
+                        var compilingFileUrl = exports.ObjJCompiler || ObjJCompiler ? (exports.ObjJCompiler || ObjJCompiler).currentCompileFile : null;
                         throw new Error("Could not load file at " + aURL + (compilingFileUrl ? " when compiling " + compilingFileUrl : "") + "\nwith includeURLs: " + StaticResource.includeURLs());
                     }
                     cachedFileExecutableSearchResults[cacheUID] = aStaticResource;
@@ -13396,7 +13631,7 @@ default:
                     acornOptions.preIncludeFiles.push({include: includeString, sourceFile: includeFileUrl.toString()});
                 }            }        if (allPreIncludesResolved)
         {
-            var compiler = exports.ObjJCompiler.compileFileDependencies(fileContents, aURL, compilerOptions);
+            var compiler = (exports.ObjJCompiler || ObjJCompiler).compileFileDependencies(fileContents, aURL, compilerOptions);
             var warningsAndErrors = compiler.warningsAndErrors;
             if (warningsAndErrors && warningsAndErrors.length === 1 && warningsAndErrors[0].message.indexOf("file not found") > -1)
                 return;
@@ -13475,7 +13710,7 @@ default:
         if (currentGccCompilerFlags === compilerFlags)
             return;
         currentGccCompilerFlags = compilerFlags;
-        var objjcFlags = exports.ObjJCompiler.parseGccCompilerFlags(compilerFlags);
+        var objjcFlags = (exports.ObjJCompiler || ObjJCompiler).parseGccCompilerFlags(compilerFlags);
         FileExecutable.setCurrentCompilerFlags(objjcFlags);
     };
     FileExecutable.currentGccCompilerFlags =     function(compilerFlags)
@@ -13835,8 +14070,10 @@ default:
             meta.objj_msgSend2 = objj_msgSendFast2;
             meta.objj_msgSend3 = objj_msgSendFast3;
             aClass.method_msgSend = aClass.method_dtable;
-            meta.method_msgSend = meta.method_dtable;
-            meta.objj_msgSend0(aClass, "initialize");
+            var metaMethodDTable = meta.method_msgSend = meta.method_dtable,
+                initializeImp = metaMethodDTable["initialize"];
+            if (initializeImp)
+                initializeImp(aClass, "initialize");
             meta.info = (meta.info | CLS_INITIALIZED) & ~CLS_INITIALIZING;
         }    };
     _objj_forward =     function(self, _cmd)
@@ -13883,7 +14120,7 @@ default:
                     }                }            }        }        implementation = isa.method_dtable[SEL_doesNotRecognizeSelector_];
         if (implementation)
             return implementation(self, SEL_doesNotRecognizeSelector_, _cmd);
-        throw class_getName(isa) + " does not implement doesNotRecognizeSelector:. Did you forget a superclass for " + class_getName(isa) + "?";
+        throw class_getName(isa) + " does not implement doesNotRecognizeSelector: when sending " + sel_getName(_cmd) + ". Did you forget a superclass for " + class_getName(isa) + "?";
     };
     class_getMethodImplementation =     function(aClass, aSelector)
     {
@@ -14032,7 +14269,7 @@ default:
     objj_msgSend =     function(aReceiver, aSelector)
     {
         if (aReceiver == nil)
-            return nil;
+            return aReceiver;
         var isa = aReceiver.isa;
         if (isa.init)
             _class_initialize(isa);
