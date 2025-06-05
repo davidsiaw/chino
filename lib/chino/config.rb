@@ -71,6 +71,7 @@ module Chino
 
     def get_file(file)
       return { filename: file.to_s } if File.exist?(file.to_s)
+      return common_erb(file) if File.exist?(common_erb_name(file))
       return erb(file) if File.exist?(erb_name(file))
       return { filename: "#{common_path}/#{file}" } if File.exist?("#{common_path}/#{file}")
       return get_from_dependency(file) if dependency_has_file?(file)
@@ -91,8 +92,19 @@ module Chino
       @dep_puller.get_from_dependency(file)
     end
 
-    def erb_name(file)
+    def common_erb_name(file)
       "#{common_path}/#{file}.erb"
+    end
+
+    def erb_name(file)
+      "#{file}.erb"
+    end
+
+    def common_erb(file)
+      renderer = ERB.new(File.read(common_erb_name(file)))
+      {
+        string: renderer.result(binding)
+      }
     end
 
     def erb(file)
