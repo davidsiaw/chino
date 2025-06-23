@@ -37,7 +37,17 @@ when 'build'
     FileUtils.cp(cur_path, File.join('temp', rel_path))
   end
 
-  config.collect_exports.each do |k, v|
+  Dir['./**/*.j.erb'].each do |file|
+    cur_path = File.expand_path(file)
+    rel_path = cur_path.sub(Regexp.new("^#{base_path}"), '').sub(/\.erb$/, "")
+
+    FileUtils.mkdir_p(File.join('temp', File.dirname(rel_path)))
+
+    contents = config.get_file(rel_path.sub("/", ""))[:string]
+    File.write(File.join('temp', rel_path), contents)
+  end
+
+  config.bundle_exports.each do |k, v|
     FileUtils.mkdir_p(File.join('temp', File.dirname(k)))
     FileUtils.cp(v, File.join('temp', k))
   end
@@ -50,12 +60,12 @@ when 'build'
     File.write("temp/#{filename}", file_content)
   end
 
-  IO.popen('cd temp && jake deploy') do |io|
+  IO.popen('cd temp && jake release') do |io|
     while (line = io.gets)
       puts line
     end
   end
-  FileUtils.mv("temp/Build/Deployment/#{config.bundle_name}", 'build')
+  FileUtils.mv("temp/Build/Release/#{config.bundle_name}", 'build')
 
 when 'create'
 
