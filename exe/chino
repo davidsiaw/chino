@@ -32,6 +32,8 @@ when 'build'
   Dir['./**/*.j'].each do |file|
     # skip any hidden dirs
     next if file.start_with?('./.')
+    
+    puts "Process file: #{file}"
 
     cur_path = File.expand_path(file)
     rel_path = cur_path.sub(Regexp.new("^#{base_path}"), '')
@@ -43,6 +45,8 @@ when 'build'
   Dir['./**/*.j.erb'].each do |file|
     # skip any hidden dirs here
     next if file.start_with?('./.')
+
+    puts "Process file: #{file}"
 
     cur_path = File.expand_path(file)
     rel_path = cur_path.sub(Regexp.new("^#{base_path}"), '').sub(/\.erb$/, "")
